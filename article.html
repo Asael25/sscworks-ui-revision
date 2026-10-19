@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title id="meta-title">Article — SSC Works (PT Surya Sarana Cipta)</title>
+  <meta name="description" id="meta-description" content="Technical insight and engineering perspectives from SSC Works.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Work Sans', sans-serif;
+        background-color: #FBFAF8;
+        color: #1E293B;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .article-body h2 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin-top: 2.25rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    @media (min-width: 640px) {
+      .article-body h2 {
+        font-size: 1.85rem;
+      }
+    }
+    .article-body h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1E293B;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+    .article-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+    .article-body ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+    .article-body ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #334155;
+    }
+    .article-body li {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+    .article-body blockquote {
+      border-left: 4px solid #1D4ED8;
+      background-color: #EFF6FF;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      border-radius: 0 0.75rem 0.75rem 0;
+      font-style: italic;
+      color: #1E3A8A;
+    }
+    .article-body .callout-box {
+      background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+      border: 1px solid #DBEAFE;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FBFAF8] text-slate-800 antialiased font-['Work_Sans',sans-serif]">
+
+  <!-- ====== READING PROGRESS BAR ====== -->
+  <div id="read-progress" class="fixed top-0 left-0 h-[3px] bg-[#1D4ED8] z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- ====== COMPACT CLEAN NAVBAR (NON-STICKY) ====== -->
+  <header class="relative w-full z-40 bg-white border-b border-slate-200/90 font-['Work_Sans',sans-serif]" id="ssc-navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-[70px] flex items-center justify-between">
+      
+      <!-- Logo SSC Works -->
+      <a href="code.html" class="flex items-center gap-3 shrink-0 group py-1.5" aria-label="SSC Works Home">
+        <img
+          alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
+          class="h-[32px] sm:h-[35px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
+          src="https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+        
+        <!-- About with Dropdown -->
+        <div class="relative group/about">
+          <button type="button"
+            class="flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] transition-colors rounded-md group-hover/about:text-[#1D4ED8] group-hover/about:bg-slate-50 focus:outline-none"
+            aria-expanded="false">
+            <span>About</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover/about:text-[#1D4ED8] transition-transform duration-200 group-hover/about:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="absolute top-full left-0 pt-2 w-56 opacity-0 invisible translate-y-1 group-hover/about:opacity-100 group-hover/about:visible group-hover/about:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-white rounded-xl shadow-[0_12px_28px_-4px_rgba(15,23,42,0.12),0_4px_10px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-1.5">
+              <a href="code.html#ct-branches" class="flex items-center gap-2.5 px-4 py-2 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+                Branch (6 Lokasi)
+              </a>
+              <a href="code.html#portfolio" class="flex items-center gap-2.5 px-4 py-2 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+                Portfolio
+              </a>
+              <a href="code.html#services-matrix" class="flex items-center gap-2.5 px-4 py-2 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1D4ED8]"></span>
+                Services Matrix
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <a href="code.html#services-matrix" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+          Services
+        </a>
+
+        <!-- Career -->
+        <a href="#" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+          Career
+        </a>
+
+        <!-- News (Active on this section) -->
+        <a href="news.html" class="px-3.5 py-2 text-[14.5px] font-semibold text-[#1D4ED8] bg-blue-50/70 rounded-md transition-colors" aria-current="page">
+          News
+        </a>
+
+        <!-- Contact Us -->
+        <a href="code.html#contact" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+          Contact Us
+        </a>
+
+        <!-- Vertical Divider -->
+        <div class="h-4 w-[1px] bg-slate-300 mx-2" aria-hidden="true"></div>
+
+        <!-- Language Selector -->
+        <div class="relative group/lang">
+          <button type="button"
+            class="flex items-center gap-1.5 px-3 py-1.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md border border-slate-200 transition-all focus:outline-none"
+            aria-label="Language Selector" aria-expanded="false">
+            <svg class="w-4 h-4 text-[#1D4ED8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="font-medium tracking-wide">ID / EN</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover/lang:text-[#1D4ED8] transition-transform duration-200 group-hover/lang:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Language Options -->
+          <div class="absolute top-full right-0 pt-2 w-36 opacity-0 invisible translate-y-1 group-hover/lang:opacity-100 group-hover/lang:visible group-hover/lang:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-white rounded-xl shadow-[0_12px_28px_-4px_rgba(15,23,42,0.12),0_4px_10px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-1.5">
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-800 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="flex items-center gap-2">🇮🇩 Indonesia</span>
+                <span class="text-xs text-[#1D4ED8] font-bold">✓</span>
+              </button>
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-600 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="flex items-center gap-2">🇬🇧 English</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <button type="button"
+          onclick="var m = document.getElementById('ssc-mobile-menu'); m.classList.toggle('hidden');"
+          class="p-2 rounded-lg text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-100 transition-colors focus:outline-none"
+          aria-label="Toggle Navigation Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="ssc-mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-5 shadow-lg">
+      <div class="flex flex-col space-y-3">
+        <div class="py-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">About</span>
+          <div class="pl-3 mt-1.5 space-y-2 border-l-2 border-slate-200">
+            <a href="code.html#ct-branches" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Branch (6 Lokasi)</a>
+            <a href="code.html#portfolio" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Portfolio</a>
+            <a href="code.html#services-matrix" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Services Matrix</a>
+          </div>
+        </div>
+        <a href="code.html#services-matrix" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Services</a>
+        <a href="#" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Career</a>
+        <a href="news.html" class="text-sm font-semibold text-[#1D4ED8] py-1">News</a>
+        <a href="code.html#contact" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full bg-[#FBFAF8] min-h-screen">
+
+    <!-- ====== BREADCRUMBS & BACK LINK BAR ====== -->
+    <div class="w-full bg-white border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3.5 flex items-center justify-between text-xs sm:text-sm">
+        <div class="flex items-center gap-2 text-slate-500 overflow-hidden text-ellipsis whitespace-nowrap">
+          <a href="code.html" class="hover:text-[#1D4ED8] transition-colors">Home</a>
+          <span>/</span>
+          <a href="news.html" class="hover:text-[#1D4ED8] transition-colors">News</a>
+          <span>/</span>
+          <span id="breadcrumb-title" class="text-slate-800 font-medium truncate max-w-[200px] sm:max-w-md">Article Detail</span>
+        </div>
+        <a href="news.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] shrink-0 bg-blue-50/80 hover:bg-blue-100/80 px-3 py-1.5 rounded-full transition-colors">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to News
+        </a>
+      </div>
+    </div>
+
+    <!-- ====== ARTICLE HERO HEADER ====== -->
+    <section class="w-full pt-12 pb-10 bg-gradient-to-b from-white to-[#FBFAF8] border-b border-slate-200/70">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        
+        <!-- Category & Read Time -->
+        <div class="flex items-center gap-3 mb-4">
+          <span id="art-tag" class="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-50 text-[#1D4ED8] border border-blue-200/70">
+            Repair Insight
+          </span>
+          <span class="text-slate-400 text-xs">•</span>
+          <span id="art-read-time" class="text-slate-500 text-xs font-medium">4 min read</span>
+        </div>
+
+        <!-- Article Headline -->
+        <h1 id="art-title" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18] mb-6">
+          What Is Repair in Industrial Operations?
+        </h1>
+
+        <!-- Author & Date Metadata Row -->
+        <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-200/80">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1D4ED8]/10 text-[#1D4ED8] font-bold flex items-center justify-center text-sm border border-[#1D4ED8]/20">
+              SSC
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 leading-tight">SSC Works Technical Editorial Team</p>
+              <p class="text-xs text-slate-500 mt-0.5">Published on <span id="art-date">12 Sep 2026</span></p>
+            </div>
+          </div>
+
+          <!-- Share Actions -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-medium text-slate-400 mr-1 hidden sm:inline">Share:</span>
+            <button type="button" onclick="copyArticleLink()"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:border-[#1D4ED8] hover:text-[#1D4ED8] shadow-sm transition-colors"
+              title="Copy Link">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy</span>
+            </button>
+            <button type="button" onclick="shareWhatsApp()"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 shadow-sm transition-colors"
+              title="Share to WhatsApp">
+              <span>WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====== ARTICLE CONTENT & SIDEBAR ====== -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Main Article Column (8 Cols) -->
+        <article class="lg:col-span-8 flex flex-col">
+          
+          <!-- Featured Image -->
+          <div class="w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm bg-slate-100 mb-8 aspect-[16/10] sm:aspect-[16/9]">
+            <img id="art-featured-img" src="https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp"
+              alt="Article Cover" class="w-full h-full object-cover">
+          </div>
+
+          <!-- Article Body -->
+          <div id="art-body" class="article-body font-['Work_Sans',sans-serif]">
+            <!-- Hydrated via JavaScript -->
+          </div>
+
+          <!-- Bottom Article Footer Navigation -->
+          <div class="mt-12 pt-8 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+            <a href="news.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 text-sm font-semibold text-slate-700 hover:border-[#1D4ED8] hover:text-[#1D4ED8] bg-white transition-all shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to All Articles
+            </a>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+                Top of Page
+              </button>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Sidebar (4 Cols) -->
+        <aside class="lg:col-span-4 space-y-8">
+          
+          <!-- CTA Card: Contact & Consultation -->
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-7 rounded-2xl shadow-lg border border-slate-700">
+            <span class="inline-block text-[11px] font-semibold tracking-wider uppercase text-blue-400 bg-blue-900/50 border border-blue-500/30 px-3 py-1 rounded-full mb-3">
+              Need Workshop Assistance?
+            </span>
+            <h3 class="text-xl font-bold leading-snug mb-3">
+              Heavy Equipment Repair &amp; Metal Fabrication
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+              Speak directly with our senior engineering team across 6 workshop hubs throughout Indonesia.
+            </p>
+            <div class="space-y-3">
+              <a href="code.html#contact"
+                class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#1D4ED8] hover:bg-[#1e40af] text-white font-semibold text-sm transition-all shadow-md">
+                <span>Inquire With Our Engineers</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://wa.me/6285601042000" target="_blank" rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all">
+                <span>WhatsApp: +62 856 010 42000</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Navigation / Table of Contents -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm sticky top-6">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#1D4ED8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              In This Article
+            </h4>
+            <nav id="art-toc" class="space-y-2 text-sm">
+              <!-- Hydrated dynamically based on headings -->
+            </nav>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- ====== RELATED STORIES SECTION ====== -->
+    <section class="w-full py-16 bg-white border-t border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-[#1D4ED8] block mb-1">Explore More</span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">Related Articles</h3>
+          </div>
+          <a href="news.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+            View All
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="art-related-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== STAY CONNECTED NEWSLETTER STRIP ====== -->
+    <section class="w-full bg-[#1e293b] text-white py-14 border-t border-slate-800" id="sscSubscribeStrip">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="max-w-xl text-center md:text-left">
+          <span class="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-2 block">Newsletter</span>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+            Stay Connected with Workshop Updates
+          </h3>
+          <p class="text-slate-300 text-sm mt-2 font-normal">
+            Get technical case studies, equipment maintenance tips, and machining insights directly to your inbox.
+          </p>
+        </div>
+        <form class="w-full md:w-auto flex flex-col sm:flex-row gap-3 shrink-0" onsubmit="event.preventDefault(); alert('Terima kasih telah berlangganan insight SSC Works!');">
+          <input type="email" required placeholder="Enter your work email"
+            class="px-4 py-3 rounded-xl bg-slate-800/90 border border-slate-700 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-[#1D4ED8] min-w-[260px]">
+          <button type="submit"
+            class="px-6 py-3 rounded-xl bg-[#1D4ED8] hover:bg-[#1e40af] text-white font-semibold text-sm transition-all shadow-md shrink-0">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== AUTHENTIC SSC FOOTER ====== -->
+  <footer class="ssc-footer" style="background:#111827; color:#E2E8F0; font-family:'Work Sans',sans-serif; border-top:1px solid #1F2937;">
+    <div style="max-width:1280px; margin:0 auto; padding:60px 24px 32px 24px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:40px; margin-bottom:48px;">
+        <div>
+          <img src="https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png" alt="SSC Works Logo" style="height:36px; margin-bottom:16px; filter:brightness(0) invert(1);" />
+          <p style="font-size:14px; line-height:1.7; color:#94A3B8; margin-bottom:16px;">
+            PT Surya Sarana Cipta (SSC Works) provides premier mechanical repair, precision line boring, specialized welding, and heavy equipment fabrication nationwide.
+          </p>
+        </div>
+        <div>
+          <h4 style="font-size:15px; font-weight:700; color:#FFFFFF; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.05em;">Quick Links</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; line-height:2.1; color:#94A3B8;">
+            <li><a href="code.html" style="color:#94A3B8; text-decoration:none;">Home</a></li>
+            <li><a href="code.html#ct-branches" style="color:#94A3B8; text-decoration:none;">Branch Locations (6 Hubs)</a></li>
+            <li><a href="code.html#services-matrix" style="color:#94A3B8; text-decoration:none;">Services Matrix</a></li>
+            <li><a href="news.html" style="color:#1D4ED8; text-decoration:none; font-weight:600;">News &amp; Insights</a></li>
+            <li><a href="code.html#contact" style="color:#94A3B8; text-decoration:none;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:15px; font-weight:700; color:#FFFFFF; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.05em;">Head Office</h4>
+          <p style="font-size:14px; line-height:1.7; color:#94A3B8; margin-bottom:12px;">
+            South Quarter Tower A Lt 7, Jl. R.A. Kartini Kav 8, Cilandak Barat, Jakarta Selatan
+          </p>
+          <p style="font-size:14px; color:#94A3B8; margin-bottom:6px;">WhatsApp: +62 856 010 42000</p>
+          <p style="font-size:14px; color:#94A3B8;">Email: head-office@sscworks.com</p>
+        </div>
+      </div>
+      <div style="border-top:1px solid #1F2937; padding-top:24px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; font-size:13px; color:#64748B;">
+        <p style="margin:0;">&copy; 2026 PT Surya Sarana Cipta (SSC Works). All rights reserved.</p>
+        <p style="margin:0;">Manufacturing &bull; Heavy Equipment &bull; Industrial Engineering</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== TOAST NOTIFICATION ====== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-semibold shadow-2xl opacity-0 pointer-events-none transition-all duration-300 translate-y-3 flex items-center gap-2 border border-slate-700">
+    <span class="text-emerald-400">✓</span>
+    <span id="toast-text">Tautan disalin ke papan klip!</span>
+  </div>
+
+  <!-- ====== ARTICLE DATA & DYNAMIC ENGINE ====== -->
+  <script>
+    var sscArticleDatabase = {
+      "what-is-repair-in-industrial-operations": {
+        slug: "what-is-repair-in-industrial-operations",
+        title: "What Is Repair in Industrial Operations?",
+        tag: "Repair Insight",
+        date: "12 Sep 2026",
+        readTime: "4 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp",
+        summary: "In an industrial context, repair is not simply fixing what broke. It is a technical and strategic process aimed at restoring functionality, performance, and workplace safety.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            Many people ask, <em>what is repair?</em> In an industrial context, repair is not simply fixing something that is broken. It is a technical and strategic process aimed at restoring the functionality, performance, and safety of equipment so it can operate reliably again.
+          </p>
+          <p>
+            In engineering companies like <strong>SSC Works</strong>, repair plays a vital role in cost efficiency, operational reliability, and workplace safety, especially in fabrication, heavy equipment, and industrial facilities.
+          </p>
+
+          <h2 id="section-1">1. What Is Repair?</h2>
+          <p>
+            In general, <strong>repair is the process of correcting damage, wear, or performance degradation in machinery, equipment, or structural components</strong>, so they meet required technical specifications again.
+          </p>
+          <p>Repair is distinctly different from:</p>
+          <ul>
+            <li><strong>Maintenance</strong> &rarr; routine actions to prevent premature damage</li>
+            <li><strong>Overhaul</strong> &rarr; complete disassembly and full refurbishment of major assemblies</li>
+            <li><strong>Replacement</strong> &rarr; purchasing and installing a brand-new unit or sub-assembly</li>
+          </ul>
+          <p>
+            Repair sits strategically in between: <em>more cost-effective than full replacement, but far more technical than routine maintenance.</em>
+          </p>
+
+          <blockquote>
+            "According to Industrial Maintenance Studies, timely industrial repair can reduce equipment operational capital costs by 40% to 60% compared to complete unit replacement."
+          </blockquote>
+
+          <h2 id="section-2">2. Types of Repair in Heavy Industry</h2>
+          <div class="callout-box">
+            <h3 class="text-base font-bold text-slate-900 mb-2">Primary Repair Categories Managed by SSC Works:</h3>
+            <ul class="mb-0">
+              <li><strong>Mechanical Repair:</strong> Focused on rotating shafts, bearings, gears, line boring, and dimensional precision re-machining.</li>
+              <li><strong>Electrical Repair:</strong> Industrial motor winding restoration, switchgear control panels, and PLC instrumentation.</li>
+              <li><strong>Structural Repair:</strong> Heavy mining dump truck chassis frames, excavator booms, crusher structures, and certified crack repair.</li>
+              <li><strong>Surface Repair:</strong> Thermal spraying, abrasive blasting, high-spec epoxy coating, and wear plate restoration.</li>
+            </ul>
+          </div>
+
+          <h2 id="section-3">3. Professional Repair Process</h2>
+          <p>
+            Industrial repair must follow strict quality procedures to ensure long-term structural integrity and on-site safety:
+          </p>
+          <ol>
+            <li><strong>Initial Inspection:</strong> Comprehensive visual inspection, ultrasonic thickness measurement, and Non-Destructive Testing (NDT / MPI).</li>
+            <li><strong>Damage Root Cause Analysis:</strong> Engineering investigation to identify fatigue, overload, thermal distortion, or poor lubrication.</li>
+            <li><strong>Method Selection & WPS:</strong> Formulating certified Welding Procedure Specifications and Inspection Test Plans (ITP).</li>
+            <li><strong>Repair Execution:</strong> Machining, line boring, pre-heating, multi-pass welding, and post-weld stress relieving.</li>
+            <li><strong>Quality Control & Documentation:</strong> Comprehensive Manufacturer Data Record (MDR) handover to the client.</li>
+          </ol>
+
+          <h2 id="section-4">4. Strategic Value for Indonesian Industries</h2>
+          <p>
+            In mining, quarrying, and heavy manufacturing throughout Indonesia, equipment downtime costs tens of thousands of dollars per day. Fast turnaround from specialized workshops with mobile line boring capabilities ensures production targets remain on schedule without waiting months for overseas replacement shipments.
+          </p>
+        `
+      },
+
+      "equipment-is-the-key-to-industrial-efficiency": {
+        slug: "equipment-is-the-key-to-industrial-efficiency",
+        title: "Equipment Is the Key to Industrial Efficiency",
+        tag: "Efficiency",
+        date: "12 Sep 2026",
+        readTime: "5 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/08/tunnel.webp",
+        summary: "How high-reliability heavy machinery drives modern manufacturing and extraction. Discover how predictive maintenance preserves operational capital.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            In any heavy industrial, mining, or civil infrastructure enterprise, equipment is not merely a tool — it is the heartbeat of operational efficiency and revenue generation.
+          </p>
+          <p>
+            When machinery operates at peak precision, cycle times shorten, fuel efficiency improves, and production bottlenecks disappear. Conversely, unmanaged mechanical wear compounds into catastrophic downtime.
+          </p>
+
+          <h2 id="section-1">1. The Direct Link Between Machinery and Productivity</h2>
+          <p>
+            High-efficiency operations depend on predictable machine uptime. A single excavator bucket failure or crusher shaft misalignment can halt an entire extraction circuit. Maintaining equipment within original manufacturer (OEM) tolerances ensures that every kilowatt of power translates directly into output.
+          </p>
+
+          <h2 id="section-2">2. Proactive Maintenance vs. Reactive Firefighting</h2>
+          <p>
+            World-class facilities transition from breakdown repairs to condition-based monitoring. Key practices include:
+          </p>
+          <ul>
+            <li>Vibration analysis on rotating shafts and gearboxes.</li>
+            <li>Spectrometric oil sampling to detect microscopic metal wear.</li>
+            <li>Thermographic imaging to discover hot spots in electrical cabinets and bearing housings.</li>
+          </ul>
+
+          <blockquote>
+            "Preserving equipment integrity through planned component rebuilding costs a fraction of unplanned shutdowns and emergency parts procurement."
+          </blockquote>
+
+          <h2 id="section-3">3. SSC Works’ Role in Maximizing Equipment Life</h2>
+          <p>
+            With strategically located hubs in Jakarta, Surabaya, Balikpapan, and beyond, SSC Works delivers specialized re-machining and component overhaul services designed to keep Indonesia's industrial machinery performing at peak efficiency.
+          </p>
+        `
+      },
+
+      "the-future-of-industrial-workshop": {
+        slug: "the-future-of-industrial-workshop",
+        title: "The Future of Industrial Workshop",
+        tag: "Innovation",
+        date: "12 Sep 2026",
+        readTime: "6 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp",
+        summary: "Modern trends and best practices shaping heavy machining facilities. Explore how CNC integration and metallurgic testing accelerate turnaround cycles.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            The traditional industrial workshop is undergoing a profound digital and metallurgical transformation. Today's workshops combine brute mechanical capability with micrometric computer-aided precision.
+          </p>
+
+          <h2 id="section-1">1. High-Precision Portable Line Boring</h2>
+          <p>
+            Transporting multi-ton chassis or heavy mining arms across islands for re-machining is both costly and time-consuming. Modern workshops increasingly deploy compact, high-torque portable line boring and automated bore welding rigs directly to mine sites, finishing articulated pin bores to sub-millimeter tolerances on-site.
+          </p>
+
+          <h2 id="section-2">2. Advanced Non-Destructive Testing (NDT)</h2>
+          <p>
+            Inspecting critical welds now utilizes phased array ultrasonic testing and magnetic particle inspection to detect sub-surface microfissures before catastrophic fatigue failure can occur in harsh production environments.
+          </p>
+
+          <h2 id="section-3">3. SSC Works’ Modern Workshop Fleet</h2>
+          <p>
+            Through continuous investment in CNC tooling, dynamic balancing benches, and certified welding personnel, SSC Works provides state-of-the-art workshop support built for tomorrow’s heavy industrial requirements.
+          </p>
+        `
+      },
+
+      "ssc-metal-fabrication": {
+        slug: "ssc-metal-fabrication",
+        title: "SSC Metal Fabrication",
+        tag: "Fabrication",
+        date: "12 Sep 2026",
+        readTime: "5 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp",
+        summary: "Leading steel fabrication techniques for heavy structural and mechanical assemblies. Transforming raw plate into certified heavy-duty frames.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            Fabricating structures that withstand hundreds of tons of dynamic pressure requires uncompromising metallurgical knowledge, certified welding craftsmanship, and rigorous quality assurance.
+          </p>
+
+          <h2 id="section-1">1. From Raw Steel Plates to Heavy-Duty Structures</h2>
+          <p>
+            SSC Works specializes in medium-to-heavy structural steel fabrication. Utilizing precision CNC plasma cutting, high-capacity hydraulic press brakes, and submerged arc welding (SAW), our workshops produce:
+          </p>
+          <ul>
+            <li>Heavy mining dump bodies and rock buckets.</li>
+            <li>Plant conveyor trusses, discharge chutes, and hopper systems.</li>
+            <li>Industrial pressure vessel skids and structural storage tanks.</li>
+          </ul>
+
+          <h2 id="section-2">2. Certified Welding Procedures (WPS & PQR)</h2>
+          <p>
+            Every weld bead deposited adheres strictly to AWS D1.1 and ASME standard procedures. Our certified welders undergo regular qualification testing to guarantee zero porosity and optimal penetration under extreme fatigue loads.
+          </p>
+        `
+      },
+
+      "liebherr-in-heavy-equipment-manufacturing": {
+        slug: "liebherr-in-heavy-equipment-manufacturing",
+        title: "Liebherr: in Heavy Equipment Manufacturing",
+        tag: "Heavy Equipment",
+        date: "12 Sep 2026",
+        readTime: "4 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp",
+        summary: "A global powerhouse in heavy mining equipment. Discover its engineering innovations, structural tolerances, and how SSC Works supports comprehensive re-machining.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            Liebherr represents one of the world's premier manufacturers of ultra-class hydraulic excavators, crawler cranes, and heavy mining haul trucks.
+          </p>
+
+          <h2 id="section-1">1. Ultra-Class Hydraulic Engineering</h2>
+          <p>
+            Liebherr mining shovels operate with immense hydraulic pressures exceeding 350 bar. Maintaining cylinder barrel roundness, rod chrome plating, and high-pressure seal integrity is crucial to preventing expensive production outages in opencast mining.
+          </p>
+
+          <h2 id="section-2">2. Rebuilding Liebherr Structural Components</h2>
+          <p>
+            SSC Works provides turnkey repair and overhaul services for Liebherr boom pivots, stick assemblies, bucket hinges, and undercarriage side frames, restoring worn pin bores back to factory OEM tolerances.
+          </p>
+        `
+      },
+
+      "komatsu-heavy-equipment-industry": {
+        slug: "komatsu-heavy-equipment-industry",
+        title: "Komatsu: Heavy Equipment Industry",
+        tag: "Heavy Equipment",
+        date: "12 Sep 2026",
+        readTime: "4 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/08/dumpt.webp",
+        summary: "A leader in high-capacity earthmoving haulers. Explore durability metrics, hydrostatic circuit overhauls, and specialized cylinder restoration standards.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            Komatsu has long stood at the forefront of the Indonesian mining and construction sectors, celebrated for the rugged durability of its PC series excavators and HD rigid dump trucks.
+          </p>
+
+          <h2 id="section-1">1. Heavy Earthmoving Demands</h2>
+          <p>
+            In nickel, coal, and gold mining operations across Kalimantan and Sulawesi, Komatsu machines face relentless shock loads, abrasive dust, and 24/7 operating cycles.
+          </p>
+
+          <h2 id="section-2">2. Specialized Component Overhaul</h2>
+          <p>
+            SSC Works supports Komatsu fleets through specialized line boring of center hitches, equalizing beam reconditioning, hoist cylinder re-chroming, and crack repair on heavy excavator booms.
+          </p>
+        `
+      },
+
+      "vehicle-repair-near-me": {
+        slug: "vehicle-repair-near-me",
+        title: "Vehicle Repair Near Me: Industrial & Heavy Fleets",
+        tag: "Field Service",
+        date: "08 Sep 2026",
+        readTime: "4 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/08/tunnel.webp",
+        summary: "Mining vehicle repair near you: keep production running and cut costly idle hours. Deploy mobile line boring and diagnostic mechanics directly to your concession.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            When mining haul trucks, wheel loaders, or mobile cranes break down in remote concessions, waiting weeks for parts or long-distance transport is unacceptable.
+          </p>
+
+          <h2 id="section-1">1. On-Site Mobile Engineering Response</h2>
+          <p>
+            SSC Works operates rapid-response mobile repair teams equipped with portable machining tools, inverter welding units, and hydraulic testing kits capable of reaching mining sites across Indonesia.
+          </p>
+
+          <h2 id="section-2">2. Nationwide Workshop Footprint</h2>
+          <p>
+            With 6 strategically positioned hubs in Jakarta, Surabaya, Balikpapan, Samarinda, and Banjarmasin, comprehensive workshop support is always within logistical reach.
+          </p>
+        `
+      },
+
+      "what-is-cat": {
+        slug: "what-is-cat",
+        title: "What is CAT? Caterpillar Heavy Equipment Breakdown",
+        tag: "Brand Focus",
+        date: "05 Sep 2026",
+        readTime: "5 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp",
+        summary: "A closer look at the iconic heavy equipment manufacturer Caterpillar. Understanding powertrain torque ratings and certified rebuilding procedures.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            Caterpillar (CAT) is synonymous with heavy machinery across global mining, forestry, and heavy civil construction industries.
+          </p>
+
+          <h2 id="section-1">1. Built to Be Rebuilt</h2>
+          <p>
+            A core philosophy of Caterpillar machinery is component rebuildability. Castings, engine blocks, and hydraulic cylinder barrels are engineered with generous wear allowances, allowing them to undergo multiple complete rebuild cycles rather than disposal.
+          </p>
+
+          <h2 id="section-2">2. SSC Works Precision Restoration</h2>
+          <p>
+            Our workshops handle precision re-sleeving, bearing journal grinding, torque converter casing weld repair, and hydraulic rod manufacture for Caterpillar equipment across the archipelago.
+          </p>
+        `
+      },
+
+      "what-is-assembling": {
+        slug: "what-is-assembling",
+        title: "What is Assembling in Heavy Machinery?",
+        tag: "Engineering",
+        date: "01 Sep 2026",
+        readTime: "3 min read",
+        image: "https://sscworks.com/wp-content/uploads/2026/08/dumpt.webp",
+        summary: "Understanding precision assembly in heavy equipment fabrication. Why accurate fit tolerances, bearing preload, and thermal expansion dictate component lifespan.",
+        content: `
+          <p class="lead text-lg font-medium text-slate-700 leading-relaxed mb-6">
+            In mechanical engineering, assembling is far more than fastening bolts together. It is a calculated science requiring calibrated torque, thermal clearance verification, and meticulous cleanliness.
+          </p>
+
+          <h2 id="section-1">1. Precision Fit & Tolerances</h2>
+          <p>
+            Heavy equipment operates under extreme dynamic stress. Incorrect interference fits on bearings or improper torque tightening can lead to premature spalling, excessive heat build-up, and catastrophic seizure.
+          </p>
+
+          <h2 id="section-2">2. Controlled Cleanroom & Workshop Assembly</h2>
+          <p>
+            At SSC Works, hydraulic cylinders, planetary final drives, and heavy gearboxes are assembled in dust-controlled zones, verified with dial indicators and calibrated digital torque wrenches before rigorous pressure testing.
+          </p>
+        `
+      }
+    };
+
+    // Helper functions
+    function getQueryParam(param) {
+      var urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function getArticleSlug() {
+      var id = getQueryParam('id');
+      if (id && sscArticleDatabase[id]) return id;
+      var hash = window.location.hash.replace('#', '');
+      if (hash && sscArticleDatabase[hash]) return hash;
+      return "what-is-repair-in-industrial-operations"; // default
+    }
+
+    function renderArticle(slug) {
+      var art = sscArticleDatabase[slug] || sscArticleDatabase["what-is-repair-in-industrial-operations"];
+
+      // Update page title & metadata
+      document.title = art.title + " — SSC Works";
+      var metaDesc = document.getElementById('meta-description');
+      if (metaDesc) metaDesc.setAttribute('content', art.summary);
+
+      // Breadcrumb & Hero
+      document.getElementById('breadcrumb-title').textContent = art.title;
+      document.getElementById('art-tag').textContent = art.tag;
+      document.getElementById('art-read-time').textContent = art.readTime;
+      document.getElementById('art-title').textContent = art.title;
+      document.getElementById('art-date').textContent = art.date;
+
+      // Image
+      var img = document.getElementById('art-featured-img');
+      img.src = art.image;
+      img.alt = art.title;
+
+      // Content Body
+      document.getElementById('art-body').innerHTML = art.content;
+
+      // Build Table of Contents dynamically from h2 tags
+      var tocNav = document.getElementById('art-toc');
+      tocNav.innerHTML = '';
+      var headings = document.getElementById('art-body').querySelectorAll('h2');
+      if (headings.length > 0) {
+        headings.forEach(function(h, idx) {
+          if (!h.id) h.id = 'sec-' + idx;
+          var link = document.createElement('a');
+          link.href = '#' + h.id;
+          link.className = 'block py-1 px-2.5 rounded-lg text-slate-600 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors truncate';
+          link.textContent = h.textContent;
+          tocNav.appendChild(link);
+        });
+      } else {
+        tocNav.innerHTML = '<span class="text-xs text-slate-400">Standard Overview</span>';
+      }
+
+      // Render Related Articles (excluding current article)
+      renderRelatedArticles(slug);
+    }
+
+    function renderRelatedArticles(currentSlug) {
+      var container = document.getElementById('art-related-grid');
+      container.innerHTML = '';
+      var keys = Object.keys(sscArticleDatabase).filter(function(k) { return k !== currentSlug; });
+      var sample = keys.slice(0, 3);
+
+      sample.forEach(function(k) {
+        var a = sscArticleDatabase[k];
+        var card = document.createElement('article');
+        card.className = 'group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_15px_30px_-10px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden';
+        card.innerHTML = 
+          '<a href="article.html?id=' + a.slug + '" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">' +
+            '<img src="' + a.image + '" alt="' + a.title + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">' +
+            '<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">' + a.tag + '</span>' +
+          '</a>' +
+          '<div class="p-5 flex flex-col flex-1">' +
+            '<span class="text-xs text-slate-400 mb-2">' + a.date + ' • ' + a.readTime + '</span>' +
+            '<h4 class="text-base font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-2">' +
+              '<a href="article.html?id=' + a.slug + '">' + a.title + '</a>' +
+            '</h4>' +
+            '<p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">' + a.summary + '</p>' +
+            '<div class="mt-auto pt-3 border-t border-slate-100">' +
+              '<a href="article.html?id=' + a.slug + '" class="inline-flex items-center gap-1 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8]">' +
+                'Read Article &rarr;' +
+              '</a>' +
+            '</div>' +
+          '</div>';
+        container.appendChild(card);
+      });
+    }
+
+    // Reading progress bar calculation
+    window.addEventListener('scroll', function() {
+      var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var bar = document.getElementById('read-progress');
+      if (bar) bar.style.width = Math.min(scrolled, 100) + '%';
+    });
+
+    // Toast and Sharing functions
+    function showToast(msg) {
+      var toast = document.getElementById('toast');
+      var toastText = document.getElementById('toast-text');
+      if (toast && toastText) {
+        toastText.textContent = msg;
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        setTimeout(function() {
+          toast.classList.remove('opacity-100', 'translate-y-0');
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+        }, 2500);
+      }
+    }
+
+    function copyArticleLink() {
+      var url = window.location.href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function() {
+          showToast('✓ Tautan artikel berhasil disalin!');
+        });
+      } else {
+        showToast('✓ Tautan artikel: ' + url);
+      }
+    }
+
+    function shareWhatsApp() {
+      var url = encodeURIComponent(window.location.href);
+      var text = encodeURIComponent(document.title);
+      window.open('https://api.whatsapp.com/send?text=' + text + '%20' + url, '_blank');
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      var slug = getArticleSlug();
+      renderArticle(slug);
+    });
+
+    // Handle hash change if navigating within same page
+    window.addEventListener('hashchange', function() {
+      var hash = window.location.hash.replace('#', '');
+      if (hash && sscArticleDatabase[hash]) {
+        renderArticle(hash);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  </script>
+
+</body>
+</html>
