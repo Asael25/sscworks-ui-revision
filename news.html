@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>News &amp; Insights — SSC Works (PT Surya Sarana Cipta)</title>
+  <meta name="description" content="Stories From the Workshop Floor — Updates, technical insights, and industry perspectives from the SSC Works team covering heavy repair, fabrication, and machinery know-how.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Work Sans', sans-serif;
+        background-color: #FBFAF8;
+        color: #1E293B;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FBFAF8] text-slate-800 antialiased font-['Work_Sans',sans-serif]">
+
+  <!-- ====== COMPACT CLEAN NAVBAR (NON-STICKY, SCROLLS AWAY WITH PAGE) ====== -->
+  <header class="relative w-full z-40 bg-white border-b border-slate-200/90 font-['Work_Sans',sans-serif]" id="ssc-navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-[70px] flex items-center justify-between">
+      
+      <!-- Logo SSC Works -->
+      <a href="code.html" class="flex items-center gap-3 shrink-0 group py-1.5" aria-label="SSC Works Home">
+        <img
+          alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
+          class="h-[32px] sm:h-[35px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
+          src="https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+        
+        <!-- About with Dropdown -->
+        <div class="relative group/about">
+          <button type="button"
+            class="flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] transition-colors rounded-md group-hover/about:text-[#1D4ED8] group-hover/about:bg-slate-50 focus:outline-none"
+            aria-haspopup="true" aria-expanded="false">
+            <span>About</span>
+            <svg class="w-4 h-4 text-slate-400 group-hover/about:text-[#1D4ED8] transition-transform duration-200 group-hover/about:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Card -->
+          <div class="absolute top-full left-0 pt-2 w-52 opacity-0 invisible translate-y-1 group-hover/about:opacity-100 group-hover/about:visible group-hover/about:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-white rounded-xl shadow-[0_12px_32px_-4px_rgba(15,23,42,0.12),0_4px_12px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-2">
+              <a href="code.html#ct-branches" class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span>Branch</span>
+                <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-blue-50 text-[#1D4ED8]">6 Hubs</span>
+              </a>
+              <a href="code.html#portfolio" class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span>Portfolio</span>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg>
+              </a>
+              <a href="code.html#services-matrix" class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span>Services</span>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <a href="code.html#services-matrix" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+          Services
+        </a>
+
+        <!-- Career -->
+        <a href="#" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+          Career
+        </a>
+
+        <!-- News (Active on this page) -->
+        <a href="news.html" class="px-3.5 py-2 text-[14.5px] font-semibold text-[#1D4ED8] bg-blue-50/70 rounded-md transition-colors" aria-current="page">
+          News
+        </a>
+
+        <!-- Contact Us -->
+        <a href="code.html#contact" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+          Contact Us
+        </a>
+
+        <!-- Vertical Divider -->
+        <div class="h-4 w-[1px] bg-slate-300 mx-2" aria-hidden="true"></div>
+
+        <!-- Language Selector -->
+        <div class="relative group/lang">
+          <button type="button"
+            class="flex items-center gap-1.5 px-3 py-1.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md border border-slate-200 transition-all focus:outline-none"
+            aria-label="Language Selector" aria-expanded="false">
+            <svg class="w-4 h-4 text-[#1D4ED8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="font-medium tracking-wide">ID / EN</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover/lang:text-[#1D4ED8] transition-transform duration-200 group-hover/lang:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Language Options -->
+          <div class="absolute top-full right-0 pt-2 w-36 opacity-0 invisible translate-y-1 group-hover/lang:opacity-100 group-hover/lang:visible group-hover/lang:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-white rounded-xl shadow-[0_12px_28px_-4px_rgba(15,23,42,0.12),0_4px_10px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-1.5">
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-800 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="flex items-center gap-2">🇮🇩 Indonesia</span>
+                <span class="text-xs text-[#1D4ED8] font-bold">✓</span>
+              </button>
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-600 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+                <span class="flex items-center gap-2">🇬🇧 English</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <button type="button"
+          onclick="var m = document.getElementById('ssc-mobile-menu'); m.classList.toggle('hidden');"
+          class="p-2 rounded-lg text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-100 transition-colors focus:outline-none"
+          aria-label="Toggle Navigation Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu (Hidden by default) -->
+    <div id="ssc-mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-6 py-5 shadow-lg">
+      <div class="flex flex-col space-y-3">
+        <div class="py-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">About</span>
+          <div class="pl-3 mt-1.5 space-y-2 border-l-2 border-slate-200">
+            <a href="code.html#ct-branches" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Branch (6 Hubs)</a>
+            <a href="code.html#portfolio" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Portfolio</a>
+            <a href="code.html#services-matrix" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Services</a>
+          </div>
+        </div>
+        <a href="code.html#services-matrix" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Services</a>
+        <a href="#" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Career</a>
+        <a href="news.html" class="text-sm font-semibold text-[#1D4ED8] py-1">News</a>
+        <a href="code.html#contact" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Contact Us</a>
+        <div class="pt-3 border-t border-slate-200 flex items-center justify-between">
+          <span class="text-xs font-medium text-slate-500">Language:</span>
+          <div class="flex items-center gap-2">
+            <button class="px-2.5 py-1 text-xs font-semibold rounded bg-[#1D4ED8] text-white">ID</button>
+            <button class="px-2.5 py-1 text-xs font-medium rounded bg-slate-100 text-slate-700 hover:bg-slate-200">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full bg-[#FBFAF8] min-h-[calc(100vh-140px)]">
+    
+    <!-- ====== PAGE HEADER SECTION ====== -->
+    <section class="relative w-full pt-16 pb-14 border-b border-slate-200/80 overflow-hidden bg-gradient-to-b from-white to-[#FBFAF8]" id="nw-header">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2.5 text-xs font-semibold tracking-widest uppercase text-[#1D4ED8] mb-3">
+              <span class="w-2 h-2 rounded-full bg-[#1D4ED8] inline-block shadow-[0_0_8px_rgba(29,78,216,0.6)]"></span>
+              News &amp; Insights
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.08] mt-1 mb-5">
+              Stories From<br class="hidden sm:inline"> the Workshop Floor
+            </h1>
+            <p class="text-slate-600 text-base sm:text-lg font-normal leading-relaxed max-w-xl">
+              Updates, technical insights, and industry perspectives from the SSC Works team — covering repair, fabrication, and heavy equipment know-how.
+            </p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="flex items-center flex-wrap gap-2 pt-2 lg:pt-0" id="news-filter-tabs">
+            <button type="button" onclick="sscFilterNews('all', this)"
+              class="news-filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all duration-200 bg-[#1D4ED8] text-white border-[#1D4ED8] shadow-sm">
+              All (9)
+            </button>
+            <button type="button" onclick="sscFilterNews('repair', this)"
+              class="news-filter-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-full border border-slate-300/80 bg-white text-slate-700 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all duration-200">
+              Repair &amp; Efficiency
+            </button>
+            <button type="button" onclick="sscFilterNews('heavy', this)"
+              class="news-filter-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-full border border-slate-300/80 bg-white text-slate-700 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all duration-200">
+              Heavy Equipment
+            </button>
+            <button type="button" onclick="sscFilterNews('fabrication', this)"
+              class="news-filter-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-full border border-slate-300/80 bg-white text-slate-700 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all duration-200">
+              Fabrication &amp; Innovation
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ARTICLES GRID SECTION ====== -->
+    <section class="w-full py-16 lg:py-20" id="nw-list">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8" id="news-grid">
+          
+          <!-- Article 1 (Page 1) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden" data-category="repair" data-page="1">
+            <a href="https://sscworks.com/blog/what-is-repair-in-industrial-operations/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp" alt="What Is Repair in Industrial Operations?"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Repair Insight
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>12 Sep 2026</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/what-is-repair-in-industrial-operations/" target="_blank" rel="noopener noreferrer">
+                  What Is Repair in Industrial Operations?
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                Learn the strategic importance of heavy industrial repair. In a production environment, repair is not simply fixing what broke — it’s a proactive operational lifecycle to maximize machine uptime.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/what-is-repair-in-industrial-operations/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 (Page 1) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden" data-category="repair" data-page="1">
+            <a href="https://sscworks.com/blog/equipment-is-the-key-to-industrial-efficiency/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/08/tunnel.webp" alt="Equipment Is the Key to Industrial Efficiency"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Efficiency
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>12 Sep 2026</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/equipment-is-the-key-to-industrial-efficiency/" target="_blank" rel="noopener noreferrer">
+                  Equipment Is the Key to Industrial Efficiency
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                How high-reliability heavy machinery drives modern manufacturing and extraction. Discover how predictive maintenance preserves operational capital and prevents catastrophic downtime.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/equipment-is-the-key-to-industrial-efficiency/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 (Page 1) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden" data-category="fabrication" data-page="1">
+            <a href="https://sscworks.com/blog/the-future-of-industrial-workshop/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp" alt="The Future of Industrial Workshop"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Innovation
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>12 Sep 2026</span>
+                <span>•</span>
+                <span>6 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/the-future-of-industrial-workshop/" target="_blank" rel="noopener noreferrer">
+                  The Future of Industrial Workshop
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                Modern trends and best practices shaping heavy machining facilities. Explore how CNC integration, portable line boring, and metallurgic testing accelerate turnaround cycles.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/the-future-of-industrial-workshop/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4 (Page 1) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden" data-category="fabrication" data-page="1">
+            <a href="https://sscworks.com/blog/ssc-metal-fabrication/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp" alt="SSC Metal Fabrication"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Fabrication
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>12 Sep 2026</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/ssc-metal-fabrication/" target="_blank" rel="noopener noreferrer">
+                  SSC Metal Fabrication
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                Leading steel fabrication techniques for heavy structural and mechanical assemblies. Transforming raw plate into certified heavy-duty frames with certified ultrasonic welding.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/ssc-metal-fabrication/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5 (Page 1) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden" data-category="heavy" data-page="1">
+            <a href="https://sscworks.com/blog/liebherr-in-heavy-equipment-manufacturing/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp" alt="Liebherr: in Heavy Equipment Manufacturing"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Heavy Equipment
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>12 Sep 2026</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/liebherr-in-heavy-equipment-manufacturing/" target="_blank" rel="noopener noreferrer">
+                  Liebherr: in Heavy Equipment Manufacturing
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                A global powerhouse in heavy mining equipment. Discover its engineering innovations, structural tolerances, and how SSC Works supports comprehensive re-machining.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/liebherr-in-heavy-equipment-manufacturing/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6 (Page 1) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden" data-category="heavy" data-page="1">
+            <a href="https://sscworks.com/blog/komatsu-heavy-equipment-industry/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/08/dumpt.webp" alt="Komatsu: Heavy Equipment Industry"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Heavy Equipment
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>12 Sep 2026</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/komatsu-heavy-equipment-industry/" target="_blank" rel="noopener noreferrer">
+                  Komatsu: Heavy Equipment Industry
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                A leader in high-capacity earthmoving haulers. Explore durability metrics, hydrostatic circuit overhauls, and SSC Works’ specialized cylinder restoration standards.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/komatsu-heavy-equipment-industry/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 7 (Page 2) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden hidden" data-category="repair" data-page="2">
+            <a href="https://sscworks.com/blog/vehicle-repair-near-me/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/08/tunnel.webp" alt="Vehicle Repair Near Me"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Field Service
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>08 Sep 2026</span>
+                <span>•</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/vehicle-repair-near-me/" target="_blank" rel="noopener noreferrer">
+                  Vehicle Repair Near Me
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                Mining vehicle repair near you: keep production running and cut costly idle hours. Deploy mobile line boring and diagnostic mechanics directly to your mining concession.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/vehicle-repair-near-me/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 8 (Page 2) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden hidden" data-category="heavy" data-page="2">
+            <a href="https://sscworks.com/blog/what-is-cat/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/10/mining-768x512.webp" alt="What is CAT?"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Brand Focus
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>05 Sep 2026</span>
+                <span>•</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/what-is-cat/" target="_blank" rel="noopener noreferrer">
+                  What is CAT?
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                A closer look at the iconic heavy equipment manufacturer Caterpillar. Understanding powertrain torque ratings, hydraulic specifications, and certified rebuilding procedures.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/what-is-cat/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 9 (Page 2) -->
+          <article class="news-item group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-[0_20px_35px_-12px_rgba(29,78,216,0.12)] hover:border-[#1D4ED8]/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden hidden" data-category="fabrication" data-page="2">
+            <a href="https://sscworks.com/blog/what-is-assembling/" target="_blank" rel="noopener noreferrer" class="block overflow-hidden relative aspect-[16/10] bg-slate-100">
+              <img src="https://sscworks.com/wp-content/uploads/2026/08/dumpt.webp" alt="What is Assembling?"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+              <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-white/90 backdrop-blur text-[#1D4ED8] shadow-sm">
+                Engineering
+              </span>
+            </a>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-2.5">
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>01 Sep 2026</span>
+                <span>•</span>
+                <span>3 min read</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#1D4ED8] transition-colors leading-snug mb-3">
+                <a href="https://sscworks.com/blog/what-is-assembling/" target="_blank" rel="noopener noreferrer">
+                  What is Assembling?
+                </a>
+              </h3>
+              <p class="text-sm text-slate-600 line-clamp-3 leading-relaxed mb-5">
+                Understanding precision assembly in heavy equipment fabrication. Why accurate fit tolerances, bearing preload, and thermal expansion factors dictate component lifespan.
+              </p>
+              <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
+                <a href="https://sscworks.com/blog/what-is-assembling/" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D4ED8] hover:text-[#173ea8] transition-colors">
+                  Read Article
+                  <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="flex items-center justify-center gap-3 mt-14" id="news-pagination">
+          <button type="button" onclick="sscGoToNewsPage(1)" id="news-page-1-btn"
+            class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-[#1D4ED8] text-white border border-[#1D4ED8] transition-all shadow-sm">
+            1
+          </button>
+          <button type="button" onclick="sscGoToNewsPage(2)" id="news-page-2-btn"
+            class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-white text-slate-700 border border-slate-300 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all shadow-sm">
+            2
+          </button>
+          <button type="button" onclick="sscNextNewsPage()" id="news-next-btn"
+            class="h-10 px-4 rounded-full inline-flex items-center gap-2 text-sm font-semibold bg-white text-slate-700 border border-slate-300 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all shadow-sm">
+            <span>Next</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== STAY CONNECTED STRIP (EXACT SSCWORKS.COM STYLING) ====== -->
+  <section class="ssub-strip" id="sscSubscribeStrip">
+    <div class="ssub-inner">
+      <div class="ssub-text">
+        <span class="ssub-eyebrow">
+          <span class="ssub-eyebrow-dot" aria-hidden="true"></span>
+          Stay Connected
+        </span>
+        <h2 class="ssub-title">Get Updates From SSC Works</h2>
+        <p class="ssub-sub">News, project highlights, and career opportunities — straight to your inbox.</p>
+      </div>
+
+      <form class="ssub-form" id="sscSubscribeForm"
+        onsubmit="event.preventDefault(); document.getElementById('sscSubscribeSuccess').classList.remove('hidden'); this.reset();">
+        <div class="ssub-field">
+          <input class="ssub-input" type="email" id="sscSubscribeEmail" name="email"
+            placeholder="Your email address" required="" autocomplete="email">
+          <span class="ssub-error" id="sscSubscribeError">Please enter a valid email address.</span>
+        </div>
+        <button type="submit" class="ssub-btn" id="sscSubscribeBtn">
+          <span class="ssub-btn-label">Subscribe</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <p class="ssub-success hidden" id="sscSubscribeSuccess" role="status" aria-live="polite">
+      Thanks for subscribing — you'll hear from us soon.
+    </p>
+  </section>
+
+  <style>
+    /* STAY CONNECTED STYLES */
+    :root {
+      --ssub-ink: #1C1A17;
+      --ssub-muted: #a8a099;
+      --ssub-accent: #2563EB;
+      --ssub-line: rgba(255, 255, 255, 0.14);
+      --ssub-bg: #171512;
+    }
+
+    .ssub-strip {
+      position: relative;
+      background: var(--ssub-bg);
+      font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+      padding: 56px 24px;
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ssub-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .ssub-text {
+      max-width: 520px;
+    }
+
+    .ssub-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .74rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #8fb0f5;
+      margin: 0 0 14px 0;
+    }
+
+    .ssub-eyebrow-dot {
+      width: 16px;
+      height: 1px;
+      background: #8fb0f5;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .ssub-title {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-size: clamp(22px, 2.6vw, 32px);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      line-height: 1.25;
+    }
+
+    .ssub-sub {
+      font-size: .92rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ssub-muted);
+      margin: 0;
+    }
+
+    .ssub-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .ssub-field {
+      position: relative;
+    }
+
+    .ssub-strip input.ssub-input[type="email"] {
+      width: 280px;
+      max-width: 100%;
+      height: 48px !important;
+      margin: 0 !important;
+      padding: 12px 20px !important;
+      border-radius: 999px !important;
+      border: 1px solid var(--ssub-line) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: #ffffff !important;
+      font-family: 'Work Sans', sans-serif !important;
+      font-size: .88rem !important;
+      box-sizing: border-box !important;
+      transition: border-color .25s ease, background .25s ease;
+      outline: none;
+    }
+
+    .ssub-strip input.ssub-input[type="email"]:focus {
+      border-color: #8fb0f5 !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .ssub-btn {
+      height: 48px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: #1D4ED8;
+      color: #ffffff !important;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      transition: background .25s ease, transform .15s ease;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .ssub-btn:hover {
+      background: #1e40af;
+      transform: translateY(-1px);
+    }
+
+    .ssub-error {
+      display: none;
+    }
+
+    .ssub-success {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      font-size: .88rem;
+      color: #86efac;
+    }
+  </style>
+
+  <!-- ====== FOOTER (EXACT SSCWORKS.COM STYLING) ====== -->
+  <footer class="ssc-footer">
+    <div class="ssc-footer__bg" aria-hidden="true"></div>
+    <div class="ssc-footer__inner">
+      <div class="ssc-footer__ticker" aria-hidden="true">
+        <div class="ssc-footer__ticker-track">
+          <span>GENERAL REPAIR</span><i>•</i>
+          <span>HEAVY MACHINERY</span><i>•</i>
+          <span>AUTOMOTIVE</span><i>•</i>
+          <span>INDUSTRIAL</span><i>•</i>
+          <span>SSC PARTS</span><i>•</i>
+          <span>GENERAL REPAIR</span><i>•</i>
+          <span>HEAVY MACHINERY</span><i>•</i>
+          <span>AUTOMOTIVE</span><i>•</i>
+          <span>INDUSTRIAL</span><i>•</i>
+          <span>SSC PARTS</span><i>•</i>
+        </div>
+      </div>
+
+      <div class="ssc-footer__main">
+        <div class="ssc-footer__bleed" aria-hidden="true">SSC</div>
+
+        <div class="ssc-footer__cols">
+          <div class="ssc-footer__col ssc-footer__col--about">
+            <p class="ssc-footer__eyebrow">ABOUT</p>
+            <p class="ssc-footer__desc">A company undertaking its line of business in General Repair for heavy machinery, automotive, and industry.</p>
+            <div class="ssc-footer__badges" style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:#9A978D;letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#3B7DD8;"></span>ISO 9001
+              </span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:#9A978D;letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#3B7DD8;"></span>ISO 14001
+              </span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:#9A978D;letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;">
+                <span style="width:5px;height:5px;border-radius:50%;background:#3B7DD8;"></span>ISO 45001
+              </span>
+            </div>
+          </div>
+
+          <div class="ssc-footer__col">
+            <p class="ssc-footer__eyebrow">NAVIGATION</p>
+            <ul>
+              <li><a href="code.html">Home</a></li>
+              <li><a href="code.html#ct-branches">Cabang Kami</a></li>
+              <li><a href="code.html#services-matrix">Services</a></li>
+              <li><a href="news.html">News &amp; Insights</a></li>
+              <li><a href="code.html#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="ssc-footer__col">
+            <p class="ssc-footer__eyebrow">OUR SERVICES</p>
+            <ul>
+              <li><a href="code.html#services-matrix">SSC Parts</a></li>
+              <li><a href="code.html#services-matrix">Heavy Machinery</a></li>
+              <li><a href="code.html#services-matrix">Hydraulic Overhaul</a></li>
+              <li><a href="code.html#services-matrix">Industrial Machining</a></li>
+            </ul>
+          </div>
+
+          <div class="ssc-footer__col ssc-footer__col--contact">
+            <p class="ssc-footer__eyebrow">CONTACT</p>
+            <ul class="ssc-footer__contact">
+              <li>
+                <a href="https://maps.google.com/?q=South+Quarter+Tower+A+Jl+RA+Kartini+Kav+8+Cilandak+Barat" target="_blank" rel="noopener">South Quarter Tower A Lt 7, Jl. R.A. Kartini Kav 8, Cilandak Barat</a>
+              </li>
+              <li><a href="tel:+6285601042000">+62 856 010 42000 (Admin)</a></li>
+              <li><a href="mailto:head-office@sscworks.com">head-office@sscworks.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ssc-footer__bottom">
+        <span>© <span class="ssc-footer__year">2026</span> SSC Works. All rights reserved.</span>
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+          <a href="#">Privacy Statement</a>
+          <span style="opacity:0.3;">•</span>
+          <a href="#">Terms of Service</a>
+          <span style="opacity:0.3;">•</span>
+          <a href="#">Quality &amp; HSE Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* FOOTER STYLING */
+    .ssc-footer {
+      --sf-void: #0B0B0A;
+      --sf-panel: #141412;
+      --sf-amber: #3B7DD8;
+      --sf-amber-dim: #2A5FA8;
+      --sf-text: #F5F3EE;
+      --sf-muted: #9A978D;
+      --sf-line: rgba(245, 243, 238, .14);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      background: var(--sf-void);
+      color: var(--sf-text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .ssc-footer * {
+      box-sizing: border-box;
+    }
+
+    .ssc-footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .ssc-footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('https://sscworks.com/wp-content/uploads/2026/08/bg-scaled.webp');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(1) contrast(1.15) brightness(.55);
+      transform: scale(1.03);
+    }
+
+    .ssc-footer__inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ssc-footer__inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11, 11, 10, .82) 0%, rgba(11, 11, 10, .72) 40%, rgba(11, 11, 10, .92) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .ssc-footer__ticker {
+      border-top: 1px solid var(--sf-line);
+      border-bottom: 1px solid var(--sf-line);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 14px 0;
+      background: rgba(11, 11, 10, .5);
+      backdrop-filter: blur(4px);
+    }
+
+    .ssc-footer__ticker-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      color: var(--sf-muted);
+      animation: sscTicker 38s linear infinite;
+    }
+
+    .ssc-footer__ticker-track i {
+      font-style: normal;
+      color: var(--sf-amber);
+    }
+
+    @keyframes sscTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .ssc-footer__main {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+    }
+
+    .ssc-footer__bleed {
+      position: absolute;
+      right: -20px;
+      bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(140px, 22vw, 260px);
+      font-weight: 900;
+      line-height: .8;
+      letter-spacing: -.05em;
+      color: rgba(245, 243, 238, .03);
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ssc-footer__cols {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
+      gap: 48px;
+    }
+
+    .ssc-footer__eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .2em;
+      color: var(--sf-amber);
+      margin: 0 0 20px 0;
+    }
+
+    .ssc-footer__desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--sf-muted);
+      margin: 0;
+      max-width: 320px;
+    }
+
+    .ssc-footer__col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ssc-footer__col ul li a {
+      font-size: 13.5px;
+      color: var(--sf-muted);
+      transition: color .2s ease;
+    }
+
+    .ssc-footer__col ul li a:hover {
+      color: var(--sf-text);
+    }
+
+    .ssc-footer__contact li {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--sf-muted);
+    }
+
+    .ssc-footer__bottom {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 24px 36px;
+      border-top: 1px solid var(--sf-line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--sf-muted);
+    }
+
+    @media (max-width: 900px) {
+      .ssc-footer__cols {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ssc-footer__cols {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+
+  <!-- ====== NEWS INTERACTION SCRIPT ====== -->
+  <script>
+    var sscCurrentNewsPage = 1;
+    var sscActiveFilter = 'all';
+
+    function sscFilterNews(cat, btn) {
+      sscActiveFilter = cat;
+      var tabs = document.querySelectorAll('.news-filter-btn');
+      tabs.forEach(function(t) {
+        t.className = 'news-filter-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-full border border-slate-300/80 bg-white text-slate-700 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all duration-200';
+      });
+      btn.className = 'news-filter-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border transition-all duration-200 bg-[#1D4ED8] text-white border-[#1D4ED8] shadow-sm';
+
+      var items = document.querySelectorAll('.news-item');
+      var pagination = document.getElementById('news-pagination');
+
+      if (cat === 'all') {
+        pagination.style.display = 'flex';
+        sscGoToNewsPage(1);
+      } else {
+        pagination.style.display = 'none';
+        items.forEach(function(item) {
+          if (item.getAttribute('data-category') === cat) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      }
+    }
+
+    function sscGoToNewsPage(page) {
+      sscCurrentNewsPage = page;
+      var items = document.querySelectorAll('.news-item');
+      items.forEach(function(item) {
+        if (item.getAttribute('data-page') === String(page)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      var p1Btn = document.getElementById('news-page-1-btn');
+      var p2Btn = document.getElementById('news-page-2-btn');
+      var nextBtn = document.getElementById('news-next-btn');
+
+      if (page === 1) {
+        p1Btn.className = 'w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-[#1D4ED8] text-white border border-[#1D4ED8] transition-all shadow-sm';
+        p2Btn.className = 'w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-white text-slate-700 border border-slate-300 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all shadow-sm';
+        nextBtn.classList.remove('opacity-40', 'pointer-events-none');
+      } else {
+        p2Btn.className = 'w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-[#1D4ED8] text-white border border-[#1D4ED8] transition-all shadow-sm';
+        p1Btn.className = 'w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-white text-slate-700 border border-slate-300 hover:border-[#1D4ED8] hover:text-[#1D4ED8] transition-all shadow-sm';
+        nextBtn.classList.add('opacity-40', 'pointer-events-none');
+      }
+    }
+
+    function sscNextNewsPage() {
+      if (sscCurrentNewsPage === 1) {
+        sscGoToNewsPage(2);
+        var newsSec = document.getElementById('nw-header');
+        if (newsSec) {
+          newsSec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
