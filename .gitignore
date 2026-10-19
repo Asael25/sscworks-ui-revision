@@ -1,0 +1,14 @@
+# Logs & Environment
+.env
+*.log
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Scratch & Temporary files
+scratch/
+*.tmp
