@@ -53,89 +53,67 @@
 
 <body class="bg-surface font-body-md text-body antialiased">
   <!-- ====== REDESIGNED CLEAN & COMPACT NAVBAR (NON-STICKY, SCROLLS AWAY WITH PAGE) ====== -->
-  <header class="relative w-full z-40 bg-white border-b border-slate-200/90 font-['Work_Sans',sans-serif]"
-    id="ssc-navbar">
+  <header class="relative w-full z-40 bg-white border-b border-slate-200/90 font-['Work_Sans',sans-serif]" id="ssc-navbar">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 h-[70px] flex items-center justify-between">
-
+      
       <!-- Logo SSC Works -->
       <a href="#" class="flex items-center gap-3 shrink-0 group py-1.5" aria-label="SSC Works Home">
-        <img alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
+        <img
+          alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
           class="h-[32px] sm:h-[35px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
           src="https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png">
       </a>
 
       <!-- Desktop Navigation Menu -->
       <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
-
+        
         <!-- About with Dropdown (Branch, Portfolio, Services) -->
         <div class="relative group/about">
           <button type="button"
             class="flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] transition-colors rounded-md group-hover/about:text-[#1D4ED8] group-hover/about:bg-slate-50 focus:outline-none"
             aria-haspopup="true" aria-expanded="false">
             <span>About</span>
-            <svg
-              class="w-4 h-4 text-slate-400 group-hover/about:text-[#1D4ED8] transition-transform duration-200 group-hover/about:rotate-180"
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                clip-rule="evenodd" />
+            <svg class="w-4 h-4 text-slate-400 group-hover/about:text-[#1D4ED8] transition-transform duration-200 group-hover/about:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
             </svg>
           </button>
 
           <!-- Dropdown Card -->
-          <div
-            class="absolute top-full left-0 pt-2 w-52 opacity-0 invisible translate-y-1 group-hover/about:opacity-100 group-hover/about:visible group-hover/about:translate-y-0 transition-all duration-200 ease-out z-50">
-            <div
-              class="bg-white rounded-xl shadow-[0_12px_32px_-4px_rgba(15,23,42,0.12),0_4px_12px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-2">
-              <a href="#ct-branches"
-                class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+          <div class="absolute top-full left-0 pt-2 w-52 opacity-0 invisible translate-y-1 group-hover/about:opacity-100 group-hover/about:visible group-hover/about:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-white rounded-xl shadow-[0_12px_32px_-4px_rgba(15,23,42,0.12),0_4px_12px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-2">
+              <a href="#ct-branches" class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
                 <span>Branch</span>
-                <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-blue-50 text-[#1D4ED8]">6
-                  Hubs</span>
+                <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-blue-50 text-[#1D4ED8]">6 Hubs</span>
               </a>
-              <a href="#portfolio"
-                class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+              <a href="#portfolio" class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
                 <span>Portfolio</span>
-                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd"
-                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                    clip-rule="evenodd" />
-                </svg>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg>
               </a>
-              <a href="#services-matrix"
-                class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+              <a href="#services-matrix" class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
                 <span>Services</span>
-                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd"
-                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                    clip-rule="evenodd" />
-                </svg>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg>
               </a>
             </div>
           </div>
         </div>
 
         <!-- Services -->
-        <a href="#services-matrix"
-          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+        <a href="#services-matrix" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
           Services
         </a>
 
         <!-- Career -->
-        <a href="#"
-          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+        <a href="#" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
           Career
         </a>
 
         <!-- News -->
-        <a href="news.html"
-          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+        <a href="news.html" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
           News
         </a>
 
         <!-- Contact Us -->
-        <a href="#contact"
-          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
+        <a href="#contact" class="px-3.5 py-2 text-[14.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md transition-colors">
           Contact Us
         </a>
 
@@ -147,35 +125,25 @@
           <button type="button"
             class="flex items-center gap-1.5 px-3 py-1.5 text-[13.5px] font-medium text-slate-700 hover:text-[#1D4ED8] hover:bg-slate-50 rounded-md border border-slate-200 transition-all focus:outline-none"
             aria-label="Language Selector" aria-expanded="false">
-            <svg class="w-4 h-4 text-[#1D4ED8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
+            <svg class="w-4 h-4 text-[#1D4ED8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-              </path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
             <span class="font-medium tracking-wide">ID / EN</span>
-            <svg
-              class="w-3.5 h-3.5 text-slate-400 group-hover/lang:text-[#1D4ED8] transition-transform duration-200 group-hover/lang:rotate-180"
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                clip-rule="evenodd" />
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover/lang:text-[#1D4ED8] transition-transform duration-200 group-hover/lang:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
             </svg>
           </button>
 
           <!-- Dropdown Language Options -->
-          <div
-            class="absolute top-full right-0 pt-2 w-36 opacity-0 invisible translate-y-1 group-hover/lang:opacity-100 group-hover/lang:visible group-hover/lang:translate-y-0 transition-all duration-200 ease-out z-50">
-            <div
-              class="bg-white rounded-xl shadow-[0_12px_28px_-4px_rgba(15,23,42,0.12),0_4px_10px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-1.5">
-              <button type="button"
-                class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-800 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+          <div class="absolute top-full right-0 pt-2 w-36 opacity-0 invisible translate-y-1 group-hover/lang:opacity-100 group-hover/lang:visible group-hover/lang:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-white rounded-xl shadow-[0_12px_28px_-4px_rgba(15,23,42,0.12),0_4px_10px_-2px_rgba(15,23,42,0.06)] border border-slate-200/90 py-1.5">
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-800 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
                 <span class="flex items-center gap-2">🇮🇩 Indonesia</span>
                 <span class="text-xs text-[#1D4ED8] font-bold">✓</span>
               </button>
-              <button type="button"
-                class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-600 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-600 hover:text-[#1D4ED8] hover:bg-slate-50 transition-colors">
                 <span class="flex items-center gap-2">🇬🇧 English</span>
               </button>
             </div>
@@ -204,11 +172,9 @@
         <div class="py-1">
           <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">About</span>
           <div class="pl-3 mt-1.5 space-y-2 border-l-2 border-slate-200">
-            <a href="#ct-branches" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Branch (6
-              Hubs)</a>
+            <a href="#ct-branches" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Branch (6 Hubs)</a>
             <a href="#portfolio" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Portfolio</a>
-            <a href="#services-matrix"
-              class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Services</a>
+            <a href="#services-matrix" class="block text-sm font-medium text-slate-700 hover:text-[#1D4ED8]">Services</a>
           </div>
         </div>
         <a href="#services-matrix" class="text-sm font-medium text-slate-700 hover:text-[#1D4ED8] py-1">Services</a>
@@ -219,8 +185,7 @@
           <span class="text-xs font-medium text-slate-500">Language:</span>
           <div class="flex items-center gap-2">
             <button class="px-2.5 py-1 text-xs font-semibold rounded bg-[#1D4ED8] text-white">ID</button>
-            <button
-              class="px-2.5 py-1 text-xs font-medium rounded bg-slate-100 text-slate-700 hover:bg-slate-200">EN</button>
+            <button class="px-2.5 py-1 text-xs font-medium rounded bg-slate-100 text-slate-700 hover:bg-slate-200">EN</button>
           </div>
         </div>
       </div>
@@ -289,9 +254,11 @@
               <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold mb-4">
                 Check Our Profile
               </h2>
-
+              <p class="font-body-lg text-body-lg text-text-body mb-6" style="font-weight: 300; font-style: italic;">
+                A look inside our workshops and the team behind every repair.
+              </p>
               <p class="font-body-sm text-body-sm text-text-caption mb-8 leading-relaxed">
-                PT SSC Works operates certified overhaul workshops engineered specifically
+                PT Sarana Sukses Katulistiwa (SSC Works) operates certified overhaul workshops engineered specifically
                 to minimize mechanical downtime for heavy equipment, mining vehicles, industrial gearboxes, and
                 structural earthmovers across Indonesia.
               </p>
@@ -337,6 +304,10 @@
             <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold">
               Our Repair Process
             </h2>
+            <p class="font-body-md text-body-md text-text-caption mt-3">
+              Predictable turnarounds backed by rigorous metallurgical tests, precision tolerances, and certified
+              sign-offs at every gate.
+            </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Step 01 -->
@@ -459,6 +430,10 @@
                 Quality Service is Our Guarantee
               </h2>
             </div>
+            <p class="font-body-sm text-body-sm text-text-caption max-w-md">
+              Standardized procedures across 8 core heavy-industry competencies, equipped for massive tonnage and
+              extreme operating conditions.
+            </p>
           </div>
           <!-- Interactive Expanding Horizontal Accordion Shelf / Rack -->
           <div
@@ -1546,11 +1521,9 @@
             cursor: pointer;
             transition: transform 0.25s ease;
           }
-
           .ct-leaflet-pin:hover {
             transform: scale(1.15) translateY(-4px);
           }
-
           .ct-leaflet-pin svg {
             display: block;
             filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
@@ -1561,17 +1534,14 @@
             color: #ffffff !important;
             border-color: rgba(255, 255, 255, 0.2) !important;
           }
-
           .leaflet-control-zoom a:hover {
             background: #1D4ED8 !important;
           }
-
           .leaflet-control-attribution {
             background: rgba(15, 23, 42, 0.75) !important;
             color: rgba(255, 255, 255, 0.55) !important;
             font-size: 10px !important;
           }
-
           .leaflet-control-attribution a {
             color: #93c5fd !important;
           }
@@ -1580,11 +1550,9 @@
             .ct-branches {
               padding: 64px 16px;
             }
-
             .ct-map-wrap {
               height: 440px;
             }
-
             .ct-map-info {
               left: 12px;
               right: 12px;
@@ -1592,7 +1560,6 @@
               width: auto;
               padding: 16px;
             }
-
             .ct-branch-list button {
               padding: 8px 16px;
               font-size: 0.82rem;
@@ -1619,37 +1586,22 @@
               <div class="ct-map-info" id="ctMapInfo">
                 <span class="ct-map-info-badge" id="ctInfoIndex">CABANG 01</span>
                 <h3 class="ct-map-info-name" id="ctInfoName">Balikpapan</h3>
-                <p class="ct-map-info-address" id="ctInfoAddress">Jl Marsma R. Iswahyudi No 502 Sepinggan, Balikpapan
-                  Selatan</p>
+                <p class="ct-map-info-address" id="ctInfoAddress">Jl Marsma R. Iswahyudi No 502 Sepinggan, Balikpapan Selatan</p>
                 <a class="ct-map-info-phone" id="ctInfoPhone" href="tel:+62542761494">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                    </path>
-                  </svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   <span>+62 542-761-494</span>
                 </a>
                 <div class="ct-map-actions">
                   <a class="ct-map-info-directions" id="ctInfoDirections" href="#" target="_blank" rel="noopener">
                     Petunjuk Arah
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
-                    </svg>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
                   </a>
-                  <button type="button" class="ct-map-info-close" onclick="sscBackToOverview()"
-                    title="Tutup kartu">Tutup</button>
+                  <button type="button" class="ct-map-info-close" onclick="sscBackToOverview()" title="Tutup kartu">Tutup</button>
                 </div>
               </div>
 
               <div class="ct-map-hint">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
                 Klik pin untuk melihat detail cabang
               </div>
             </div>
@@ -1715,7 +1667,7 @@
 
         var sscMap = null, sscMarkers = {}, sscLockedKey = null;
         var SSC_OVERVIEW_CENTER = [-2.5, 118.0];
-
+        
         // Batasan wilayah Indonesia (Sabang sampai Merauke)
         var INDONESIA_BOUNDS = [
           [-11.5, 94.0], // Batas Barat & Selatan (Rote, Jawa, Sabang)
@@ -1958,1013 +1910,1322 @@
             </div>
           </div>
         </div>
-        <!-- DIRECT INQUIRY & CONTACT SECTION -->
-        <section class="w-full bg-surface-base py-20 lg:py-24" id="contact">
-          <div class="max-w-4xl mx-auto px-6 lg:px-8">
-            <!-- Centered Header -->
-            <div class="text-center max-w-2xl mx-auto mb-10">
-              <span
-                class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3 block">CONTACT
-                US</span>
-              <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold">
-                Send us a message
-              </h2>
-            </div>
+      <!-- DIRECT INQUIRY & CONTACT SECTION -->
+      <section class="w-full bg-surface-base py-20 lg:py-24" id="contact">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+          <!-- Centered Header -->
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <span
+              class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3 block">CONTACT
+              US</span>
+            <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold">
+              Send us a message
+            </h2>
+          </div>
 
-            <!-- Centered Inquiry Form -->
-            <div class="bg-surface-base border border-border-hairline rounded-2xl p-6 sm:p-10 shadow-sm">
-              <form class="space-y-6" id="contact-form" onsubmit="event.preventDefault(); submitInquiry();">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
-                      for="contact-name">Name *</label>
-                    <input
-                      class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
-                      id="contact-name" required="" type="text">
-                  </div>
-                  <div>
-                    <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
-                      for="contact-email">Email *</label>
-                    <input
-                      class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
-                      id="contact-email" required="" type="email">
-                  </div>
+          <!-- Centered Inquiry Form -->
+          <div class="bg-surface-base border border-border-hairline rounded-2xl p-6 sm:p-10 shadow-sm">
+            <form class="space-y-6" id="contact-form" onsubmit="event.preventDefault(); submitInquiry();">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
+                    for="contact-name">Name *</label>
+                  <input
+                    class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                    id="contact-name" required="" type="text">
                 </div>
                 <div>
                   <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
-                    for="contact-phone">Phone (optional)</label>
+                    for="contact-email">Email *</label>
                   <input
                     class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
-                    id="contact-phone" type="tel">
+                    id="contact-email" required="" type="email">
                 </div>
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <label class="font-label-ui text-label-ui font-semibold text-text-heading"
-                      for="contact-message">Message *</label>
-                    <span class="font-body-sm text-body-sm text-text-caption" id="char-count">0 / 600</span>
-                  </div>
-                  <textarea
-                    class="w-full bg-surface-base border border-border-hairline rounded-lg p-4 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
-                    id="contact-message" maxlength="600"
-                    oninput="document.getElementById('char-count').innerText = this.value.length + ' / 600'" required=""
-                    rows="4"></textarea>
-                </div>
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                  <span class="font-body-sm text-body-sm text-text-caption">We reply within 1 business day.</span>
-                  <button
-                    class="w-full sm:w-auto inline-flex items-center justify-center bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-8 py-3.5 rounded-lg transition-all shadow-sm"
-                    type="submit">
-                    <span class="">Submit Inquiry</span>
-                    <span class="material-symbols-outlined ml-2 text-[18px]">send</span>
-                  </button>
-                </div>
-                <!-- Success notification box -->
-                <div
-                  class="hidden p-4 bg-surface-subtle border border-border-hairline rounded-lg text-primary-container font-label-ui text-label-ui flex items-center gap-3"
-                  id="form-success">
-                  <span class="material-symbols-outlined text-primary-container">check_circle</span>
-                  <span class="">Thanks — your message has been sent. We'll get back to you within 1 business
-                    day.</span>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-        <!-- STAY CONNECTED STRIP (EXACT SSCWORKS.COM STYLING) -->
-        <section class="ssub-strip" id="sscSubscribeStrip">
-          <div class="ssub-inner">
-            <div class="ssub-text">
-              <span class="ssub-eyebrow">
-                <span class="ssub-eyebrow-dot" aria-hidden="true"></span>
-                Stay Connected
-              </span>
-              <h2 class="ssub-title">Get Updates From SSC Works</h2>
-              <p class="ssub-sub">News, project highlights, and career opportunities — straight to your inbox.</p>
-            </div>
-
-            <form class="ssub-form" id="sscSubscribeForm"
-              onsubmit="event.preventDefault(); document.getElementById('sscSubscribeSuccess').classList.remove('hidden'); this.reset();">
-              <div class="ssub-field">
-                <input class="ssub-input" type="email" id="sscSubscribeEmail" name="email"
-                  placeholder="Your email address" required="" autocomplete="email">
-                <span class="ssub-error" id="sscSubscribeError">Please enter a valid email address.</span>
               </div>
-              <button type="submit" class="ssub-btn" id="sscSubscribeBtn">
-                <span class="ssub-btn-label">Subscribe</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M13 6l6 6-6 6"></path>
-                </svg>
-              </button>
+              <div>
+                <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
+                  for="contact-phone">Phone (optional)</label>
+                <input
+                  class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                  id="contact-phone" type="tel">
+              </div>
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label class="font-label-ui text-label-ui font-semibold text-text-heading"
+                    for="contact-message">Message *</label>
+                  <span class="font-body-sm text-body-sm text-text-caption" id="char-count">0 / 600</span>
+                </div>
+                <textarea
+                  class="w-full bg-surface-base border border-border-hairline rounded-lg p-4 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                  id="contact-message" maxlength="600"
+                  oninput="document.getElementById('char-count').innerText = this.value.length + ' / 600'"
+                  required="" rows="4"></textarea>
+              </div>
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                <span class="font-body-sm text-body-sm text-text-caption">We reply within 1 business day.</span>
+                <button
+                  class="w-full sm:w-auto inline-flex items-center justify-center bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-8 py-3.5 rounded-lg transition-all shadow-sm"
+                  type="submit">
+                  <span class="">Submit Inquiry</span>
+                  <span class="material-symbols-outlined ml-2 text-[18px]">send</span>
+                </button>
+              </div>
+              <!-- Success notification box -->
+              <div
+                class="hidden p-4 bg-surface-subtle border border-border-hairline rounded-lg text-primary-container font-label-ui text-label-ui flex items-center gap-3"
+                id="form-success">
+                <span class="material-symbols-outlined text-primary-container">check_circle</span>
+                <span class="">Thanks — your message has been sent. We'll get back to you within 1 business
+                  day.</span>
+              </div>
             </form>
           </div>
+        </div>
+      </section>
+      <!-- STAY CONNECTED STRIP (EXACT SSCWORKS.COM STYLING) -->
+      <section class="ssub-strip" id="sscSubscribeStrip">
+        <div class="ssub-inner">
+          <div class="ssub-text">
+            <span class="ssub-eyebrow">
+              <span class="ssub-eyebrow-dot" aria-hidden="true"></span>
+              Stay Connected
+            </span>
+            <h2 class="ssub-title">Get Updates From SSC Works</h2>
+            <p class="ssub-sub">News, project highlights, and career opportunities — straight to your inbox.</p>
+          </div>
 
-          <p class="ssub-success hidden" id="sscSubscribeSuccess" role="status" aria-live="polite">
-            Thanks for subscribing — you'll hear from us soon.
-          </p>
-        </section>
+          <form class="ssub-form" id="sscSubscribeForm"
+            onsubmit="event.preventDefault(); document.getElementById('sscSubscribeSuccess').classList.remove('hidden'); this.reset();">
+            <div class="ssub-field">
+              <input class="ssub-input" type="email" id="sscSubscribeEmail" name="email"
+                placeholder="Your email address" required="" autocomplete="email">
+              <span class="ssub-error" id="sscSubscribeError">Please enter a valid email address.</span>
+            </div>
+            <button type="submit" class="ssub-btn" id="sscSubscribeBtn">
+              <span class="ssub-btn-label">Subscribe</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
 
-        <style>
-          /* =====================================================
+        <p class="ssub-success hidden" id="sscSubscribeSuccess" role="status" aria-live="polite">
+          Thanks for subscribing — you'll hear from us soon.
+        </p>
+      </section>
+
+      <style>
+        /* =====================================================
    STYLE — Stay Connected (Original sscworks.com)
    ===================================================== */
-          :root {
-            --ssub-ink: #1C1A17;
-            --ssub-muted: #a8a099;
-            --ssub-accent: #2563EB;
-            --ssub-line: rgba(255, 255, 255, 0.14);
-            --ssub-bg: #171512;
-          }
+        :root {
+          --ssub-ink: #1C1A17;
+          --ssub-muted: #a8a099;
+          --ssub-accent: #2563EB;
+          --ssub-line: rgba(255, 255, 255, 0.14);
+          --ssub-bg: #171512;
+        }
 
-          .ssub-strip {
-            position: relative;
-            background: var(--ssub-bg);
-            font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
-            padding: 56px 24px;
-            box-sizing: border-box;
-            width: 100%;
-            overflow: hidden;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-          }
+        .ssub-strip {
+          position: relative;
+          background: var(--ssub-bg);
+          font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+          padding: 56px 24px;
+          box-sizing: border-box;
+          width: 100%;
+          overflow: hidden;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
+        .ssub-inner {
+          max-width: 1180px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 40px;
+          flex-wrap: wrap;
+        }
+
+        .ssub-text {
+          max-width: 520px;
+        }
+
+        .ssub-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 0.74rem;
+          font-weight: 600;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          color: #8fb0f5;
+          margin: 0 0 14px 0;
+          font-family: 'Work Sans', sans-serif;
+        }
+
+        .ssub-eyebrow-dot {
+          width: 16px;
+          height: 1px;
+          background: #8fb0f5;
+          display: inline-block;
+          flex-shrink: 0;
+        }
+
+        .ssub-title {
+          font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+          font-size: clamp(22px, 2.6vw, 32px);
+          font-weight: 700;
+          color: #ffffff;
+          margin: 0 0 10px 0;
+          line-height: 1.25;
+        }
+
+        .ssub-sub {
+          font-family: 'Work Sans', sans-serif;
+          font-size: 0.92rem;
+          font-weight: 300;
+          line-height: 1.6;
+          color: var(--ssub-muted);
+          margin: 0;
+        }
+
+        .ssub-form {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+          flex-shrink: 0;
+          margin: 0;
+        }
+
+        .ssub-field {
+          position: relative;
+        }
+
+        .ssub-strip input.ssub-input[type="email"] {
+          width: 280px;
+          max-width: 100%;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 15px 20px !important;
+          border-radius: 999px !important;
+          border: 1px solid var(--ssub-line) !important;
+          background: rgba(255, 255, 255, 0.05) !important;
+          color: #ffffff !important;
+          font-family: 'Work Sans', sans-serif !important;
+          font-size: 0.92rem !important;
+          line-height: 1.2 !important;
+          box-shadow: none !important;
+          outline: none !important;
+          box-sizing: border-box;
+          transition: border-color .25s ease, background .25s ease;
+        }
+
+        .ssub-strip input.ssub-input[type="email"]::placeholder {
+          color: #7a7367 !important;
+          opacity: 1;
+        }
+
+        .ssub-strip input.ssub-input[type="email"]:focus {
+          border-color: var(--ssub-accent) !important;
+          background: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        .ssub-strip .ssub-field.has-error input.ssub-input[type="email"] {
+          border-color: #e05a4a !important;
+        }
+
+        .ssub-error {
+          display: none;
+          position: absolute;
+          left: 20px;
+          top: 100%;
+          margin-top: 6px;
+          font-size: 0.74rem;
+          color: #f0958a;
+          white-space: nowrap;
+        }
+
+        .ssub-field.has-error .ssub-error {
+          display: block;
+        }
+
+        .ssub-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 15px 26px;
+          border: none;
+          border-radius: 999px;
+          background: var(--ssub-accent);
+          color: #ffffff;
+          font-family: 'Work Sans', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;
+          line-height: 1.2;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: background .25s ease, transform .2s ease;
+        }
+
+        .ssub-btn:hover {
+          background: #1d4fc4;
+          transform: translateY(-2px);
+        }
+
+        .ssub-btn:disabled {
+          opacity: .6;
+          cursor: default;
+          transform: none;
+        }
+
+        .ssub-btn svg {
+          transition: transform .25s ease;
+        }
+
+        .ssub-btn:hover svg {
+          transform: translateX(3px);
+        }
+
+        .ssub-success {
+          max-width: 1180px;
+          margin: 18px auto 0;
+          padding: 12px 18px;
+          border-radius: 10px;
+          background: rgba(37, 99, 235, 0.12);
+          border: 1px solid rgba(37, 99, 235, 0.3);
+          color: #ffffff;
+          font-size: 0.85rem;
+          text-align: center;
+        }
+
+        @media (max-width: 760px) {
           .ssub-inner {
-            max-width: 1180px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-          }
-
-          .ssub-text {
-            max-width: 520px;
-          }
-
-          .ssub-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.74rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #8fb0f5;
-            margin: 0 0 14px 0;
-            font-family: 'Work Sans', sans-serif;
-          }
-
-          .ssub-eyebrow-dot {
-            width: 16px;
-            height: 1px;
-            background: #8fb0f5;
-            display: inline-block;
-            flex-shrink: 0;
-          }
-
-          .ssub-title {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-            font-size: clamp(22px, 2.6vw, 32px);
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0 0 10px 0;
-            line-height: 1.25;
-          }
-
-          .ssub-sub {
-            font-family: 'Work Sans', sans-serif;
-            font-size: 0.92rem;
-            font-weight: 300;
-            line-height: 1.6;
-            color: var(--ssub-muted);
-            margin: 0;
+            flex-direction: column;
+            align-items: flex-start;
           }
 
           .ssub-form {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-            margin: 0;
+            width: 100%;
           }
 
           .ssub-field {
-            position: relative;
+            flex: 1;
+            min-width: 0;
           }
 
           .ssub-strip input.ssub-input[type="email"] {
-            width: 280px;
-            max-width: 100%;
-            height: auto !important;
-            margin: 0 !important;
-            padding: 15px 20px !important;
-            border-radius: 999px !important;
-            border: 1px solid var(--ssub-line) !important;
-            background: rgba(255, 255, 255, 0.05) !important;
-            color: #ffffff !important;
-            font-family: 'Work Sans', sans-serif !important;
-            font-size: 0.92rem !important;
-            line-height: 1.2 !important;
-            box-shadow: none !important;
-            outline: none !important;
-            box-sizing: border-box;
-            transition: border-color .25s ease, background .25s ease;
+            width: 100%;
           }
 
-          .ssub-strip input.ssub-input[type="email"]::placeholder {
-            color: #7a7367 !important;
-            opacity: 1;
+          .ssub-btn {
+            flex-shrink: 0;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .ssub-strip {
+            padding: 44px 20px;
           }
 
-          .ssub-strip input.ssub-input[type="email"]:focus {
-            border-color: var(--ssub-accent) !important;
-            background: rgba(255, 255, 255, 0.08) !important;
+          .ssub-form {
+            flex-direction: column;
+            align-items: stretch;
           }
 
-          .ssub-strip .ssub-field.has-error input.ssub-input[type="email"] {
-            border-color: #e05a4a !important;
+          .ssub-field {
+            width: 100%;
+          }
+
+          .ssub-btn {
+            width: 100%;
+            justify-content: center;
           }
 
           .ssub-error {
+            position: static;
             display: none;
-            position: absolute;
-            left: 20px;
-            top: 100%;
-            margin-top: 6px;
-            font-size: 0.74rem;
-            color: #f0958a;
-            white-space: nowrap;
+            margin: 6px 0 0 20px;
           }
 
           .ssub-field.has-error .ssub-error {
             display: block;
           }
-
-          .ssub-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 15px 26px;
-            border: none;
-            border-radius: 999px;
-            background: var(--ssub-accent);
-            color: #ffffff;
-            font-family: 'Work Sans', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            line-height: 1.2;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background .25s ease, transform .2s ease;
-          }
-
-          .ssub-btn:hover {
-            background: #1d4fc4;
-            transform: translateY(-2px);
-          }
-
-          .ssub-btn:disabled {
-            opacity: .6;
-            cursor: default;
-            transform: none;
-          }
-
-          .ssub-btn svg {
-            transition: transform .25s ease;
-          }
-
-          .ssub-btn:hover svg {
-            transform: translateX(3px);
-          }
-
-          .ssub-success {
-            max-width: 1180px;
-            margin: 18px auto 0;
-            padding: 12px 18px;
-            border-radius: 10px;
-            background: rgba(37, 99, 235, 0.12);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            color: #ffffff;
-            font-size: 0.85rem;
-            text-align: center;
-          }
-
-          @media (max-width: 760px) {
-            .ssub-inner {
-              flex-direction: column;
-              align-items: flex-start;
-            }
-
-            .ssub-form {
-              width: 100%;
-            }
-
-            .ssub-field {
-              flex: 1;
-              min-width: 0;
-            }
-
-            .ssub-strip input.ssub-input[type="email"] {
-              width: 100%;
-            }
-
-            .ssub-btn {
-              flex-shrink: 0;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .ssub-strip {
-              padding: 44px 20px;
-            }
-
-            .ssub-form {
-              flex-direction: column;
-              align-items: stretch;
-            }
-
-            .ssub-field {
-              width: 100%;
-            }
-
-            .ssub-btn {
-              width: 100%;
-              justify-content: center;
-            }
-
-            .ssub-error {
-              position: static;
-              display: none;
-              margin: 6px 0 0 20px;
-            }
-
-            .ssub-field.has-error .ssub-error {
-              display: block;
-            }
-          }
-        </style>
-        <!-- MODAL: VIDEO PLAYER OVERLAY -->
-        <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
-          id="video-modal">
-          <div
-            class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col">
-            <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
-              <span class="font-label-ui text-label-ui font-semibold text-text-heading">SSC Works — Corporate Workshop
-                Tour</span>
-              <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
-                onclick="document.getElementById('video-modal').classList.add('hidden')" type="button">
-                <span class="material-symbols-outlined text-[20px]">close</span>
-              </button>
-            </div>
-            <div class="relative aspect-video bg-black flex items-center justify-center">
-              <img alt="Video preview thumbnail" class="w-full h-full object-cover opacity-80"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WFedkV54x__V-1mGPWasefKBA0lscUWE-zhPidTDlQb0Ipcv4ZKoTDyr9iuYIWCoj01HgqqLM0AVy4IfuSKp53KdCUGhSXwiMCTypnF11GftNMaKzwWLyE9rlWyweDDaGNfyoLEwB6BvxFw27CfDSRw1KstYkWLo1UhHUc6wzNls2l7083dG9aqdnoOMK8pdLd4SfXUC4XqZCBKfgRfS-tw-iSKMi8K4py6Qzd_wqIq0_IEItAS09Bvxo">
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-on-primary bg-text-heading/40">
-                <span class="material-symbols-outlined text-[64px] mb-2 text-primary-container">play_circle</span>
-                <p class="font-headline-sm text-headline-sm font-semibold">Video Stream Demonstration</p>
-                <p class="font-body-sm text-body-sm text-on-primary/80 max-w-md mt-2">Machining, welding, thermal spray
-                  coatings, and final hydrostatic testing workflows across Balikpapan &amp; Gresik plants.</p>
-              </div>
+        }
+      </style>
+      <!-- MODAL: VIDEO PLAYER OVERLAY -->
+      <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
+        id="video-modal">
+        <div
+          class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col">
+          <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
+            <span class="font-label-ui text-label-ui font-semibold text-text-heading">SSC Works — Corporate Workshop
+              Tour</span>
+            <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
+              onclick="document.getElementById('video-modal').classList.add('hidden')" type="button">
+              <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          </div>
+          <div class="relative aspect-video bg-black flex items-center justify-center">
+            <img alt="Video preview thumbnail" class="w-full h-full object-cover opacity-80"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1WFedkV54x__V-1mGPWasefKBA0lscUWE-zhPidTDlQb0Ipcv4ZKoTDyr9iuYIWCoj01HgqqLM0AVy4IfuSKp53KdCUGhSXwiMCTypnF11GftNMaKzwWLyE9rlWyweDDaGNfyoLEwB6BvxFw27CfDSRw1KstYkWLo1UhHUc6wzNls2l7083dG9aqdnoOMK8pdLd4SfXUC4XqZCBKfgRfS-tw-iSKMi8K4py6Qzd_wqIq0_IEItAS09Bvxo">
+            <div
+              class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-on-primary bg-text-heading/40">
+              <span class="material-symbols-outlined text-[64px] mb-2 text-primary-container">play_circle</span>
+              <p class="font-headline-sm text-headline-sm font-semibold">Video Stream Demonstration</p>
+              <p class="font-body-sm text-body-sm text-on-primary/80 max-w-md mt-2">Machining, welding, thermal spray
+                coatings, and final hydrostatic testing workflows across Balikpapan &amp; Gresik plants.</p>
             </div>
           </div>
         </div>
-        <!-- MODAL: ISO CERTIFICATE VIEWER -->
-        <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
-          id="cert-modal">
-          <div
-            class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col">
-            <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
-              <span class="font-label-ui text-label-ui font-semibold text-text-heading" id="cert-modal-title">ISO
-                Certificate Verification</span>
-              <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
+      </div>
+      <!-- MODAL: ISO CERTIFICATE VIEWER -->
+      <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
+        id="cert-modal">
+        <div
+          class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col">
+          <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
+            <span class="font-label-ui text-label-ui font-semibold text-text-heading" id="cert-modal-title">ISO
+              Certificate Verification</span>
+            <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
+              onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
+              <span class="material-symbols-outlined text-[20px]">close</span>
+            </button>
+          </div>
+          <div class="p-8 flex flex-col items-center text-center bg-surface-base">
+            <div
+              class="w-24 h-24 rounded-full bg-surface-subtle border border-border-hairline flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-primary-container text-[48px]">verified</span>
+            </div>
+            <h4 class="font-headline-sm text-headline-sm font-semibold text-text-heading mb-2" id="cert-modal-header">
+              ISO 9001:2015 Audit</h4>
+            <p class="font-body-sm text-body-sm text-text-caption max-w-md mb-8" id="cert-modal-desc">
+              Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.
+            </p>
+            <div
+              class="w-full bg-surface-subtle p-4 rounded-lg border border-border-hairline text-left text-xs font-mono text-text-caption space-y-1 mb-6">
+              <div class="">Accreditation: KAN / International Accreditation Forum</div>
+              <div class="">Status: Active · Valid through 2027</div>
+              <div class="">Audit Scope: Remanufacturing &amp; Engineering Services</div>
+            </div>
+            <div class="flex items-center gap-4">
+              <button
+                class="inline-flex items-center gap-2 bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-6 py-2.5 rounded-lg transition-colors"
+                onclick="alert('Opening official high-resolution scan document...')" type="button">
+                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                <span class="">Buka ukuran asli</span>
+              </button>
+              <button
+                class="font-label-ui text-label-ui px-4 py-2.5 rounded-lg border border-border-hairline text-text-heading hover:bg-surface-subtle transition-colors"
                 onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
-                <span class="material-symbols-outlined text-[20px]">close</span>
+                Tutup
               </button>
-            </div>
-            <div class="p-8 flex flex-col items-center text-center bg-surface-base">
-              <div
-                class="w-24 h-24 rounded-full bg-surface-subtle border border-border-hairline flex items-center justify-center mb-6">
-                <span class="material-symbols-outlined text-primary-container text-[48px]">verified</span>
-              </div>
-              <h4 class="font-headline-sm text-headline-sm font-semibold text-text-heading mb-2" id="cert-modal-header">
-                ISO 9001:2015 Audit</h4>
-              <p class="font-body-sm text-body-sm text-text-caption max-w-md mb-8" id="cert-modal-desc">
-                Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.
-              </p>
-              <div
-                class="w-full bg-surface-subtle p-4 rounded-lg border border-border-hairline text-left text-xs font-mono text-text-caption space-y-1 mb-6">
-                <div class="">Accreditation: KAN / International Accreditation Forum</div>
-                <div class="">Status: Active · Valid through 2027</div>
-                <div class="">Audit Scope: Remanufacturing &amp; Engineering Services</div>
-              </div>
-              <div class="flex items-center gap-4">
-                <button
-                  class="inline-flex items-center gap-2 bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-6 py-2.5 rounded-lg transition-colors"
-                  onclick="alert('Opening official high-resolution scan document...')" type="button">
-                  <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-                  <span class="">Buka ukuran asli</span>
-                </button>
-                <button
-                  class="font-label-ui text-label-ui px-4 py-2.5 rounded-lg border border-border-hairline text-text-heading hover:bg-surface-subtle transition-colors"
-                  onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
-                  Tutup
-                </button>
-              </div>
             </div>
           </div>
         </div>
-        <script>
-          function selectBranch(name, address, phone, desc) {
-            document.getElementById('branch-title').innerText = name + ' Workshop';
-            document.getElementById('branch-address').innerText = address + ' — ' + desc;
-            document.getElementById('branch-phone').innerText = 'Tel: ' + phone;
-          }
+      </div>
+      <script>
+        function selectBranch(name, address, phone, desc) {
+          document.getElementById('branch-title').innerText = name + ' Workshop';
+          document.getElementById('branch-address').innerText = address + ' — ' + desc;
+          document.getElementById('branch-phone').innerText = 'Tel: ' + phone;
+        }
 
-          function openCertModal(title, desc) {
-            document.getElementById('cert-modal-title').innerText = title;
-            document.getElementById('cert-modal-header').innerText = title;
-            document.getElementById('cert-modal-desc').innerText = desc;
-            document.getElementById('cert-modal').classList.remove('hidden');
-          }
+        function openCertModal(title, desc) {
+          document.getElementById('cert-modal-title').innerText = title;
+          document.getElementById('cert-modal-header').innerText = title;
+          document.getElementById('cert-modal-desc').innerText = desc;
+          document.getElementById('cert-modal').classList.remove('hidden');
+        }
 
-          function submitInquiry() {
-            document.getElementById('form-success').classList.remove('hidden');
-            document.getElementById('contact-form').reset();
-            document.getElementById('char-count').innerText = '0 / 600';
-          }
+        function submitInquiry() {
+          document.getElementById('form-success').classList.remove('hidden');
+          document.getElementById('contact-form').reset();
+          document.getElementById('char-count').innerText = '0 / 600';
+        }
 
-          // =====================================================
-          // HERO 3D PARTICLE MORPHING SYSTEM (matching sscworks.com)
-          // =====================================================
-          (function () {
-            const mount = document.getElementById('hero-particle-mount');
-            if (!mount || typeof THREE === 'undefined') return;
+        // =====================================================
+        // HERO 3D PARTICLE MORPHING SYSTEM (matching sscworks.com)
+        // =====================================================
+        (function () {
+          const mount = document.getElementById('hero-particle-mount');
+          if (!mount || typeof THREE === 'undefined') return;
 
-            const slidesData = [
-              {
-                title: 'Fast & Efficient Repairs For All Heavy Equipment and Vehicles',
-                desc: 'Highly trained & reliable repair team certified around the clock with advanced cutting-edge workshop machinery, mobile line boring, and ISO-standard metallurgy.',
-                label: 'EXCAVATOR BOOM & TRACKS',
-                idx: '01'
-              },
-              {
-                title: 'Precision Machining & Industrial Gearbox Overhauls',
-                desc: 'Equipped with heavy-duty horizontal turning lathes, precision gear cutting, and ISO metallurgical crack testing to eliminate unexpected breakdowns.',
-                label: 'INDUSTRIAL GEAR & DRIVE',
-                idx: '02'
-              },
-              {
-                title: 'Certified Hydraulic Engineering & Heavy Crane Solutions',
-                desc: 'Specialized mobile line boring, hydraulic cylinder restoration, and structural boom reinforcement engineered for rapid mining deployment.',
-                label: 'MOBILE CRANE & BOOM',
-                idx: '03'
-              }
+          const slidesData = [
+            {
+              title: 'Fast & Efficient Repairs For All Heavy Equipment and Vehicles',
+              desc: 'Highly trained & reliable repair team certified around the clock with advanced cutting-edge workshop machinery, mobile line boring, and ISO-standard metallurgy.',
+              label: 'EXCAVATOR BOOM & TRACKS',
+              idx: '01'
+            },
+            {
+              title: 'Precision Machining & Industrial Gearbox Overhauls',
+              desc: 'Equipped with heavy-duty horizontal turning lathes, precision gear cutting, and ISO metallurgical crack testing to eliminate unexpected breakdowns.',
+              label: 'INDUSTRIAL GEAR & DRIVE',
+              idx: '02'
+            },
+            {
+              title: 'Certified Hydraulic Engineering & Heavy Crane Solutions',
+              desc: 'Specialized mobile line boring, hydraulic cylinder restoration, and structural boom reinforcement engineered for rapid mining deployment.',
+              label: 'MOBILE CRANE & BOOM',
+              idx: '03'
+            }
+          ];
+
+          let currentSlide = 0;
+          let isPlaying = true;
+          let autoTimer = null;
+
+          const PARTICLE_COUNT = window.innerWidth < 768 ? 13000 : 24000;
+
+          // Bezier curve sampler for procedural shapes
+          function cubicBezier(p0, p1, p2, p3, t) {
+            const mt = 1 - t;
+            return [
+              mt * mt * mt * p0[0] + 3 * mt * mt * t * p1[0] + 3 * mt * t * t * p2[0] + t * t * t * p3[0],
+              mt * mt * mt * p0[1] + 3 * mt * mt * t * p1[1] + 3 * mt * t * t * p2[1] + t * t * t * p3[1]
             ];
+          }
 
-            let currentSlide = 0;
-            let isPlaying = true;
-            let autoTimer = null;
-
-            const PARTICLE_COUNT = window.innerWidth < 768 ? 13000 : 24000;
-
-            // Bezier curve sampler for procedural shapes
-            function cubicBezier(p0, p1, p2, p3, t) {
-              const mt = 1 - t;
-              return [
-                mt * mt * mt * p0[0] + 3 * mt * mt * t * p1[0] + 3 * mt * t * t * p2[0] + t * t * t * p3[0],
-                mt * mt * mt * p0[1] + 3 * mt * mt * t * p1[1] + 3 * mt * t * t * p2[1] + t * t * t * p3[1]
-              ];
+          function samplePath(segs, count, spread) {
+            const out = [];
+            for (let i = 0; i < count; i++) {
+              const seg = segs[(Math.random() * segs.length) | 0];
+              const t = Math.random();
+              const [x, y] = cubicBezier(seg[0], seg[1], seg[2], seg[3], t);
+              const [x2, y2] = cubicBezier(seg[0], seg[1], seg[2], seg[3], Math.min(t + 0.01, 1));
+              let dx = x2 - x, dy = y2 - y;
+              const len = Math.hypot(dx, dy) || 1;
+              dx /= len; dy /= len;
+              const nx = -dy, ny = dx;
+              const edge = Math.sin(Math.PI * t);
+              const jitterAmp = spread * (0.2 + 0.8 * Math.random()) * (0.3 + 0.7 * edge);
+              const jitter = (Math.random() - 0.5) * 2;
+              out.push([
+                x + nx * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                y + ny * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                (Math.random() - 0.5) * 45
+              ]);
             }
+            return out;
+          }
 
-            function samplePath(segs, count, spread) {
-              const out = [];
-              for (let i = 0; i < count; i++) {
-                const seg = segs[(Math.random() * segs.length) | 0];
-                const t = Math.random();
-                const [x, y] = cubicBezier(seg[0], seg[1], seg[2], seg[3], t);
-                const [x2, y2] = cubicBezier(seg[0], seg[1], seg[2], seg[3], Math.min(t + 0.01, 1));
-                let dx = x2 - x, dy = y2 - y;
-                const len = Math.hypot(dx, dy) || 1;
-                dx /= len; dy /= len;
-                const nx = -dy, ny = dx;
-                const edge = Math.sin(Math.PI * t);
-                const jitterAmp = spread * (0.2 + 0.8 * Math.random()) * (0.3 + 0.7 * edge);
-                const jitter = (Math.random() - 0.5) * 2;
-                out.push([
-                  x + nx * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
-                  y + ny * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
-                  (Math.random() - 0.5) * 45
-                ]);
-              }
-              return out;
-            }
-
-            // 1. Excavator Shape
-            function buildExcavator(count) {
-              const segs = [
-                [[-160, -130], [-160, -100], [-130, -85], [130, -85]],
-                [[130, -85], [160, -100], [160, -130], [-160, -130]],
-                [[-140, -110], [-40, -110], [40, -110], [140, -110]],
-                [[-130, -85], [-130, -20], [-90, 15], [-20, 15]],
-                [[-20, 15], [-20, -85], [-70, -85], [-130, -85]],
-                [[-120, -15], [-100, 5], [-40, 5], [-30, -15]],
-                [[-130, -85], [-160, -65], [-160, -25], [-130, -20]],
-                [[-15, -20], [30, 45], [85, 115], [130, 145]],
-                [[-5, -30], [40, 35], [95, 105], [135, 145]],
-                [[-5, -5], [20, 25], [50, 55], [80, 80]],
-                [[130, 145], [180, 115], [220, 65], [240, 10]],
-                [[125, 140], [175, 110], [215, 60], [235, 10]],
-                [[240, 10], [280, -15], [270, -65], [220, -55]],
-                [[220, -55], [200, -35], [210, -5], [240, 10]],
-                [[270, -65], [290, -80], [280, -75], [260, -65]]
-              ];
-              return samplePath(segs, count, 26);
-            }
-
-            // 2. Heavy Industrial Gear Shape
-            function buildGear(count) {
-              const segs = [];
-              const teeth = 12;
-              const rOuter = 165;
-              const rInner = 115;
-              for (let i = 0; i < teeth; i++) {
-                const a0 = (i / teeth) * Math.PI * 2;
-                const a1 = ((i + 0.35) / teeth) * Math.PI * 2;
-                const a2 = ((i + 0.65) / teeth) * Math.PI * 2;
-                const a3 = ((i + 1.0) / teeth) * Math.PI * 2;
-                segs.push([
-                  [Math.cos(a0) * rInner, Math.sin(a0) * rInner],
-                  [Math.cos(a0) * rOuter, Math.sin(a0) * rOuter],
-                  [Math.cos(a1) * rOuter, Math.sin(a1) * rOuter],
-                  [Math.cos(a1) * rInner, Math.sin(a1) * rInner]
-                ]);
-                segs.push([
-                  [Math.cos(a1) * rInner, Math.sin(a1) * rInner],
-                  [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
-                  [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
-                  [Math.cos(a3) * rInner, Math.sin(a3) * rInner]
-                ]);
-              }
-              for (let i = 0; i < 6; i++) {
-                const a0 = (i / 6) * Math.PI * 2;
-                const a1 = ((i + 1) / 6) * Math.PI * 2;
-                const rHub = 45;
-                segs.push([
-                  [Math.cos(a0) * rHub, Math.sin(a0) * rHub],
-                  [Math.cos(a0) * rHub, Math.sin(a0) * rHub],
-                  [Math.cos(a1) * rHub, Math.sin(a1) * rHub],
-                  [Math.cos(a1) * rHub, Math.sin(a1) * rHub]
-                ]);
-                const spA = a0 + Math.PI / 6;
-                const spR = 78;
-                const spRad = 20;
-                const sx = Math.cos(spA) * spR, sy = Math.sin(spA) * spR;
-                segs.push([
-                  [sx - spRad, sy], [sx, sy + spRad], [sx + spRad, sy], [sx, sy - spRad]
-                ]);
-              }
-              return samplePath(segs, count, 20);
-            }
-
-            // 3. Mobile Crane Shape
-            function buildCrane(count) {
-              const segs = [
-                [[-200, -125], [-200, -85], [180, -85], [180, -125]],
-                [[-200, -125], [-50, -125], [50, -125], [180, -125]],
-                [[-160, -140], [-160, -125], [-120, -125], [-120, -140]],
-                [[-80, -140], [-80, -125], [-40, -125], [-40, -140]],
-                [[60, -140], [60, -125], [100, -125], [100, -140]],
-                [[120, -140], [120, -125], [160, -125], [160, -140]],
-                [[120, -85], [120, -35], [165, -35], [180, -85]],
-                [[-180, -125], [-205, -145], [-205, -150], [-185, -150]],
-                [[160, -125], [185, -145], [185, -150], [165, -150]],
-                [[-120, -85], [-120, -25], [-40, -25], [-40, -85]],
-                [[-60, -20], [-60, 15], [-40, 15], [-40, -20]],
-                [[-50, 5], [30, 65], [120, 135], [210, 195]],
-                [[-40, -5], [40, 55], [130, 125], [215, 185]],
-                [[0, 35], [20, 50], [40, 45], [60, 80]],
-                [[70, 75], [90, 110], [120, 105], [140, 140]],
-                [[150, 135], [170, 165], [190, 160], [210, 185]],
-                [[210, 195], [210, 145], [210, 95], [210, 45]],
-                [[205, 45], [215, 45], [215, 25], [205, 25]],
-                [[210, 25], [210, 10], [220, 5], [215, -5]]
-              ];
-              return samplePath(segs, count, 24);
-            }
-
-            // Auto-normalize and center shapes so they never get cut off
-            function normalizeAndCenter(pts, targetSpan, shiftX, shiftY) {
-              shiftX = shiftX || 0;
-              shiftY = shiftY || 0;
-              let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-              for (let i = 0; i < pts.length; i++) {
-                const x = pts[i][0], y = pts[i][1];
-                if (x < minX) minX = x;
-                if (x > maxX) maxX = x;
-                if (y < minY) minY = y;
-                if (y > maxY) maxY = y;
-              }
-              const cx = (minX + maxX) / 2;
-              const cy = (minY + maxY) / 2;
-              const span = Math.max(maxX - minX, maxY - minY) || 1;
-              const scale = targetSpan / span;
-
-              for (let i = 0; i < pts.length; i++) {
-                pts[i][0] = (pts[i][0] - cx) * scale + shiftX;
-                pts[i][1] = (pts[i][1] - cy) * scale + shiftY;
-                pts[i][2] = (pts[i][2] || 0) * scale;
-              }
-              return pts;
-            }
-
-            // Properly proportioned shapes, shifted slightly to the left (-22px) without touching text
-            const shapeSets = [
-              normalizeAndCenter(buildExcavator(PARTICLE_COUNT), 340, -22, -6),
-              normalizeAndCenter(buildGear(PARTICLE_COUNT), 330, -22, 0),
-              normalizeAndCenter(buildCrane(PARTICLE_COUNT), 345, -22, 5)
+          // 1. Excavator Shape
+          function buildExcavator(count) {
+            const segs = [
+              [[-160, -130], [-160, -100], [-130, -85], [130, -85]],
+              [[130, -85], [160, -100], [160, -130], [-160, -130]],
+              [[-140, -110], [-40, -110], [40, -110], [140, -110]],
+              [[-130, -85], [-130, -20], [-90, 15], [-20, 15]],
+              [[-20, 15], [-20, -85], [-70, -85], [-130, -85]],
+              [[-120, -15], [-100, 5], [-40, 5], [-30, -15]],
+              [[-130, -85], [-160, -65], [-160, -25], [-130, -20]],
+              [[-15, -20], [30, 45], [85, 115], [130, 145]],
+              [[-5, -30], [40, 35], [95, 105], [135, 145]],
+              [[-5, -5], [20, 25], [50, 55], [80, 80]],
+              [[130, 145], [180, 115], [220, 65], [240, 10]],
+              [[125, 140], [175, 110], [215, 60], [235, 10]],
+              [[240, 10], [280, -15], [270, -65], [220, -55]],
+              [[220, -55], [200, -35], [210, -5], [240, 10]],
+              [[270, -65], [290, -80], [280, -75], [260, -65]]
             ];
+            return samplePath(segs, count, 26);
+          }
 
-            // Three.js Scene Setup
-            const scene = new THREE.Scene();
-            const width = mount.clientWidth || 600;
-            const height = mount.clientHeight || 580;
-            const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 2000);
-            camera.position.set(0, 0, 560);
-
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.setSize(width, height);
-            mount.appendChild(renderer.domElement);
-
-            // Soft circular sprite
-            function makeSprite() {
-              const c = document.createElement('canvas');
-              c.width = c.height = 64;
-              const ctx = c.getContext('2d');
-              const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-              g.addColorStop(0, 'rgba(15, 23, 42, 1)');
-              g.addColorStop(0.5, 'rgba(29, 78, 216, 0.85)');
-              g.addColorStop(0.85, 'rgba(29, 78, 216, 0.25)');
-              g.addColorStop(1, 'rgba(29, 78, 216, 0)');
-              ctx.fillStyle = g;
-              ctx.fillRect(0, 0, 64, 64);
-              return new THREE.CanvasTexture(c);
+          // 2. Heavy Industrial Gear Shape
+          function buildGear(count) {
+            const segs = [];
+            const teeth = 12;
+            const rOuter = 165;
+            const rInner = 115;
+            for (let i = 0; i < teeth; i++) {
+              const a0 = (i / teeth) * Math.PI * 2;
+              const a1 = ((i + 0.35) / teeth) * Math.PI * 2;
+              const a2 = ((i + 0.65) / teeth) * Math.PI * 2;
+              const a3 = ((i + 1.0) / teeth) * Math.PI * 2;
+              segs.push([
+                [Math.cos(a0) * rInner, Math.sin(a0) * rInner],
+                [Math.cos(a0) * rOuter, Math.sin(a0) * rOuter],
+                [Math.cos(a1) * rOuter, Math.sin(a1) * rOuter],
+                [Math.cos(a1) * rInner, Math.sin(a1) * rInner]
+              ]);
+              segs.push([
+                [Math.cos(a1) * rInner, Math.sin(a1) * rInner],
+                [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                [Math.cos(a3) * rInner, Math.sin(a3) * rInner]
+              ]);
             }
+            for (let i = 0; i < 6; i++) {
+              const a0 = (i / 6) * Math.PI * 2;
+              const a1 = ((i + 1) / 6) * Math.PI * 2;
+              const rHub = 45;
+              segs.push([
+                [Math.cos(a0) * rHub, Math.sin(a0) * rHub],
+                [Math.cos(a0) * rHub, Math.sin(a0) * rHub],
+                [Math.cos(a1) * rHub, Math.sin(a1) * rHub],
+                [Math.cos(a1) * rHub, Math.sin(a1) * rHub]
+              ]);
+              const spA = a0 + Math.PI / 6;
+              const spR = 78;
+              const spRad = 20;
+              const sx = Math.cos(spA) * spR, sy = Math.sin(spA) * spR;
+              segs.push([
+                [sx - spRad, sy], [sx, sy + spRad], [sx + spRad, sy], [sx, sy - spRad]
+              ]);
+            }
+            return samplePath(segs, count, 20);
+          }
 
-            const positions = new Float32Array(PARTICLE_COUNT * 3);
-            const basePos = new Float32Array(PARTICLE_COUNT * 3);
-            const fromPos = new Float32Array(PARTICLE_COUNT * 3);
-            const toPos = new Float32Array(PARTICLE_COUNT * 3);
-            const phase = new Float32Array(PARTICLE_COUNT);
-            const speed = new Float32Array(PARTICLE_COUNT);
+          // 3. Mobile Crane Shape
+          function buildCrane(count) {
+            const segs = [
+              [[-200, -125], [-200, -85], [180, -85], [180, -125]],
+              [[-200, -125], [-50, -125], [50, -125], [180, -125]],
+              [[-160, -140], [-160, -125], [-120, -125], [-120, -140]],
+              [[-80, -140], [-80, -125], [-40, -125], [-40, -140]],
+              [[60, -140], [60, -125], [100, -125], [100, -140]],
+              [[120, -140], [120, -125], [160, -125], [160, -140]],
+              [[120, -85], [120, -35], [165, -35], [180, -85]],
+              [[-180, -125], [-205, -145], [-205, -150], [-185, -150]],
+              [[160, -125], [185, -145], [185, -150], [165, -150]],
+              [[-120, -85], [-120, -25], [-40, -25], [-40, -85]],
+              [[-60, -20], [-60, 15], [-40, 15], [-40, -20]],
+              [[-50, 5], [30, 65], [120, 135], [210, 195]],
+              [[-40, -5], [40, 55], [130, 125], [215, 185]],
+              [[0, 35], [20, 50], [40, 45], [60, 80]],
+              [[70, 75], [90, 110], [120, 105], [140, 140]],
+              [[150, 135], [170, 165], [190, 160], [210, 185]],
+              [[210, 195], [210, 145], [210, 95], [210, 45]],
+              [[205, 45], [215, 45], [215, 25], [205, 25]],
+              [[210, 25], [210, 10], [220, 5], [215, -5]]
+            ];
+            return samplePath(segs, count, 24);
+          }
 
-            const initialSet = shapeSets[0];
+          // Auto-normalize and center shapes so they never get cut off
+          function normalizeAndCenter(pts, targetSpan, shiftX, shiftY) {
+            shiftX = shiftX || 0;
+            shiftY = shiftY || 0;
+            let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+            for (let i = 0; i < pts.length; i++) {
+              const x = pts[i][0], y = pts[i][1];
+              if (x < minX) minX = x;
+              if (x > maxX) maxX = x;
+              if (y < minY) minY = y;
+              if (y > maxY) maxY = y;
+            }
+            const cx = (minX + maxX) / 2;
+            const cy = (minY + maxY) / 2;
+            const span = Math.max(maxX - minX, maxY - minY) || 1;
+            const scale = targetSpan / span;
+
+            for (let i = 0; i < pts.length; i++) {
+              pts[i][0] = (pts[i][0] - cx) * scale + shiftX;
+              pts[i][1] = (pts[i][1] - cy) * scale + shiftY;
+              pts[i][2] = (pts[i][2] || 0) * scale;
+            }
+            return pts;
+          }
+
+          // Properly proportioned shapes, shifted slightly to the left (-22px) without touching text
+          const shapeSets = [
+            normalizeAndCenter(buildExcavator(PARTICLE_COUNT), 340, -22, -6),
+            normalizeAndCenter(buildGear(PARTICLE_COUNT), 330, -22, 0),
+            normalizeAndCenter(buildCrane(PARTICLE_COUNT), 345, -22, 5)
+          ];
+
+          // Three.js Scene Setup
+          const scene = new THREE.Scene();
+          const width = mount.clientWidth || 600;
+          const height = mount.clientHeight || 580;
+          const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 2000);
+          camera.position.set(0, 0, 560);
+
+          const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          renderer.setSize(width, height);
+          mount.appendChild(renderer.domElement);
+
+          // Soft circular sprite
+          function makeSprite() {
+            const c = document.createElement('canvas');
+            c.width = c.height = 64;
+            const ctx = c.getContext('2d');
+            const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+            g.addColorStop(0, 'rgba(15, 23, 42, 1)');
+            g.addColorStop(0.5, 'rgba(29, 78, 216, 0.85)');
+            g.addColorStop(0.85, 'rgba(29, 78, 216, 0.25)');
+            g.addColorStop(1, 'rgba(29, 78, 216, 0)');
+            ctx.fillStyle = g;
+            ctx.fillRect(0, 0, 64, 64);
+            return new THREE.CanvasTexture(c);
+          }
+
+          const positions = new Float32Array(PARTICLE_COUNT * 3);
+          const basePos = new Float32Array(PARTICLE_COUNT * 3);
+          const fromPos = new Float32Array(PARTICLE_COUNT * 3);
+          const toPos = new Float32Array(PARTICLE_COUNT * 3);
+          const phase = new Float32Array(PARTICLE_COUNT);
+          const speed = new Float32Array(PARTICLE_COUNT);
+
+          const initialSet = shapeSets[0];
+          for (let i = 0; i < PARTICLE_COUNT; i++) {
+            const p = initialSet[i % initialSet.length];
+            fromPos[i * 3] = toPos[i * 3] = basePos[i * 3] = positions[i * 3] = p[0];
+            fromPos[i * 3 + 1] = toPos[i * 3 + 1] = basePos[i * 3 + 1] = positions[i * 3 + 1] = p[1];
+            fromPos[i * 3 + 2] = toPos[i * 3 + 2] = basePos[i * 3 + 2] = positions[i * 3 + 2] = p[2];
+            phase[i] = Math.random() * Math.PI * 2;
+            speed[i] = 0.5 + Math.random() * 1.0;
+          }
+
+          const geometry = new THREE.BufferGeometry();
+          geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+          const material = new THREE.PointsMaterial({
+            size: 2.6,
+            map: makeSprite(),
+            transparent: true,
+            depthWrite: false,
+            opacity: 0.95,
+            blending: THREE.NormalBlending,
+            color: new THREE.Color('#0F172A')
+          });
+
+          const points = new THREE.Points(geometry, material);
+          scene.add(points);
+
+          let morphT = 1;
+          const MORPH_DURATION = 1600;
+          let morphStart = 0;
+
+          function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          }
+
+          function goToSlide(idx) {
+            if (idx < 0 || idx >= slidesData.length) return;
+            const targetSet = shapeSets[idx];
             for (let i = 0; i < PARTICLE_COUNT; i++) {
-              const p = initialSet[i % initialSet.length];
-              fromPos[i * 3] = toPos[i * 3] = basePos[i * 3] = positions[i * 3] = p[0];
-              fromPos[i * 3 + 1] = toPos[i * 3 + 1] = basePos[i * 3 + 1] = positions[i * 3 + 1] = p[1];
-              fromPos[i * 3 + 2] = toPos[i * 3 + 2] = basePos[i * 3 + 2] = positions[i * 3 + 2] = p[2];
-              phase[i] = Math.random() * Math.PI * 2;
-              speed[i] = 0.5 + Math.random() * 1.0;
+              fromPos[i * 3] = basePos[i * 3];
+              fromPos[i * 3 + 1] = basePos[i * 3 + 1];
+              fromPos[i * 3 + 2] = basePos[i * 3 + 2];
+              const p = targetSet[i % targetSet.length];
+              toPos[i * 3] = p[0];
+              toPos[i * 3 + 1] = p[1];
+              toPos[i * 3 + 2] = p[2];
             }
+            morphT = 0;
+            morphStart = performance.now();
+            currentSlide = idx;
 
-            const geometry = new THREE.BufferGeometry();
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            // Update UI Elements with smooth fade
+            const data = slidesData[idx];
+            const headline = document.getElementById('hero-headline');
+            const subheadline = document.getElementById('hero-subheadline');
+            const badge = document.getElementById('particle-shape-label');
+            const idxBadge = document.getElementById('particle-current-idx');
 
-            const material = new THREE.PointsMaterial({
-              size: 2.6,
-              map: makeSprite(),
-              transparent: true,
-              depthWrite: false,
-              opacity: 0.95,
-              blending: THREE.NormalBlending,
-              color: new THREE.Color('#0F172A')
-            });
-
-            const points = new THREE.Points(geometry, material);
-            scene.add(points);
-
-            let morphT = 1;
-            const MORPH_DURATION = 1600;
-            let morphStart = 0;
-
-            function easeInOutCubic(t) {
-              return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            if (headline) {
+              headline.style.opacity = '0';
+              headline.style.transform = 'translateY(10px)';
+              setTimeout(() => {
+                headline.innerText = data.title;
+                headline.style.opacity = '1';
+                headline.style.transform = 'translateY(0)';
+              }, 200);
             }
-
-            function goToSlide(idx) {
-              if (idx < 0 || idx >= slidesData.length) return;
-              const targetSet = shapeSets[idx];
-              for (let i = 0; i < PARTICLE_COUNT; i++) {
-                fromPos[i * 3] = basePos[i * 3];
-                fromPos[i * 3 + 1] = basePos[i * 3 + 1];
-                fromPos[i * 3 + 2] = basePos[i * 3 + 2];
-                const p = targetSet[i % targetSet.length];
-                toPos[i * 3] = p[0];
-                toPos[i * 3 + 1] = p[1];
-                toPos[i * 3 + 2] = p[2];
-              }
-              morphT = 0;
-              morphStart = performance.now();
-              currentSlide = idx;
-
-              // Update UI Elements with smooth fade
-              const data = slidesData[idx];
-              const headline = document.getElementById('hero-headline');
-              const subheadline = document.getElementById('hero-subheadline');
-              const badge = document.getElementById('particle-shape-label');
-              const idxBadge = document.getElementById('particle-current-idx');
-
-              if (headline) {
-                headline.style.opacity = '0';
-                headline.style.transform = 'translateY(10px)';
-                setTimeout(() => {
-                  headline.innerText = data.title;
-                  headline.style.opacity = '1';
-                  headline.style.transform = 'translateY(0)';
-                }, 200);
-              }
-              if (subheadline) {
-                subheadline.style.opacity = '0';
-                subheadline.style.transform = 'translateY(10px)';
-                setTimeout(() => {
-                  subheadline.innerText = data.desc;
-                  subheadline.style.opacity = '1';
-                  subheadline.style.transform = 'translateY(0)';
-                }, 250);
-              }
-              if (badge) badge.innerText = data.label;
-              if (idxBadge) idxBadge.innerText = data.idx;
-
-              // Update indicators
-              const indContainer = document.getElementById('hero-indicators');
-              if (indContainer) {
-                const btns = indContainer.querySelectorAll('button');
-                btns.forEach((btn, i) => {
-                  if (i === idx) {
-                    btn.className = 'h-1.5 w-10 bg-primary-container rounded-full transition-all';
-                  } else {
-                    btn.className = 'h-1.5 w-3 bg-border-hairline hover:bg-primary-container/50 rounded-full transition-all';
-                  }
-                });
-              }
+            if (subheadline) {
+              subheadline.style.opacity = '0';
+              subheadline.style.transform = 'translateY(10px)';
+              setTimeout(() => {
+                subheadline.innerText = data.desc;
+                subheadline.style.opacity = '1';
+                subheadline.style.transform = 'translateY(0)';
+              }, 250);
             }
+            if (badge) badge.innerText = data.label;
+            if (idxBadge) idxBadge.innerText = data.idx;
 
-            // Auto cycle timer
-            function resetTimer() {
-              if (autoTimer) clearInterval(autoTimer);
-              if (isPlaying) {
-                autoTimer = setInterval(function () {
-                  goToSlide((currentSlide + 1) % slidesData.length);
-                }, 5500);
-              }
-            }
-            resetTimer();
-
-            // Indicators click
+            // Update indicators
             const indContainer = document.getElementById('hero-indicators');
             if (indContainer) {
               const btns = indContainer.querySelectorAll('button');
               btns.forEach((btn, i) => {
-                btn.addEventListener('click', function () {
-                  goToSlide(i);
-                  resetTimer();
-                });
+                if (i === idx) {
+                  btn.className = 'h-1.5 w-10 bg-primary-container rounded-full transition-all';
+                } else {
+                  btn.className = 'h-1.5 w-3 bg-border-hairline hover:bg-primary-container/50 rounded-full transition-all';
+                }
               });
             }
+          }
 
-            // Play / Pause button
-            const playPauseBtn = document.getElementById('hero-play-pause');
-            if (playPauseBtn) {
-              playPauseBtn.addEventListener('click', function () {
-                isPlaying = !isPlaying;
-                const icon = playPauseBtn.querySelector('.material-symbols-outlined');
-                if (icon) icon.innerText = isPlaying ? 'pause' : 'play_arrow';
+          // Auto cycle timer
+          function resetTimer() {
+            if (autoTimer) clearInterval(autoTimer);
+            if (isPlaying) {
+              autoTimer = setInterval(function () {
+                goToSlide((currentSlide + 1) % slidesData.length);
+              }, 5500);
+            }
+          }
+          resetTimer();
+
+          // Indicators click
+          const indContainer = document.getElementById('hero-indicators');
+          if (indContainer) {
+            const btns = indContainer.querySelectorAll('button');
+            btns.forEach((btn, i) => {
+              btn.addEventListener('click', function () {
+                goToSlide(i);
                 resetTimer();
               });
-            }
+            });
+          }
 
-            // Interactive mouse 3D tilt
-            let targetRotX = 0, targetRotY = 0;
-            const mountCard = mount.parentElement;
-            if (mountCard) {
-              mountCard.addEventListener('mousemove', function (e) {
-                const rect = mount.getBoundingClientRect();
-                const mx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-                const my = ((e.clientY - rect.top) / rect.height) * 2 - 1;
-                targetRotY = mx * 0.35;
-                targetRotX = -my * 0.28;
-              });
+          // Play / Pause button
+          const playPauseBtn = document.getElementById('hero-play-pause');
+          if (playPauseBtn) {
+            playPauseBtn.addEventListener('click', function () {
+              isPlaying = !isPlaying;
+              const icon = playPauseBtn.querySelector('.material-symbols-outlined');
+              if (icon) icon.innerText = isPlaying ? 'pause' : 'play_arrow';
+              resetTimer();
+            });
+          }
 
-              mountCard.addEventListener('mouseleave', function () {
-                targetRotX = 0;
-                targetRotY = 0;
-              });
-            }
-
-            // Window resize
-            window.addEventListener('resize', function () {
-              if (!mount) return;
-              const w = mount.clientWidth;
-              const h = mount.clientHeight;
-              camera.aspect = w / h;
-              camera.updateProjectionMatrix();
-              renderer.setSize(w, h);
+          // Interactive mouse 3D tilt
+          let targetRotX = 0, targetRotY = 0;
+          const mountCard = mount.parentElement;
+          if (mountCard) {
+            mountCard.addEventListener('mousemove', function (e) {
+              const rect = mount.getBoundingClientRect();
+              const mx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+              const my = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+              targetRotY = mx * 0.35;
+              targetRotX = -my * 0.28;
             });
 
-            // Animation Loop
-            const clock = new THREE.Clock();
-            function animate() {
-              requestAnimationFrame(animate);
-              const t = clock.getElapsedTime();
-              const now = performance.now();
+            mountCard.addEventListener('mouseleave', function () {
+              targetRotX = 0;
+              targetRotY = 0;
+            });
+          }
 
-              if (morphT < 1) {
-                const raw = Math.min((now - morphStart) / MORPH_DURATION, 1);
-                morphT = raw;
-                const e = easeInOutCubic(raw);
-                for (let i = 0; i < PARTICLE_COUNT; i++) {
-                  const i3 = i * 3;
-                  basePos[i3] = fromPos[i3] + (toPos[i3] - fromPos[i3]) * e;
-                  basePos[i3 + 1] = fromPos[i3 + 1] + (toPos[i3 + 1] - fromPos[i3 + 1]) * e;
-                  basePos[i3 + 2] = fromPos[i3 + 2] + (toPos[i3 + 2] - fromPos[i3 + 2]) * e;
-                }
-              }
+          // Window resize
+          window.addEventListener('resize', function () {
+            if (!mount) return;
+            const w = mount.clientWidth;
+            const h = mount.clientHeight;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+          });
 
-              const arr = geometry.attributes.position.array;
+          // Animation Loop
+          const clock = new THREE.Clock();
+          function animate() {
+            requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+            const now = performance.now();
+
+            if (morphT < 1) {
+              const raw = Math.min((now - morphStart) / MORPH_DURATION, 1);
+              morphT = raw;
+              const e = easeInOutCubic(raw);
               for (let i = 0; i < PARTICLE_COUNT; i++) {
-                const idx = i * 3;
-                const ph = phase[i];
-                const sp = speed[i];
-                const nx = Math.sin(t * sp + ph) * 1.4;
-                const ny = Math.cos(t * sp * 0.8 + ph * 1.3) * 1.4;
-                const nz = Math.sin(t * sp * 0.6 + ph * 0.7) * 2.8;
-                arr[idx] = basePos[idx] + nx;
-                arr[idx + 1] = basePos[idx + 1] + ny;
-                arr[idx + 2] = basePos[idx + 2] + nz;
+                const i3 = i * 3;
+                basePos[i3] = fromPos[i3] + (toPos[i3] - fromPos[i3]) * e;
+                basePos[i3 + 1] = fromPos[i3 + 1] + (toPos[i3 + 1] - fromPos[i3 + 1]) * e;
+                basePos[i3 + 2] = fromPos[i3 + 2] + (toPos[i3 + 2] - fromPos[i3 + 2]) * e;
               }
-              geometry.attributes.position.needsUpdate = true;
-
-              // Smooth inertia tilt
-              points.rotation.x += (targetRotX - points.rotation.x) * 0.06;
-              points.rotation.y += (targetRotY - points.rotation.y) * 0.06;
-              points.rotation.z = Math.sin(t * 0.2) * 0.02;
-
-              renderer.render(scene, camera);
             }
-            animate();
-          })();
-        </script>
+
+            const arr = geometry.attributes.position.array;
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+              const idx = i * 3;
+              const ph = phase[i];
+              const sp = speed[i];
+              const nx = Math.sin(t * sp + ph) * 1.4;
+              const ny = Math.cos(t * sp * 0.8 + ph * 1.3) * 1.4;
+              const nz = Math.sin(t * sp * 0.6 + ph * 0.7) * 2.8;
+              arr[idx] = basePos[idx] + nx;
+              arr[idx + 1] = basePos[idx + 1] + ny;
+              arr[idx + 2] = basePos[idx + 2] + nz;
+            }
+            geometry.attributes.position.needsUpdate = true;
+
+            // Smooth inertia tilt
+            points.rotation.x += (targetRotX - points.rotation.x) * 0.06;
+            points.rotation.y += (targetRotY - points.rotation.y) * 0.06;
+            points.rotation.z = Math.sin(t * 0.2) * 0.02;
+
+            renderer.render(scene, camera);
+          }
+          animate();
+        })();
+      </script>
     </div>
   </main>
-  <!-- ====== UNIFIED SLEEK FOOTER (STAY CONNECTED + FOOTER MERGED) ====== -->
-  <footer class="w-full bg-[#0B0F17] text-slate-300 font-['Work_Sans',sans-serif] border-t border-slate-800/90 relative overflow-hidden" id="ssc-footer">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8">
-      
-      <!-- Integrated Stay Connected Strip -->
-      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-10 border-b border-slate-800/80">
-        <div class="max-w-xl">
-          <span class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-[#60A5FA] mb-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>
-            Stay Connected
-          </span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Get Updates From SSC Works
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">
-            News, technical insights, and workshop highlights straight to your inbox.
-          </p>
-        </div>
+  <footer class="ssc-footer">
+    <div class="ssc-footer__bg" aria-hidden="true"></div>
+    <div class="ssc-footer__grain" aria-hidden="true"></div>
 
-        <form class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full lg:w-auto shrink-0"
-          onsubmit="event.preventDefault(); document.getElementById('footer-subscribe-success').classList.remove('hidden'); this.reset();">
-          <div class="relative min-w-[260px] sm:w-72">
-            <input type="email" required placeholder="Enter your work email"
-              class="w-full h-11 px-4 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-[#3B82F6] transition-colors">
-          </div>
-          <button type="submit"
-            class="h-11 px-6 rounded-xl bg-[#1D4ED8] hover:bg-[#1e40af] text-white font-semibold text-xs sm:text-sm transition-all shadow-sm shrink-0 flex items-center justify-center gap-2">
-            <span>Subscribe</span>
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </form>
-      </div>
-
-      <!-- Success Notice -->
-      <div id="footer-subscribe-success" class="hidden mt-3 text-xs text-emerald-400 font-medium">
-        ✓ Terima kasih telah berlangganan update SSC Works!
-      </div>
-
-      <!-- Main Footer Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 py-10">
-        
-        <!-- Col 1: Brand & About (5 cols) -->
-        <div class="lg:col-span-5 space-y-4">
-          <div class="flex items-center gap-3">
-            <img alt="SSC Works Logo" class="h-7 w-auto object-contain brightness-0 invert"
-              src="https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png">
-          </div>
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-            PT Surya Sarana Cipta provides premier mechanical repair, precision line boring, specialized welding, and heavy machinery fabrication across Indonesia.
-          </p>
-
-          <!-- ISO Compliance Badges -->
-          <div class="flex items-center gap-2 flex-wrap pt-1">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-800/80 border border-slate-700/70 text-slate-300">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>ISO 9001
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-800/80 border border-slate-700/70 text-slate-300">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>ISO 14001
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-medium bg-slate-800/80 border border-slate-700/70 text-slate-300">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#3B82F6]"></span>ISO 45001
-            </span>
-          </div>
-
-          <!-- Social Media Icons -->
-          <div class="flex items-center gap-2.5 pt-2">
-            <a href="https://web.facebook.com/people/SSC-Works-General-Repair/61557109485324/" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-lg bg-slate-800/90 hover:bg-[#1D4ED8] border border-slate-700/70 flex items-center justify-center text-slate-300 hover:text-white transition-all" aria-label="Facebook">
-              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.35C16.3 4.24 15.3 4.15 14.16 4.15c-2.4 0-4.04 1.46-4.04 4.15V10.5H7.6v3h2.52V21h3.38z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/sscworks/" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-lg bg-slate-800/90 hover:bg-[#1D4ED8] border border-slate-700/70 flex items-center justify-center text-slate-300 hover:text-white transition-all" aria-label="Instagram">
-              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M12 8.3a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4zm0 6.1a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8zm4.7-6.25a.86.86 0 1 1-1.72 0 .86.86 0 0 1 1.72 0zM20 7.6c-.06-1.2-.33-2.26-1.2-3.13-.87-.87-1.93-1.14-3.13-1.2C14.4 3.2 9.6 3.2 8.33 3.27c-1.2.06-2.25.33-3.13 1.2-.87.87-1.13 1.93-1.2 3.13C3.94 8.6 3.94 15.4 4 16.4c.07 1.2.33 2.26 1.2 3.13.88.87 1.93 1.14 3.13 1.2 1.27.07 6.07.07 7.34 0 1.2-.06 2.26-.33 3.13-1.2.87-.87 1.14-1.93 1.2-3.13.07-1.27.07-6.06 0-7.3zM18.4 17.7c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.97.3s-4-.1-4.97-.3a2.5 2.5 0 0 1-1.43-1.44c-.4-1-.3-3.36-.3-4.97s-.1-4 .3-4.97c.26-.66.77-1.17 1.43-1.43 1-.4 3.36-.3 4.97-.3s4 .1 4.97.3c.66.26 1.17.77 1.43 1.43.4 1 .3 3.36.3 4.97s.1 4-.3 4.97z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@SSCWorks" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-lg bg-slate-800/90 hover:bg-[#1D4ED8] border border-slate-700/70 flex items-center justify-center text-slate-300 hover:text-white transition-all" aria-label="YouTube">
-              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M21.6 7.9s-.2-1.5-.85-2.16c-.8-.87-1.7-.87-2.12-.92C15.7 4.6 12 4.6 12 4.6h-.02s-3.7 0-6.63.22c-.4.05-1.3.05-2.12.92C2.6 6.4 2.4 7.9 2.4 7.9S2.17 9.66 2.17 11.4v1.63c0 1.75.23 3.5.23 3.5s.2 1.5.85 2.16c.8.87 1.87.84 2.34.94 1.7.16 7.2.22 7.2.22s3.72 0 6.65-.23c.4-.05 1.3-.05 2.12-.93.65-.65.85-2.15.85-2.15s.23-1.75.23-3.5V11.4c0-1.75-.23-3.5-.23-3.5zM9.95 14.9V8.8l5.7 3.06-5.7 3.05z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/pt-ssc-works/" target="_blank" rel="noopener noreferrer"
-              class="w-8 h-8 rounded-lg bg-slate-800/90 hover:bg-[#1D4ED8] border border-slate-700/70 flex items-center justify-center text-slate-300 hover:text-white transition-all" aria-label="LinkedIn">
-              <svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 8.8h3.5V20H3.2V8.8zm6.14 0h3.36v1.54h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.3 4.18 5.3V20h-3.5v-5.4c0-1.3-.02-2.96-1.8-2.96-1.82 0-2.1 1.4-2.1 2.87V20H9.34V8.8z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Col 2: Navigation (2 cols) -->
-        <div class="lg:col-span-2 space-y-3">
-          <p class="text-xs font-semibold uppercase tracking-wider text-white">Navigation</p>
-          <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-            <li><a href="code.html" class="hover:text-white transition-colors">Home</a></li>
-            <li><a href="code.html#ct-branches" class="hover:text-white transition-colors">Cabang Kami</a></li>
-            <li><a href="code.html#services-matrix" class="hover:text-white transition-colors">Services</a></li>
-            <li><a href="news.html" class="hover:text-white transition-colors">News &amp; Insights</a></li>
-            <li><a href="code.html#contact" class="hover:text-white transition-colors">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Services (2 cols) -->
-        <div class="lg:col-span-2 space-y-3">
-          <p class="text-xs font-semibold uppercase tracking-wider text-white">Services</p>
-          <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
-            <li><a href="code.html#services-matrix" class="hover:text-white transition-colors">SSC Parts</a></li>
-            <li><a href="code.html#services-matrix" class="hover:text-white transition-colors">Heavy Machinery</a></li>
-            <li><a href="code.html#services-matrix" class="hover:text-white transition-colors">Hydraulic Overhaul</a></li>
-            <li><a href="code.html#services-matrix" class="hover:text-white transition-colors">Industrial Machining</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Contact & Head Office (3 cols) -->
-        <div class="lg:col-span-3 space-y-3">
-          <p class="text-xs font-semibold uppercase tracking-wider text-white">Head Office</p>
-          <div class="space-y-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
-            <p>
-              South Quarter Tower A Lt 7, Jl. R.A. Kartini Kav 8, Cilandak Barat, Jakarta Selatan
-            </p>
-            <p class="pt-1">
-              <span class="text-slate-500 block text-xs">WhatsApp:</span>
-              <a href="https://wa.me/6285601042000" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white transition-colors font-medium">
-                +62 856 010 42000 (Admin)
-              </a>
-            </p>
-            <p>
-              <span class="text-slate-500 block text-xs">Email:</span>
-              <a href="mailto:head-office@sscworks.com" class="text-slate-300 hover:text-white transition-colors">
-                head-office@sscworks.com
-              </a>
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Bar: Copyright & Compliance -->
-      <div class="pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-        <p>© 2026 PT Surya Sarana Cipta (SSC Works). All rights reserved.</p>
-        <div class="flex items-center gap-4 text-xs">
-          <a href="#" class="hover:text-slate-300 transition-colors">Privacy Statement</a>
-          <span>•</span>
-          <a href="#" class="hover:text-slate-300 transition-colors">Terms of Service</a>
-          <span>•</span>
-          <a href="#" class="hover:text-slate-300 transition-colors">HSE Compliance</a>
+    <div class="ssc-footer__inner">
+      <div class="ssc-footer__top">
+        <div class="ssc-footer__mark">SSC<span>WORKS</span></div>
+        <div class="ssc-footer__social">
+          <a href="https://web.facebook.com/people/SSC-Works-General-Repair/61557109485324/" aria-label="Facebook"
+            target="_blank" rel="noopener"><svg viewBox="0 0 24 24">
+              <path
+                d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.35C16.3 4.24 15.3 4.15 14.16 4.15c-2.4 0-4.04 1.46-4.04 4.15V10.5H7.6v3h2.52V21h3.38z">
+              </path>
+            </svg></a>
+          <a href="https://www.instagram.com/sscworks/" aria-label="Instagram" target="_blank" rel="noopener"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M12 8.3a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4zm0 6.1a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8zm4.7-6.25a.86.86 0 1 1-1.72 0 .86.86 0 0 1 1.72 0zM20 7.6c-.06-1.2-.33-2.26-1.2-3.13-.87-.87-1.93-1.14-3.13-1.2C14.4 3.2 9.6 3.2 8.33 3.27c-1.2.06-2.25.33-3.13 1.2-.87.87-1.13 1.93-1.2 3.13C3.94 8.6 3.94 15.4 4 16.4c.07 1.2.33 2.26 1.2 3.13.88.87 1.93 1.14 3.13 1.2 1.27.07 6.07.07 7.34 0 1.2-.06 2.26-.33 3.13-1.2.87-.87 1.14-1.93 1.2-3.13.07-1.27.07-6.06 0-7.3zM18.4 17.7c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.97.3s-4-.1-4.97-.3a2.5 2.5 0 0 1-1.43-1.44c-.4-1-.3-3.36-.3-4.97s-.1-4 .3-4.97c.26-.66.77-1.17 1.43-1.43 1-.4 3.36-.3 4.97-.3s4 .1 4.97.3c.66.26 1.17.77 1.43 1.43.4 1 .3 3.36.3 4.97s.1 4-.3 4.97z">
+              </path>
+            </svg></a>
+          <a href="https://www.youtube.com/@SSCWorks" aria-label="YouTube" target="_blank" rel="noopener"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M21.6 7.9s-.2-1.5-.85-2.16c-.8-.87-1.7-.87-2.12-.92C15.7 4.6 12 4.6 12 4.6h-.02s-3.7 0-6.63.22c-.4.05-1.3.05-2.12.92C2.6 6.4 2.4 7.9 2.4 7.9S2.17 9.66 2.17 11.4v1.63c0 1.75.23 3.5.23 3.5s.2 1.5.85 2.16c.8.87 1.87.84 2.34.94 1.7.16 7.2.22 7.2.22s3.72 0 6.65-.23c.4-.05 1.3-.05 2.12-.93.65-.65.85-2.15.85-2.15s.23-1.75.23-3.5V11.4c0-1.75-.23-3.5-.23-3.5zM9.95 14.9V8.8l5.7 3.06-5.7 3.05z">
+              </path>
+            </svg></a>
+          <a href="https://www.linkedin.com/company/pt-ssc-works/" aria-label="LinkedIn" target="_blank"
+            rel="noopener"><svg viewBox="0 0 24 24">
+              <path
+                d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 8.8h3.5V20H3.2V8.8zm6.14 0h3.36v1.54h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.3 4.18 5.3V20h-3.5v-5.4c0-1.3-.02-2.96-1.8-2.96-1.82 0-2.1 1.4-2.1 2.87V20H9.34V8.8z">
+              </path>
+            </svg></a>
         </div>
       </div>
 
+      <div class="ssc-footer__ticker">
+        <div class="ssc-footer__ticker-track">
+          <span>GENERAL REPAIR</span><i>•</i>
+          <span>HEAVY MACHINERY</span><i>•</i>
+          <span>AUTOMOTIVE</span><i>•</i>
+          <span>INDUSTRIAL</span><i>•</i>
+          <span>SSC PARTS</span><i>•</i>
+          <span>GENERAL REPAIR</span><i>•</i>
+          <span>HEAVY MACHINERY</span><i>•</i>
+          <span>AUTOMOTIVE</span><i>•</i>
+          <span>INDUSTRIAL</span><i>•</i>
+          <span>SSC PARTS</span><i>•</i>
+        </div>
+      </div>
+
+      <div class="ssc-footer__main">
+        <div class="ssc-footer__bleed" aria-hidden="true">SSC</div>
+
+        <div class="ssc-footer__cols">
+          <div class="ssc-footer__col ssc-footer__col--about">
+            <p class="ssc-footer__eyebrow">ABOUT</p>
+            <p class="ssc-footer__desc">A company undertaking its line of business in General Repair for heavy
+              machinery, automotive, and industry.</p>
+            <div class="ssc-footer__badges" style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;">
+              <span
+                style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:var(--sf-muted);letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;"><span
+                  style="width:5px;height:5px;border-radius:50%;background:var(--sf-amber);"></span>ISO 9001</span>
+              <span
+                style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:var(--sf-muted);letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;"><span
+                  style="width:5px;height:5px;border-radius:50%;background:var(--sf-amber);"></span>ISO 14001</span>
+              <span
+                style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:var(--sf-muted);letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;"><span
+                  style="width:5px;height:5px;border-radius:50%;background:var(--sf-amber);"></span>ISO 45001</span>
+            </div>
+          </div>
+
+          <div class="ssc-footer__col">
+            <p class="ssc-footer__eyebrow">NAVIGATION</p>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="ssc-footer__col">
+            <p class="ssc-footer__eyebrow">OUR SERVICES</p>
+            <ul>
+              <li><a href="#">SSC Parts</a></li>
+              <li><a href="#">Heavy Machinery</a></li>
+              <li><a href="#">Hydraulic Overhaul</a></li>
+              <li><a href="#">Industrial Machining</a></li>
+            </ul>
+          </div>
+
+          <div class="ssc-footer__col ssc-footer__col--contact">
+            <p class="ssc-footer__eyebrow">CONTACT</p>
+            <ul class="ssc-footer__contact">
+              <li><a href="https://maps.google.com/?q=South+Quarter+Tower+A+Jl+RA+Kartini+Kav+8+Cilandak+Barat"
+                  target="_blank" rel="noopener">South Quarter Tower A Lt 7, Jl. R.A. Kartini Kav 8, Cilandak Barat</a>
+              </li>
+              <li><a href="tel:+6285601042000">+62 856010 42000 (Admin)</a></li>
+              <li><a href="mailto:head-office@sscworks.com">head-office@sscworks.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ssc-footer__bottom">
+        <span>© <span class="ssc-footer__year">2026</span> SSC Works. All rights reserved.</span>
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+          <a href="#">Privacy Statement</a>
+          <span style="opacity:0.3;">•</span>
+          <a href="#">Terms of Service</a>
+          <span style="opacity:0.3;">•</span>
+          <a href="#">Quality &amp; HSE Compliance</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <style>
+    /* =====================================================
+   STYLE — Footer (Exact sscworks.com)
+   ===================================================== */
+    .ssc-footer {
+      --sf-void: #0B0B0A;
+      --sf-panel: #141412;
+      --sf-amber: #3B7DD8;
+      --sf-amber-dim: #2A5FA8;
+      --sf-text: #F5F3EE;
+      --sf-muted: #9A978D;
+      --sf-line: rgba(245, 243, 238, .14);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      background: var(--sf-void);
+      color: var(--sf-text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .ssc-footer * {
+      box-sizing: border-box;
+    }
+
+    .ssc-footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .ssc-footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('https://sscworks.com/wp-content/uploads/2026/08/bg-scaled.webp');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(1) contrast(1.15) brightness(.55);
+      transform: scale(1.03);
+    }
+
+    .ssc-footer__inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ssc-footer__inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(11, 11, 10, .55) 0%, rgba(11, 11, 10, .86) 45%, var(--sf-void) 100%);
+    }
+
+    .ssc-footer__grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .06;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .ssc-footer__top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 64px) 0;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ssc-footer__mark {
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-weight: 700;
+      font-size: clamp(16px, 1.6vw, 20px);
+      letter-spacing: .02em;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      color: var(--sf-text);
+    }
+
+    .ssc-footer__mark span {
+      font-size: .55em;
+      font-weight: 500;
+      color: var(--sf-muted);
+      letter-spacing: .18em;
+    }
+
+    .ssc-footer__social {
+      display: flex;
+      gap: 14px;
+    }
+
+    .ssc-footer__social a {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--sf-line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .25s ease, background-color .25s ease, transform .25s ease;
+    }
+
+    .ssc-footer__social svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--sf-text);
+      transition: fill .25s ease;
+    }
+
+    .ssc-footer__social a:hover {
+      background: var(--sf-amber);
+      border-color: var(--sf-amber);
+      transform: translateY(-2px);
+    }
+
+    .ssc-footer__social a:hover svg {
+      fill: var(--sf-void);
+    }
+
+    .ssc-footer__ticker {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      border-top: 1px solid var(--sf-line);
+      border-bottom: 1px solid var(--sf-line);
+      margin-top: clamp(20px, 4vw, 36px);
+      background: rgba(59, 125, 216, .06);
+    }
+
+    .ssc-footer__ticker-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      width: max-content;
+      padding: 10px 0;
+      animation: sf-marquee 28s linear infinite;
+    }
+
+    .ssc-footer__ticker-track span {
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-size: clamp(11px, 1.1vw, 13px);
+      font-weight: 700;
+      letter-spacing: .14em;
+      color: var(--sf-muted);
+      padding: 0 18px;
+    }
+
+    .ssc-footer__ticker-track i {
+      font-style: normal;
+      color: var(--sf-amber);
+      font-size: 10px;
+    }
+
+    @keyframes sf-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .ssc-footer__main {
+      position: relative;
+      z-index: 2;
+      padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px) clamp(32px, 5vw, 56px);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ssc-footer__bleed {
+      position: absolute;
+      left: clamp(-10px, -2vw, 10px);
+      bottom: clamp(-40px, -4vw, -10px);
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-weight: 700;
+      font-size: clamp(90px, 16vw, 220px);
+      line-height: .8;
+      letter-spacing: -.03em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(245, 243, 238, .14);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .ssc-footer__cols {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.4fr .8fr .8fr 1.1fr;
+      gap: clamp(24px, 4vw, 40px);
+    }
+
+    .ssc-footer__eyebrow {
+      font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      color: var(--sf-amber);
+      margin: 0 0 16px;
+    }
+
+    .ssc-footer__desc {
+      margin: 0;
+      color: var(--sf-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 34ch;
+    }
+
+    .ssc-footer__col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .ssc-footer__col a {
+      font-size: 14.5px;
+      color: var(--sf-text);
+      position: relative;
+      display: inline-block;
+      transition: color .2s ease;
+    }
+
+    .ssc-footer__col a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: var(--sf-amber);
+      transition: width .25s ease;
+    }
+
+    .ssc-footer__col a:hover {
+      color: var(--sf-amber);
+    }
+
+    .ssc-footer__col a:hover::after {
+      width: 100%;
+    }
+
+    .ssc-footer__contact a {
+      color: var(--sf-muted);
+    }
+
+    .ssc-footer__contact a:hover {
+      color: var(--sf-amber);
+    }
+
+    .ssc-footer__bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 18px clamp(20px, 5vw, 64px) 22px;
+      border-top: 1px solid var(--sf-line);
+      font-size: 12.5px;
+      color: var(--sf-muted);
+      letter-spacing: .02em;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ssc-footer__bottom a {
+      color: var(--sf-muted);
+    }
+
+    .ssc-footer__bottom a:hover {
+      color: var(--sf-amber);
+    }
+
+    @media (max-width: 900px) {
+      .ssc-footer__cols {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ssc-footer__col--about {
+        grid-column: 1 / -1;
+      }
+
+      .ssc-footer__bleed {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ssc-footer__cols {
+        grid-template-columns: 1fr;
+      }
+
+      .ssc-footer__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ssc-footer__ticker-track {
+        animation: none;
+      }
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
