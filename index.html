@@ -1,0 +1,3878 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Leaflet Map Engine for Interactive Google Maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    .font-futura {
+      font-family: 'Futura', 'Futura PT', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Navbar Theme Adaptation for Slide 2 (White Background) */
+    #ssc-navbar.nav-theme-dark nav a,
+    #ssc-navbar.nav-theme-dark nav button {
+      color: #1E293B !important;
+    }
+    #ssc-navbar.nav-theme-dark nav a:hover,
+    #ssc-navbar.nav-theme-dark nav button:hover {
+      color: #0F172A !important;
+      background-color: rgba(15, 23, 42, 0.06) !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-lang-btn {
+      color: #1E293B !important;
+      border-color: rgba(15, 23, 42, 0.25) !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-lang-btn svg {
+      color: #2563EB !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-nav-divider {
+      background-color: rgba(15, 23, 42, 0.2) !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-mobile-toggle {
+      color: #1E293B !important;
+    }
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-fixed": "#dbe1ff", "on-tertiary-fixed": "#00174b", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "surface-subtle": "#F8FAFC", "text-heading": "#0F172A", "on-secondary-fixed-variant": "#3f465c", "surface": "#f8f9ff", "tertiary-container": "#0051d6", "on-secondary-fixed": "#131b2e", "surface-base": "#FFFFFF", "text-body": "#334155", "on-error": "#ffffff", "inverse-surface": "#233144", "background": "#f8f9ff", "surface-variant": "#d5e3fd", "error-container": "#ffdad6", "on-surface": "#0d1c2f", "on-tertiary-fixed-variant": "#003ea8", "secondary-fixed": "#dae2fd", "surface-tint": "#2151da", "on-primary-fixed-variant": "#0039b5", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b7c4ff", "surface-container": "#e6eeff", "brand-accent-red": "#C0392B", "surface-container-high": "#dde9ff", "surface-bright": "#f8f9ff", "text-caption": "#64748B", "outline": "#747686", "inverse-on-surface": "#ebf1ff", "on-secondary-container": "#5c647a", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface-dim": "#ccdbf4", "primary": "#0037b0", "on-primary-fixed": "#001551", "on-primary-container": "#cad3ff", "secondary-container": "#dae2fd", "on-tertiary-container": "#c9d4ff", "on-background": "#0d1c2f", "tertiary-fixed-dim": "#b4c5ff", "surface-container-lowest": "#ffffff", "secondary": "#565e74", "tertiary": "#003ca3", "on-surface-variant": "#434655", "primary-container": "#1d4ed8", "border-hairline": "#E2E8F0", "outline-variant": "#c4c5d7", "inverse-primary": "#b7c4ff", "surface-container-highest": "#d5e3fd", "primary-fixed": "#dce1ff", "secondary-fixed-dim": "#bec6e0" }, borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" }, spacing: { "space-3xl": "6rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-xl": "2.5rem", margin: "3rem", gutter: "1.5rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "space-2xl": "4rem", "space-lg": "1.5rem", "space-md": "1rem" }, fontFamily: { "body-sm": ["Inter"], "body-md": ["Inter"], "display-hero": ["Inter"], "label-ui": ["Inter"], "metric-numeral": ["Inter"], "headline-lg": ["Inter"], "label-tag": ["Inter"], "headline-lg-mobile": ["Inter"], "display-hero-mobile": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "body-sm": ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }], "body-md": ["1rem", { lineHeight: "1.6", fontWeight: "400" }], "display-hero": ["3.5rem", { lineHeight: "1.15", letterSpacing: "-0.03em", fontWeight: "600" }], "label-ui": ["0.875rem", { lineHeight: "1.25", fontWeight: "500" }], "metric-numeral": ["2.75rem", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["2.25rem", { lineHeight: "1.25", letterSpacing: "-0.025em", fontWeight: "600" }], "label-tag": ["0.75rem", { lineHeight: "1.4", letterSpacing: "0.08em", fontWeight: "600" }], "headline-lg-mobile": ["1.75rem", { lineHeight: "1.3", letterSpacing: "-0.02em", fontWeight: "600" }], "display-hero-mobile": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-sm": ["1.25rem", { lineHeight: "1.4", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["1.125rem", { lineHeight: "1.6", fontWeight: "400" }], "headline-md": ["1.5rem", { lineHeight: "1.35", letterSpacing: "-0.015em", fontWeight: "600" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-body antialiased">
+  <!-- ====== REDESIGNED CLEAN & COMPACT NAVBAR (SEAMLESS WITH BACKGROUND) ====== -->
+  <header class="absolute top-0 inset-x-0 z-40 bg-transparent border-none font-['Work_Sans',sans-serif]"
+    id="ssc-navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-[76px] flex items-center justify-between">
+
+      <!-- Logo SSC Works (ChatGPT White Text on Red Badge Version) -->
+      <a href="#" class="flex items-center gap-3 shrink-0 group py-1" aria-label="SSC Works Home">
+        <img id="ssc-logo-img" alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
+          class="h-[32px] sm:h-[35px] w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]"
+          src="ssc_works_logo_white.png">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main Navigation">
+
+        <!-- About with Dropdown (Branch, Portfolio, Services) -->
+        <div class="relative group/about">
+          <button type="button"
+            class="flex items-center gap-1.5 px-3.5 py-2 text-[14.5px] font-medium text-slate-200 hover:text-white transition-colors rounded-md group-hover/about:text-white group-hover/about:bg-white/10 focus:outline-none"
+            aria-haspopup="true" aria-expanded="false">
+            <span>About</span>
+            <svg
+              class="w-4 h-4 text-slate-400 group-hover/about:text-white transition-transform duration-200 group-hover/about:rotate-180"
+              viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Card -->
+          <div
+            class="absolute top-full left-0 pt-2 w-52 opacity-0 invisible translate-y-1 group-hover/about:opacity-100 group-hover/about:visible group-hover/about:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div
+              class="bg-[#0F172A] rounded-xl shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)] border border-white/15 py-2 text-slate-200">
+              <a href="#ct-branches"
+                class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">
+                <span>Branch</span>
+                <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30">6 Hubs</span>
+              </a>
+              <a href="#portfolio"
+                class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">
+                <span>Portfolio</span>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#services-matrix"
+                class="flex items-center justify-between px-4 py-2.5 text-[13.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">
+                <span>Services</span>
+                <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <a href="#services-matrix"
+          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+          Services
+        </a>
+
+        <!-- Career -->
+        <a href="#"
+          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+          Career
+        </a>
+
+        <!-- News -->
+        <a href="news.html"
+          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+          News
+        </a>
+
+        <!-- Contact Us -->
+        <a href="#contact"
+          class="px-3.5 py-2 text-[14.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md transition-colors">
+          Contact Us
+        </a>
+
+        <!-- Vertical Divider -->
+        <div id="ssc-nav-divider" class="h-4 w-[1px] bg-white/20 mx-2 transition-colors duration-500" aria-hidden="true"></div>
+
+        <!-- Language Selector -->
+        <div class="relative group/lang">
+          <button id="ssc-lang-btn" type="button"
+            class="flex items-center gap-1.5 px-3 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md border border-white/20 transition-all focus:outline-none"
+            aria-label="Language Selector" aria-expanded="false">
+            <svg class="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="font-medium tracking-wide">ID / EN</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover/lang:text-white transition-transform duration-200 group-hover/lang:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Language Options -->
+          <div class="absolute top-full right-0 pt-2 w-36 opacity-0 invisible translate-y-1 group-hover/lang:opacity-100 group-hover/lang:visible group-hover/lang:translate-y-0 transition-all duration-200 ease-out z-50">
+            <div class="bg-[#0F172A] rounded-xl shadow-[0_12px_28px_-4px_rgba(0,0,0,0.5)] border border-white/15 py-1.5">
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-white hover:text-blue-400 hover:bg-white/10 transition-colors">
+                <span class="flex items-center gap-2">🇮🇩 Indonesia</span>
+                <span class="text-xs text-blue-400 font-bold">✓</span>
+              </button>
+              <button type="button" class="w-full flex items-center justify-between px-3.5 py-2 text-[13px] font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors">
+                <span class="flex items-center gap-2">🇬🇧 English</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <button id="ssc-mobile-toggle" type="button"
+          onclick="var m = document.getElementById('ssc-mobile-menu'); m.classList.toggle('hidden');"
+          class="p-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none"
+          aria-label="Toggle Navigation Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="ssc-mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0B0F19] px-6 py-5 shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        <div class="py-1">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">About</span>
+          <div class="pl-3 mt-1.5 space-y-2 border-l-2 border-white/15">
+            <a href="#ct-branches" class="block text-sm font-medium text-slate-200 hover:text-white">Branch (6 Hubs)</a>
+            <a href="#portfolio" class="block text-sm font-medium text-slate-200 hover:text-white">Portfolio</a>
+            <a href="#services-matrix" class="block text-sm font-medium text-slate-200 hover:text-white">Services</a>
+          </div>
+        </div>
+        <a href="#services-matrix" class="text-sm font-medium text-slate-200 hover:text-white py-1">Services</a>
+        <a href="#" class="text-sm font-medium text-slate-200 hover:text-white py-1">Career</a>
+        <a href="news.html" class="text-sm font-medium text-slate-200 hover:text-white py-1">News</a>
+        <a href="#contact" class="text-sm font-medium text-slate-200 hover:text-white py-1">Contact Us</a>
+        <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+          <span class="text-xs font-medium text-slate-400">Language:</span>
+          <div class="flex items-center gap-2">
+            <button class="px-2.5 py-1 text-xs font-semibold rounded bg-[#1D4ED8] text-white">ID</button>
+            <button class="px-2.5 py-1 text-xs font-medium rounded bg-white/10 text-slate-200 hover:bg-white/20">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full bg-surface min-h-screen">
+    <div class="flex flex-col w-full bg-surface-base text-text-body font-body-md">
+      <!-- HERO SECTION (3-SLIDE DYNAMIC HERO: PHOTO 1 -> PARTICLE 3D -> PHOTO 3) -->
+      <section class="relative w-full bg-[#001D56] overflow-hidden transition-colors duration-1000" id="hero-section">
+        
+        <!-- 1. Background Image Layer 1: Industrial Team Portrait in Blue Helmets -->
+        <div id="hero-bg-photo-1" class="absolute inset-0 bg-cover bg-[right_center] lg:bg-[right_5%] xl:bg-[right_8%] pointer-events-none transition-opacity duration-1000"
+             style="background-image: url('industrial_team_portrait_in_blue_helmets.png'); opacity: 1;" aria-hidden="true"></div>
+
+        <!-- 2. Background Image Layer 3: Seven Technicians, One Team -->
+        <div id="hero-bg-photo-3" class="absolute inset-0 bg-cover bg-[right_center] lg:bg-[right_5%] xl:bg-[right_8%] pointer-events-none transition-opacity duration-1000"
+             style="background-image: url('seven_technicians_one_team.png'); opacity: 0;" aria-hidden="true"></div>
+
+        <!-- 3. Left Vignette for Perfect Contrast (Deepening the Studio Blue behind Text) -->
+        <div id="hero-scrim-left" class="absolute inset-0 bg-gradient-to-r from-[#001440]/80 via-[#001D56]/40 via-40% to-transparent pointer-events-none z-[1] transition-opacity duration-1000 opacity-100" aria-hidden="true"></div>
+
+        <!-- 4. Subtle Top Scrim for Navbar Contrast -->
+        <div id="hero-scrim-top" class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#001440]/70 via-[#001440]/20 to-transparent pointer-events-none z-[1] transition-opacity duration-1000 opacity-100" aria-hidden="true"></div>
+
+        <!-- 5. Bottom Gradient Transition to Next Section -->
+        <div id="hero-scrim-bottom" class="absolute bottom-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-10" aria-hidden="true"></div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            <!-- Left: Copy & Actions (Constrained strictly to the plain area) -->
+            <div class="lg:col-span-6 xl:col-span-5 flex flex-col items-start max-w-xl lg:max-w-[480px] xl:max-w-[510px]">
+
+              <!-- Main Headline (Bigger Futura font, no capslock / Title Case, contained in plain area) -->
+              <h1
+                class="font-futura font-bold text-white mb-6 leading-[1.1] text-3xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[53px] drop-shadow-md transition-all duration-500"
+                id="hero-headline">
+                Fast &amp; Efficient Repairs for All Heavy Equipment and Vehicles
+              </h1>
+
+              <!-- Subheadline (Smaller Montserrat font, italic, light) -->
+              <p class="font-montserrat text-slate-200/95 font-light italic mb-8 max-w-[430px] leading-relaxed text-[13.5px] sm:text-[14.5px] md:text-[15px] transition-all duration-500 drop-shadow-sm"
+                id="hero-subheadline">
+                Highly trained &amp; reliable repair team certified around the clock with advanced cutting-edge workshop
+                machinery, mobile line boring, and ISO-standard metallurgy.
+              </p>
+
+              <!-- Single CTA Button: Thin Wireframe with Simple Arrow (Adapts White/Dark) -->
+              <div class="flex items-center gap-4 w-full sm:w-auto mb-10">
+                <a id="hero-cta-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/60 hover:border-white hover:bg-white/10 text-white font-medium text-sm px-7 py-3 rounded-xl transition-all duration-500 group backdrop-blur-[2px] shadow-sm"
+                  href="#services-matrix">
+                  <span>Explore Services</span>
+                  <svg id="hero-cta-arrow" class="w-4 h-4 text-white transition-all duration-500 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Carousel Indicators & Pause/Play Control -->
+              <div id="hero-divider" class="flex items-center gap-4 pt-4 border-t border-white/15 w-full transition-colors duration-500">
+                <div class="flex items-center gap-2" id="hero-indicators">
+                  <button aria-label="Slide 1" class="h-1.5 w-10 bg-white rounded-full transition-all"
+                    type="button"></button>
+                  <button aria-label="Slide 2"
+                    class="h-1.5 w-3 bg-white/30 hover:bg-white/60 rounded-full transition-all"
+                    type="button"></button>
+                  <button aria-label="Slide 3"
+                    class="h-1.5 w-3 bg-white/30 hover:bg-white/60 rounded-full transition-all"
+                    type="button"></button>
+                </div>
+                <button aria-label="Pause slide transitions"
+                  class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/40 transition-all duration-500"
+                  id="hero-play-pause" type="button">
+                  <span class="material-symbols-outlined text-[16px]">pause</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive 3D Particle Canvas on Slide 2, clear transparent view of technicians on Slide 1 & 3 -->
+            <div class="hidden lg:block lg:col-span-6 xl:col-span-7 relative w-full h-[500px] xl:h-[540px] transition-opacity duration-1000 opacity-0 pointer-events-none" id="hero-particle-wrapper">
+              <div class="w-full h-full cursor-grab active:cursor-grabbing relative" id="hero-particle-mount"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- HERO 3-SLIDE DYNAMIC SEQUENCE & 3D PARTICLE ENGINE SCRIPT -->
+        <script>
+          (function () {
+            var slidesData = [
+              {
+                title: 'Fast & Efficient Repairs for All Heavy Equipment and Vehicles',
+                desc: 'Highly trained & reliable repair team certified around the clock with advanced cutting-edge workshop machinery, mobile line boring, and ISO-standard metallurgy.',
+                theme: 'blue-1', // Photo 1
+                shapeIdx: 0
+              },
+              {
+                title: 'Precision Machining & Industrial Gearbox Overhauls',
+                desc: 'Equipped with heavy-duty horizontal turning lathes, precision gear cutting, and ISO metallurgical crack testing to eliminate unexpected breakdowns.',
+                theme: 'white-particle', // Official SSC Works 3D Particle
+                shapeIdx: 1
+              },
+              {
+                title: 'Certified Hydraulic Engineering & Heavy Crane Solutions',
+                desc: 'Specialized mobile line boring, hydraulic cylinder restoration, and structural boom reinforcement engineered for rapid mining deployment.',
+                theme: 'blue-3', // Photo 3
+                shapeIdx: 2
+              }
+            ];
+
+            var currentSlide = 0;
+            var isPlaying = true;
+            var autoTimer = null;
+            var SLIDE_DURATION = 10000; // 10 seconds per slide as requested
+
+            // ==========================================
+            // THREE.JS 3D PARTICLE MORPHING ENGINE
+            // ==========================================
+            var particleEngine = (function () {
+              var mount = document.getElementById('hero-particle-mount');
+              if (!mount || typeof THREE === 'undefined') return null;
+
+              var PARTICLE_COUNT = window.innerWidth < 768 ? 12000 : 22000;
+
+              function cubicBezier(p0, p1, p2, p3, t) {
+                var mt = 1 - t;
+                return [
+                  mt * mt * mt * p0[0] + 3 * mt * mt * t * p1[0] + 3 * mt * t * t * p2[0] + t * t * t * p3[0],
+                  mt * mt * mt * p0[1] + 3 * mt * mt * t * p1[1] + 3 * mt * t * t * p2[1] + t * t * t * p3[1]
+                ];
+              }
+
+              function samplePath(segs, count, spread) {
+                var out = [];
+                for (var i = 0; i < count; i++) {
+                  var seg = segs[(Math.random() * segs.length) | 0];
+                  var t = Math.random();
+                  var p1 = cubicBezier(seg[0], seg[1], seg[2], seg[3], t);
+                  var p2 = cubicBezier(seg[0], seg[1], seg[2], seg[3], Math.min(t + 0.01, 1));
+                  var dx = p2[0] - p1[0], dy = p2[1] - p1[1];
+                  var len = Math.hypot(dx, dy) || 1;
+                  dx /= len; dy /= len;
+                  var nx = -dy, ny = dx;
+                  var edge = Math.sin(Math.PI * t);
+                  var jitterAmp = spread * (0.2 + 0.8 * Math.random()) * (0.3 + 0.7 * edge);
+                  var jitter = (Math.random() - 0.5) * 2;
+                  out.push([
+                    p1[0] + nx * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                    p1[1] + ny * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                    (Math.random() - 0.5) * 45
+                  ]);
+                }
+                return out;
+              }
+
+              function buildExcavator(count) {
+                var segs = [
+                  [[-160, -130], [-160, -100], [-130, -85], [130, -85]],
+                  [[130, -85], [160, -100], [160, -130], [-160, -130]],
+                  [[-140, -110], [-40, -110], [40, -110], [140, -110]],
+                  [[-130, -85], [-130, -20], [-90, 15], [-20, 15]],
+                  [[-20, 15], [-20, -85], [-70, -85], [-130, -85]],
+                  [[-120, -15], [-100, 5], [-40, 5], [-30, -15]],
+                  [[-130, -85], [-160, -65], [-160, -25], [-130, -20]],
+                  [[-15, -20], [30, 45], [85, 115], [130, 145]],
+                  [[-5, -30], [40, 35], [95, 105], [135, 145]],
+                  [[-5, -5], [20, 25], [50, 55], [80, 80]],
+                  [[130, 145], [180, 115], [220, 65], [240, 10]],
+                  [[125, 140], [175, 110], [215, 60], [235, 10]],
+                  [[240, 10], [280, -15], [270, -65], [220, -55]],
+                  [[220, -55], [200, -35], [210, -5], [240, 10]],
+                  [[270, -65], [290, -80], [280, -75], [260, -65]]
+                ];
+                return samplePath(segs, count, 26);
+              }
+
+              function buildGear(count) {
+                var segs = [];
+                var teeth = 12;
+                var rOuter = 165;
+                var rInner = 115;
+                for (var i = 0; i < teeth; i++) {
+                  var a0 = (i / teeth) * Math.PI * 2;
+                  var a1 = ((i + 0.35) / teeth) * Math.PI * 2;
+                  var a2 = ((i + 0.65) / teeth) * Math.PI * 2;
+                  var a3 = ((i + 1.0) / teeth) * Math.PI * 2;
+                  segs.push([
+                    [Math.cos(a0) * rInner, Math.sin(a0) * rInner],
+                    [Math.cos(a0) * rOuter, Math.sin(a0) * rOuter],
+                    [Math.cos(a1) * rOuter, Math.sin(a1) * rOuter],
+                    [Math.cos(a1) * rInner, Math.sin(a1) * rInner]
+                  ]);
+                  segs.push([
+                    [Math.cos(a1) * rInner, Math.sin(a1) * rInner],
+                    [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                    [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                    [Math.cos(a3) * rInner, Math.sin(a3) * rInner]
+                  ]);
+                }
+                for (var j = 0; j < 6; j++) {
+                  var ga0 = (j / 6) * Math.PI * 2;
+                  var ga1 = ((j + 1) / 6) * Math.PI * 2;
+                  var rHub = 45;
+                  segs.push([
+                    [Math.cos(ga0) * rHub, Math.sin(ga0) * rHub],
+                    [Math.cos(ga0) * rHub, Math.sin(ga0) * rHub],
+                    [Math.cos(ga1) * rHub, Math.sin(ga1) * rHub],
+                    [Math.cos(ga1) * rHub, Math.sin(ga1) * rHub]
+                  ]);
+                  var spA = ga0 + Math.PI / 6;
+                  var spR = 78;
+                  var spRad = 20;
+                  var sx = Math.cos(spA) * spR, sy = Math.sin(spA) * spR;
+                  segs.push([
+                    [sx - spRad, sy], [sx, sy + spRad], [sx + spRad, sy], [sx, sy - spRad]
+                  ]);
+                }
+                return samplePath(segs, count, 20);
+              }
+
+              function buildCrane(count) {
+                var segs = [
+                  [[-200, -125], [-200, -85], [180, -85], [180, -125]],
+                  [[-200, -125], [-50, -125], [50, -125], [180, -125]],
+                  [[-160, -140], [-160, -125], [-120, -125], [-120, -140]],
+                  [[-80, -140], [-80, -125], [-40, -125], [-40, -140]],
+                  [[60, -140], [60, -125], [100, -125], [100, -140]],
+                  [[120, -140], [120, -125], [160, -125], [160, -140]],
+                  [[120, -85], [120, -35], [165, -35], [180, -85]],
+                  [[-180, -125], [-205, -145], [-205, -150], [-185, -150]],
+                  [[160, -125], [185, -145], [185, -150], [165, -150]],
+                  [[-120, -85], [-120, -25], [-40, -25], [-40, -85]],
+                  [[-60, -20], [-60, 15], [-40, 15], [-40, -20]],
+                  [[-50, 5], [30, 65], [120, 135], [210, 195]],
+                  [[-40, -5], [40, 55], [130, 125], [215, 185]],
+                  [[0, 35], [20, 50], [40, 45], [60, 80]],
+                  [[70, 75], [90, 110], [120, 105], [140, 140]],
+                  [[150, 135], [170, 165], [190, 160], [210, 185]],
+                  [[210, 195], [210, 145], [210, 95], [210, 45]],
+                  [[205, 45], [215, 45], [215, 25], [205, 25]],
+                  [[210, 25], [210, 10], [220, 5], [215, -5]]
+                ];
+                return samplePath(segs, count, 24);
+              }
+
+              function normalizeAndCenter(pts, targetSpan, shiftX, shiftY) {
+                shiftX = shiftX || 0;
+                shiftY = shiftY || 0;
+                var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+                for (var i = 0; i < pts.length; i++) {
+                  var x = pts[i][0], y = pts[i][1];
+                  if (x < minX) minX = x;
+                  if (x > maxX) maxX = x;
+                  if (y < minY) minY = y;
+                  if (y > maxY) maxY = y;
+                }
+                var cx = (minX + maxX) / 2;
+                var cy = (minY + maxY) / 2;
+                var span = Math.max(maxX - minX, maxY - minY) || 1;
+                var scale = targetSpan / span;
+
+                for (var j = 0; j < pts.length; j++) {
+                  pts[j][0] = (pts[j][0] - cx) * scale + shiftX;
+                  pts[j][1] = (pts[j][1] - cy) * scale + shiftY;
+                  pts[j][2] = (pts[j][2] || 0) * scale;
+                }
+                return pts;
+              }
+
+              var shapeSets = [
+                normalizeAndCenter(buildExcavator(PARTICLE_COUNT), 350, 0, -6),
+                normalizeAndCenter(buildGear(PARTICLE_COUNT), 340, 0, 0),
+                normalizeAndCenter(buildCrane(PARTICLE_COUNT), 355, 0, 5)
+              ];
+
+              var scene = new THREE.Scene();
+              var width = mount.clientWidth || 600;
+              var height = mount.clientHeight || 520;
+              var camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 2000);
+              camera.position.set(0, 0, 560);
+
+              var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+              renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+              renderer.setSize(width, height);
+              mount.appendChild(renderer.domElement);
+
+              function makeSprite() {
+                var c = document.createElement('canvas');
+                c.width = c.height = 64;
+                var ctx = c.getContext('2d');
+                var g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+                g.addColorStop(0, 'rgba(15, 23, 42, 1)');
+                g.addColorStop(0.5, 'rgba(29, 78, 216, 0.9)');
+                g.addColorStop(0.85, 'rgba(29, 78, 216, 0.3)');
+                g.addColorStop(1, 'rgba(29, 78, 216, 0)');
+                ctx.fillStyle = g;
+                ctx.fillRect(0, 0, 64, 64);
+                return new THREE.CanvasTexture(c);
+              }
+
+              var positions = new Float32Array(PARTICLE_COUNT * 3);
+              var basePos = new Float32Array(PARTICLE_COUNT * 3);
+              var fromPos = new Float32Array(PARTICLE_COUNT * 3);
+              var toPos = new Float32Array(PARTICLE_COUNT * 3);
+              var phase = new Float32Array(PARTICLE_COUNT);
+              var speed = new Float32Array(PARTICLE_COUNT);
+
+              var initialSet = shapeSets[1]; // default gear shape for slide 2
+              for (var k = 0; k < PARTICLE_COUNT; k++) {
+                var p = initialSet[k % initialSet.length];
+                fromPos[k * 3] = toPos[k * 3] = basePos[k * 3] = positions[k * 3] = p[0];
+                fromPos[k * 3 + 1] = toPos[k * 3 + 1] = basePos[k * 3 + 1] = positions[k * 3 + 1] = p[1];
+                fromPos[k * 3 + 2] = toPos[k * 3 + 2] = basePos[k * 3 + 2] = positions[k * 3 + 2] = p[2];
+                phase[k] = Math.random() * Math.PI * 2;
+                speed[k] = 0.5 + Math.random() * 1.0;
+              }
+
+              var geometry = new THREE.BufferGeometry();
+              geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+              var material = new THREE.PointsMaterial({
+                size: 2.8,
+                map: makeSprite(),
+                transparent: true,
+                depthWrite: false,
+                opacity: 0.95,
+                blending: THREE.NormalBlending,
+                color: new THREE.Color('#0F172A')
+              });
+
+              var points = new THREE.Points(geometry, material);
+              scene.add(points);
+
+              var morphT = 1;
+              var MORPH_DURATION = 1600;
+              var morphStart = 0;
+
+              function easeInOutCubic(t) {
+                return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+              }
+
+              function morphTo(shapeIndex) {
+                var targetSet = shapeSets[shapeIndex % shapeSets.length];
+                for (var m = 0; m < PARTICLE_COUNT; m++) {
+                  fromPos[m * 3] = basePos[m * 3];
+                  fromPos[m * 3 + 1] = basePos[m * 3 + 1];
+                  fromPos[m * 3 + 2] = basePos[m * 3 + 2];
+                  var tp = targetSet[m % targetSet.length];
+                  toPos[m * 3] = tp[0];
+                  toPos[m * 3 + 1] = tp[1];
+                  toPos[m * 3 + 2] = tp[2];
+                }
+                morphT = 0;
+                morphStart = performance.now();
+              }
+
+              // Mouse tilt
+              var targetRotX = 0, targetRotY = 0;
+              var mountCard = mount.parentElement;
+              if (mountCard) {
+                mountCard.addEventListener('mousemove', function (e) {
+                  var rect = mount.getBoundingClientRect();
+                  var mx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                  var my = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+                  targetRotY = mx * 0.35;
+                  targetRotX = -my * 0.28;
+                });
+                mountCard.addEventListener('mouseleave', function () {
+                  targetRotX = 0;
+                  targetRotY = 0;
+                });
+              }
+
+              window.addEventListener('resize', function () {
+                if (!mount) return;
+                var w = mount.clientWidth;
+                var h = mount.clientHeight;
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+                renderer.setSize(w, h);
+              });
+
+              var clock = new THREE.Clock();
+              function animate() {
+                requestAnimationFrame(animate);
+                var t = clock.getElapsedTime();
+                var now = performance.now();
+
+                if (morphT < 1) {
+                  var raw = Math.min((now - morphStart) / MORPH_DURATION, 1);
+                  morphT = raw;
+                  var e = easeInOutCubic(raw);
+                  for (var q = 0; q < PARTICLE_COUNT; q++) {
+                    var q3 = q * 3;
+                    basePos[q3] = fromPos[q3] + (toPos[q3] - fromPos[q3]) * e;
+                    basePos[q3 + 1] = fromPos[q3 + 1] + (toPos[q3 + 1] - fromPos[q3 + 1]) * e;
+                    basePos[q3 + 2] = fromPos[q3 + 2] + (toPos[q3 + 2] - fromPos[q3 + 2]) * e;
+                  }
+                }
+
+                var arr = geometry.attributes.position.array;
+                for (var n = 0; n < PARTICLE_COUNT; n++) {
+                  var idx = n * 3;
+                  var ph = phase[n];
+                  var sp = speed[n];
+                  var nx = Math.sin(t * sp + ph) * 1.4;
+                  var ny = Math.cos(t * sp * 0.8 + ph * 1.3) * 1.4;
+                  var nz = Math.sin(t * sp * 0.6 + ph * 0.7) * 2.8;
+                  arr[idx] = basePos[idx] + nx;
+                  arr[idx + 1] = basePos[idx + 1] + ny;
+                  arr[idx + 2] = basePos[idx + 2] + nz;
+                }
+                geometry.attributes.position.needsUpdate = true;
+
+                points.rotation.x += (targetRotX - points.rotation.x) * 0.06;
+                points.rotation.y += (targetRotY - points.rotation.y) * 0.06;
+                points.rotation.z = Math.sin(t * 0.2) * 0.02;
+
+                renderer.render(scene, camera);
+              }
+              animate();
+
+              return {
+                morphTo: morphTo
+              };
+            })();
+
+            // ==========================================
+            // SLIDE TRANSITION & ADAPTIVE THEMING
+            // ==========================================
+            function goToSlide(idx) {
+              if (idx < 0 || idx >= slidesData.length) return;
+              currentSlide = idx;
+              var data = slidesData[idx];
+
+              var heroSection = document.getElementById('hero-section');
+              var bgPhoto1 = document.getElementById('hero-bg-photo-1');
+              var bgPhoto3 = document.getElementById('hero-bg-photo-3');
+              var scrimLeft = document.getElementById('hero-scrim-left');
+              var scrimTop = document.getElementById('hero-scrim-top');
+              var particleWrapper = document.getElementById('hero-particle-wrapper');
+              var navbar = document.getElementById('ssc-navbar');
+              var logoImg = document.getElementById('ssc-logo-img');
+              var headline = document.getElementById('hero-headline');
+              var subheadline = document.getElementById('hero-subheadline');
+              var ctaBtn = document.getElementById('hero-cta-btn');
+              var ctaArrow = document.getElementById('hero-cta-arrow');
+              var divider = document.getElementById('hero-divider');
+              var playPauseBtn = document.getElementById('hero-play-pause');
+              var indContainer = document.getElementById('hero-indicators');
+
+              // 1. Text Fade Out & Fade In with new content
+              if (headline) {
+                headline.style.opacity = '0';
+                headline.style.transform = 'translateY(8px)';
+              }
+              if (subheadline) {
+                subheadline.style.opacity = '0';
+                subheadline.style.transform = 'translateY(8px)';
+              }
+
+              setTimeout(function () {
+                if (headline) {
+                  headline.innerText = data.title;
+                  headline.style.opacity = '1';
+                  headline.style.transform = 'translateY(0)';
+                }
+                if (subheadline) {
+                  subheadline.innerText = data.desc;
+                  subheadline.style.fontStyle = 'italic';
+                  subheadline.style.fontWeight = '300';
+                  subheadline.style.opacity = '1';
+                  subheadline.style.transform = 'translateY(0)';
+                }
+              }, 220);
+
+              // 2. Theme Adaptation (Special Black/Dark text exclusively for Slide 2 Particle)
+              if (idx === 1) {
+                // SLIDE 2: Official SSC Works Particle on Clean White Background
+                if (heroSection) heroSection.style.backgroundColor = '#FFFFFF';
+                if (bgPhoto1) bgPhoto1.style.opacity = '0';
+                if (bgPhoto3) bgPhoto3.style.opacity = '0';
+                if (scrimLeft) scrimLeft.style.opacity = '0';
+                if (scrimTop) scrimTop.style.opacity = '0';
+
+                if (particleWrapper) {
+                  particleWrapper.style.opacity = '1';
+                  particleWrapper.style.pointerEvents = 'auto';
+                }
+
+                if (particleEngine) {
+                  particleEngine.morphTo(1); // Morph to precision industrial gear shape
+                }
+
+                // Navbar switches to crisp official dark theme on white
+                if (navbar) navbar.classList.add('nav-theme-dark');
+                if (logoImg) logoImg.src = 'https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png';
+
+                // Typography turns automatically deep BLACK as requested
+                if (headline) {
+                  headline.style.color = '#0F172A';
+                  headline.style.textShadow = 'none';
+                }
+                if (subheadline) {
+                  subheadline.style.color = '#334155';
+                  subheadline.style.textShadow = 'none';
+                }
+
+                // CTA Button wireframe adapts to sleek dark frame
+                if (ctaBtn) {
+                  ctaBtn.className = 'w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-slate-800 hover:border-black hover:bg-slate-900/5 text-slate-900 font-medium text-sm px-7 py-3 rounded-xl transition-all duration-500 group backdrop-blur-[2px] shadow-sm';
+                }
+                if (ctaArrow) {
+                  ctaArrow.className = 'w-4 h-4 text-slate-900 transition-all duration-500 group-hover:translate-x-1';
+                }
+
+                // Divider & Pause/Play Control
+                if (divider) divider.className = 'flex items-center gap-4 pt-4 border-t border-slate-200 w-full transition-colors duration-500';
+                if (playPauseBtn) {
+                  playPauseBtn.className = 'w-8 h-8 rounded-lg border border-slate-300 flex items-center justify-center text-slate-600 hover:text-black hover:border-slate-500 transition-all duration-500';
+                }
+
+                // Indicators for Slide 2 (Dark/Blue accents)
+                if (indContainer) {
+                  var btns = indContainer.querySelectorAll('button');
+                  btns.forEach(function (btn, i) {
+                    if (i === idx) {
+                      btn.className = 'h-1.5 w-10 bg-[#1D4ED8] rounded-full transition-all';
+                    } else {
+                      btn.className = 'h-1.5 w-3 bg-slate-300 hover:bg-slate-400 rounded-full transition-all';
+                    }
+                  });
+                }
+
+              } else {
+                // SLIDES 1 & 3: Deep Studio Blue Background with Team Portraits
+                if (heroSection) heroSection.style.backgroundColor = '#001D56';
+                if (bgPhoto1) bgPhoto1.style.opacity = (idx === 0 ? '1' : '0');
+                if (bgPhoto3) bgPhoto3.style.opacity = (idx === 2 ? '1' : '0');
+                if (scrimLeft) scrimLeft.style.opacity = '1';
+                if (scrimTop) scrimTop.style.opacity = '1';
+
+                if (particleWrapper) {
+                  particleWrapper.style.opacity = '0';
+                  particleWrapper.style.pointerEvents = 'none';
+                }
+
+                // Navbar returns to white theme on studio blue
+                if (navbar) navbar.classList.remove('nav-theme-dark');
+                if (logoImg) logoImg.src = 'ssc_works_logo_white.png';
+
+                // Typography returns to WHITE font
+                if (headline) {
+                  headline.style.color = '#FFFFFF';
+                  headline.style.textShadow = '0 2px 8px rgba(0,0,0,0.4)';
+                }
+                if (subheadline) {
+                  subheadline.style.color = 'rgba(226, 232, 240, 0.95)';
+                  subheadline.style.textShadow = '0 1px 4px rgba(0,0,0,0.3)';
+                }
+
+                // CTA Button wireframe returns to crisp white
+                if (ctaBtn) {
+                  ctaBtn.className = 'w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/60 hover:border-white hover:bg-white/10 text-white font-medium text-sm px-7 py-3 rounded-xl transition-all duration-500 group backdrop-blur-[2px] shadow-sm';
+                }
+                if (ctaArrow) {
+                  ctaArrow.className = 'w-4 h-4 text-white transition-all duration-500 group-hover:translate-x-1';
+                }
+
+                // Divider & Pause/Play Control
+                if (divider) divider.className = 'flex items-center gap-4 pt-4 border-t border-white/15 w-full transition-colors duration-500';
+                if (playPauseBtn) {
+                  playPauseBtn.className = 'w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/40 transition-all duration-500';
+                }
+
+                // Indicators for Slides 1 & 3 (White accents)
+                if (indContainer) {
+                  var btns = indContainer.querySelectorAll('button');
+                  btns.forEach(function (btn, i) {
+                    if (i === idx) {
+                      btn.className = 'h-1.5 w-10 bg-white rounded-full transition-all';
+                    } else {
+                      btn.className = 'h-1.5 w-3 bg-white/30 hover:bg-white/60 rounded-full transition-all';
+                    }
+                  });
+                }
+              }
+            }
+
+            // ==========================================
+            // AUTO ROTATION TIMER (10 SECONDS INTERVAL)
+            // ==========================================
+            function resetTimer() {
+              if (autoTimer) clearInterval(autoTimer);
+              if (isPlaying) {
+                autoTimer = setInterval(function () {
+                  goToSlide((currentSlide + 1) % slidesData.length);
+                }, SLIDE_DURATION);
+              }
+            }
+
+            // Indicators click handlers
+            var indContainer = document.getElementById('hero-indicators');
+            if (indContainer) {
+              var btns = indContainer.querySelectorAll('button');
+              btns.forEach(function (btn, i) {
+                btn.addEventListener('click', function () {
+                  goToSlide(i);
+                  resetTimer();
+                });
+              });
+            }
+
+            // Play / Pause button
+            var playPauseBtn = document.getElementById('hero-play-pause');
+            if (playPauseBtn) {
+              playPauseBtn.addEventListener('click', function () {
+                isPlaying = !isPlaying;
+                var icon = playPauseBtn.querySelector('.material-symbols-outlined');
+                if (icon) icon.innerText = isPlaying ? 'pause' : 'play_arrow';
+                resetTimer();
+              });
+            }
+
+            // Expose globally for testing / control
+            window.heroGoToSlide = goToSlide;
+
+            // Initialize on Slide 0 (Photo 1) with active timer
+            goToSlide(0);
+            resetTimer();
+          })();
+        </script>
+      </section>
+      <!-- COMPANY PROFILE (VIDEO SPOTLIGHT) -->
+      <section class="w-full bg-surface-base py-20 border-b border-border-hairline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 flex flex-col items-start">
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3">COMPANY
+                PROFILE</span>
+              <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold mb-4">
+                Check Our Profile
+              </h2>
+              <p class="font-body-lg text-body-lg text-text-body mb-6" style="font-weight: 300; font-style: italic;">
+                A look inside our workshops and the team behind every repair.
+              </p>
+              <p class="font-body-sm text-body-sm text-text-caption mb-8 leading-relaxed">
+                PT SSC Works operates certified overhaul workshops engineered specifically
+                to minimize mechanical downtime for heavy equipment, mining vehicles, industrial gearboxes, and
+                structural earthmovers across Indonesia.
+              </p>
+              <button
+                class="inline-flex items-center gap-2 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary transition-colors group"
+                onclick="document.getElementById('video-modal').classList.remove('hidden')" type="button">
+                <span class="">Play Video Tour</span>
+                <span
+                  class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+            </div>
+            <div class="lg:col-span-7">
+              <div class="relative rounded-lg overflow-hidden border border-border-hairline group cursor-pointer"
+                onclick="document.getElementById('video-modal').classList.remove('hidden')">
+                <img alt="Inside view of SSC Works machining department showing heavy component turning"
+                  class="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1WFedkV54x__V-1mGPWasefKBA0lscUWE-zhPidTDlQb0Ipcv4ZKoTDyr9iuYIWCoj01HgqqLM0AVy4IfuSKp53KdCUGhSXwiMCTypnF11GftNMaKzwWLyE9rlWyweDDaGNfyoLEwB6BvxFw27CfDSRw1KstYkWLo1UhHUc6wzNls2l7083dG9aqdnoOMK8pdLd4SfXUC4XqZCBKfgRfS-tw-iSKMi8K4py6Qzd_wqIq0_IEItAS09Bvxo">
+                <div
+                  class="absolute inset-0 bg-text-heading/30 group-hover:bg-text-heading/20 transition-colors flex items-center justify-center">
+                  <div
+                    class="w-20 h-20 rounded-full bg-primary-container/90 text-on-primary flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                    <span class="material-symbols-outlined text-[36px] ml-1">play_arrow</span>
+                  </div>
+                </div>
+                <div
+                  class="absolute bottom-4 left-4 bg-surface-base/90 backdrop-blur-md px-4 py-2 rounded-lg border border-border-hairline">
+                  <span
+                    class="font-label-tag text-label-tag uppercase text-text-heading font-semibold tracking-wider">SSC
+                    Works Corporate Video (04:12)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- OUR REPAIR PROCESS (WHAT WE DO) -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="max-w-3xl mb-16">
+            <span
+              class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3 block">HOW
+              WE RESTORE</span>
+            <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold">
+              Our Repair Process
+            </h2>
+            <p class="font-body-md text-body-md text-text-caption mt-3">
+              Predictable turnarounds backed by rigorous metallurgical tests, precision tolerances, and certified
+              sign-offs at every gate.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Step 01 -->
+            <div
+              class="group flex flex-col bg-surface-base rounded-lg border border-border-hairline overflow-hidden hover:border-primary-container transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+              <div class="h-60 overflow-hidden relative">
+                <img alt="Engineering technicians receiving and measuring damaged hydraulic arm component"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1WeEGKvFOwp963lRN7Vhxyje_tTX9d5jVpgnJdNeA2lAfsPw9ivslHydoxGY2dk9v75G87lrXAHHHtb5yxmKHIMthwEid6sNP9Q6POrCsVwFB0mvIROBhgoJM-KvL3fn2sayYjIsuZyNI3IN65d8MttcxLfzFwUEXkNOD_eIhm5mMc75ULWXl0oyRMRL_cQdTv57ajYM0kMn-aSEtluNgHEOOSr25TvhGHUyYxg9Le4wAtSOUVgB8EtM0et">
+                <div
+                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 drop-shadow-md text-white font-mono text-xs font-bold tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-white/50"></span><span
+                    class="leading-none">01</span>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <span
+                  class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
+                  1 — Assessment</span>
+                <h3
+                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2 group-hover:text-primary-container transition-colors">
+                  Drop Off Damaged Component</h3>
+                <div
+                  class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out flex-1">
+                  <p class="font-body-sm text-body-sm text-text-caption pt-1 mb-4 leading-relaxed">
+                    Initial Inspection &amp; Diagnosis. We begin with a full inspection to identify damage levels,
+                    non-destructive crack testing, and determine the most efficient and cost-effective repair strategy.
+                  </p>
+                </div>
+                <div
+                  class="pt-4 border-t border-border-hairline flex items-center justify-between text-text-caption font-label-ui text-label-ui mt-auto">
+
+
+                </div>
+              </div>
+            </div>
+            <!-- Step 02 -->
+            <div
+              class="group flex flex-col bg-surface-base rounded-lg border border-border-hairline overflow-hidden hover:border-primary-container transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+              <div class="h-60 overflow-hidden relative">
+                <img
+                  alt="High precision CNC lathe cutting machine turning cylindrical shaft with continuous cooling lubrication"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1XacHsnQHXOtuUbPKRrSTr0r830fORF1a5Kl3Xo6qTeI4lHwWhNhwKjbqU73ja7UJemzxryNPKhv_Cb1UKbb5SvAWgLmVO0H-0Bg9a_IEZrGDle9C7SOAW7PencA29Jc9RfQrGFEEGyMUMWMvUiOaZUPivT6ahc0L5By8FRJGFFCYsLHjUVG7R9hQ1Ds-CL-_6jDAUCypYiORsaAIbjOIC6bVaCZs3k7fut4mfZZu6Idu3G1vY0sIbIX0w0">
+                <div
+                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 drop-shadow-md text-white font-mono text-xs font-bold tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-white/50"></span><span
+                    class="leading-none">02</span>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <span
+                  class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
+                  2 — Engineering</span>
+                <h3
+                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2 group-hover:text-primary-container transition-colors">
+                  Precision Repair &amp; Fabrication</h3>
+                <div
+                  class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out flex-1">
+                  <p class="font-body-sm text-body-sm text-text-caption pt-1 mb-4 leading-relaxed">
+                    Handled by Expert Engineers. Our technicians execute high-precision repairs using industry-standard
+                    machining, welding, thermal spray, and fabrication processes - ensuring strength, accuracy, and
+                    durability.
+                  </p>
+                </div>
+                <div
+                  class="pt-4 border-t border-border-hairline flex items-center justify-between text-text-caption font-label-ui text-label-ui mt-auto">
+
+
+                </div>
+              </div>
+            </div>
+            <!-- Step 03 -->
+            <div
+              class="group flex flex-col bg-surface-base rounded-lg border border-border-hairline overflow-hidden hover:border-primary-container transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+              <div class="h-60 overflow-hidden relative">
+                <img
+                  alt="Restored large hydraulic cylinder reconditioned, pressure tested, painted orange, and ready for shipment"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1XtW_RcS8cODuGn75BTXV39S1Si4LfIg_O0pb5Pj4uKKrR9rLXJ2QqJN_lkC3M6qHYhy1L_t33hSOjPThgQcEPgXuOCbJuQqQYbas1mTz3bS51g8GwWTadJt9dUwU9ryxKg7-x0LQu_wqBnqqco2hQOg8WGc2BmtfUn6AGy19kOkBJp63XOra1_kuQT5ffF4LrBLecpoRO2Zvk5rCEr--Om2XdC_8tINLZV0j2qUjFOGYJxZ-HMOueCTU4">
+                <div
+                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 drop-shadow-md text-white font-mono text-xs font-bold tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-white/50"></span><span
+                    class="leading-none">03</span>
+                </div>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <span
+                  class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
+                  3 — Commissioning</span>
+                <h3
+                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2 group-hover:text-primary-container transition-colors">
+                  Return in Like-New Condition</h3>
+                <div
+                  class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out flex-1">
+                  <p class="font-body-sm text-body-sm text-text-caption pt-1 mb-4 leading-relaxed">
+                    Tested. Proven. Delivered. All components are thoroughly tested before delivery, restored to optimal
+                    performance and ready to be reinstalled on-site with complete quality certifications.
+                  </p>
+                </div>
+                <div
+                  class="pt-4 border-t border-border-hairline flex items-center justify-between text-text-caption font-label-ui text-label-ui mt-auto">
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- QUALITY SERVICES (HORIZONTAL ACCORDION & DIRECTORY) -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline" id="services-matrix">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span
+                class="font-label-tag text-label-tag uppercase text-[#1D4ED8] tracking-wider font-semibold mb-3 block">OUR
+                SERVICES</span>
+              <h2 class="font-headline-lg text-headline-lg text-[#0F172A] font-semibold">
+                Quality Service is Our Guarantee
+              </h2>
+            </div>
+            </p>
+          </div>
+          <!-- Interactive Expanding Horizontal Accordion Shelf / Rack -->
+          <div
+            class="flex flex-col lg:flex-row h-auto lg:h-[520px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-950 w-full shadow-lg divide-y lg:divide-y-0 lg:divide-x divide-slate-800/80">
+            <!-- Panel 01 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Machining (CNC &amp; Manual)"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WgphqfPWwGYfX5zk1n-NBpXVad8s0_3j4wnNJhtbV2U1r4Dinf-8Gmtix1rbXz81A4fSaRZshdmB4EUwt2UHMf-66RlXLNUv8vXO1JDGO_kuOFH0RnDL5V7-rMLBfHaWPx9N5URU61fsx1g9XHXRV3T3xDWZ45_ydkpQfB-VURlXL_5XjNnQBNOIXHTYeReI_MkKVzoMcSMlBbwK7fA9MHNzcA1M__BZUQj9gcpn-HA2p9BjHa5iCT984">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">01</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">precision_manufacturing</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Machining (CNC &amp; Manual)</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Precision machining services for industrial components using advanced CNC and manual machines.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Capacities</span>
+                    <span class="text-xs text-slate-300">Lathe up to 3.2m · Milling · Line Boring · Honing</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 02 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Welding &amp; Fabrication"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1W7cnVw4w9i9fXPsn1vXxqlho3ZF3jXDx0wE0lqqZ9FNwMuesY-mG8rAH03jUexqR3WUwERE34HSD_sTVkX_0AuArbH9DxBR82aqyD2dMNc3U1duKSPzS8Hr2IelyiXsRgISPbII_i46QymSM8ZTu-s5Zt-_ZFWRUoEEc_OzTrWxE3Orf_-t8984Jfte_7O_N8powZUSjLwibuWaV6g4Zef3bcs3y5BzsDrNNzY17evEB1PHw__M_NFwPSF">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">02</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">engineering</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Welding &amp; Fabrication</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Certified welding solutions for critical structures and repairs, including robotic manipulators.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Processes</span>
+                    <span class="text-xs text-slate-300">SMAW · TIG · MIG · SAW · Digital PWHT</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 03 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Thermal Spray &amp; Coating"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WbWcMdB2rwf1zJ5KrDEo0q7ynSEJWgHQaqCi-KJq7izRfyjex3FGge4NMJwe-JoyEMifuTXGp4YUOvqJvsTfzuTgJL28NNKnPGidkXrJZIYKHsX8st-RsCGcgE2TSEhCF57YqX95NrdRzypzgEBl8M2mYKagI0LMftdlo1batyWqWe3Qo1-vawcHeYhOKQAH1Cu7thcos8oPuiddEEXxbCArOixW8hTejh-KPfV9uUr67MeCeZhKOB99Zx">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">03</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">format_paint</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Thermal Spray &amp; Coating</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Protective and restorative coatings using wire flame spray, arc spray, and ceramic technology.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Applications</span>
+
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 04 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Component Reconditioning"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WJ97fOGvvy6Zjsy5TXfyLqz-0VW9rhPltjfaSij1k25YHvaslgYH0D1j2VJqFOvyNT9cSyRduf5q7ier2Jdkd1DyaDmba5NxEpsK2_JZeHMYsKSGRQuwf9tqy1Kqgi4AcDq-1boOAi7zILMe5J_9S_u7epCFJb7Cf372pvK_lkjVMhUMY4CEaILW57mYDaU6BfFOCufX75JUVMNDXzCBifB-uJGb7eQn8xMxfSxidtrU1zoCrj8MS2Xguy">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">04</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">settings_backup_restore</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Component Reconditioning</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Cost-effective and sustainable repair of heavy diesel engine and powertrain components.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Core
+                      Parts</span>
+                    <span class="text-xs text-slate-300">Cylinder Block · Camshaft · Spindle · Crankshaft</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 05 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Balancing, Plating &amp; Press"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1XVTMSHJ31eiW97ihKAdUiJlpmCNGHexbZoOlj5jIGI5OUNL-gbIgyuPiP-V8Zne9SPZf9kXrZX-Or7kK5hmcRSgjuIPvnvGORwq6R9sEx-jHtmkv_3xW2qBBXfEIlUN9ZG2s91ER0-dMxq1QjoRG1_pR07KwLHcXDwo3lJ4myrV38JyYaDNmX4E6kSVIOIzP4e0rX4olFnORrvXtfhhG0vvfiZwkd-Km0Svk-bNCkXL4bfDLRG_VFyNlkN">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">05</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">autorenew</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Balancing, Plating &amp; Press</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Dynamic balancing and heavy-duty structural treatments for rotating high-speed shafts.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Machinery</span>
+                    <span class="text-xs text-slate-300">3M Balancing · Brush Plating · 650T Press</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 06 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Inspection &amp; Testing"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1UIeEIJIZDGgDX0SpR-MImHkr34KbrR1kDEiD6hZ4u5OWnZPoTXyvCBqLegFIkk1SGiqlDklE9J3JAyupwCpVK034quUtC23wUPSnnEB1DNxhIMns6BeNOEqNBR23W3iUVwdzr901mJICsZ7qX_4iqBiBf_II0Jk5Q50LoK4JRp2x7IBSYKTrcOosWnhT2InGbcGL2w2J16Pda1yDAzabxYZu_Ayyo4IbXCqJOPXTZSJ9WBlZCZEl7JVI2p">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">06</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">fact_check</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Inspection &amp; Testing</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Comprehensive QA/QC inspections following ISO calibration and certified non-destructive tests.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Methods</span>
+                    <span class="text-xs text-slate-300">NDT (PT, MT, UT) · Hardness · Pressure Test</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 07 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Custom Fabrication"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WDmU1tmShg6IdRohh-qgrKNrlcD5Ta7logFE1R1CqFjIY2ZCJRRBaDIe62Ibdi57ODJVPSBq-6H2bh4Ijo1MAp3DsfE_ZMu_fuuc9qn8MfT0YhkG-t1ASistE_S9WUpBqCZRsaueHo3BvLIa0CW0_dCeKiQemVeJHpYkN9a9yCtJzw5vHWjHK-X2YrnFAsle3gJ1igR94hPxYuyY1LmjwBMk6LUwXnqRWhzK-E_l0KUXb1k_A2jfgoxYg">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">07</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">carpenter</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Custom Fabrication</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Tailor-made metalworks, heavy chutes, and structural chassis built to engineered drawings.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Products</span>
+                    <span class="text-xs text-slate-300">Screw Conveyors · Spreaders · Fuel Tanks</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel 08 -->
+            <div
+              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+              <img alt="Hot Dip Galvanizing (HDG)"
+                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1UFpNTAeXwh08eF0s688NyRPbFlVO8LsoKk7_PlWAIDpLSfH3Mdc-iXJMbrm4kQuaHBo1oo1ojh_flUuTm3wracfy3T05-xmjZV-h5PCodftU5p_yL8IPNrknpe964zzh-LQGkIf1QqVRC-MJu2o5g8kty7xwWmmIWAehquL64vFPz5VmeDiFcxTV2DTvfzBA4YrPrVEvG_twttsazwBlqTY5C0OFcjxQ-E_bEC8UABE0tJvM5rC08D-bWE">
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+              </div>
+              <div
+                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
+              </div>
+              <div class="relative z-10 flex flex-col justify-end h-full">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">08</span>
+                  <span
+                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">shield</span>
+                </div>
+                <h3
+                  class="text-white font-bold text-base sm:text-lg tracking-tight transition-transform duration-300 min-h-[3.5rem] flex items-start leading-tight">
+                  Hot Dip Galvanizing (HDG)</h3>
+                <div
+                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
+                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+                    Durable corrosion protection for steel components through SNI and ASTM compliant full immersion
+                    baths.
+                  </p>
+                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                    <span
+                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Compliance</span>
+                    <span class="text-xs text-slate-300">Large Industrial Parts · SNI &amp; ASTM A123</span>
+                  </div>
+                  <div
+                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
+                    <span class="">Explore Service</span>
+                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- WELCOME TO REPAIR MASTERY (KEY STATS & TEAM PHOTO) -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Photo plate -->
+            <div class="lg:col-span-6 relative">
+              <div class="rounded-lg overflow-hidden border border-border-hairline bg-surface-subtle shadow-sm">
+                <img alt="Engineering leadership and field mechanics standing together at mining overhaul facility"
+                  class="w-full h-[400px] object-cover"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1UhjA1oF-WQYwLUgkkpgHiJNQWdjUE3ZWcrcyPewjp9cd9beIMkxUZBGaFNSTqfwiinlA6orRvHisR3yCama9y9tRSEwI02qJI2_doHl-G3D2LkQk_TwgkCPWctPWdNiQavKWYYr2mOL00k3aGzPgMAGlxWoa8BR2l594YASAz9UysZqj7c7av3xBd54dC7kG3UqqnynYPLA6Ut1Fp2x887jMBxGIookcnWNtidflDy29AgVxs-wNgBm96x">
+              </div>
+              <div
+                class="pt-3 flex items-center justify-between text-text-caption font-label-tag text-label-tag uppercase">
+                <span class="">Field Engineers &amp; Machinists at Work</span>
+                <span class="">Est. 2003 · Indonesia</span>
+              </div>
+            </div>
+            <!-- Metrics & Narrative -->
+            <div class="lg:col-span-6 flex flex-col">
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3">THE
+                REPAIR SOLUTION EXPERTS</span>
+              <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold mb-6">
+                Welcome to Repair Mastery
+              </h2>
+              <p class="font-body-md text-body-md text-text-body mb-10 leading-relaxed">
+                With over two decades of metallurgical research, dedicated machine shops, and field-tested
+                remanufacturing workflows, SSC Works transforms worn heavy fleet components into like-new assets
+                guaranteed to withstand the harshest extraction environments.
+              </p>
+              <!-- 3-Column Uniform Metric Display -->
+              <div class="grid grid-cols-3 gap-6 pt-6 border-t border-border-hairline">
+                <div class="flex flex-col">
+                  <span class="font-metric-numeral text-metric-numeral font-bold mb-1">23+</span>
+                  <span class="font-label-ui text-label-ui font-semibold text-text-heading">Years Experience</span>
+                  <span class="font-body-sm text-body-sm text-text-caption mt-1">Field Tested</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-metric-numeral text-metric-numeral font-bold mb-1">1M+</span>
+                  <span class="font-label-ui text-label-ui font-semibold text-text-heading">Repairs Completed</span>
+                  <span class="font-body-sm text-body-sm text-text-caption mt-1">Zero Fatal Defect</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-metric-numeral text-metric-numeral font-bold mb-1">1,000+</span>
+                  <span class="font-label-ui text-label-ui font-semibold text-text-heading">Projects Completed</span>
+                  <span class="font-body-sm text-body-sm text-text-caption mt-1">Nationwide Mines</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CERTIFIED QUALITY, ENVIRONMENT & SAFETY (ISO COMPLIANCE) -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- ISO 9001 -->
+            <div
+              class="bg-surface-base rounded-lg border border-border-hairline p-8 flex flex-col items-center text-center hover:border-primary-container transition-all">
+              <div
+                class="w-20 h-20 rounded-full bg-surface-subtle border border-border-hairline flex flex-col items-center justify-center mb-6">
+                <span
+                  class="font-label-tag text-[10px] font-bold text-primary-container tracking-tighter uppercase">ISO</span>
+                <span class="font-headline-sm text-[16px] font-bold text-text-heading leading-none">9001</span>
+                <span class="font-label-tag text-[9px] text-text-caption">2015</span>
+              </div>
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-1">QUALITY</span>
+              <h3 class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2">Quality Management</h3>
+              <p class="font-body-sm text-body-sm text-text-caption mb-6">
+                Consistent results. On every job. Standardized QA/QC check sheets from component receipt to load
+                testing.
+              </p>
+              <button
+                class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
+                onclick="openCertModal('ISO 9001:2015 Quality Management Certificate', 'Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.')"
+                type="button">
+                <span class="">View certificate</span>
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+              </button>
+            </div>
+            <!-- ISO 14001 -->
+            <div
+              class="bg-surface-base rounded-lg border border-border-hairline p-8 flex flex-col items-center text-center hover:border-primary-container transition-all">
+              <div
+                class="w-20 h-20 rounded-full bg-surface-subtle border border-border-hairline flex flex-col items-center justify-center mb-6">
+                <span
+                  class="font-label-tag text-[10px] font-bold text-primary-container tracking-tighter uppercase">ISO</span>
+                <span class="font-headline-sm text-[16px] font-bold text-text-heading leading-none">14001</span>
+                <span class="font-label-tag text-[9px] text-text-caption">2015</span>
+              </div>
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-1">ENVIRONMENT</span>
+              <h3 class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2">Environmental
+                Management</h3>
+              <p class="font-body-sm text-body-sm text-text-caption mb-6">
+                Responsible work. Lower impact. Safe chemical disposal, waste oil recycling, and eco-conscious shot
+                blasting.
+              </p>
+              <button
+                class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
+                onclick="openCertModal('ISO 14001:2015 Environmental Management', 'Comprehensive waste mitigation protocol and ISO-verified environmentally conscious recycling system.')"
+                type="button">
+                <span class="">View certificate</span>
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+              </button>
+            </div>
+            <!-- ISO 45001 -->
+            <div
+              class="bg-surface-base rounded-lg border border-border-hairline p-8 flex flex-col items-center text-center hover:border-primary-container transition-all">
+              <div
+                class="w-20 h-20 rounded-full bg-surface-subtle border border-border-hairline flex flex-col items-center justify-center mb-6">
+                <span
+                  class="font-label-tag text-[10px] font-bold text-primary-container tracking-tighter uppercase">ISO</span>
+                <span class="font-headline-sm text-[16px] font-bold text-text-heading leading-none">45001</span>
+                <span class="font-label-tag text-[9px] text-text-caption">2018</span>
+              </div>
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-1">SAFETY</span>
+              <h3 class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2">Health &amp; Safety
+              </h3>
+              <p class="font-body-sm text-body-sm text-text-caption mb-6">
+                A safe site for every crew. Strict PPE compliance, overhead crane safety protocols, and zero-accident
+                targets.
+              </p>
+              <button
+                class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
+                onclick="openCertModal('ISO 45001:2018 Occupational Health &amp; Safety', 'Certified zero-incident HSE governance governing heavy equipment handling and machine shops.')"
+                type="button">
+                <span class="">View certificate</span>
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- TRUSTED BY / CLIENT LOGO STRIP (MATCHING SSCWORKS.COM ORIGINAL) -->
+      <section id="clients-section"
+        class="w-full relative bg-[#fbfaf8] py-20 lg:py-24 border-b border-[#e5e0d8] overflow-hidden scroll-mt-28">
+        <style>
+          #clients-section {
+            font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            scroll-margin-top: 110px;
+          }
+
+          .clients-header {
+            max-width: 1200px;
+            margin: 0 auto 44px;
+            text-align: center;
+          }
+
+          .clients-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #1D4ED8;
+            margin-bottom: 14px;
+          }
+
+          .clients-eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #1D4ED8;
+            display: inline-block;
+            flex-shrink: 0;
+          }
+
+          .clients-title {
+            font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif !important;
+            font-size: clamp(32px, 4vw, 50px);
+            font-weight: 600 !important;
+            line-height: 1.1;
+            letter-spacing: -0.035em;
+            color: #1c1a17 !important;
+            margin: 0 0 18px 0;
+          }
+
+          .clients-divider {
+            display: block;
+            width: 56px;
+            height: 3px;
+            border-radius: 2px;
+            background: #1D4ED8;
+            margin: 0 auto;
+          }
+
+          .marquee {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1360px;
+            margin: 0 auto;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+          }
+
+          .marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: marqueeScroll 45s linear infinite;
+          }
+
+          .marquee:hover .marquee-track {
+            animation-play-state: paused;
+          }
+
+          @keyframes marqueeScroll {
+            from {
+              transform: translateX(0);
+            }
+
+            to {
+              transform: translateX(-50%);
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .marquee-track {
+              animation: none;
+              justify-content: center;
+              flex-wrap: wrap;
+            }
+          }
+
+          .logo-item {
+            flex: 0 0 auto;
+            padding: 0 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .logo-item img {
+            height: 42px;
+            width: auto;
+            max-width: 145px;
+            object-fit: contain;
+            filter: grayscale(18%) contrast(96%);
+            opacity: 0.9;
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), filter 0.3s ease, opacity 0.3s ease;
+          }
+
+          .logo-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%) contrast(100%);
+            opacity: 1;
+          }
+
+          @media (max-width: 768px) {
+            .logo-item {
+              padding: 0 22px;
+            }
+
+            .logo-item img {
+              height: 32px;
+              max-width: 110px;
+            }
+          }
+        </style>
+
+        <div class="clients-header px-6">
+          <span class="clients-eyebrow">
+            <span class="clients-eyebrow-dot"></span>
+            Trusted By
+          </span>
+          <h2 class="clients-title">Our Clients</h2>
+          <span class="clients-divider"></span>
+        </div>
+
+        <div class="marquee">
+          <div class="marquee-track" id="marqueeTrack">
+            <!-- First sequence of 24 authentic client logos -->
+            <div class="flex items-center">
+              <div class="logo-item" title="Freeport Indonesia (FM)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/fm.webp" alt="Freeport (FM)" loading="lazy">
+              </div>
+              <div class="logo-item" title="AMMAN Mineral"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/amman.webp" alt="AMMAN" loading="lazy"></div>
+              <div class="logo-item" title="KPC (Kaltim Prima Coal)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/kpc.webp" alt="KPC" loading="lazy"></div>
+              <div class="logo-item" title="Trakindo Utama"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/trak.webp" alt="Trakindo" loading="lazy"></div>
+              <div class="logo-item" title="Macmahon"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/mac.webp" alt="Macmahon" loading="lazy"></div>
+              <div class="logo-item" title="Sandvik"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/san.webp" alt="Sandvik" loading="lazy"></div>
+              <div class="logo-item" title="FLSmidth"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/fls.webp" alt="FLSmidth" loading="lazy"></div>
+              <div class="logo-item" title="Metso"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/met.webp" alt="Metso" loading="lazy"></div>
+              <div class="logo-item" title="Vale Indonesia"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/vale.webp" alt="Vale" loading="lazy"></div>
+              <div class="logo-item" title="BUMA"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/buma.webp" alt="BUMA" loading="lazy"></div>
+              <div class="logo-item" title="PAMA (Pamapersada Nusantara)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/pama.webp" alt="PAMA" loading="lazy"></div>
+              <div class="logo-item" title="PLN"><img decoding="async"
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png" alt="PLN" loading="lazy"></div>
+              <div class="logo-item" title="SIMS Jaya Kaltim"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/sims.webp" alt="SIMS" loading="lazy"></div>
+              <div class="logo-item" title="Thiess"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/thiess.webp" alt="Thiess" loading="lazy"></div>
+              <div class="logo-item" title="Hexindo Adiperkasa"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/hex.webp" alt="Hexindo" loading="lazy"></div>
+              <div class="logo-item" title="Pertamina"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/perta.webp" alt="Pertamina" loading="lazy"></div>
+              <div class="logo-item" title="PT Nusa Halmahera Minerals"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/goso.webp" alt="PT Nusa Halmahera Minerals"
+                  loading="lazy"></div>
+              <div class="logo-item" title="Madhani Talatah Nusantara"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/mad.webp" alt="Madhani" loading="lazy"></div>
+              <div class="logo-item" title="PT Reman Duraprana"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/rem.webp" alt="Reman" loading="lazy"></div>
+              <div class="logo-item" title="PT Resource Equipment Indonesia (REL)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/rel.webp"
+                  alt="PT Resource Equipment Indonesia (REL)" loading="lazy"></div>
+              <div class="logo-item" title="WEIR Minerals"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/weir.webp" alt="WEIR Minerals" loading="lazy">
+              </div>
+              <div class="logo-item" title="LS Group (PT Sentosa Laju Sejahtera)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/ls.webp"
+                  alt="LS Group (PT Sentosa Laju Sejahtera)" loading="lazy"></div>
+              <div class="logo-item" title="Badak LNG"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/badak.webp" alt="Badak LNG" loading="lazy"></div>
+              <div class="logo-item" title="United Tractors"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/ut.webp" alt="United Tractors" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Duplicate sequence of 24 authentic client logos for continuous seamless scrolling -->
+            <div class="flex items-center" aria-hidden="true">
+              <div class="logo-item" title="Freeport Indonesia (FM)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/fm.webp" alt="Freeport (FM)" loading="lazy">
+              </div>
+              <div class="logo-item" title="AMMAN Mineral"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/amman.webp" alt="AMMAN" loading="lazy"></div>
+              <div class="logo-item" title="KPC (Kaltim Prima Coal)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/kpc.webp" alt="KPC" loading="lazy"></div>
+              <div class="logo-item" title="Trakindo Utama"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/trak.webp" alt="Trakindo" loading="lazy"></div>
+              <div class="logo-item" title="Macmahon"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/mac.webp" alt="Macmahon" loading="lazy"></div>
+              <div class="logo-item" title="Sandvik"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/san.webp" alt="Sandvik" loading="lazy"></div>
+              <div class="logo-item" title="FLSmidth"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/fls.webp" alt="FLSmidth" loading="lazy"></div>
+              <div class="logo-item" title="Metso"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/met.webp" alt="Metso" loading="lazy"></div>
+              <div class="logo-item" title="Vale Indonesia"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/vale.webp" alt="Vale" loading="lazy"></div>
+              <div class="logo-item" title="BUMA"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/buma.webp" alt="BUMA" loading="lazy"></div>
+              <div class="logo-item" title="PAMA (Pamapersada Nusantara)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/pama.webp" alt="PAMA" loading="lazy"></div>
+              <div class="logo-item" title="PLN"><img decoding="async"
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png" alt="PLN" loading="lazy"></div>
+              <div class="logo-item" title="SIMS Jaya Kaltim"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/sims.webp" alt="SIMS" loading="lazy"></div>
+              <div class="logo-item" title="Thiess"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/thiess.webp" alt="Thiess" loading="lazy"></div>
+              <div class="logo-item" title="Hexindo Adiperkasa"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/hex.webp" alt="Hexindo" loading="lazy"></div>
+              <div class="logo-item" title="Pertamina"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/perta.webp" alt="Pertamina" loading="lazy"></div>
+              <div class="logo-item" title="PT Nusa Halmahera Minerals"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/goso.webp" alt="PT Nusa Halmahera Minerals"
+                  loading="lazy"></div>
+              <div class="logo-item" title="Madhani Talatah Nusantara"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/mad.webp" alt="Madhani" loading="lazy"></div>
+              <div class="logo-item" title="PT Reman Duraprana"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/rem.webp" alt="Reman" loading="lazy"></div>
+              <div class="logo-item" title="PT Resource Equipment Indonesia (REL)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/rel.webp"
+                  alt="PT Resource Equipment Indonesia (REL)" loading="lazy"></div>
+              <div class="logo-item" title="WEIR Minerals"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/weir.webp" alt="WEIR Minerals" loading="lazy">
+              </div>
+              <div class="logo-item" title="LS Group (PT Sentosa Laju Sejahtera)"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/ls.webp"
+                  alt="LS Group (PT Sentosa Laju Sejahtera)" loading="lazy"></div>
+              <div class="logo-item" title="Badak LNG"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/badak.webp" alt="Badak LNG" loading="lazy"></div>
+              <div class="logo-item" title="United Tractors"><img decoding="async"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/ut.webp" alt="United Tractors" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- REGIONAL EXCELLENCE, NATIONAL REACH (BRANCH LEADERS) -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="max-w-3xl mb-16">
+            <span
+              class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3 block">MEET
+              OUR BRANCH LEADERS</span>
+            <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold">
+              Regional Excellence, National Reach
+            </h2>
+          </div>
+          <div class="flex flex-col items-center w-full">
+            <div class="relative flex flex-col items-center z-10">
+              <div
+                class="bg-surface-base border-2 border-primary-container/30 hover:border-primary-container rounded-lg p-6 flex flex-col items-center text-center shadow-sm w-full max-w-xs transition-all relative">
+                <div
+                  class="absolute -top-3 px-3 py-0.5 bg-primary-container text-white text-[10px] font-label-tag font-bold tracking-wider uppercase rounded-full shadow-sm">
+                  Head Office Executive</div><span
+                  class="font-label-ui text-label-ui font-bold text-text-heading leading-tight mb-1">Lazuardhi
+                  Hilman</span><span class="font-label-tag text-label-tag text-primary-container font-semibold">Jakarta
+                  — Head Office</span>
+                <p class="font-body-sm text-xs text-text-caption mt-2 mb-3">Nationwide Fleet Operations &amp; Corporate
+                  Oversight</p><a
+                  class="inline-flex items-center gap-1.5 text-primary-container font-label-tag text-label-tag font-semibold hover:underline bg-surface-subtle px-3 py-1.5 rounded border border-border-hairline hover:border-primary-container transition-all"
+                  href="#"><span class="">VIEW PROFILE</span><span
+                    class="material-symbols-outlined text-[14px]">arrow_forward</span></a>
+              </div>
+              <div class="w-0.5 h-8 bg-border-hairline"></div>
+            </div>
+            <div class="hidden lg:flex flex-col w-full items-center">
+              <div class="w-[80%] h-0.5 bg-border-hairline relative">
+                <div class="absolute left-0 top-0 w-0.5 h-6 bg-border-hairline"></div>
+                <div class="absolute left-[25%] top-0 w-0.5 h-6 bg-border-hairline"></div>
+                <div class="absolute left-[50%] top-0 w-0.5 h-6 bg-border-hairline -translate-x-1/2"></div>
+                <div class="absolute left-[75%] top-0 w-0.5 h-6 bg-border-hairline"></div>
+                <div class="absolute right-0 top-0 w-0.5 h-6 bg-border-hairline"></div>
+              </div>
+              <div class="h-6"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 w-full">
+              <div
+                class="bg-surface-base border border-border-hairline rounded-lg p-5 flex flex-col items-center text-center hover:border-primary-container transition-all relative shadow-sm">
+                <span class="font-label-ui text-label-ui font-semibold text-text-heading leading-tight mb-1">Budi
+                  Artoko</span><span class="font-label-tag text-label-tag text-text-caption mb-3">Balikpapan
+                  Branch</span><a
+                  class="mt-auto text-primary-container font-label-tag text-label-tag font-semibold hover:underline"
+                  href="#">VIEW PROFILE</a>
+              </div>
+              <div
+                class="bg-surface-base border border-border-hairline rounded-lg p-5 flex flex-col items-center text-center hover:border-primary-container transition-all relative shadow-sm">
+                <span class="font-label-ui text-label-ui font-semibold text-text-heading leading-tight mb-1">Farid
+                  Afandi</span><span class="font-label-tag text-label-tag text-text-caption mb-3">Samarinda
+                  Branch</span><a
+                  class="mt-auto text-primary-container font-label-tag text-label-tag font-semibold hover:underline"
+                  href="#">VIEW PROFILE</a>
+              </div>
+              <div
+                class="bg-surface-base border border-border-hairline rounded-lg p-5 flex flex-col items-center text-center hover:border-primary-container transition-all relative shadow-sm">
+                <span class="font-label-ui text-label-ui font-semibold text-text-heading leading-tight mb-1">M. Bahrul
+                  Huda</span><span class="font-label-tag text-label-tag text-text-caption mb-3">Palu Branch</span><a
+                  class="mt-auto text-primary-container font-label-tag text-label-tag font-semibold hover:underline"
+                  href="#">VIEW PROFILE</a>
+              </div>
+              <div
+                class="bg-surface-base border border-border-hairline rounded-lg p-5 flex flex-col items-center text-center hover:border-primary-container transition-all relative shadow-sm">
+                <span class="font-label-ui text-label-ui font-semibold text-text-heading leading-tight mb-1">Husen
+                  Rohimin</span><span class="font-label-tag text-label-tag text-text-caption mb-3">Gresik
+                  Branch</span><a
+                  class="mt-auto text-primary-container font-label-tag text-label-tag font-semibold hover:underline"
+                  href="#">VIEW PROFILE</a>
+              </div>
+              <div
+                class="bg-surface-base border border-border-hairline rounded-lg p-5 flex flex-col items-center text-center hover:border-primary-container transition-all relative shadow-sm">
+                <span
+                  class="font-label-ui text-label-ui font-semibold text-text-heading leading-tight mb-1">Syauqi</span><span
+                  class="font-label-tag text-label-tag text-text-caption mb-3">Papua (Timika) Hub</span><a
+                  class="mt-auto text-primary-container font-label-tag text-label-tag font-semibold hover:underline"
+                  href="#">VIEW PROFILE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ====== CABANG KAMI — 6 LOKASI DI SELURUH INDONESIA (MATCHING SSCWORKS.COM) ====== -->
+      <section class="ct-branches relative w-full overflow-hidden" id="ct-branches">
+        <style>
+          .ct-branches {
+            position: relative;
+            background:
+              linear-gradient(180deg,
+                rgba(11, 11, 10, 0.72) 0%,
+                rgba(15, 23, 42, 0.88) 45%,
+                rgba(11, 11, 10, 0.94) 100%),
+              url('https://sscworks.com/wp-content/uploads/2026/08/bg-scaled.webp') center/cover no-repeat;
+            background-color: #0b0b0a;
+            font-family: 'Work Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            padding: 96px 24px 104px;
+            box-sizing: border-box;
+            width: 100%;
+            scroll-margin-top: 100px;
+          }
+
+          .ct-branches-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .ct-branches-head {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 48px;
+          }
+
+          /* USER REQUEST: "warna teks Cabang Kami kamu ganti putih" */
+          .ct-eyebrow--white {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #ffffff !important;
+            margin-bottom: 16px;
+          }
+
+          .ct-eyebrow-dot--white {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ffffff !important;
+            display: inline-block;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+          }
+
+          #ct-branches .ct-branches-title {
+            font-family: 'Work Sans', sans-serif !important;
+            font-size: clamp(32px, 4.2vw, 52px);
+            font-weight: 600 !important;
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            color: #ffffff !important;
+            margin: 0 0 18px 0;
+          }
+
+          .ct-divider {
+            display: block;
+            width: 56px;
+            height: 3px;
+            border-radius: 2px;
+            background: #1D4ED8;
+            margin: 0 auto 20px;
+          }
+
+          .ct-branches-sub {
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.72);
+            margin: 0 auto;
+          }
+
+          .ct-map-layout {
+            display: block;
+            width: 100%;
+          }
+
+          .ct-map-wrap {
+            position: relative;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            width: 100%;
+            height: 520px;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+          }
+
+          .ct-leaflet-map {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            z-index: 1;
+          }
+
+          /* Floating Info Card */
+          .ct-map-info {
+            position: absolute !important;
+            left: 20px;
+            bottom: 20px;
+            z-index: 500 !important;
+            width: min(340px, calc(100% - 40px));
+            box-sizing: border-box;
+            font-family: 'Work Sans', sans-serif;
+            background: rgba(15, 23, 42, 0.94) !important;
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+            padding: 22px;
+            opacity: 0 !important;
+            transform: translateY(12px) !important;
+            pointer-events: none !important;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+          }
+
+          .ct-map-info.is-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
+          }
+
+          .ct-map-info-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #60a5fa;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+          }
+
+          .ct-map-info-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+          }
+
+          .ct-map-info-address {
+            font-size: 0.84rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0 0 10px 0;
+          }
+
+          .ct-map-info-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #93c5fd;
+            text-decoration: none;
+            margin-bottom: 14px;
+            transition: color 0.2s;
+          }
+
+          .ct-map-info-phone:hover {
+            color: #ffffff;
+            text-decoration: underline;
+          }
+
+          .ct-map-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+
+          .ct-map-info-directions {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: #1D4ED8;
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+          }
+
+          .ct-map-info-directions:hover {
+            background: #2563eb;
+          }
+
+          .ct-map-info-close {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+          }
+
+          .ct-map-info-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+          }
+
+          .ct-map-hint {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 500;
+            background: rgba(15, 23, 42, 0.85);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+          }
+
+          /* Branch Pill Buttons */
+          .ct-branch-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+          }
+
+          .ct-branch-list button {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 10px 22px;
+            border-radius: 9999px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+          }
+
+          .ct-branch-list button:hover {
+            background: rgba(29, 78, 216, 0.35);
+            border-color: #1D4ED8;
+            color: #ffffff;
+            transform: translateY(-2px);
+          }
+
+          .ct-branch-list button.is-active {
+            background: #1D4ED8;
+            border-color: #1D4ED8;
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(29, 78, 216, 0.45);
+            transform: translateY(-1px);
+          }
+
+          /* Leaflet map custom controls & pin styling */
+          .ct-leaflet-pin {
+            width: 32px;
+            height: 40px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.25s ease;
+          }
+
+          .ct-leaflet-pin:hover {
+            transform: scale(1.15) translateY(-4px);
+          }
+
+          .ct-leaflet-pin svg {
+            display: block;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
+          }
+
+          .leaflet-control-zoom a {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
+          }
+
+          .leaflet-control-zoom a:hover {
+            background: #1D4ED8 !important;
+          }
+
+          .leaflet-control-attribution {
+            background: rgba(15, 23, 42, 0.75) !important;
+            color: rgba(255, 255, 255, 0.55) !important;
+            font-size: 10px !important;
+          }
+
+          .leaflet-control-attribution a {
+            color: #93c5fd !important;
+          }
+
+          @media (max-width: 768px) {
+            .ct-branches {
+              padding: 64px 16px;
+            }
+
+            .ct-map-wrap {
+              height: 440px;
+            }
+
+            .ct-map-info {
+              left: 12px;
+              right: 12px;
+              bottom: 12px;
+              width: auto;
+              padding: 16px;
+            }
+
+            .ct-branch-list button {
+              padding: 8px 16px;
+              font-size: 0.82rem;
+            }
+          }
+        </style>
+
+        <div class="ct-branches-inner">
+          <div class="ct-branches-head">
+            <p class="ct-eyebrow--white">
+              <span class="ct-eyebrow-dot--white" aria-hidden="true"></span>
+              Cabang Kami
+            </p>
+            <h2 class="ct-branches-title">6 Lokasi di Seluruh Indonesia</h2>
+            <span class="ct-divider" aria-hidden="true"></span>
+            <p class="ct-branches-sub">Pilih pin di peta untuk melihat lokasi persis dan detail kontak cabang.</p>
+          </div>
+
+          <div class="ct-map-layout">
+            <div class="ct-map-wrap">
+              <div id="ctLeafletMap" class="ct-leaflet-map"></div>
+
+              <!-- Floating Branch Info Card inside map -->
+              <div class="ct-map-info" id="ctMapInfo">
+                <span class="ct-map-info-badge" id="ctInfoIndex">CABANG 01</span>
+                <h3 class="ct-map-info-name" id="ctInfoName">Balikpapan</h3>
+                <p class="ct-map-info-address" id="ctInfoAddress">Jl Marsma R. Iswahyudi No 502 Sepinggan, Balikpapan
+                  Selatan</p>
+                <a class="ct-map-info-phone" id="ctInfoPhone" href="tel:+62542761494">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                  <span>+62 542-761-494</span>
+                </a>
+                <div class="ct-map-actions">
+                  <a class="ct-map-info-directions" id="ctInfoDirections" href="#" target="_blank" rel="noopener">
+                    Petunjuk Arah
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                  </a>
+                  <button type="button" class="ct-map-info-close" onclick="sscBackToOverview()"
+                    title="Tutup kartu">Tutup</button>
+                </div>
+              </div>
+
+              <div class="ct-map-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Klik pin untuk melihat detail cabang
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Branch Pill Buttons -->
+          <div class="ct-branch-list" id="ctBranchList" aria-label="Daftar Cabang"></div>
+        </div>
+      </section>
+
+      <!-- LEAFLET & GOOGLE MAPS ENGINE SCRIPT -->
+      <script>
+        var sscBranches = {
+          balikpapan: {
+            index: '01',
+            name: 'Balikpapan (Hub)',
+            address: 'Jl Marsma R. Iswahyudi No 502 Sepinggan, Balikpapan Selatan',
+            phone: '+62 542-761-494',
+            lat: -1.2635,
+            lng: 116.8938
+          },
+          samarinda: {
+            index: '02',
+            name: 'Samarinda',
+            address: 'Jl Soekarno Hatta Km. 05 No 56-57, Loa Janan, Samarinda',
+            phone: '+62-541-7269-333',
+            lat: -0.5646,
+            lng: 117.1063
+          },
+          palu: {
+            index: '03',
+            name: 'Palu',
+            address: 'Jl Juanda No. 40, Lolu Utara, Palu Selatan',
+            phone: '+62-451-421-786',
+            lat: -0.9003,
+            lng: 119.8779
+          },
+          gresik: {
+            index: '04',
+            name: 'Gresik',
+            address: 'Jl Mayjend Sungkono No 38, Sekarkurung, Gresik, Jawa Timur',
+            phone: '+62-31-9910-2102',
+            lat: -7.1770,
+            lng: 112.6304
+          },
+          papua: {
+            index: '05',
+            name: 'Papua (Timika)',
+            address: 'Pondok Indah Amor Blok 16 No A5, Kuala Kencana, Timika',
+            phone: '+62 901 321 445',
+            lat: -4.5340,
+            lng: 136.8890
+          },
+          jakarta: {
+            index: '06',
+            name: 'Head Office — Jakarta',
+            address: 'South Quarter Tower A Lt 7, Jl. R.A. Kartini Kav 8, Cilandak Barat',
+            phone: '+62 856 010 42000',
+            lat: -6.2895,
+            lng: 106.7890
+          }
+        };
+
+        var sscMap = null, sscMarkers = {}, sscLockedKey = null;
+        var SSC_OVERVIEW_CENTER = [-2.5, 118.0];
+
+        // Batasan wilayah Indonesia (Sabang sampai Merauke)
+        var INDONESIA_BOUNDS = [
+          [-11.5, 94.0], // Batas Barat & Selatan (Rote, Jawa, Sabang)
+          [6.5, 142.0]   // Batas Timur & Utara (Aceh utara, Papua timur)
+        ];
+
+        function sscPinIcon(active) {
+          var fill = active ? '#ffffff' : '#1D4ED8';
+          var dot = active ? '#1D4ED8' : '#ffffff';
+          var size = active ? 36 : 28;
+          var svg =
+            '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + (size * 1.24) + '" viewBox="0 0 34 42">' +
+            '<path d="M17 0C7.6 0 0 7.6 0 17c0 12.7 17 25 17 25s17-12.3 17-25C34 7.6 26.4 0 17 0Z" fill="' + fill + '" stroke="rgba(0,0,0,0.35)" stroke-width="1.2"/>' +
+            '<circle cx="17" cy="17" r="6" fill="' + dot + '"/>' +
+            '</svg>';
+          return L.divIcon({
+            className: 'ct-leaflet-pin',
+            html: svg,
+            iconSize: [size, size * 1.24],
+            iconAnchor: [size / 2, size * 1.24]
+          });
+        }
+
+        function initSscMap() {
+          var mapEl = document.getElementById('ctLeafletMap');
+          if (!mapEl || typeof L === 'undefined') return;
+
+          var isMobile = window.innerWidth < 768;
+          // Batasan UX: Zoom minimal dibatasi maksimal satu wilayah Indonesia, tidak bisa zoom out sampai dunia/kecil
+          var minZoomVal = isMobile ? 4.2 : 4.8;
+          var initialZoom = isMobile ? 4.5 : 5.0;
+
+          sscMap = L.map(mapEl, {
+            center: SSC_OVERVIEW_CENTER,
+            zoom: initialZoom,
+            minZoom: minZoomVal,
+            maxZoom: 18,
+            maxBounds: INDONESIA_BOUNDS,
+            maxBoundsViscosity: 1.0, // Batas ketat: user tidak bisa menggeser atau zoom out keluar dari Indonesia
+            scrollWheelZoom: true,
+            zoomControl: true,
+            attributionControl: true
+          });
+
+          // Google Maps tile layer (standar peta resmi Google Maps)
+          L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: '&copy; Google Maps',
+            maxZoom: 19
+          }).addTo(sscMap);
+
+          // Pasang Marker 6 Cabang
+          Object.keys(sscBranches).forEach(function (key) {
+            var b = sscBranches[key];
+            var marker = L.marker([b.lat, b.lng], {
+              icon: sscPinIcon(false),
+              bubblingMouseEvents: false
+            }).addTo(sscMap);
+
+            marker.on('click', function (e) {
+              if (e && e.originalEvent) {
+                L.DomEvent.stopPropagation(e.originalEvent);
+              }
+              sscLockBranch(key);
+            });
+
+            sscMarkers[key] = marker;
+          });
+
+          sscMap.on('click', function () {
+            if (sscLockedKey) sscBackToOverview();
+          });
+
+          sscBindBranchUiOnce();
+        }
+
+        function sscLockBranch(key) {
+          if (sscLockedKey === key) {
+            sscBackToOverview();
+            return;
+          }
+          sscLockedKey = key;
+          var b = sscBranches[key];
+
+          Object.keys(sscMarkers).forEach(function (k) {
+            sscMarkers[k].setIcon(sscPinIcon(k === key));
+          });
+
+          sscMap.flyTo([b.lat, b.lng], 15, { duration: 1.2 });
+          sscUpdateInfoCard(key);
+          sscUpdateBranchListActive(key);
+        }
+
+        function sscBackToOverview() {
+          sscLockedKey = null;
+          Object.keys(sscMarkers).forEach(function (k) {
+            sscMarkers[k].setIcon(sscPinIcon(false));
+          });
+          var isMobile = window.innerWidth < 768;
+          sscMap.flyTo(SSC_OVERVIEW_CENTER, isMobile ? 4.5 : 5.0, { duration: 1.0 });
+          sscUpdateInfoCard(null);
+          sscUpdateBranchListActive(null);
+        }
+
+        function sscUpdateInfoCard(key) {
+          var infoCard = document.getElementById('ctMapInfo');
+          if (!infoCard) return;
+
+          if (!key) {
+            infoCard.classList.remove('is-visible');
+            return;
+          }
+          var b = sscBranches[key];
+          document.getElementById('ctInfoIndex').textContent = 'CABANG ' + b.index;
+          document.getElementById('ctInfoName').textContent = b.name;
+          document.getElementById('ctInfoAddress').textContent = b.address;
+
+          var phoneEl = document.getElementById('ctInfoPhone');
+          if (b.phone) {
+            phoneEl.querySelector('span').textContent = b.phone;
+            phoneEl.href = 'tel:' + b.phone.replace(/[^0-9+]/g, '');
+            phoneEl.style.display = 'inline-flex';
+          } else {
+            phoneEl.style.display = 'none';
+          }
+
+          var query = encodeURIComponent(b.address);
+          document.getElementById('ctInfoDirections').href = 'https://www.google.com/maps/dir/?api=1&destination=' + query;
+
+          infoCard.classList.add('is-visible');
+        }
+
+        function sscUpdateBranchListActive(key) {
+          var listWrap = document.getElementById('ctBranchList');
+          if (!listWrap) return;
+          listWrap.querySelectorAll('button').forEach(function (btn) {
+            btn.classList.toggle('is-active', btn.dataset.branch === key);
+          });
+        }
+
+        var sscBranchUiBound = false;
+        function sscBindBranchUiOnce() {
+          if (sscBranchUiBound) return;
+          sscBranchUiBound = true;
+
+          var listWrap = document.getElementById('ctBranchList');
+          if (!listWrap) return;
+
+          Object.keys(sscBranches).forEach(function (key) {
+            var b = sscBranches[key];
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.textContent = b.name;
+            btn.dataset.branch = key;
+            btn.addEventListener('click', function () { sscLockBranch(key); });
+            listWrap.appendChild(btn);
+          });
+        }
+
+        // Backward compatibility handler
+        function selectBranch(name) {
+          var k = (name || '').toLowerCase();
+          if (k.indexOf('balik') > -1) sscLockBranch('balikpapan');
+          else if (k.indexOf('samar') > -1) sscLockBranch('samarinda');
+          else if (k.indexOf('palu') > -1) sscLockBranch('palu');
+          else if (k.indexOf('gresik') > -1) sscLockBranch('gresik');
+          else if (k.indexOf('papua') > -1 || k.indexOf('timika') > -1) sscLockBranch('papua');
+          else if (k.indexOf('jakarta') > -1) sscLockBranch('jakarta');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          if (typeof L !== 'undefined') {
+            initSscMap();
+          } else {
+            window.addEventListener('load', initSscMap);
+          }
+        });
+      </script>
+      <!-- TESTIMONIALS & RELIABILITY -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 flex flex-col">
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3">TESTIMONIALS</span>
+              <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold mb-6">
+                Trusted by teams who can't afford downtime.
+              </h2>
+              <div class="flex items-center gap-8 pt-4">
+                <div class="flex flex-col">
+                  <span class="font-metric-numeral text-metric-numeral text-text-heading font-bold">4.9</span>
+                  <span class="font-body-sm text-body-sm text-text-caption">Avg. Fleet Rating</span>
+                </div>
+                <div class="h-10 w-px bg-border-hairline"></div>
+                <div class="flex flex-col">
+                  <span class="font-metric-numeral text-metric-numeral font-bold text-text-heading">100%</span>
+                  <span class="font-body-sm text-body-sm text-text-caption">On-Schedule Delivery</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-surface-base border border-border-hairline rounded-lg p-6 flex flex-col">
+                <p class="font-body-md text-body-md text-text-body mb-6 flex-1">
+                  "SSC Works provided fast and accurate service. Our heavy equipment components were back in operation
+                  ahead of schedule with exceptional quality."
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border-hairline">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-subtle font-label-ui font-bold text-text-heading flex items-center justify-center">
+                    BL
+                  </div>
+                  <div>
+                    <p class="font-label-ui text-label-ui font-semibold text-text-heading">Badak LNG</p>
+                    <div class="flex text-amber-500 text-[14px]">
+                      <span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span
+                        class="">★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-surface-base border border-border-hairline rounded-lg p-6 flex flex-col">
+                <p class="font-body-md text-body-md text-text-body mb-6 flex-1">
+                  "The SSC Works team was extremely professional. From inspection to delivery, everything was seamless
+                  and highly efficient."
+                </p>
+                <div class="flex items-center gap-3 pt-4 border-t border-border-hairline">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-subtle font-label-ui font-bold text-text-heading flex items-center justify-center">
+                    M
+                  </div>
+                  <div>
+                    <p class="font-label-ui text-label-ui font-semibold text-text-heading">MacMahon</p>
+                    <div class="flex text-amber-500 text-[14px]">
+                      <span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span
+                        class="">★</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- DIRECT INQUIRY & CONTACT SECTION -->
+        <section class="w-full bg-surface-base py-20 lg:py-24" id="contact">
+          <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <!-- Centered Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+              <span
+                class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3 block">CONTACT
+                US</span>
+              <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold">
+                Send us a message
+              </h2>
+            </div>
+
+            <!-- Centered Inquiry Form -->
+            <div class="bg-surface-base border border-border-hairline rounded-2xl p-6 sm:p-10 shadow-sm">
+              <form class="space-y-6" id="contact-form" onsubmit="event.preventDefault(); submitInquiry();">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
+                      for="contact-name">Name *</label>
+                    <input
+                      class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                      id="contact-name" required="" type="text">
+                  </div>
+                  <div>
+                    <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
+                      for="contact-email">Email *</label>
+                    <input
+                      class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                      id="contact-email" required="" type="email">
+                  </div>
+                </div>
+                <div>
+                  <label class="font-label-ui text-label-ui font-semibold text-text-heading block mb-2"
+                    for="contact-phone">Phone (optional)</label>
+                  <input
+                    class="w-full bg-surface-base border border-border-hairline rounded-lg px-4 py-3 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                    id="contact-phone" type="tel">
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <label class="font-label-ui text-label-ui font-semibold text-text-heading"
+                      for="contact-message">Message *</label>
+                    <span class="font-body-sm text-body-sm text-text-caption" id="char-count">0 / 600</span>
+                  </div>
+                  <textarea
+                    class="w-full bg-surface-base border border-border-hairline rounded-lg p-4 font-body-sm text-body-sm text-text-heading focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all"
+                    id="contact-message" maxlength="600"
+                    oninput="document.getElementById('char-count').innerText = this.value.length + ' / 600'" required=""
+                    rows="4"></textarea>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                  <span class="font-body-sm text-body-sm text-text-caption">We reply within 1 business day.</span>
+                  <button
+                    class="w-full sm:w-auto inline-flex items-center justify-center bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-8 py-3.5 rounded-lg transition-all shadow-sm"
+                    type="submit">
+                    <span class="">Submit Inquiry</span>
+                    <span class="material-symbols-outlined ml-2 text-[18px]">send</span>
+                  </button>
+                </div>
+                <!-- Success notification box -->
+                <div
+                  class="hidden p-4 bg-surface-subtle border border-border-hairline rounded-lg text-primary-container font-label-ui text-label-ui flex items-center gap-3"
+                  id="form-success">
+                  <span class="material-symbols-outlined text-primary-container">check_circle</span>
+                  <span class="">Thanks — your message has been sent. We'll get back to you within 1 business
+                    day.</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- STAY CONNECTED STRIP (EXACT SSCWORKS.COM STYLING) -->
+        <section class="ssub-strip" id="sscSubscribeStrip">
+          <div class="ssub-inner">
+            <div class="ssub-text">
+              <span class="ssub-eyebrow">
+                <span class="ssub-eyebrow-dot" aria-hidden="true"></span>
+                Stay Connected
+              </span>
+              <h2 class="ssub-title">Get Updates From SSC Works</h2>
+              <p class="ssub-sub">News, project highlights, and career opportunities — straight to your inbox.</p>
+            </div>
+
+            <form class="ssub-form" id="sscSubscribeForm"
+              onsubmit="event.preventDefault(); document.getElementById('sscSubscribeSuccess').classList.remove('hidden'); this.reset();">
+              <div class="ssub-field">
+                <input class="ssub-input" type="email" id="sscSubscribeEmail" name="email"
+                  placeholder="Your email address" required="" autocomplete="email">
+                <span class="ssub-error" id="sscSubscribeError">Please enter a valid email address.</span>
+              </div>
+              <button type="submit" class="ssub-btn" id="sscSubscribeBtn">
+                <span class="ssub-btn-label">Subscribe</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <p class="ssub-success hidden" id="sscSubscribeSuccess" role="status" aria-live="polite">
+            Thanks for subscribing — you'll hear from us soon.
+          </p>
+        </section>
+
+        <style>
+          /* =====================================================
+   STYLE — Stay Connected (Original sscworks.com)
+   ===================================================== */
+          :root {
+            --ssub-ink: #1C1A17;
+            --ssub-muted: #a8a099;
+            --ssub-accent: #2563EB;
+            --ssub-line: rgba(255, 255, 255, 0.14);
+            --ssub-bg: #171512;
+          }
+
+          .ssub-strip {
+            position: relative;
+            background: var(--ssub-bg);
+            font-family: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+            padding: 56px 24px;
+            box-sizing: border-box;
+            width: 100%;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+          }
+
+          .ssub-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+          }
+
+          .ssub-text {
+            max-width: 520px;
+          }
+
+          .ssub-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #8fb0f5;
+            margin: 0 0 14px 0;
+            font-family: 'Work Sans', sans-serif;
+          }
+
+          .ssub-eyebrow-dot {
+            width: 16px;
+            height: 1px;
+            background: #8fb0f5;
+            display: inline-block;
+            flex-shrink: 0;
+          }
+
+          .ssub-title {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(22px, 2.6vw, 32px);
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            line-height: 1.25;
+          }
+
+          .ssub-sub {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--ssub-muted);
+            margin: 0;
+          }
+
+          .ssub-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+            margin: 0;
+          }
+
+          .ssub-field {
+            position: relative;
+          }
+
+          .ssub-strip input.ssub-input[type="email"] {
+            width: 280px;
+            max-width: 100%;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 15px 20px !important;
+            border-radius: 999px !important;
+            border: 1px solid var(--ssub-line) !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            color: #ffffff !important;
+            font-family: 'Work Sans', sans-serif !important;
+            font-size: 0.92rem !important;
+            line-height: 1.2 !important;
+            box-shadow: none !important;
+            outline: none !important;
+            box-sizing: border-box;
+            transition: border-color .25s ease, background .25s ease;
+          }
+
+          .ssub-strip input.ssub-input[type="email"]::placeholder {
+            color: #7a7367 !important;
+            opacity: 1;
+          }
+
+          .ssub-strip input.ssub-input[type="email"]:focus {
+            border-color: var(--ssub-accent) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+          }
+
+          .ssub-strip .ssub-field.has-error input.ssub-input[type="email"] {
+            border-color: #e05a4a !important;
+          }
+
+          .ssub-error {
+            display: none;
+            position: absolute;
+            left: 20px;
+            top: 100%;
+            margin-top: 6px;
+            font-size: 0.74rem;
+            color: #f0958a;
+            white-space: nowrap;
+          }
+
+          .ssub-field.has-error .ssub-error {
+            display: block;
+          }
+
+          .ssub-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 26px;
+            border: none;
+            border-radius: 999px;
+            background: var(--ssub-accent);
+            color: #ffffff;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1.2;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background .25s ease, transform .2s ease;
+          }
+
+          .ssub-btn:hover {
+            background: #1d4fc4;
+            transform: translateY(-2px);
+          }
+
+          .ssub-btn:disabled {
+            opacity: .6;
+            cursor: default;
+            transform: none;
+          }
+
+          .ssub-btn svg {
+            transition: transform .25s ease;
+          }
+
+          .ssub-btn:hover svg {
+            transform: translateX(3px);
+          }
+
+          .ssub-success {
+            max-width: 1180px;
+            margin: 18px auto 0;
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: rgba(37, 99, 235, 0.12);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #ffffff;
+            font-size: 0.85rem;
+            text-align: center;
+          }
+
+          @media (max-width: 760px) {
+            .ssub-inner {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+
+            .ssub-form {
+              width: 100%;
+            }
+
+            .ssub-field {
+              flex: 1;
+              min-width: 0;
+            }
+
+            .ssub-strip input.ssub-input[type="email"] {
+              width: 100%;
+            }
+
+            .ssub-btn {
+              flex-shrink: 0;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .ssub-strip {
+              padding: 44px 20px;
+            }
+
+            .ssub-form {
+              flex-direction: column;
+              align-items: stretch;
+            }
+
+            .ssub-field {
+              width: 100%;
+            }
+
+            .ssub-btn {
+              width: 100%;
+              justify-content: center;
+            }
+
+            .ssub-error {
+              position: static;
+              display: none;
+              margin: 6px 0 0 20px;
+            }
+
+            .ssub-field.has-error .ssub-error {
+              display: block;
+            }
+          }
+        </style>
+        <!-- MODAL: VIDEO PLAYER OVERLAY -->
+        <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
+          id="video-modal">
+          <div
+            class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
+              <span class="font-label-ui text-label-ui font-semibold text-text-heading">SSC Works — Corporate Workshop
+                Tour</span>
+              <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
+                onclick="document.getElementById('video-modal').classList.add('hidden')" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+            <div class="relative aspect-video bg-black flex items-center justify-center">
+              <img alt="Video preview thumbnail" class="w-full h-full object-cover opacity-80"
+                src="https://lh3.googleusercontent.com/aida/AEtjO1WFedkV54x__V-1mGPWasefKBA0lscUWE-zhPidTDlQb0Ipcv4ZKoTDyr9iuYIWCoj01HgqqLM0AVy4IfuSKp53KdCUGhSXwiMCTypnF11GftNMaKzwWLyE9rlWyweDDaGNfyoLEwB6BvxFw27CfDSRw1KstYkWLo1UhHUc6wzNls2l7083dG9aqdnoOMK8pdLd4SfXUC4XqZCBKfgRfS-tw-iSKMi8K4py6Qzd_wqIq0_IEItAS09Bvxo">
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-on-primary bg-text-heading/40">
+                <span class="material-symbols-outlined text-[64px] mb-2 text-primary-container">play_circle</span>
+                <p class="font-headline-sm text-headline-sm font-semibold">Video Stream Demonstration</p>
+                <p class="font-body-sm text-body-sm text-on-primary/80 max-w-md mt-2">Machining, welding, thermal spray
+                  coatings, and final hydrostatic testing workflows across Balikpapan &amp; Gresik plants.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL: ISO CERTIFICATE VIEWER -->
+        <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
+          id="cert-modal">
+          <div
+            class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
+              <span class="font-label-ui text-label-ui font-semibold text-text-heading" id="cert-modal-title">ISO
+                Certificate Verification</span>
+              <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
+                onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
+                <span class="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+            <div class="p-8 flex flex-col items-center text-center bg-surface-base">
+              <div
+                class="w-24 h-24 rounded-full bg-surface-subtle border border-border-hairline flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-primary-container text-[48px]">verified</span>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm font-semibold text-text-heading mb-2" id="cert-modal-header">
+                ISO 9001:2015 Audit</h4>
+              <p class="font-body-sm text-body-sm text-text-caption max-w-md mb-8" id="cert-modal-desc">
+                Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.
+              </p>
+              <div
+                class="w-full bg-surface-subtle p-4 rounded-lg border border-border-hairline text-left text-xs font-mono text-text-caption space-y-1 mb-6">
+                <div class="">Accreditation: KAN / International Accreditation Forum</div>
+                <div class="">Status: Active · Valid through 2027</div>
+                <div class="">Audit Scope: Remanufacturing &amp; Engineering Services</div>
+              </div>
+              <div class="flex items-center gap-4">
+                <button
+                  class="inline-flex items-center gap-2 bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-6 py-2.5 rounded-lg transition-colors"
+                  onclick="alert('Opening official high-resolution scan document...')" type="button">
+                  <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                  <span class="">Buka ukuran asli</span>
+                </button>
+                <button
+                  class="font-label-ui text-label-ui px-4 py-2.5 rounded-lg border border-border-hairline text-text-heading hover:bg-surface-subtle transition-colors"
+                  onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
+                  Tutup
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function selectBranch(name, address, phone, desc) {
+            document.getElementById('branch-title').innerText = name + ' Workshop';
+            document.getElementById('branch-address').innerText = address + ' — ' + desc;
+            document.getElementById('branch-phone').innerText = 'Tel: ' + phone;
+          }
+
+          function openCertModal(title, desc) {
+            document.getElementById('cert-modal-title').innerText = title;
+            document.getElementById('cert-modal-header').innerText = title;
+            document.getElementById('cert-modal-desc').innerText = desc;
+            document.getElementById('cert-modal').classList.remove('hidden');
+          }
+
+          function submitInquiry() {
+            document.getElementById('form-success').classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            document.getElementById('char-count').innerText = '0 / 600';
+          }
+
+          // =====================================================
+          // HERO 3D PARTICLE MORPHING SYSTEM (matching sscworks.com)
+          // =====================================================
+          (function () {
+            const mount = document.getElementById('hero-particle-mount');
+            if (!mount || typeof THREE === 'undefined') return;
+
+            const slidesData = [
+              {
+                title: 'Fast & Efficient Repairs For All Heavy Equipment and Vehicles',
+                desc: 'Highly trained & reliable repair team certified around the clock with advanced cutting-edge workshop machinery, mobile line boring, and ISO-standard metallurgy.',
+                label: 'EXCAVATOR BOOM & TRACKS',
+                idx: '01'
+              },
+              {
+                title: 'Precision Machining & Industrial Gearbox Overhauls',
+                desc: 'Equipped with heavy-duty horizontal turning lathes, precision gear cutting, and ISO metallurgical crack testing to eliminate unexpected breakdowns.',
+                label: 'INDUSTRIAL GEAR & DRIVE',
+                idx: '02'
+              },
+              {
+                title: 'Certified Hydraulic Engineering & Heavy Crane Solutions',
+                desc: 'Specialized mobile line boring, hydraulic cylinder restoration, and structural boom reinforcement engineered for rapid mining deployment.',
+                label: 'MOBILE CRANE & BOOM',
+                idx: '03'
+              }
+            ];
+
+            let currentSlide = 0;
+            let isPlaying = true;
+            let autoTimer = null;
+
+            const PARTICLE_COUNT = window.innerWidth < 768 ? 13000 : 24000;
+
+            // Bezier curve sampler for procedural shapes
+            function cubicBezier(p0, p1, p2, p3, t) {
+              const mt = 1 - t;
+              return [
+                mt * mt * mt * p0[0] + 3 * mt * mt * t * p1[0] + 3 * mt * t * t * p2[0] + t * t * t * p3[0],
+                mt * mt * mt * p0[1] + 3 * mt * mt * t * p1[1] + 3 * mt * t * t * p2[1] + t * t * t * p3[1]
+              ];
+            }
+
+            function samplePath(segs, count, spread) {
+              const out = [];
+              for (let i = 0; i < count; i++) {
+                const seg = segs[(Math.random() * segs.length) | 0];
+                const t = Math.random();
+                const [x, y] = cubicBezier(seg[0], seg[1], seg[2], seg[3], t);
+                const [x2, y2] = cubicBezier(seg[0], seg[1], seg[2], seg[3], Math.min(t + 0.01, 1));
+                let dx = x2 - x, dy = y2 - y;
+                const len = Math.hypot(dx, dy) || 1;
+                dx /= len; dy /= len;
+                const nx = -dy, ny = dx;
+                const edge = Math.sin(Math.PI * t);
+                const jitterAmp = spread * (0.2 + 0.8 * Math.random()) * (0.3 + 0.7 * edge);
+                const jitter = (Math.random() - 0.5) * 2;
+                out.push([
+                  x + nx * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                  y + ny * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                  (Math.random() - 0.5) * 45
+                ]);
+              }
+              return out;
+            }
+
+            // 1. Excavator Shape
+            function buildExcavator(count) {
+              const segs = [
+                [[-160, -130], [-160, -100], [-130, -85], [130, -85]],
+                [[130, -85], [160, -100], [160, -130], [-160, -130]],
+                [[-140, -110], [-40, -110], [40, -110], [140, -110]],
+                [[-130, -85], [-130, -20], [-90, 15], [-20, 15]],
+                [[-20, 15], [-20, -85], [-70, -85], [-130, -85]],
+                [[-120, -15], [-100, 5], [-40, 5], [-30, -15]],
+                [[-130, -85], [-160, -65], [-160, -25], [-130, -20]],
+                [[-15, -20], [30, 45], [85, 115], [130, 145]],
+                [[-5, -30], [40, 35], [95, 105], [135, 145]],
+                [[-5, -5], [20, 25], [50, 55], [80, 80]],
+                [[130, 145], [180, 115], [220, 65], [240, 10]],
+                [[125, 140], [175, 110], [215, 60], [235, 10]],
+                [[240, 10], [280, -15], [270, -65], [220, -55]],
+                [[220, -55], [200, -35], [210, -5], [240, 10]],
+                [[270, -65], [290, -80], [280, -75], [260, -65]]
+              ];
+              return samplePath(segs, count, 26);
+            }
+
+            // 2. Heavy Industrial Gear Shape
+            function buildGear(count) {
+              const segs = [];
+              const teeth = 12;
+              const rOuter = 165;
+              const rInner = 115;
+              for (let i = 0; i < teeth; i++) {
+                const a0 = (i / teeth) * Math.PI * 2;
+                const a1 = ((i + 0.35) / teeth) * Math.PI * 2;
+                const a2 = ((i + 0.65) / teeth) * Math.PI * 2;
+                const a3 = ((i + 1.0) / teeth) * Math.PI * 2;
+                segs.push([
+                  [Math.cos(a0) * rInner, Math.sin(a0) * rInner],
+                  [Math.cos(a0) * rOuter, Math.sin(a0) * rOuter],
+                  [Math.cos(a1) * rOuter, Math.sin(a1) * rOuter],
+                  [Math.cos(a1) * rInner, Math.sin(a1) * rInner]
+                ]);
+                segs.push([
+                  [Math.cos(a1) * rInner, Math.sin(a1) * rInner],
+                  [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                  [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                  [Math.cos(a3) * rInner, Math.sin(a3) * rInner]
+                ]);
+              }
+              for (let i = 0; i < 6; i++) {
+                const a0 = (i / 6) * Math.PI * 2;
+                const a1 = ((i + 1) / 6) * Math.PI * 2;
+                const rHub = 45;
+                segs.push([
+                  [Math.cos(a0) * rHub, Math.sin(a0) * rHub],
+                  [Math.cos(a0) * rHub, Math.sin(a0) * rHub],
+                  [Math.cos(a1) * rHub, Math.sin(a1) * rHub],
+                  [Math.cos(a1) * rHub, Math.sin(a1) * rHub]
+                ]);
+                const spA = a0 + Math.PI / 6;
+                const spR = 78;
+                const spRad = 20;
+                const sx = Math.cos(spA) * spR, sy = Math.sin(spA) * spR;
+                segs.push([
+                  [sx - spRad, sy], [sx, sy + spRad], [sx + spRad, sy], [sx, sy - spRad]
+                ]);
+              }
+              return samplePath(segs, count, 20);
+            }
+
+            // 3. Mobile Crane Shape
+            function buildCrane(count) {
+              const segs = [
+                [[-200, -125], [-200, -85], [180, -85], [180, -125]],
+                [[-200, -125], [-50, -125], [50, -125], [180, -125]],
+                [[-160, -140], [-160, -125], [-120, -125], [-120, -140]],
+                [[-80, -140], [-80, -125], [-40, -125], [-40, -140]],
+                [[60, -140], [60, -125], [100, -125], [100, -140]],
+                [[120, -140], [120, -125], [160, -125], [160, -140]],
+                [[120, -85], [120, -35], [165, -35], [180, -85]],
+                [[-180, -125], [-205, -145], [-205, -150], [-185, -150]],
+                [[160, -125], [185, -145], [185, -150], [165, -150]],
+                [[-120, -85], [-120, -25], [-40, -25], [-40, -85]],
+                [[-60, -20], [-60, 15], [-40, 15], [-40, -20]],
+                [[-50, 5], [30, 65], [120, 135], [210, 195]],
+                [[-40, -5], [40, 55], [130, 125], [215, 185]],
+                [[0, 35], [20, 50], [40, 45], [60, 80]],
+                [[70, 75], [90, 110], [120, 105], [140, 140]],
+                [[150, 135], [170, 165], [190, 160], [210, 185]],
+                [[210, 195], [210, 145], [210, 95], [210, 45]],
+                [[205, 45], [215, 45], [215, 25], [205, 25]],
+                [[210, 25], [210, 10], [220, 5], [215, -5]]
+              ];
+              return samplePath(segs, count, 24);
+            }
+
+            // Auto-normalize and center shapes so they never get cut off
+            function normalizeAndCenter(pts, targetSpan, shiftX, shiftY) {
+              shiftX = shiftX || 0;
+              shiftY = shiftY || 0;
+              let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+              for (let i = 0; i < pts.length; i++) {
+                const x = pts[i][0], y = pts[i][1];
+                if (x < minX) minX = x;
+                if (x > maxX) maxX = x;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+              }
+              const cx = (minX + maxX) / 2;
+              const cy = (minY + maxY) / 2;
+              const span = Math.max(maxX - minX, maxY - minY) || 1;
+              const scale = targetSpan / span;
+
+              for (let i = 0; i < pts.length; i++) {
+                pts[i][0] = (pts[i][0] - cx) * scale + shiftX;
+                pts[i][1] = (pts[i][1] - cy) * scale + shiftY;
+                pts[i][2] = (pts[i][2] || 0) * scale;
+              }
+              return pts;
+            }
+
+            // Properly proportioned shapes, shifted slightly to the left (-22px) without touching text
+            const shapeSets = [
+              normalizeAndCenter(buildExcavator(PARTICLE_COUNT), 340, -22, -6),
+              normalizeAndCenter(buildGear(PARTICLE_COUNT), 330, -22, 0),
+              normalizeAndCenter(buildCrane(PARTICLE_COUNT), 345, -22, 5)
+            ];
+
+            // Three.js Scene Setup
+            const scene = new THREE.Scene();
+            const width = mount.clientWidth || 600;
+            const height = mount.clientHeight || 580;
+            const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 2000);
+            camera.position.set(0, 0, 560);
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(width, height);
+            mount.appendChild(renderer.domElement);
+
+            // Soft circular sprite
+            function makeSprite() {
+              const c = document.createElement('canvas');
+              c.width = c.height = 64;
+              const ctx = c.getContext('2d');
+              const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+              g.addColorStop(0, 'rgba(255, 255, 255, 1)');
+              g.addColorStop(0.35, 'rgba(96, 165, 250, 0.95)');
+              g.addColorStop(0.7, 'rgba(37, 99, 235, 0.35)');
+              g.addColorStop(1, 'rgba(29, 78, 216, 0)');
+              ctx.fillStyle = g;
+              ctx.fillRect(0, 0, 64, 64);
+              return new THREE.CanvasTexture(c);
+            }
+
+            const positions = new Float32Array(PARTICLE_COUNT * 3);
+            const basePos = new Float32Array(PARTICLE_COUNT * 3);
+            const fromPos = new Float32Array(PARTICLE_COUNT * 3);
+            const toPos = new Float32Array(PARTICLE_COUNT * 3);
+            const phase = new Float32Array(PARTICLE_COUNT);
+            const speed = new Float32Array(PARTICLE_COUNT);
+
+            const initialSet = shapeSets[0];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+              const p = initialSet[i % initialSet.length];
+              fromPos[i * 3] = toPos[i * 3] = basePos[i * 3] = positions[i * 3] = p[0];
+              fromPos[i * 3 + 1] = toPos[i * 3 + 1] = basePos[i * 3 + 1] = positions[i * 3 + 1] = p[1];
+              fromPos[i * 3 + 2] = toPos[i * 3 + 2] = basePos[i * 3 + 2] = positions[i * 3 + 2] = p[2];
+              phase[i] = Math.random() * Math.PI * 2;
+              speed[i] = 0.5 + Math.random() * 1.0;
+            }
+
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const material = new THREE.PointsMaterial({
+              size: 2.6,
+              map: makeSprite(),
+              transparent: true,
+              depthWrite: false,
+              opacity: 0.95,
+              blending: THREE.NormalBlending,
+              color: new THREE.Color('#0F172A')
+            });
+
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+
+            let morphT = 1;
+            const MORPH_DURATION = 1600;
+            let morphStart = 0;
+
+            function easeInOutCubic(t) {
+              return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            }
+
+            function goToSlide(idx) {
+              if (idx < 0 || idx >= slidesData.length) return;
+              const targetSet = shapeSets[idx];
+              for (let i = 0; i < PARTICLE_COUNT; i++) {
+                fromPos[i * 3] = basePos[i * 3];
+                fromPos[i * 3 + 1] = basePos[i * 3 + 1];
+                fromPos[i * 3 + 2] = basePos[i * 3 + 2];
+                const p = targetSet[i % targetSet.length];
+                toPos[i * 3] = p[0];
+                toPos[i * 3 + 1] = p[1];
+                toPos[i * 3 + 2] = p[2];
+              }
+              morphT = 0;
+              morphStart = performance.now();
+              currentSlide = idx;
+
+              // Update UI Elements with smooth fade
+              const data = slidesData[idx];
+              const headline = document.getElementById('hero-headline');
+              const subheadline = document.getElementById('hero-subheadline');
+              const badge = document.getElementById('particle-shape-label');
+              const idxBadge = document.getElementById('particle-current-idx');
+
+              if (headline) {
+                headline.style.opacity = '0';
+                headline.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                  headline.innerText = data.title;
+                  headline.style.opacity = '1';
+                  headline.style.transform = 'translateY(0)';
+                }, 200);
+              }
+              if (subheadline) {
+                subheadline.style.opacity = '0';
+                subheadline.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                  subheadline.innerText = data.desc;
+                  subheadline.style.opacity = '1';
+                  subheadline.style.transform = 'translateY(0)';
+                }, 250);
+              }
+              if (badge) badge.innerText = data.label;
+              if (idxBadge) idxBadge.innerText = data.idx;
+
+              // Update indicators
+              const indContainer = document.getElementById('hero-indicators');
+              if (indContainer) {
+                const btns = indContainer.querySelectorAll('button');
+                btns.forEach((btn, i) => {
+                  if (i === idx) {
+                    btn.className = 'h-1.5 w-10 bg-primary-container rounded-full transition-all';
+                  } else {
+                    btn.className = 'h-1.5 w-3 bg-border-hairline hover:bg-primary-container/50 rounded-full transition-all';
+                  }
+                });
+              }
+            }
+
+            // Auto cycle timer
+            function resetTimer() {
+              if (autoTimer) clearInterval(autoTimer);
+              if (isPlaying) {
+                autoTimer = setInterval(function () {
+                  goToSlide((currentSlide + 1) % slidesData.length);
+                }, 5500);
+              }
+            }
+            resetTimer();
+
+            // Indicators click
+            const indContainer = document.getElementById('hero-indicators');
+            if (indContainer) {
+              const btns = indContainer.querySelectorAll('button');
+              btns.forEach((btn, i) => {
+                btn.addEventListener('click', function () {
+                  goToSlide(i);
+                  resetTimer();
+                });
+              });
+            }
+
+            // Play / Pause button
+            const playPauseBtn = document.getElementById('hero-play-pause');
+            if (playPauseBtn) {
+              playPauseBtn.addEventListener('click', function () {
+                isPlaying = !isPlaying;
+                const icon = playPauseBtn.querySelector('.material-symbols-outlined');
+                if (icon) icon.innerText = isPlaying ? 'pause' : 'play_arrow';
+                resetTimer();
+              });
+            }
+
+            // Interactive mouse 3D tilt
+            let targetRotX = 0, targetRotY = 0;
+            const mountCard = mount.parentElement;
+            if (mountCard) {
+              mountCard.addEventListener('mousemove', function (e) {
+                const rect = mount.getBoundingClientRect();
+                const mx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                const my = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+                targetRotY = mx * 0.35;
+                targetRotX = -my * 0.28;
+              });
+
+              mountCard.addEventListener('mouseleave', function () {
+                targetRotX = 0;
+                targetRotY = 0;
+              });
+            }
+
+            // Window resize
+            window.addEventListener('resize', function () {
+              if (!mount) return;
+              const w = mount.clientWidth;
+              const h = mount.clientHeight;
+              camera.aspect = w / h;
+              camera.updateProjectionMatrix();
+              renderer.setSize(w, h);
+            });
+
+            // Animation Loop
+            const clock = new THREE.Clock();
+            function animate() {
+              requestAnimationFrame(animate);
+              const t = clock.getElapsedTime();
+              const now = performance.now();
+
+              if (morphT < 1) {
+                const raw = Math.min((now - morphStart) / MORPH_DURATION, 1);
+                morphT = raw;
+                const e = easeInOutCubic(raw);
+                for (let i = 0; i < PARTICLE_COUNT; i++) {
+                  const i3 = i * 3;
+                  basePos[i3] = fromPos[i3] + (toPos[i3] - fromPos[i3]) * e;
+                  basePos[i3 + 1] = fromPos[i3 + 1] + (toPos[i3 + 1] - fromPos[i3 + 1]) * e;
+                  basePos[i3 + 2] = fromPos[i3 + 2] + (toPos[i3 + 2] - fromPos[i3 + 2]) * e;
+                }
+              }
+
+              const arr = geometry.attributes.position.array;
+              for (let i = 0; i < PARTICLE_COUNT; i++) {
+                const idx = i * 3;
+                const ph = phase[i];
+                const sp = speed[i];
+                const nx = Math.sin(t * sp + ph) * 1.4;
+                const ny = Math.cos(t * sp * 0.8 + ph * 1.3) * 1.4;
+                const nz = Math.sin(t * sp * 0.6 + ph * 0.7) * 2.8;
+                arr[idx] = basePos[idx] + nx;
+                arr[idx + 1] = basePos[idx + 1] + ny;
+                arr[idx + 2] = basePos[idx + 2] + nz;
+              }
+              geometry.attributes.position.needsUpdate = true;
+
+              // Smooth inertia tilt
+              points.rotation.x += (targetRotX - points.rotation.x) * 0.06;
+              points.rotation.y += (targetRotY - points.rotation.y) * 0.06;
+              points.rotation.z = Math.sin(t * 0.2) * 0.02;
+
+              renderer.render(scene, camera);
+            }
+            animate();
+          })();
+        </script>
+    </div>
+  </main>
+  <footer class="ssc-footer">
+    <div class="ssc-footer__bg" aria-hidden="true"></div>
+    <div class="ssc-footer__grain" aria-hidden="true"></div>
+
+    <div class="ssc-footer__inner">
+      <div class="ssc-footer__top">
+        <div class="ssc-footer__mark">SSC<span>WORKS</span></div>
+        <div class="ssc-footer__social">
+          <a href="https://web.facebook.com/people/SSC-Works-General-Repair/61557109485324/" aria-label="Facebook"
+            target="_blank" rel="noopener"><svg viewBox="0 0 24 24">
+              <path
+                d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.35C16.3 4.24 15.3 4.15 14.16 4.15c-2.4 0-4.04 1.46-4.04 4.15V10.5H7.6v3h2.52V21h3.38z">
+              </path>
+            </svg></a>
+          <a href="https://www.instagram.com/sscworks/" aria-label="Instagram" target="_blank" rel="noopener"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M12 8.3a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4zm0 6.1a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8zm4.7-6.25a.86.86 0 1 1-1.72 0 .86.86 0 0 1 1.72 0zM20 7.6c-.06-1.2-.33-2.26-1.2-3.13-.87-.87-1.93-1.14-3.13-1.2C14.4 3.2 9.6 3.2 8.33 3.27c-1.2.06-2.25.33-3.13 1.2-.87.87-1.13 1.93-1.2 3.13C3.94 8.6 3.94 15.4 4 16.4c.07 1.2.33 2.26 1.2 3.13.88.87 1.93 1.14 3.13 1.2 1.27.07 6.07.07 7.34 0 1.2-.06 2.26-.33 3.13-1.2.87-.87 1.14-1.93 1.2-3.13.07-1.27.07-6.06 0-7.3zM18.4 17.7c-.26.66-.77 1.17-1.43 1.44-1 .4-3.36.3-4.97.3s-4-.1-4.97-.3a2.5 2.5 0 0 1-1.43-1.44c-.4-1-.3-3.36-.3-4.97s-.1-4 .3-4.97c.26-.66.77-1.17 1.43-1.43 1-.4 3.36-.3 4.97-.3s4 .1 4.97.3c.66.26 1.17.77 1.43 1.43.4 1 .3 3.36.3 4.97s.1 4-.3 4.97z">
+              </path>
+            </svg></a>
+          <a href="https://www.youtube.com/@SSCWorks" aria-label="YouTube" target="_blank" rel="noopener"><svg
+              viewBox="0 0 24 24">
+              <path
+                d="M21.6 7.9s-.2-1.5-.85-2.16c-.8-.87-1.7-.87-2.12-.92C15.7 4.6 12 4.6 12 4.6h-.02s-3.7 0-6.63.22c-.4.05-1.3.05-2.12.92C2.6 6.4 2.4 7.9 2.4 7.9S2.17 9.66 2.17 11.4v1.63c0 1.75.23 3.5.23 3.5s.2 1.5.85 2.16c.8.87 1.87.84 2.34.94 1.7.16 7.2.22 7.2.22s3.72 0 6.65-.23c.4-.05 1.3-.05 2.12-.93.65-.65.85-2.15.85-2.15s.23-1.75.23-3.5V11.4c0-1.75-.23-3.5-.23-3.5zM9.95 14.9V8.8l5.7 3.06-5.7 3.05z">
+              </path>
+            </svg></a>
+          <a href="https://www.linkedin.com/company/pt-ssc-works/" aria-label="LinkedIn" target="_blank"
+            rel="noopener"><svg viewBox="0 0 24 24">
+              <path
+                d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 8.8h3.5V20H3.2V8.8zm6.14 0h3.36v1.54h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.3 4.18 5.3V20h-3.5v-5.4c0-1.3-.02-2.96-1.8-2.96-1.82 0-2.1 1.4-2.1 2.87V20H9.34V8.8z">
+              </path>
+            </svg></a>
+        </div>
+      </div>
+
+      <div class="ssc-footer__ticker">
+        <div class="ssc-footer__ticker-track">
+          <span>GENERAL REPAIR</span><i>•</i>
+          <span>HEAVY MACHINERY</span><i>•</i>
+          <span>AUTOMOTIVE</span><i>•</i>
+          <span>INDUSTRIAL</span><i>•</i>
+          <span>SSC PARTS</span><i>•</i>
+          <span>GENERAL REPAIR</span><i>•</i>
+          <span>HEAVY MACHINERY</span><i>•</i>
+          <span>AUTOMOTIVE</span><i>•</i>
+          <span>INDUSTRIAL</span><i>•</i>
+          <span>SSC PARTS</span><i>•</i>
+        </div>
+      </div>
+
+      <div class="ssc-footer__main">
+        <div class="ssc-footer__bleed" aria-hidden="true">SSC</div>
+
+        <div class="ssc-footer__cols">
+          <div class="ssc-footer__col ssc-footer__col--about">
+            <p class="ssc-footer__eyebrow">ABOUT</p>
+            <p class="ssc-footer__desc">A company undertaking its line of business in General Repair for heavy
+              machinery, automotive, and industry.</p>
+            <div class="ssc-footer__badges" style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;">
+              <span
+                style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:var(--sf-muted);letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;"><span
+                  style="width:5px;height:5px;border-radius:50%;background:var(--sf-amber);"></span>ISO 9001</span>
+              <span
+                style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:var(--sf-muted);letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;"><span
+                  style="width:5px;height:5px;border-radius:50%;background:var(--sf-amber);"></span>ISO 14001</span>
+              <span
+                style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;padding:4px 9px;border-radius:4px;background:rgba(245,243,238,0.06);border:1px solid rgba(245,243,238,0.14);color:var(--sf-muted);letter-spacing:0.08em;display:inline-flex;align-items:center;gap:6px;"><span
+                  style="width:5px;height:5px;border-radius:50%;background:var(--sf-amber);"></span>ISO 45001</span>
+            </div>
+          </div>
+
+          <div class="ssc-footer__col">
+            <p class="ssc-footer__eyebrow">NAVIGATION</p>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="ssc-footer__col">
+            <p class="ssc-footer__eyebrow">OUR SERVICES</p>
+            <ul>
+              <li><a href="#">SSC Parts</a></li>
+              <li><a href="#">Heavy Machinery</a></li>
+              <li><a href="#">Hydraulic Overhaul</a></li>
+              <li><a href="#">Industrial Machining</a></li>
+            </ul>
+          </div>
+
+          <div class="ssc-footer__col ssc-footer__col--contact">
+            <p class="ssc-footer__eyebrow">CONTACT</p>
+            <ul class="ssc-footer__contact">
+              <li><a href="https://maps.google.com/?q=South+Quarter+Tower+A+Jl+RA+Kartini+Kav+8+Cilandak+Barat"
+                  target="_blank" rel="noopener">South Quarter Tower A Lt 7, Jl. R.A. Kartini Kav 8, Cilandak Barat</a>
+              </li>
+              <li><a href="tel:+6285601042000">+62 856010 42000 (Admin)</a></li>
+              <li><a href="mailto:head-office@sscworks.com">head-office@sscworks.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ssc-footer__bottom">
+        <span>© <span class="ssc-footer__year">2026</span> SSC Works. All rights reserved.</span>
+        <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+          <a href="#">Privacy Statement</a>
+          <span style="opacity:0.3;">•</span>
+          <a href="#">Terms of Service</a>
+          <span style="opacity:0.3;">•</span>
+          <a href="#">Quality &amp; HSE Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    /* =====================================================
+   STYLE — Footer (Exact sscworks.com)
+   ===================================================== */
+    .ssc-footer {
+      --sf-void: #0B0B0A;
+      --sf-panel: #141412;
+      --sf-amber: #3B7DD8;
+      --sf-amber-dim: #2A5FA8;
+      --sf-text: #F5F3EE;
+      --sf-muted: #9A978D;
+      --sf-line: rgba(245, 243, 238, .14);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      background: var(--sf-void);
+      color: var(--sf-text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .ssc-footer * {
+      box-sizing: border-box;
+    }
+
+    .ssc-footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .ssc-footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('https://sscworks.com/wp-content/uploads/2026/08/bg-scaled.webp');
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(1) contrast(1.15) brightness(.55);
+      transform: scale(1.03);
+    }
+
+    .ssc-footer__inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ssc-footer__inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(11, 11, 10, .55) 0%, rgba(11, 11, 10, .86) 45%, var(--sf-void) 100%);
+    }
+
+    .ssc-footer__grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .06;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .ssc-footer__top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 64px) 0;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ssc-footer__mark {
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-weight: 700;
+      font-size: clamp(16px, 1.6vw, 20px);
+      letter-spacing: .02em;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      color: var(--sf-text);
+    }
+
+    .ssc-footer__mark span {
+      font-size: .55em;
+      font-weight: 500;
+      color: var(--sf-muted);
+      letter-spacing: .18em;
+    }
+
+    .ssc-footer__social {
+      display: flex;
+      gap: 14px;
+    }
+
+    .ssc-footer__social a {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--sf-line);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .25s ease, background-color .25s ease, transform .25s ease;
+    }
+
+    .ssc-footer__social svg {
+      width: 15px;
+      height: 15px;
+      fill: var(--sf-text);
+      transition: fill .25s ease;
+    }
+
+    .ssc-footer__social a:hover {
+      background: var(--sf-amber);
+      border-color: var(--sf-amber);
+      transform: translateY(-2px);
+    }
+
+    .ssc-footer__social a:hover svg {
+      fill: var(--sf-void);
+    }
+
+    .ssc-footer__ticker {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      border-top: 1px solid var(--sf-line);
+      border-bottom: 1px solid var(--sf-line);
+      margin-top: clamp(20px, 4vw, 36px);
+      background: rgba(59, 125, 216, .06);
+    }
+
+    .ssc-footer__ticker-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      width: max-content;
+      padding: 10px 0;
+      animation: sf-marquee 28s linear infinite;
+    }
+
+    .ssc-footer__ticker-track span {
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-size: clamp(11px, 1.1vw, 13px);
+      font-weight: 700;
+      letter-spacing: .14em;
+      color: var(--sf-muted);
+      padding: 0 18px;
+    }
+
+    .ssc-footer__ticker-track i {
+      font-style: normal;
+      color: var(--sf-amber);
+      font-size: 10px;
+    }
+
+    @keyframes sf-marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .ssc-footer__main {
+      position: relative;
+      z-index: 2;
+      padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 64px) clamp(32px, 5vw, 56px);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ssc-footer__bleed {
+      position: absolute;
+      left: clamp(-10px, -2vw, 10px);
+      bottom: clamp(-40px, -4vw, -10px);
+      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-weight: 700;
+      font-size: clamp(90px, 16vw, 220px);
+      line-height: .8;
+      letter-spacing: -.03em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(245, 243, 238, .14);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .ssc-footer__cols {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.4fr .8fr .8fr 1.1fr;
+      gap: clamp(24px, 4vw, 40px);
+    }
+
+    .ssc-footer__eyebrow {
+      font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      color: var(--sf-amber);
+      margin: 0 0 16px;
+    }
+
+    .ssc-footer__desc {
+      margin: 0;
+      color: var(--sf-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 34ch;
+    }
+
+    .ssc-footer__col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .ssc-footer__col a {
+      font-size: 14.5px;
+      color: var(--sf-text);
+      position: relative;
+      display: inline-block;
+      transition: color .2s ease;
+    }
+
+    .ssc-footer__col a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: var(--sf-amber);
+      transition: width .25s ease;
+    }
+
+    .ssc-footer__col a:hover {
+      color: var(--sf-amber);
+    }
+
+    .ssc-footer__col a:hover::after {
+      width: 100%;
+    }
+
+    .ssc-footer__contact a {
+      color: var(--sf-muted);
+    }
+
+    .ssc-footer__contact a:hover {
+      color: var(--sf-amber);
+    }
+
+    .ssc-footer__bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 18px clamp(20px, 5vw, 64px) 22px;
+      border-top: 1px solid var(--sf-line);
+      font-size: 12.5px;
+      color: var(--sf-muted);
+      letter-spacing: .02em;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .ssc-footer__bottom a {
+      color: var(--sf-muted);
+    }
+
+    .ssc-footer__bottom a:hover {
+      color: var(--sf-amber);
+    }
+
+    @media (max-width: 900px) {
+      .ssc-footer__cols {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ssc-footer__col--about {
+        grid-column: 1 / -1;
+      }
+
+      .ssc-footer__bleed {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .ssc-footer__cols {
+        grid-template-columns: 1fr;
+      }
+
+      .ssc-footer__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ssc-footer__ticker-track {
+        animation: none;
+      }
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

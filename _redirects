@@ -1,0 +1,5 @@
+# Redirect old code.html to root
+/code.html    /    301!
+
+# Fallback for client-side routing if any
+/*    /index.html   200
