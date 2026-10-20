@@ -14,13 +14,42 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet">
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
     rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- Leaflet Map Engine for Interactive Google Maps -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
+    .font-futura {
+      font-family: 'Futura', 'Futura PT', 'Century Gothic', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    /* Navbar Theme Adaptation for Slide 2 (White Background) */
+    #ssc-navbar.nav-theme-dark nav a,
+    #ssc-navbar.nav-theme-dark nav button {
+      color: #1E293B !important;
+    }
+    #ssc-navbar.nav-theme-dark nav a:hover,
+    #ssc-navbar.nav-theme-dark nav button:hover {
+      color: #0F172A !important;
+      background-color: rgba(15, 23, 42, 0.06) !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-lang-btn {
+      color: #1E293B !important;
+      border-color: rgba(15, 23, 42, 0.25) !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-lang-btn svg {
+      color: #2563EB !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-nav-divider {
+      background-color: rgba(15, 23, 42, 0.2) !important;
+    }
+    #ssc-navbar.nav-theme-dark #ssc-mobile-toggle {
+      color: #1E293B !important;
+    }
     @layer base {
 
       html,
@@ -57,11 +86,11 @@
     id="ssc-navbar">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 h-[76px] flex items-center justify-between">
 
-      <!-- Logo SSC Works (Original Brand Colors) -->
+      <!-- Logo SSC Works (ChatGPT White Text on Red Badge Version) -->
       <a href="#" class="flex items-center gap-3 shrink-0 group py-1" aria-label="SSC Works Home">
-        <img alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
-          class="h-[34px] sm:h-[38px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
-          src="https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png">
+        <img id="ssc-logo-img" alt="SSC Works - Manufacturing, Metalworking & Heavy Machinery"
+          class="h-[32px] sm:h-[35px] w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]"
+          src="ssc_works_logo_white.png">
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -139,11 +168,11 @@
         </a>
 
         <!-- Vertical Divider -->
-        <div class="h-4 w-[1px] bg-white/20 mx-2" aria-hidden="true"></div>
+        <div id="ssc-nav-divider" class="h-4 w-[1px] bg-white/20 mx-2 transition-colors duration-500" aria-hidden="true"></div>
 
         <!-- Language Selector -->
         <div class="relative group/lang">
-          <button type="button"
+          <button id="ssc-lang-btn" type="button"
             class="flex items-center gap-1.5 px-3 py-1.5 text-[13.5px] font-medium text-slate-200 hover:text-white hover:bg-white/10 rounded-md border border-white/20 transition-all focus:outline-none"
             aria-label="Language Selector" aria-expanded="false">
             <svg class="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -175,7 +204,7 @@
 
       <!-- Mobile Hamburger Button -->
       <div class="flex items-center gap-3 lg:hidden">
-        <button type="button"
+        <button id="ssc-mobile-toggle" type="button"
           onclick="var m = document.getElementById('ssc-mobile-menu'); m.classList.toggle('hidden');"
           class="p-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors focus:outline-none"
           aria-label="Toggle Navigation Menu">
@@ -214,82 +243,631 @@
   </header>
   <main class="w-full bg-surface min-h-screen">
     <div class="flex flex-col w-full bg-surface-base text-text-body font-body-md">
-      <!-- HERO SECTION (INTEGRATED SEAMLESS HERO & TEAM SHOWCASE) -->
-      <section class="relative w-full bg-[#060911] overflow-hidden" id="hero-section">
+      <!-- HERO SECTION (3-SLIDE DYNAMIC HERO: PHOTO 1 -> PARTICLE 3D -> PHOTO 3) -->
+      <section class="relative w-full bg-[#001D56] overflow-hidden transition-colors duration-1000" id="hero-section">
         
-        <!-- 1. Background Image Layer (Authentic Workshop Team Photo - Vivid & Bright on Right) -->
-        <div class="absolute inset-0 bg-cover bg-[right_35%] sm:bg-[right_center] lg:bg-[right_15%] opacity-85 pointer-events-none"
-             style="background-image: url('1000147392.jpg');" aria-hidden="true"></div>
+        <!-- 1. Background Image Layer 1: Industrial Team Portrait in Blue Helmets -->
+        <div id="hero-bg-photo-1" class="absolute inset-0 bg-cover bg-[right_center] lg:bg-[right_5%] xl:bg-[right_8%] pointer-events-none transition-opacity duration-1000"
+             style="background-image: url('industrial_team_portrait_in_blue_helmets.png'); opacity: 1;" aria-hidden="true"></div>
 
-        <!-- 2. Dark Scrim on Left Side (Area of Text & Logo) fading to transparent on the right -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#060911] via-[#060911] via-35% md:via-48% to-transparent pointer-events-none z-[1]" aria-hidden="true"></div>
+        <!-- 2. Background Image Layer 3: Seven Technicians, One Team -->
+        <div id="hero-bg-photo-3" class="absolute inset-0 bg-cover bg-[right_center] lg:bg-[right_5%] xl:bg-[right_8%] pointer-events-none transition-opacity duration-1000"
+             style="background-image: url('seven_technicians_one_team.png'); opacity: 0;" aria-hidden="true"></div>
 
-        <!-- 3. Subtle Top Scrim for Navbar Contrast -->
-        <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#060911]/85 via-[#060911]/40 to-transparent pointer-events-none z-[1]" aria-hidden="true"></div>
+        <!-- 3. Left Vignette for Perfect Contrast (Deepening the Studio Blue behind Text) -->
+        <div id="hero-scrim-left" class="absolute inset-0 bg-gradient-to-r from-[#001440]/80 via-[#001D56]/40 via-40% to-transparent pointer-events-none z-[1] transition-opacity duration-1000 opacity-100" aria-hidden="true"></div>
 
-        <!-- 4. Bottom Gradient Transition to Next White Section -->
-        <div class="absolute bottom-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-10" aria-hidden="true"></div>
+        <!-- 4. Subtle Top Scrim for Navbar Contrast -->
+        <div id="hero-scrim-top" class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#001440]/70 via-[#001440]/20 to-transparent pointer-events-none z-[1] transition-opacity duration-1000 opacity-100" aria-hidden="true"></div>
+
+        <!-- 5. Bottom Gradient Transition to Next Section -->
+        <div id="hero-scrim-bottom" class="absolute bottom-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-10" aria-hidden="true"></div>
 
         <div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-20 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-32">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            <!-- Left: Copy & Actions (Positioned on Dark Scrim Area) -->
-            <div class="lg:col-span-7 xl:col-span-6 flex flex-col items-start pr-0 lg:pr-4">
+            <!-- Left: Copy & Actions (Constrained strictly to the plain area) -->
+            <div class="lg:col-span-6 xl:col-span-5 flex flex-col items-start max-w-xl lg:max-w-[480px] xl:max-w-[510px]">
 
-              <!-- Main Headline -->
+              <!-- Main Headline (Bigger Futura font, no capslock / Title Case, contained in plain area) -->
               <h1
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-[1.14] transition-all duration-300 drop-shadow-sm"
+                class="font-futura font-bold text-white mb-6 leading-[1.1] text-3xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-[53px] drop-shadow-md transition-all duration-500"
                 id="hero-headline">
-                Fast &amp; Efficient Repairs For All Heavy Equipment and Vehicles
+                Fast &amp; Efficient Repairs for All Heavy Equipment and Vehicles
               </h1>
 
-              <!-- Subheadline -->
-              <p class="text-base sm:text-lg text-slate-300 font-light mb-8 max-w-xl leading-relaxed transition-all duration-300"
+              <!-- Subheadline (Smaller Montserrat font, italic, light) -->
+              <p class="font-montserrat text-slate-200/95 font-light italic mb-8 max-w-[430px] leading-relaxed text-[13.5px] sm:text-[14.5px] md:text-[15px] transition-all duration-500 drop-shadow-sm"
                 id="hero-subheadline">
                 Highly trained &amp; reliable repair team certified around the clock with advanced cutting-edge workshop
                 machinery, mobile line boring, and ISO-standard metallurgy.
               </p>
 
-              <!-- CTA Buttons -->
-              <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
-                <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1D4ED8] hover:bg-[#1e40af] text-white font-medium text-sm px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-900/40"
+              <!-- Single CTA Button: Thin Wireframe with Simple Arrow (Adapts White/Dark) -->
+              <div class="flex items-center gap-4 w-full sm:w-auto mb-10">
+                <a id="hero-cta-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/60 hover:border-white hover:bg-white/10 text-white font-medium text-sm px-7 py-3 rounded-xl transition-all duration-500 group backdrop-blur-[2px] shadow-sm"
                   href="#services-matrix">
                   <span>Explore Services</span>
-                  <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </a>
-                <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:bg-white/10 text-white font-medium text-sm px-7 py-3.5 rounded-xl transition-all"
-                  data-path="portfolio" href="#portfolio">
-                  <span>View Our Work</span>
-                  <span class="material-symbols-outlined text-[18px]">engineering</span>
+                  <svg id="hero-cta-arrow" class="w-4 h-4 text-white transition-all duration-500 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
                 </a>
               </div>
 
               <!-- Carousel Indicators & Pause/Play Control -->
-              <div class="flex items-center gap-4 pt-4 border-t border-white/15 w-full">
+              <div id="hero-divider" class="flex items-center gap-4 pt-4 border-t border-white/15 w-full transition-colors duration-500">
                 <div class="flex items-center gap-2" id="hero-indicators">
-                  <button aria-label="Slide 1" class="h-1.5 w-10 bg-[#3B82F6] rounded-full transition-all"
+                  <button aria-label="Slide 1" class="h-1.5 w-10 bg-white rounded-full transition-all"
                     type="button"></button>
                   <button aria-label="Slide 2"
-                    class="h-1.5 w-3 bg-white/25 hover:bg-[#3B82F6]/60 rounded-full transition-all"
+                    class="h-1.5 w-3 bg-white/30 hover:bg-white/60 rounded-full transition-all"
                     type="button"></button>
                   <button aria-label="Slide 3"
-                    class="h-1.5 w-3 bg-white/25 hover:bg-[#3B82F6]/60 rounded-full transition-all"
+                    class="h-1.5 w-3 bg-white/30 hover:bg-white/60 rounded-full transition-all"
                     type="button"></button>
                 </div>
                 <button aria-label="Pause slide transitions"
-                  class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/40 transition-colors"
+                  class="w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/40 transition-all duration-500"
                   id="hero-play-pause" type="button">
                   <span class="material-symbols-outlined text-[16px]">pause</span>
                 </button>
               </div>
             </div>
 
-            <!-- Right Column: Open area displaying the technician team photo clearly -->
-            <div class="hidden lg:block lg:col-span-5 xl:col-span-6 relative w-full min-h-[460px] pointer-events-none">
+            <!-- Right Column: Interactive 3D Particle Canvas on Slide 2, clear transparent view of technicians on Slide 1 & 3 -->
+            <div class="hidden lg:block lg:col-span-6 xl:col-span-7 relative w-full h-[500px] xl:h-[540px] transition-opacity duration-1000 opacity-0 pointer-events-none" id="hero-particle-wrapper">
+              <div class="w-full h-full cursor-grab active:cursor-grabbing relative" id="hero-particle-mount"></div>
             </div>
 
           </div>
         </div>
+
+        <!-- HERO 3-SLIDE DYNAMIC SEQUENCE & 3D PARTICLE ENGINE SCRIPT -->
+        <script>
+          (function () {
+            var slidesData = [
+              {
+                title: 'Fast & Efficient Repairs for All Heavy Equipment and Vehicles',
+                desc: 'Highly trained & reliable repair team certified around the clock with advanced cutting-edge workshop machinery, mobile line boring, and ISO-standard metallurgy.',
+                theme: 'blue-1', // Photo 1
+                shapeIdx: 0
+              },
+              {
+                title: 'Precision Machining & Industrial Gearbox Overhauls',
+                desc: 'Equipped with heavy-duty horizontal turning lathes, precision gear cutting, and ISO metallurgical crack testing to eliminate unexpected breakdowns.',
+                theme: 'white-particle', // Official SSC Works 3D Particle
+                shapeIdx: 1
+              },
+              {
+                title: 'Certified Hydraulic Engineering & Heavy Crane Solutions',
+                desc: 'Specialized mobile line boring, hydraulic cylinder restoration, and structural boom reinforcement engineered for rapid mining deployment.',
+                theme: 'blue-3', // Photo 3
+                shapeIdx: 2
+              }
+            ];
+
+            var currentSlide = 0;
+            var isPlaying = true;
+            var autoTimer = null;
+            var SLIDE_DURATION = 10000; // 10 seconds per slide as requested
+
+            // ==========================================
+            // THREE.JS 3D PARTICLE MORPHING ENGINE
+            // ==========================================
+            var particleEngine = (function () {
+              var mount = document.getElementById('hero-particle-mount');
+              if (!mount || typeof THREE === 'undefined') return null;
+
+              var PARTICLE_COUNT = window.innerWidth < 768 ? 12000 : 22000;
+
+              function cubicBezier(p0, p1, p2, p3, t) {
+                var mt = 1 - t;
+                return [
+                  mt * mt * mt * p0[0] + 3 * mt * mt * t * p1[0] + 3 * mt * t * t * p2[0] + t * t * t * p3[0],
+                  mt * mt * mt * p0[1] + 3 * mt * mt * t * p1[1] + 3 * mt * t * t * p2[1] + t * t * t * p3[1]
+                ];
+              }
+
+              function samplePath(segs, count, spread) {
+                var out = [];
+                for (var i = 0; i < count; i++) {
+                  var seg = segs[(Math.random() * segs.length) | 0];
+                  var t = Math.random();
+                  var p1 = cubicBezier(seg[0], seg[1], seg[2], seg[3], t);
+                  var p2 = cubicBezier(seg[0], seg[1], seg[2], seg[3], Math.min(t + 0.01, 1));
+                  var dx = p2[0] - p1[0], dy = p2[1] - p1[1];
+                  var len = Math.hypot(dx, dy) || 1;
+                  dx /= len; dy /= len;
+                  var nx = -dy, ny = dx;
+                  var edge = Math.sin(Math.PI * t);
+                  var jitterAmp = spread * (0.2 + 0.8 * Math.random()) * (0.3 + 0.7 * edge);
+                  var jitter = (Math.random() - 0.5) * 2;
+                  out.push([
+                    p1[0] + nx * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                    p1[1] + ny * jitter * jitterAmp + (Math.random() - 0.5) * spread * 0.3,
+                    (Math.random() - 0.5) * 45
+                  ]);
+                }
+                return out;
+              }
+
+              function buildExcavator(count) {
+                var segs = [
+                  [[-160, -130], [-160, -100], [-130, -85], [130, -85]],
+                  [[130, -85], [160, -100], [160, -130], [-160, -130]],
+                  [[-140, -110], [-40, -110], [40, -110], [140, -110]],
+                  [[-130, -85], [-130, -20], [-90, 15], [-20, 15]],
+                  [[-20, 15], [-20, -85], [-70, -85], [-130, -85]],
+                  [[-120, -15], [-100, 5], [-40, 5], [-30, -15]],
+                  [[-130, -85], [-160, -65], [-160, -25], [-130, -20]],
+                  [[-15, -20], [30, 45], [85, 115], [130, 145]],
+                  [[-5, -30], [40, 35], [95, 105], [135, 145]],
+                  [[-5, -5], [20, 25], [50, 55], [80, 80]],
+                  [[130, 145], [180, 115], [220, 65], [240, 10]],
+                  [[125, 140], [175, 110], [215, 60], [235, 10]],
+                  [[240, 10], [280, -15], [270, -65], [220, -55]],
+                  [[220, -55], [200, -35], [210, -5], [240, 10]],
+                  [[270, -65], [290, -80], [280, -75], [260, -65]]
+                ];
+                return samplePath(segs, count, 26);
+              }
+
+              function buildGear(count) {
+                var segs = [];
+                var teeth = 12;
+                var rOuter = 165;
+                var rInner = 115;
+                for (var i = 0; i < teeth; i++) {
+                  var a0 = (i / teeth) * Math.PI * 2;
+                  var a1 = ((i + 0.35) / teeth) * Math.PI * 2;
+                  var a2 = ((i + 0.65) / teeth) * Math.PI * 2;
+                  var a3 = ((i + 1.0) / teeth) * Math.PI * 2;
+                  segs.push([
+                    [Math.cos(a0) * rInner, Math.sin(a0) * rInner],
+                    [Math.cos(a0) * rOuter, Math.sin(a0) * rOuter],
+                    [Math.cos(a1) * rOuter, Math.sin(a1) * rOuter],
+                    [Math.cos(a1) * rInner, Math.sin(a1) * rInner]
+                  ]);
+                  segs.push([
+                    [Math.cos(a1) * rInner, Math.sin(a1) * rInner],
+                    [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                    [Math.cos(a2) * rInner, Math.sin(a2) * rInner],
+                    [Math.cos(a3) * rInner, Math.sin(a3) * rInner]
+                  ]);
+                }
+                for (var j = 0; j < 6; j++) {
+                  var ga0 = (j / 6) * Math.PI * 2;
+                  var ga1 = ((j + 1) / 6) * Math.PI * 2;
+                  var rHub = 45;
+                  segs.push([
+                    [Math.cos(ga0) * rHub, Math.sin(ga0) * rHub],
+                    [Math.cos(ga0) * rHub, Math.sin(ga0) * rHub],
+                    [Math.cos(ga1) * rHub, Math.sin(ga1) * rHub],
+                    [Math.cos(ga1) * rHub, Math.sin(ga1) * rHub]
+                  ]);
+                  var spA = ga0 + Math.PI / 6;
+                  var spR = 78;
+                  var spRad = 20;
+                  var sx = Math.cos(spA) * spR, sy = Math.sin(spA) * spR;
+                  segs.push([
+                    [sx - spRad, sy], [sx, sy + spRad], [sx + spRad, sy], [sx, sy - spRad]
+                  ]);
+                }
+                return samplePath(segs, count, 20);
+              }
+
+              function buildCrane(count) {
+                var segs = [
+                  [[-200, -125], [-200, -85], [180, -85], [180, -125]],
+                  [[-200, -125], [-50, -125], [50, -125], [180, -125]],
+                  [[-160, -140], [-160, -125], [-120, -125], [-120, -140]],
+                  [[-80, -140], [-80, -125], [-40, -125], [-40, -140]],
+                  [[60, -140], [60, -125], [100, -125], [100, -140]],
+                  [[120, -140], [120, -125], [160, -125], [160, -140]],
+                  [[120, -85], [120, -35], [165, -35], [180, -85]],
+                  [[-180, -125], [-205, -145], [-205, -150], [-185, -150]],
+                  [[160, -125], [185, -145], [185, -150], [165, -150]],
+                  [[-120, -85], [-120, -25], [-40, -25], [-40, -85]],
+                  [[-60, -20], [-60, 15], [-40, 15], [-40, -20]],
+                  [[-50, 5], [30, 65], [120, 135], [210, 195]],
+                  [[-40, -5], [40, 55], [130, 125], [215, 185]],
+                  [[0, 35], [20, 50], [40, 45], [60, 80]],
+                  [[70, 75], [90, 110], [120, 105], [140, 140]],
+                  [[150, 135], [170, 165], [190, 160], [210, 185]],
+                  [[210, 195], [210, 145], [210, 95], [210, 45]],
+                  [[205, 45], [215, 45], [215, 25], [205, 25]],
+                  [[210, 25], [210, 10], [220, 5], [215, -5]]
+                ];
+                return samplePath(segs, count, 24);
+              }
+
+              function normalizeAndCenter(pts, targetSpan, shiftX, shiftY) {
+                shiftX = shiftX || 0;
+                shiftY = shiftY || 0;
+                var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+                for (var i = 0; i < pts.length; i++) {
+                  var x = pts[i][0], y = pts[i][1];
+                  if (x < minX) minX = x;
+                  if (x > maxX) maxX = x;
+                  if (y < minY) minY = y;
+                  if (y > maxY) maxY = y;
+                }
+                var cx = (minX + maxX) / 2;
+                var cy = (minY + maxY) / 2;
+                var span = Math.max(maxX - minX, maxY - minY) || 1;
+                var scale = targetSpan / span;
+
+                for (var j = 0; j < pts.length; j++) {
+                  pts[j][0] = (pts[j][0] - cx) * scale + shiftX;
+                  pts[j][1] = (pts[j][1] - cy) * scale + shiftY;
+                  pts[j][2] = (pts[j][2] || 0) * scale;
+                }
+                return pts;
+              }
+
+              var shapeSets = [
+                normalizeAndCenter(buildExcavator(PARTICLE_COUNT), 350, 0, -6),
+                normalizeAndCenter(buildGear(PARTICLE_COUNT), 340, 0, 0),
+                normalizeAndCenter(buildCrane(PARTICLE_COUNT), 355, 0, 5)
+              ];
+
+              var scene = new THREE.Scene();
+              var width = mount.clientWidth || 600;
+              var height = mount.clientHeight || 520;
+              var camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 2000);
+              camera.position.set(0, 0, 560);
+
+              var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+              renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+              renderer.setSize(width, height);
+              mount.appendChild(renderer.domElement);
+
+              function makeSprite() {
+                var c = document.createElement('canvas');
+                c.width = c.height = 64;
+                var ctx = c.getContext('2d');
+                var g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+                g.addColorStop(0, 'rgba(15, 23, 42, 1)');
+                g.addColorStop(0.5, 'rgba(29, 78, 216, 0.9)');
+                g.addColorStop(0.85, 'rgba(29, 78, 216, 0.3)');
+                g.addColorStop(1, 'rgba(29, 78, 216, 0)');
+                ctx.fillStyle = g;
+                ctx.fillRect(0, 0, 64, 64);
+                return new THREE.CanvasTexture(c);
+              }
+
+              var positions = new Float32Array(PARTICLE_COUNT * 3);
+              var basePos = new Float32Array(PARTICLE_COUNT * 3);
+              var fromPos = new Float32Array(PARTICLE_COUNT * 3);
+              var toPos = new Float32Array(PARTICLE_COUNT * 3);
+              var phase = new Float32Array(PARTICLE_COUNT);
+              var speed = new Float32Array(PARTICLE_COUNT);
+
+              var initialSet = shapeSets[1]; // default gear shape for slide 2
+              for (var k = 0; k < PARTICLE_COUNT; k++) {
+                var p = initialSet[k % initialSet.length];
+                fromPos[k * 3] = toPos[k * 3] = basePos[k * 3] = positions[k * 3] = p[0];
+                fromPos[k * 3 + 1] = toPos[k * 3 + 1] = basePos[k * 3 + 1] = positions[k * 3 + 1] = p[1];
+                fromPos[k * 3 + 2] = toPos[k * 3 + 2] = basePos[k * 3 + 2] = positions[k * 3 + 2] = p[2];
+                phase[k] = Math.random() * Math.PI * 2;
+                speed[k] = 0.5 + Math.random() * 1.0;
+              }
+
+              var geometry = new THREE.BufferGeometry();
+              geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+              var material = new THREE.PointsMaterial({
+                size: 2.8,
+                map: makeSprite(),
+                transparent: true,
+                depthWrite: false,
+                opacity: 0.95,
+                blending: THREE.NormalBlending,
+                color: new THREE.Color('#0F172A')
+              });
+
+              var points = new THREE.Points(geometry, material);
+              scene.add(points);
+
+              var morphT = 1;
+              var MORPH_DURATION = 1600;
+              var morphStart = 0;
+
+              function easeInOutCubic(t) {
+                return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+              }
+
+              function morphTo(shapeIndex) {
+                var targetSet = shapeSets[shapeIndex % shapeSets.length];
+                for (var m = 0; m < PARTICLE_COUNT; m++) {
+                  fromPos[m * 3] = basePos[m * 3];
+                  fromPos[m * 3 + 1] = basePos[m * 3 + 1];
+                  fromPos[m * 3 + 2] = basePos[m * 3 + 2];
+                  var tp = targetSet[m % targetSet.length];
+                  toPos[m * 3] = tp[0];
+                  toPos[m * 3 + 1] = tp[1];
+                  toPos[m * 3 + 2] = tp[2];
+                }
+                morphT = 0;
+                morphStart = performance.now();
+              }
+
+              // Mouse tilt
+              var targetRotX = 0, targetRotY = 0;
+              var mountCard = mount.parentElement;
+              if (mountCard) {
+                mountCard.addEventListener('mousemove', function (e) {
+                  var rect = mount.getBoundingClientRect();
+                  var mx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                  var my = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+                  targetRotY = mx * 0.35;
+                  targetRotX = -my * 0.28;
+                });
+                mountCard.addEventListener('mouseleave', function () {
+                  targetRotX = 0;
+                  targetRotY = 0;
+                });
+              }
+
+              window.addEventListener('resize', function () {
+                if (!mount) return;
+                var w = mount.clientWidth;
+                var h = mount.clientHeight;
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+                renderer.setSize(w, h);
+              });
+
+              var clock = new THREE.Clock();
+              function animate() {
+                requestAnimationFrame(animate);
+                var t = clock.getElapsedTime();
+                var now = performance.now();
+
+                if (morphT < 1) {
+                  var raw = Math.min((now - morphStart) / MORPH_DURATION, 1);
+                  morphT = raw;
+                  var e = easeInOutCubic(raw);
+                  for (var q = 0; q < PARTICLE_COUNT; q++) {
+                    var q3 = q * 3;
+                    basePos[q3] = fromPos[q3] + (toPos[q3] - fromPos[q3]) * e;
+                    basePos[q3 + 1] = fromPos[q3 + 1] + (toPos[q3 + 1] - fromPos[q3 + 1]) * e;
+                    basePos[q3 + 2] = fromPos[q3 + 2] + (toPos[q3 + 2] - fromPos[q3 + 2]) * e;
+                  }
+                }
+
+                var arr = geometry.attributes.position.array;
+                for (var n = 0; n < PARTICLE_COUNT; n++) {
+                  var idx = n * 3;
+                  var ph = phase[n];
+                  var sp = speed[n];
+                  var nx = Math.sin(t * sp + ph) * 1.4;
+                  var ny = Math.cos(t * sp * 0.8 + ph * 1.3) * 1.4;
+                  var nz = Math.sin(t * sp * 0.6 + ph * 0.7) * 2.8;
+                  arr[idx] = basePos[idx] + nx;
+                  arr[idx + 1] = basePos[idx + 1] + ny;
+                  arr[idx + 2] = basePos[idx + 2] + nz;
+                }
+                geometry.attributes.position.needsUpdate = true;
+
+                points.rotation.x += (targetRotX - points.rotation.x) * 0.06;
+                points.rotation.y += (targetRotY - points.rotation.y) * 0.06;
+                points.rotation.z = Math.sin(t * 0.2) * 0.02;
+
+                renderer.render(scene, camera);
+              }
+              animate();
+
+              return {
+                morphTo: morphTo
+              };
+            })();
+
+            // ==========================================
+            // SLIDE TRANSITION & ADAPTIVE THEMING
+            // ==========================================
+            function goToSlide(idx) {
+              if (idx < 0 || idx >= slidesData.length) return;
+              currentSlide = idx;
+              var data = slidesData[idx];
+
+              var heroSection = document.getElementById('hero-section');
+              var bgPhoto1 = document.getElementById('hero-bg-photo-1');
+              var bgPhoto3 = document.getElementById('hero-bg-photo-3');
+              var scrimLeft = document.getElementById('hero-scrim-left');
+              var scrimTop = document.getElementById('hero-scrim-top');
+              var particleWrapper = document.getElementById('hero-particle-wrapper');
+              var navbar = document.getElementById('ssc-navbar');
+              var logoImg = document.getElementById('ssc-logo-img');
+              var headline = document.getElementById('hero-headline');
+              var subheadline = document.getElementById('hero-subheadline');
+              var ctaBtn = document.getElementById('hero-cta-btn');
+              var ctaArrow = document.getElementById('hero-cta-arrow');
+              var divider = document.getElementById('hero-divider');
+              var playPauseBtn = document.getElementById('hero-play-pause');
+              var indContainer = document.getElementById('hero-indicators');
+
+              // 1. Text Fade Out & Fade In with new content
+              if (headline) {
+                headline.style.opacity = '0';
+                headline.style.transform = 'translateY(8px)';
+              }
+              if (subheadline) {
+                subheadline.style.opacity = '0';
+                subheadline.style.transform = 'translateY(8px)';
+              }
+
+              setTimeout(function () {
+                if (headline) {
+                  headline.innerText = data.title;
+                  headline.style.opacity = '1';
+                  headline.style.transform = 'translateY(0)';
+                }
+                if (subheadline) {
+                  subheadline.innerText = data.desc;
+                  subheadline.style.fontStyle = 'italic';
+                  subheadline.style.fontWeight = '300';
+                  subheadline.style.opacity = '1';
+                  subheadline.style.transform = 'translateY(0)';
+                }
+              }, 220);
+
+              // 2. Theme Adaptation (Special Black/Dark text exclusively for Slide 2 Particle)
+              if (idx === 1) {
+                // SLIDE 2: Official SSC Works Particle on Clean White Background
+                if (heroSection) heroSection.style.backgroundColor = '#FFFFFF';
+                if (bgPhoto1) bgPhoto1.style.opacity = '0';
+                if (bgPhoto3) bgPhoto3.style.opacity = '0';
+                if (scrimLeft) scrimLeft.style.opacity = '0';
+                if (scrimTop) scrimTop.style.opacity = '0';
+
+                if (particleWrapper) {
+                  particleWrapper.style.opacity = '1';
+                  particleWrapper.style.pointerEvents = 'auto';
+                }
+
+                if (particleEngine) {
+                  particleEngine.morphTo(1); // Morph to precision industrial gear shape
+                }
+
+                // Navbar switches to crisp official dark theme on white
+                if (navbar) navbar.classList.add('nav-theme-dark');
+                if (logoImg) logoImg.src = 'https://sscworks.com/wp-content/uploads/2026/10/cropped-atas-Logo.png';
+
+                // Typography turns automatically deep BLACK as requested
+                if (headline) {
+                  headline.style.color = '#0F172A';
+                  headline.style.textShadow = 'none';
+                }
+                if (subheadline) {
+                  subheadline.style.color = '#334155';
+                  subheadline.style.textShadow = 'none';
+                }
+
+                // CTA Button wireframe adapts to sleek dark frame
+                if (ctaBtn) {
+                  ctaBtn.className = 'w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-slate-800 hover:border-black hover:bg-slate-900/5 text-slate-900 font-medium text-sm px-7 py-3 rounded-xl transition-all duration-500 group backdrop-blur-[2px] shadow-sm';
+                }
+                if (ctaArrow) {
+                  ctaArrow.className = 'w-4 h-4 text-slate-900 transition-all duration-500 group-hover:translate-x-1';
+                }
+
+                // Divider & Pause/Play Control
+                if (divider) divider.className = 'flex items-center gap-4 pt-4 border-t border-slate-200 w-full transition-colors duration-500';
+                if (playPauseBtn) {
+                  playPauseBtn.className = 'w-8 h-8 rounded-lg border border-slate-300 flex items-center justify-center text-slate-600 hover:text-black hover:border-slate-500 transition-all duration-500';
+                }
+
+                // Indicators for Slide 2 (Dark/Blue accents)
+                if (indContainer) {
+                  var btns = indContainer.querySelectorAll('button');
+                  btns.forEach(function (btn, i) {
+                    if (i === idx) {
+                      btn.className = 'h-1.5 w-10 bg-[#1D4ED8] rounded-full transition-all';
+                    } else {
+                      btn.className = 'h-1.5 w-3 bg-slate-300 hover:bg-slate-400 rounded-full transition-all';
+                    }
+                  });
+                }
+
+              } else {
+                // SLIDES 1 & 3: Deep Studio Blue Background with Team Portraits
+                if (heroSection) heroSection.style.backgroundColor = '#001D56';
+                if (bgPhoto1) bgPhoto1.style.opacity = (idx === 0 ? '1' : '0');
+                if (bgPhoto3) bgPhoto3.style.opacity = (idx === 2 ? '1' : '0');
+                if (scrimLeft) scrimLeft.style.opacity = '1';
+                if (scrimTop) scrimTop.style.opacity = '1';
+
+                if (particleWrapper) {
+                  particleWrapper.style.opacity = '0';
+                  particleWrapper.style.pointerEvents = 'none';
+                }
+
+                // Navbar returns to white theme on studio blue
+                if (navbar) navbar.classList.remove('nav-theme-dark');
+                if (logoImg) logoImg.src = 'ssc_works_logo_white.png';
+
+                // Typography returns to WHITE font
+                if (headline) {
+                  headline.style.color = '#FFFFFF';
+                  headline.style.textShadow = '0 2px 8px rgba(0,0,0,0.4)';
+                }
+                if (subheadline) {
+                  subheadline.style.color = 'rgba(226, 232, 240, 0.95)';
+                  subheadline.style.textShadow = '0 1px 4px rgba(0,0,0,0.3)';
+                }
+
+                // CTA Button wireframe returns to crisp white
+                if (ctaBtn) {
+                  ctaBtn.className = 'w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/60 hover:border-white hover:bg-white/10 text-white font-medium text-sm px-7 py-3 rounded-xl transition-all duration-500 group backdrop-blur-[2px] shadow-sm';
+                }
+                if (ctaArrow) {
+                  ctaArrow.className = 'w-4 h-4 text-white transition-all duration-500 group-hover:translate-x-1';
+                }
+
+                // Divider & Pause/Play Control
+                if (divider) divider.className = 'flex items-center gap-4 pt-4 border-t border-white/15 w-full transition-colors duration-500';
+                if (playPauseBtn) {
+                  playPauseBtn.className = 'w-8 h-8 rounded-lg border border-white/20 flex items-center justify-center text-slate-300 hover:text-white hover:border-white/40 transition-all duration-500';
+                }
+
+                // Indicators for Slides 1 & 3 (White accents)
+                if (indContainer) {
+                  var btns = indContainer.querySelectorAll('button');
+                  btns.forEach(function (btn, i) {
+                    if (i === idx) {
+                      btn.className = 'h-1.5 w-10 bg-white rounded-full transition-all';
+                    } else {
+                      btn.className = 'h-1.5 w-3 bg-white/30 hover:bg-white/60 rounded-full transition-all';
+                    }
+                  });
+                }
+              }
+            }
+
+            // ==========================================
+            // AUTO ROTATION TIMER (10 SECONDS INTERVAL)
+            // ==========================================
+            function resetTimer() {
+              if (autoTimer) clearInterval(autoTimer);
+              if (isPlaying) {
+                autoTimer = setInterval(function () {
+                  goToSlide((currentSlide + 1) % slidesData.length);
+                }, SLIDE_DURATION);
+              }
+            }
+
+            // Indicators click handlers
+            var indContainer = document.getElementById('hero-indicators');
+            if (indContainer) {
+              var btns = indContainer.querySelectorAll('button');
+              btns.forEach(function (btn, i) {
+                btn.addEventListener('click', function () {
+                  goToSlide(i);
+                  resetTimer();
+                });
+              });
+            }
+
+            // Play / Pause button
+            var playPauseBtn = document.getElementById('hero-play-pause');
+            if (playPauseBtn) {
+              playPauseBtn.addEventListener('click', function () {
+                isPlaying = !isPlaying;
+                var icon = playPauseBtn.querySelector('.material-symbols-outlined');
+                if (icon) icon.innerText = isPlaying ? 'pause' : 'play_arrow';
+                resetTimer();
+              });
+            }
+
+            // Expose globally for testing / control
+            window.heroGoToSlide = goToSlide;
+
+            // Initialize on Slide 0 (Photo 1) with active timer
+            goToSlide(0);
+            resetTimer();
+          })();
+        </script>
       </section>
       <!-- COMPANY PROFILE (VIDEO SPOTLIGHT) -->
       <section class="w-full bg-surface-base py-20 border-b border-border-hairline">
