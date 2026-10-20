@@ -1857,21 +1857,21 @@
           </div>
         </div>
       </section>
-      <!-- ====== CABANG KAMI — 6 LOKASI DI SELURUH INDONESIA (MATCHING SSCWORKS.COM) ====== -->
+      <!-- ====== CABANG KAMI & TESTIMONIALS (UNIFIED TWO-COLUMN LAYOUT MATCHING USER SKETCH) ====== -->
       <section class="ct-branches relative w-full overflow-hidden" id="ct-branches">
         <style>
           .ct-branches {
             position: relative;
             background:
               linear-gradient(180deg,
-                rgba(11, 11, 10, 0.72) 0%,
-                rgba(15, 23, 42, 0.88) 45%,
-                rgba(11, 11, 10, 0.94) 100%),
+                rgba(11, 15, 25, 0.95) 0%,
+                rgba(15, 23, 42, 0.97) 50%,
+                rgba(11, 15, 25, 0.99) 100%),
               url('https://sscworks.com/wp-content/uploads/2026/08/bg-scaled.webp') center/cover no-repeat;
-            background-color: #0b0b0a;
+            background-color: #0b0f19;
             font-family: 'Work Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
-            padding: 96px 24px 104px;
+            padding: 84px 20px 92px;
             box-sizing: border-box;
             width: 100%;
             scroll-margin-top: 100px;
@@ -1880,381 +1880,340 @@
           .ct-branches-inner {
             position: relative;
             z-index: 1;
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
           }
 
-          .ct-branches-head {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 48px;
-          }
-
-          /* USER REQUEST: "warna teks Cabang Kami kamu ganti putih" */
-          .ct-eyebrow--white {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: #ffffff !important;
-            margin-bottom: 16px;
-          }
-
-          .ct-eyebrow-dot--white {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #ffffff !important;
-            display: inline-block;
-            flex-shrink: 0;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-          }
-
-          #ct-branches .ct-branches-title {
-            font-family: 'Work Sans', sans-serif !important;
-            font-size: clamp(32px, 4.2vw, 52px);
-            font-weight: 600 !important;
-            line-height: 1.08;
-            letter-spacing: -0.035em;
-            color: #ffffff !important;
-            margin: 0 0 18px 0;
-          }
-
-          .ct-divider {
-            display: block;
-            width: 56px;
-            height: 3px;
-            border-radius: 2px;
-            background: #1D4ED8;
-            margin: 0 auto 20px;
-          }
-
-          .ct-branches-sub {
-            font-size: 0.95rem;
-            font-weight: 400;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.72);
-            margin: 0 auto;
-          }
-
-          .ct-map-layout {
-            display: block;
-            width: 100%;
-          }
-
-          .ct-map-wrap {
-            position: relative;
-            background: #0f172a;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            overflow: hidden;
-            width: 100%;
-            height: 520px;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-          }
-
-          .ct-leaflet-map {
+          /* Docked mini branch selector window (Jendela tempel mini di sisi kiri map) */
+          .ct-map-docked-sidebar {
             position: absolute;
-            inset: 0;
+            left: 12px;
+            top: 12px;
+            bottom: 12px;
+            z-index: 500;
+            width: 185px;
+            background: rgba(11, 15, 25, 0.96) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            padding: 12px 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+            overflow-y: auto;
+          }
+
+          @media (max-width: 640px) {
+            .ct-map-docked-sidebar {
+              width: 142px;
+              padding: 8px 6px;
+              left: 8px;
+              top: 8px;
+              bottom: 8px;
+            }
+          }
+
+          .ct-map-docked-sidebar::-webkit-scrollbar {
+            width: 4px;
+          }
+          .ct-map-docked-sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 4px;
+          }
+
+          .ct-branch-item {
+            width: 100%;
+            text-align: left;
+            padding: 9px 10px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 500;
+            line-height: 1.35;
+            color: #e2e8f0 !important;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            margin-bottom: 6px;
+          }
+
+          @media (max-width: 640px) {
+            .ct-branch-item {
+              padding: 7px 8px;
+              font-size: 10.5px;
+            }
+          }
+
+          .ct-branch-item:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(96, 165, 250, 0.5);
+            transform: translateX(2px);
+          }
+
+          .ct-branch-item.is-active {
+            color: #ffffff !important;
+            background: #1D4ED8 !important;
+            border-color: #93C5FD !important;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.55);
+          }
+
+          .ct-branch-item .ct-branch-badge {
+            font-size: 9px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.55);
+            letter-spacing: 0.05em;
+          }
+
+          .ct-branch-item.is-active .ct-branch-badge {
+            color: #bfdbfe;
+          }
+
+          /* Leaflet map inside container */
+          #ctLeafletMap {
             width: 100%;
             height: 100%;
+            min-height: 500px;
             background: #0f172a;
             z-index: 1;
           }
 
-          /* Floating Info Card */
-          .ct-map-info {
-            position: absolute !important;
-            left: 20px;
-            bottom: 20px;
-            z-index: 500 !important;
-            width: min(340px, calc(100% - 40px));
-            box-sizing: border-box;
-            font-family: 'Work Sans', sans-serif;
-            background: rgba(15, 23, 42, 0.94) !important;
-            -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 14px;
-            padding: 22px;
-            opacity: 0 !important;
-            transform: translateY(12px) !important;
-            pointer-events: none !important;
-            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+          /* Custom styling for leaflet controls so they don't overlap our docked sidebar */
+          .ct-map-wrap .leaflet-top.leaflet-left {
+            top: 12px;
+            left: auto;
+            right: 12px;
           }
-
-          .ct-map-info.is-visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-            pointer-events: auto !important;
-          }
-
-          .ct-map-info-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #60a5fa;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-          }
-
-          .ct-map-info-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-          }
-
-          .ct-map-info-address {
-            font-size: 0.84rem;
-            font-weight: 400;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.75);
-            margin: 0 0 10px 0;
-          }
-
-          .ct-map-info-phone {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #93c5fd;
-            text-decoration: none;
-            margin-bottom: 14px;
-            transition: color 0.2s;
-          }
-
-          .ct-map-info-phone:hover {
-            color: #ffffff;
-            text-decoration: underline;
-          }
-
-          .ct-map-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-          }
-
-          .ct-map-info-directions {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
+          .ct-map-wrap .leaflet-bar {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
             border-radius: 8px;
-            background: #1D4ED8;
-            color: #ffffff;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s;
+            overflow: hidden;
           }
-
-          .ct-map-info-directions:hover {
-            background: #2563eb;
-          }
-
-          .ct-map-info-close {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.2s;
-          }
-
-          .ct-map-info-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-          }
-
-          .ct-map-hint {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            z-index: 500;
-            background: rgba(15, 23, 42, 0.85);
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-          }
-
-          /* Branch Pill Buttons */
-          .ct-branch-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 32px;
-          }
-
-          .ct-branch-list button {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            color: rgba(255, 255, 255, 0.85);
-            padding: 10px 22px;
-            border-radius: 9999px;
-            font-family: 'Work Sans', sans-serif;
-            font-size: 0.88rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.25s ease;
-          }
-
-          .ct-branch-list button:hover {
-            background: rgba(29, 78, 216, 0.35);
-            border-color: #1D4ED8;
-            color: #ffffff;
-            transform: translateY(-2px);
-          }
-
-          .ct-branch-list button.is-active {
-            background: #1D4ED8;
-            border-color: #1D4ED8;
-            color: #ffffff;
-            box-shadow: 0 4px 16px rgba(29, 78, 216, 0.45);
-            transform: translateY(-1px);
-          }
-
-          /* Leaflet map custom controls & pin styling */
-          .ct-leaflet-pin {
-            width: 32px;
-            height: 40px;
-            display: block;
-            cursor: pointer;
-            transition: transform 0.25s ease;
-          }
-
-          .ct-leaflet-pin:hover {
-            transform: scale(1.15) translateY(-4px);
-          }
-
-          .ct-leaflet-pin svg {
-            display: block;
-            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.45));
-          }
-
-          .leaflet-control-zoom a {
-            background: #0f172a !important;
+          .ct-map-wrap .leaflet-bar a {
+            background-color: #0b0f19 !important;
             color: #ffffff !important;
-            border-color: rgba(255, 255, 255, 0.2) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+          }
+          .ct-map-wrap .leaflet-bar a:hover {
+            background-color: #1D4ED8 !important;
           }
 
-          .leaflet-control-zoom a:hover {
-            background: #1D4ED8 !important;
+          /* Floating Info Card in Map */
+          .ct-map-info-popup {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            z-index: 500;
+            width: calc(100% - 215px);
+            max-width: 300px;
+            background: rgba(11, 15, 25, 0.96) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            padding: 14px 16px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+            display: none;
+            animation: ctPopupAnim 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           }
 
-          .leaflet-control-attribution {
-            background: rgba(15, 23, 42, 0.75) !important;
-            color: rgba(255, 255, 255, 0.55) !important;
-            font-size: 10px !important;
-          }
-
-          .leaflet-control-attribution a {
-            color: #93c5fd !important;
-          }
-
-          @media (max-width: 768px) {
-            .ct-branches {
-              padding: 64px 16px;
+          @media (max-width: 640px) {
+            .ct-map-info-popup {
+              width: calc(100% - 165px);
+              max-width: 260px;
+              padding: 10px 12px;
+              right: 8px;
+              bottom: 8px;
             }
+          }
 
-            .ct-map-wrap {
-              height: 440px;
+          .ct-map-info-popup.is-visible {
+            display: block;
+          }
+
+          @keyframes ctPopupAnim {
+            from {
+              opacity: 0;
+              transform: translateY(8px) scale(0.97);
             }
-
-            .ct-map-info {
-              left: 12px;
-              right: 12px;
-              bottom: 12px;
-              width: auto;
-              padding: 16px;
-            }
-
-            .ct-branch-list button {
-              padding: 8px 16px;
-              font-size: 0.82rem;
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
             }
           }
         </style>
 
         <div class="ct-branches-inner">
-          <div class="ct-branches-head">
-            <p class="ct-eyebrow--white">
-              <span class="ct-eyebrow-dot--white" aria-hidden="true"></span>
-              Cabang Kami
-            </p>
-            <h2 class="ct-branches-title">6 Lokasi di Seluruh Indonesia</h2>
-            <span class="ct-divider" aria-hidden="true"></span>
-            <p class="ct-branches-sub">Pilih pin di peta untuk melihat lokasi persis dan detail kontak cabang.</p>
-          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            
+            <!-- LEFT COLUMN: OUR BRANCH COMPANY (MINI MAP + JENDELA TEMPEL CABANG) -->
+            <div class="lg:col-span-7 flex flex-col">
+              <!-- Header Our Branch Company -->
+              <div class="mb-4">
+                <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-blue-400 mb-1.5">
+                  <span class="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
+                  <span>Jaringan Bengkel & Workshop</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+                  Our Branch Company
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                  6 titik fasilitas workshop strategis dan unit servis bergerak di seluruh Indonesia.
+                </p>
+              </div>
 
-          <div class="ct-map-layout">
-            <div class="ct-map-wrap">
-              <div id="ctLeafletMap" class="ct-leaflet-map"></div>
+              <!-- Map Container with Docked Window -->
+              <div class="ct-map-wrap relative w-full flex-1 min-h-[480px] lg:min-h-[520px] rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-[#090d16]">
+                
+                <!-- Leaflet Engine Target -->
+                <div id="ctLeafletMap"></div>
 
-              <!-- Floating Branch Info Card inside map -->
-              <div class="ct-map-info" id="ctMapInfo">
-                <span class="ct-map-info-badge" id="ctInfoIndex">CABANG 01</span>
-                <h3 class="ct-map-info-name" id="ctInfoName">Balikpapan</h3>
-                <p class="ct-map-info-address" id="ctInfoAddress">Jl Marsma R. Iswahyudi No 502 Sepinggan, Balikpapan
-                  Selatan</p>
-                <a class="ct-map-info-phone" id="ctInfoPhone" href="tel:+62542761494">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                    </path>
-                  </svg>
-                  <span>+62 542-761-494</span>
-                </a>
-                <div class="ct-map-actions">
-                  <a class="ct-map-info-directions" id="ctInfoDirections" href="#" target="_blank" rel="noopener">
-                    Petunjuk Arah
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M5 12h14M13 6l6 6-6 6"></path>
+                <!-- Jendela Tempel Mini di Sisi Kiri Map (Branch Selector) -->
+                <div class="ct-map-docked-sidebar">
+                  <div class="flex items-center gap-1.5 pb-2 mb-2 border-b border-white/10 text-[10px] font-bold tracking-wider uppercase text-blue-400">
+                    <svg class="w-3.5 h-3.5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     </svg>
-                  </a>
-                  <button type="button" class="ct-map-info-close" onclick="sscBackToOverview()"
-                    title="Tutup kartu">Tutup</button>
+                    <span>PILIH BRANCH</span>
+                  </div>
+
+                  <div class="flex flex-col flex-1" id="ctBranchList" aria-label="Daftar Cabang SSC Works">
+                    <!-- Buttons will be populated & synced by JS -->
+                  </div>
+
+                  <div class="pt-2 mt-auto border-t border-white/10 text-[9.5px] text-slate-400 text-center leading-tight">
+                    Klik branch untuk direct ke titik peta
+                  </div>
+                </div>
+
+                <!-- Info Card (Right Bottom of Map) -->
+                <div class="ct-map-info-popup" id="ctMapInfo">
+                  <div class="flex items-center justify-between gap-2 mb-1.5">
+                    <span class="text-[10px] font-bold tracking-wider uppercase text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded" id="ctInfoIndex">CABANG 01</span>
+                    <button type="button" class="text-slate-400 hover:text-white text-xs p-1" onclick="sscBackToOverview()" title="Tutup kartu">
+                      ✕
+                    </button>
+                  </div>
+                  <h4 class="text-sm font-bold text-white mb-1 leading-snug" id="ctInfoName">Balikpapan (Hub)</h4>
+                  <p class="text-[11.5px] text-slate-300 leading-relaxed mb-3" id="ctInfoAddress">
+                    Jl Marsma R. Iswahyudi No 502 Sepinggan, Balikpapan Selatan
+                  </p>
+                  <div class="flex items-center justify-between gap-2 pt-2 border-t border-white/10">
+                    <a class="inline-flex items-center gap-1.5 text-xs text-blue-300 hover:text-white font-medium" id="ctInfoPhone" href="tel:+62542761494">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>+62 542-761-494</span>
+                    </a>
+                    <a class="inline-flex items-center gap-1 text-[11px] font-semibold text-white bg-blue-600 hover:bg-blue-500 px-2.5 py-1 rounded-md transition-colors" id="ctInfoDirections" href="#" target="_blank" rel="noopener">
+                      Petunjuk Arah &rarr;
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: TRUSTED & TESTIMONIALS -->
+            <div class="lg:col-span-5 flex flex-col justify-between pt-2 lg:pt-0">
+              
+              <!-- Trusted Headline & Subtitle -->
+              <div>
+                <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">
+                  TESTIMONIALS & RELIABILITY
+                </span>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug mb-3 font-display">
+                  Trusted by teams who can't afford downtime.
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-5">
+                  Overhaul armada alat berat & precision engineering terpercaya untuk industri pertambangan, migas, maritim, dan konstruksi di seluruh Indonesia.
+                </p>
+
+                <!-- 4.9 and 100% Stat Row (Matching Sketch) -->
+                <div class="grid grid-cols-2 gap-4 p-4 rounded-xl bg-white/[0.04] border border-white/10 backdrop-blur-sm mb-5">
+                  <div class="flex flex-col">
+                    <div class="flex items-baseline gap-1.5 mb-1">
+                      <span class="text-3xl sm:text-4xl font-black text-white tracking-tight">4.9</span>
+                      <span class="text-slate-400 text-xs">/ 5.0</span>
+                    </div>
+                    <div class="flex text-amber-400 text-xs tracking-wider mb-1">
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <span class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider font-semibold">Avg. Fleet Rating</span>
+                  </div>
+                  <div class="flex flex-col pl-4 border-l border-white/10">
+                    <div class="flex items-baseline gap-1 mb-1">
+                      <span class="text-3xl sm:text-4xl font-black text-blue-400 tracking-tight">100%</span>
+                    </div>
+                    <div class="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-medium mb-1">
+                      <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>ISO 9001:2015</span>
+                    </div>
+                    <span class="text-[11px] sm:text-xs text-slate-300 uppercase tracking-wider font-semibold">On-Schedule Delivery</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="ct-map-hint">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                Klik pin untuk melihat detail cabang
-              </div>
-            </div>
-          </div>
+              <!-- Testimonial Review Cards Container (Matching Sketch) -->
+              <div class="space-y-3.5">
+                
+                <!-- Review 1: Badak LNG -->
+                <div class="bg-white/[0.05] hover:bg-white/[0.08] border border-white/10 hover:border-blue-500/40 rounded-xl p-4 transition-all duration-300 shadow-lg">
+                  <p class="text-xs sm:text-sm text-slate-200 italic leading-relaxed mb-3">
+                    "SSC Works provided fast and accurate service. Our heavy equipment components were back in operation ahead of schedule with exceptional quality."
+                  </p>
+                  <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-full bg-blue-600/30 border border-blue-400/40 text-blue-300 font-bold text-xs flex items-center justify-center">
+                        BL
+                      </div>
+                      <div>
+                        <div class="text-xs font-bold text-white leading-tight">Badak LNG</div>
+                        <div class="text-[10px] text-slate-400">Energy & LNG Infrastructure</div>
+                      </div>
+                    </div>
+                    <div class="flex text-amber-400 text-xs">
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                  </div>
+                </div>
 
-          <!-- Bottom Branch Pill Buttons -->
-          <div class="ct-branch-list" id="ctBranchList" aria-label="Daftar Cabang"></div>
+                <!-- Review 2: MacMahon -->
+                <div class="bg-white/[0.05] hover:bg-white/[0.08] border border-white/10 hover:border-blue-500/40 rounded-xl p-4 transition-all duration-300 shadow-lg">
+                  <p class="text-xs sm:text-sm text-slate-200 italic leading-relaxed mb-3">
+                    "The SSC Works team was extremely professional. From inspection to delivery, everything was seamless and highly efficient."
+                  </p>
+                  <div class="flex items-center justify-between pt-3 border-t border-white/10">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-full bg-indigo-600/30 border border-indigo-400/40 text-indigo-300 font-bold text-xs flex items-center justify-center">
+                        M
+                      </div>
+                      <div>
+                        <div class="text-xs font-bold text-white leading-tight">MacMahon Mining</div>
+                        <div class="text-[10px] text-slate-400">Mining Fleet Operations</div>
+                      </div>
+                    </div>
+                    <div class="flex text-amber-400 text-xs">
+                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -2314,19 +2273,19 @@
         var sscMap = null, sscMarkers = {}, sscLockedKey = null;
         var SSC_OVERVIEW_CENTER = [-2.5, 118.0];
 
-        // Batasan wilayah Indonesia (Sabang sampai Merauke)
+        // Batasan wilayah Indonesia
         var INDONESIA_BOUNDS = [
-          [-11.5, 94.0], // Batas Barat & Selatan (Rote, Jawa, Sabang)
-          [6.5, 142.0]   // Batas Timur & Utara (Aceh utara, Papua timur)
+          [-11.5, 94.0],
+          [6.5, 142.0]
         ];
 
         function sscPinIcon(active) {
           var fill = active ? '#ffffff' : '#1D4ED8';
           var dot = active ? '#1D4ED8' : '#ffffff';
-          var size = active ? 36 : 28;
+          var size = active ? 34 : 26;
           var svg =
             '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + (size * 1.24) + '" viewBox="0 0 34 42">' +
-            '<path d="M17 0C7.6 0 0 7.6 0 17c0 12.7 17 25 17 25s17-12.3 17-25C34 7.6 26.4 0 17 0Z" fill="' + fill + '" stroke="rgba(0,0,0,0.35)" stroke-width="1.2"/>' +
+            '<path d="M17 0C7.6 0 0 7.6 0 17c0 12.7 17 25 17 25s17-12.3 17-25C34 7.6 26.4 0 17 0Z" fill="' + fill + '" stroke="rgba(0,0,0,0.4)" stroke-width="1.2"/>' +
             '<circle cx="17" cy="17" r="6" fill="' + dot + '"/>' +
             '</svg>';
           return L.divIcon({
@@ -2342,9 +2301,8 @@
           if (!mapEl || typeof L === 'undefined') return;
 
           var isMobile = window.innerWidth < 768;
-          // Batasan UX: Zoom minimal dibatasi maksimal satu wilayah Indonesia, tidak bisa zoom out sampai dunia/kecil
-          var minZoomVal = isMobile ? 4.2 : 4.8;
-          var initialZoom = isMobile ? 4.5 : 5.0;
+          var minZoomVal = isMobile ? 4.0 : 4.5;
+          var initialZoom = isMobile ? 4.3 : 4.8;
 
           sscMap = L.map(mapEl, {
             center: SSC_OVERVIEW_CENTER,
@@ -2352,13 +2310,15 @@
             minZoom: minZoomVal,
             maxZoom: 18,
             maxBounds: INDONESIA_BOUNDS,
-            maxBoundsViscosity: 1.0, // Batas ketat: user tidak bisa menggeser atau zoom out keluar dari Indonesia
-            scrollWheelZoom: true,
+            maxBoundsViscosity: 1.0,
+            scrollWheelZoom: false,
             zoomControl: true,
             attributionControl: true
           });
 
-          // Google Maps tile layer (standar peta resmi Google Maps)
+          sscMap.on('focus', function () { sscMap.scrollWheelZoom.enable(); });
+          sscMap.on('blur', function () { sscMap.scrollWheelZoom.disable(); });
+
           L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
             subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
             attribution: '&copy; Google Maps',
@@ -2388,13 +2348,21 @@
           });
 
           sscBindBranchUiOnce();
+
+          // Select Balikpapan (Hub) initially so the UI starts with an active pin and info card
+          setTimeout(function() {
+            if (sscMap) {
+              sscMap.invalidateSize();
+              sscLockBranch('balikpapan');
+            }
+          }, 350);
+
+          window.addEventListener('resize', function() {
+            if (sscMap) sscMap.invalidateSize();
+          });
         }
 
         function sscLockBranch(key) {
-          if (sscLockedKey === key) {
-            sscBackToOverview();
-            return;
-          }
           sscLockedKey = key;
           var b = sscBranches[key];
 
@@ -2402,7 +2370,7 @@
             sscMarkers[k].setIcon(sscPinIcon(k === key));
           });
 
-          sscMap.flyTo([b.lat, b.lng], 15, { duration: 1.2 });
+          sscMap.flyTo([b.lat, b.lng], 13.5, { duration: 1.2 });
           sscUpdateInfoCard(key);
           sscUpdateBranchListActive(key);
         }
@@ -2413,7 +2381,7 @@
             sscMarkers[k].setIcon(sscPinIcon(false));
           });
           var isMobile = window.innerWidth < 768;
-          sscMap.flyTo(SSC_OVERVIEW_CENTER, isMobile ? 4.5 : 5.0, { duration: 1.0 });
+          sscMap.flyTo(SSC_OVERVIEW_CENTER, isMobile ? 4.3 : 4.8, { duration: 1.0 });
           sscUpdateInfoCard(null);
           sscUpdateBranchListActive(null);
         }
@@ -2466,8 +2434,9 @@
             var b = sscBranches[key];
             var btn = document.createElement('button');
             btn.type = 'button';
-            btn.textContent = b.name;
+            btn.className = 'ct-branch-item';
             btn.dataset.branch = key;
+            btn.innerHTML = '<span>' + b.name + '</span><span class="ct-branch-badge">' + b.index + '</span>';
             btn.addEventListener('click', function () { sscLockBranch(key); });
             listWrap.appendChild(btn);
           });
@@ -2492,70 +2461,6 @@
           }
         });
       </script>
-      <!-- TESTIMONIALS & RELIABILITY -->
-      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-5 flex flex-col">
-              <span
-                class="font-label-tag text-label-tag uppercase text-primary-container tracking-wider font-semibold mb-3">TESTIMONIALS</span>
-              <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold mb-6">
-                Trusted by teams who can't afford downtime.
-              </h2>
-              <div class="flex items-center gap-8 pt-4">
-                <div class="flex flex-col">
-                  <span class="font-metric-numeral text-metric-numeral text-text-heading font-bold">4.9</span>
-                  <span class="font-body-sm text-body-sm text-text-caption">Avg. Fleet Rating</span>
-                </div>
-                <div class="h-10 w-px bg-border-hairline"></div>
-                <div class="flex flex-col">
-                  <span class="font-metric-numeral text-metric-numeral font-bold text-text-heading">100%</span>
-                  <span class="font-body-sm text-body-sm text-text-caption">On-Schedule Delivery</span>
-                </div>
-              </div>
-            </div>
-            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-surface-base border border-border-hairline rounded-lg p-6 flex flex-col">
-                <p class="font-body-md text-body-md text-text-body mb-6 flex-1">
-                  "SSC Works provided fast and accurate service. Our heavy equipment components were back in operation
-                  ahead of schedule with exceptional quality."
-                </p>
-                <div class="flex items-center gap-3 pt-4 border-t border-border-hairline">
-                  <div
-                    class="w-10 h-10 rounded-full bg-surface-subtle font-label-ui font-bold text-text-heading flex items-center justify-center">
-                    BL
-                  </div>
-                  <div>
-                    <p class="font-label-ui text-label-ui font-semibold text-text-heading">Badak LNG</p>
-                    <div class="flex text-amber-500 text-[14px]">
-                      <span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span
-                        class="">★</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-surface-base border border-border-hairline rounded-lg p-6 flex flex-col">
-                <p class="font-body-md text-body-md text-text-body mb-6 flex-1">
-                  "The SSC Works team was extremely professional. From inspection to delivery, everything was seamless
-                  and highly efficient."
-                </p>
-                <div class="flex items-center gap-3 pt-4 border-t border-border-hairline">
-                  <div
-                    class="w-10 h-10 rounded-full bg-surface-subtle font-label-ui font-bold text-text-heading flex items-center justify-center">
-                    M
-                  </div>
-                  <div>
-                    <p class="font-label-ui text-label-ui font-semibold text-text-heading">MacMahon</p>
-                    <div class="flex text-amber-500 text-[14px]">
-                      <span class="">★</span><span class="">★</span><span class="">★</span><span class="">★</span><span
-                        class="">★</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- DIRECT INQUIRY & CONTACT SECTION -->
         <section class="w-full bg-surface-base py-20 lg:py-24" id="contact">
           <div class="max-w-4xl mx-auto px-6 lg:px-8">
