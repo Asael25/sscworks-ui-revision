@@ -1086,9 +1086,7 @@
                 </div>
               </div>
               <div class="p-6 flex flex-col flex-1">
-                <span
-                  class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
-                  3 — Commissioning</span>
+
                 <h3
                   class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-3 group-hover:text-primary-container transition-colors">
                   Return in Like-New Condition</h3>
@@ -1136,8 +1134,8 @@
               height: 100%;
               cursor: pointer;
               overflow: hidden;
-              transition: flex 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-              border-right: 1px solid rgba(255, 255, 255, 0.1);
+              transition: flex 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+              border-right: 1px solid rgba(255, 255, 255, 0.12);
               background: #0b0f19;
               padding: 24px 16px;
               display: flex;
@@ -1150,21 +1148,37 @@
               border-right: none;
             }
 
+            /* Panel expands on hover or when is-active */
             #services-matrix .service-panel:hover,
             #services-matrix .service-panel.is-active {
               flex: 3.8;
               padding: 24px 22px;
             }
 
+            /* Brighter images as requested */
             #services-matrix .service-panel .panel-img {
-              transition: transform 0.7s ease, filter 0.5s ease;
-              filter: brightness(0.48);
+              transition: transform 0.7s ease, filter 0.4s ease;
+              filter: brightness(0.85);
             }
 
             #services-matrix .service-panel:hover .panel-img,
             #services-matrix .service-panel.is-active .panel-img {
               transform: scale(1.06);
-              filter: brightness(0.75);
+              filter: brightness(1.02);
+            }
+
+            /* Soft overlay gradient that keeps machinery bright & visible */
+            #services-matrix .service-panel .panel-overlay {
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(180deg, rgba(11, 15, 25, 0.75) 0%, rgba(11, 15, 25, 0.15) 45%, rgba(11, 15, 25, 0.88) 100%);
+              pointer-events: none;
+              transition: background 0.4s ease;
+            }
+
+            #services-matrix .service-panel:hover .panel-overlay,
+            #services-matrix .service-panel.is-active .panel-overlay {
+              background: linear-gradient(180deg, rgba(11, 15, 25, 0.65) 0%, rgba(11, 15, 25, 0.10) 45%, rgba(11, 15, 25, 0.92) 100%);
             }
 
             /* Unified top row across all panels: exact same height! */
@@ -1191,6 +1205,7 @@
               color: #ffffff;
               letter-spacing: -0.01em;
               word-break: normal;
+              text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
             }
 
             #services-matrix .service-panel:hover .panel-title-text,
@@ -1204,7 +1219,7 @@
               opacity: 0;
               max-height: 0;
               transform: translateY(16px);
-              transition: opacity 0.4s ease 0.12s, transform 0.4s ease 0.12s, max-height 0.4s ease;
+              transition: opacity 0.35s ease 0.1s, transform 0.35s ease 0.1s, max-height 0.35s ease;
               overflow: hidden;
               pointer-events: none;
             }
@@ -1263,7 +1278,13 @@
               margin-top: 14px;
             }
             #services-matrix .service-panel .panel-img {
-              filter: brightness(0.6);
+              filter: brightness(0.8);
+            }
+            #services-matrix .service-panel .panel-overlay {
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(180deg, rgba(11, 15, 25, 0.7) 0%, rgba(11, 15, 25, 0.2) 45%, rgba(11, 15, 25, 0.85) 100%);
+              pointer-events: none;
             }
           }
         </style>
@@ -1281,15 +1302,15 @@
               Standardized procedures across 8 core heavy-industry competencies, equipped for massive tonnage and extreme operating conditions.
             </p>
           </div>
-          <!-- Interactive Expanding Horizontal Accordion Shelf -->
-          <div class="service-shelf" id="serviceShelf">
+          <!-- Interactive Expanding Horizontal Accordion Shelf (Auto-closes when cursor leaves) -->
+          <div class="service-shelf" id="serviceShelf" onmouseleave="closeAllPanels()">
             
             <!-- Panel 01 -->
-            <div class="service-panel is-active" onmouseenter="activatePanel(this)">
+            <div class="service-panel" onmouseenter="activatePanel(this)">
               <img alt="Machining (CNC & Manual)"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/precision.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION: SAMA RATA TINGGINYA PADA SEMUA PANEL -->
               <div class="relative z-10 flex flex-col">
@@ -1306,12 +1327,12 @@
 
               <!-- BOTTOM SECTION: EXPANDED DETAIL -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Precision machining services for industrial components using advanced CNC and manual machines.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Capacities</span>
-                  <span class="text-xs text-slate-300">Lathe up to 3.2m · Milling · Line Boring · Honing</span>
+                  <span class="text-xs text-slate-200">Lathe up to 3.2m · Milling · Line Boring · Honing</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1325,7 +1346,7 @@
               <img alt="Welding & Fabrication"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/fabrication.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1342,12 +1363,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Certified welding solutions for critical structures and repairs, including robotic manipulators.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Processes</span>
-                  <span class="text-xs text-slate-300">SMAW · TIG · MIG · SAW · Digital PWHT</span>
+                  <span class="text-xs text-slate-200">SMAW · TIG · MIG · SAW · Digital PWHT</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1361,7 +1382,7 @@
               <img alt="Thermal Spray & Coating"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/pict3.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1378,12 +1399,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Protective and restorative coatings using wire flame spray, arc spray, and ceramic technology.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Applications</span>
-                  <span class="text-xs text-slate-300">Shaft Restoration · Wear Resistance · Ceramic Barrier</span>
+                  <span class="text-xs text-slate-200">Shaft Restoration · Wear Resistance · Ceramic Barrier</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1397,7 +1418,7 @@
               <img alt="Component Reconditioning"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/pict4.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1414,12 +1435,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Cost-effective and sustainable repair of heavy diesel engine and powertrain components.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Core Parts</span>
-                  <span class="text-xs text-slate-300">Cylinder Block · Camshaft · Spindle · Crankshaft</span>
+                  <span class="text-xs text-slate-200">Cylinder Block · Camshaft · Spindle · Crankshaft</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1433,7 +1454,7 @@
               <img alt="Balancing, Plating & Press"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/tes1.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1450,12 +1471,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Dynamic balancing and heavy-duty structural treatments for rotating high-speed shafts.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Machinery</span>
-                  <span class="text-xs text-slate-300">3M Balancing · Brush Plating · 650T Press</span>
+                  <span class="text-xs text-slate-200">3M Balancing · Brush Plating · 650T Press</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1469,7 +1490,7 @@
               <img alt="Inspection & Testing"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/tes8.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1486,12 +1507,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Comprehensive QA/QC inspections following ISO calibration and certified non-destructive tests.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Methods</span>
-                  <span class="text-xs text-slate-300">NDT (PT, MT, UT) · Hardness · Pressure Test</span>
+                  <span class="text-xs text-slate-200">NDT (PT, MT, UT) · Hardness · Pressure Test</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1505,7 +1526,7 @@
               <img alt="Custom Fabrication"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/pict5.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1522,12 +1543,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Tailor-made metalworks, heavy chutes, and structural chassis built to engineered drawings.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Products</span>
-                  <span class="text-xs text-slate-300">Screw Conveyors · Spreaders · Fuel Tanks</span>
+                  <span class="text-xs text-slate-200">Screw Conveyors · Spreaders · Fuel Tanks</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1541,7 +1562,7 @@
               <img alt="Hot Dip Galvanizing (HDG)"
                 class="panel-img absolute inset-0 w-full h-full object-cover"
                 src="https://sscworks.com/wp-content/uploads/2026/08/tunnel.webp">
-              <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/50 to-slate-950/90 pointer-events-none"></div>
+              <div class="panel-overlay"></div>
               
               <!-- TOP SECTION -->
               <div class="relative z-10 flex flex-col">
@@ -1558,12 +1579,12 @@
 
               <!-- BOTTOM SECTION -->
               <div class="panel-expanded-body relative z-10 flex flex-col justify-end pt-4 border-t border-white/15">
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed mb-3">
                   Durable corrosion protection for steel components through SNI and ASTM compliant full immersion baths.
                 </p>
                 <div class="pt-2 border-t border-white/10 flex flex-col gap-1 mb-3">
                   <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Compliance</span>
-                  <span class="text-xs text-slate-300">Large Industrial Parts · SNI &amp; ASTM A123</span>
+                  <span class="text-xs text-slate-200">Large Industrial Parts · SNI &amp; ASTM A123</span>
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
                   <span>Explore Service</span>
@@ -1582,6 +1603,14 @@
               p.classList.remove('is-active');
             });
             panel.classList.add('is-active');
+          }
+
+          function closeAllPanels() {
+            var shelf = document.getElementById('serviceShelf');
+            if (!shelf) return;
+            shelf.querySelectorAll('.service-panel').forEach(function(p) {
+              p.classList.remove('is-active');
+            });
           }
         </script>
       </section>
@@ -1610,11 +1639,6 @@
               <h2 class="font-headline-lg text-headline-lg text-text-heading font-semibold mb-6">
                 Welcome to Repair Mastery
               </h2>
-              <p class="font-body-md text-body-md text-text-body mb-10 leading-relaxed">
-                With over two decades of metallurgical research, dedicated machine shops, and field-tested
-                remanufacturing workflows, SSC Works transforms worn heavy fleet components into like-new assets
-                guaranteed to withstand the harshest extraction environments.
-              </p>
               <!-- 3-Column Uniform Metric Display -->
               <div class="welcome-metrics grid grid-cols-3 gap-6 pt-6 border-t border-border-hairline">
                 <div class="flex flex-col">
@@ -1654,10 +1678,6 @@
               <span
                 class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-1">QUALITY</span>
               <h3 class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2">Quality Management</h3>
-              <p class="font-body-sm text-body-sm text-text-caption mb-6">
-                Consistent results. On every job. Standardized QA/QC check sheets from component receipt to load
-                testing.
-              </p>
               <button
                 class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
                 onclick="openCertModal('ISO 9001:2015 Quality Management Certificate', 'Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.')"
