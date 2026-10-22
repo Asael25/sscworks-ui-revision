@@ -1757,7 +1757,7 @@
             <h3 class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2">Quality Management</h3>
             <button
               class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
-              onclick="openCertModal('ISO 9001:2015 Quality Management Certificate', 'Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.')"
+              onclick="openCertModal('9001')"
               type="button">
               <span class="">View certificate</span>
               <span class="material-symbols-outlined text-[16px]">visibility</span>
@@ -1783,7 +1783,7 @@
             </p>
             <button
               class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
-              onclick="openCertModal('ISO 14001:2015 Environmental Management', 'Comprehensive waste mitigation protocol and ISO-verified environmentally conscious recycling system.')"
+              onclick="openCertModal('14001')"
               type="button">
               <span class="">View certificate</span>
               <span class="material-symbols-outlined text-[16px]">visibility</span>
@@ -1809,7 +1809,7 @@
             </p>
             <button
               class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
-              onclick="openCertModal('ISO 45001:2018 Occupational Health &amp; Safety', 'Certified zero-incident HSE governance governing heavy equipment handling and machine shops.')"
+              onclick="openCertModal('45001')"
               type="button">
               <span class="">View certificate</span>
               <span class="material-symbols-outlined text-[16px]">visibility</span>
@@ -3245,48 +3245,142 @@
       });
     </script>
     <!-- MODAL: ISO CERTIFICATE VIEWER -->
-    <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
-      id="cert-modal">
+    <div class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+      id="cert-modal" onclick="if(event.target === this) closeCertModal()">
       <div
-        class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col">
-        <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
-          <span class="font-label-ui text-label-ui font-semibold text-text-heading" id="cert-modal-title">ISO
-            Certificate Verification</span>
-          <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
-            onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
-            <span class="material-symbols-outlined text-[20px]">close</span>
-          </button>
-        </div>
-        <div class="p-8 flex flex-col items-center text-center bg-surface-base">
-          <div
-            class="w-24 h-24 rounded-full bg-surface-subtle border border-border-hairline flex items-center justify-center mb-6">
-            <span class="material-symbols-outlined text-primary-container text-[48px]">verified</span>
+        class="bg-surface-base border border-border-hairline rounded-2xl w-full max-w-5xl max-h-[92vh] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in-95 duration-200">
+        
+        <!-- Modal Top Bar -->
+        <div class="px-5 py-4 border-b border-border-hairline flex flex-wrap items-center justify-between gap-3 bg-surface-subtle">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
+              <span class="material-symbols-outlined text-[20px]">verified</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="font-label-ui text-xs font-bold uppercase tracking-wider text-primary-container" id="cert-modal-tag">Quality Management System</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-base border border-border-hairline text-text-caption font-mono" id="cert-modal-number">Cert. No: 68522/B/0001/UK/En</span>
+              </div>
+              <h3 class="font-headline-sm text-base sm:text-lg font-bold text-text-heading" id="cert-modal-title">Certificate of Registration — ISO 9001:2015</h3>
+            </div>
           </div>
-          <h4 class="font-headline-sm text-headline-sm font-semibold text-text-heading mb-2" id="cert-modal-header">
-            ISO 9001:2015 Audit</h4>
-          <p class="font-body-sm text-body-sm text-text-caption max-w-md mb-8" id="cert-modal-desc">
-            Certified facility audit covering CNC machining, thermal coating, and overhaul procedures.
-          </p>
-          <div
-            class="w-full bg-surface-subtle p-4 rounded-lg border border-border-hairline text-left text-xs font-mono text-text-caption space-y-1 mb-6">
-            <div class="">Accreditation: KAN / International Accreditation Forum</div>
-            <div class="">Status: Active · Valid through 2027</div>
-            <div class="">Audit Scope: Remanufacturing &amp; Engineering Services</div>
-          </div>
-          <div class="flex items-center gap-4">
-            <button
-              class="inline-flex items-center gap-2 bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-label-ui px-6 py-2.5 rounded-lg transition-colors"
-              onclick="alert('Opening official high-resolution scan document...')" type="button">
-              <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-              <span class="">Buka ukuran asli</span>
+
+          <!-- ISO Switcher Tabs & Close -->
+          <div class="flex items-center gap-2">
+            <div class="inline-flex p-1 bg-surface-base rounded-xl border border-border-hairline">
+              <button type="button" id="tab-btn-9001" onclick="selectCertTab('9001')"
+                class="cert-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-primary-container text-on-primary shadow-sm">
+                ISO 9001
+              </button>
+              <button type="button" id="tab-btn-14001" onclick="selectCertTab('14001')"
+                class="cert-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-text-caption hover:text-text-heading">
+                ISO 14001
+              </button>
+              <button type="button" id="tab-btn-45001" onclick="selectCertTab('45001')"
+                class="cert-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-text-caption hover:text-text-heading">
+                ISO 45001
+              </button>
+            </div>
+            <button class="w-9 h-9 rounded-xl border border-border-hairline flex items-center justify-center text-text-caption hover:text-text-heading hover:bg-surface-subtle transition-colors ml-1"
+              onclick="closeCertModal()" type="button" title="Tutup (Esc)">
+              <span class="material-symbols-outlined text-[20px]">close</span>
             </button>
-            <button
-              class="font-label-ui text-label-ui px-4 py-2.5 rounded-lg border border-border-hairline text-text-heading hover:bg-surface-subtle transition-colors"
-              onclick="document.getElementById('cert-modal').classList.add('hidden')" type="button">
-              Tutup
-            </button>
           </div>
         </div>
+
+        <!-- Modal Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 overflow-y-auto max-h-[calc(92vh-75px)] divide-y lg:divide-y-0 lg:divide-x divide-border-hairline">
+          
+          <!-- Image View Section (Left / Center) -->
+          <div class="lg:col-span-7 p-4 sm:p-6 bg-slate-950/40 flex flex-col items-center justify-center min-h-[360px] relative group">
+            <div class="relative w-full flex items-center justify-center max-h-[66vh] overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-2 shadow-inner">
+              <img id="cert-modal-img" src="iso-9001.png" alt="Official Certificate of Registration PT SSC Works"
+                class="max-h-[62vh] w-auto max-w-full object-contain rounded-lg shadow-2xl transition-transform duration-300 group-hover:scale-[1.01] cursor-zoom-in"
+                onclick="window.open(this.src, '_blank')"
+                title="Klik untuk membuka dalam ukuran penuh / tab baru" />
+              
+              <!-- Zoom badge button -->
+              <a id="cert-modal-zoom-badge" href="iso-9001.png" target="_blank"
+                class="absolute bottom-4 right-4 bg-slate-900/90 hover:bg-primary-container text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 backdrop-blur-md border border-white/20 shadow-lg transition-all opacity-90 group-hover:opacity-100">
+                <span class="material-symbols-outlined text-[15px]">zoom_in</span>
+                <span>Ukuran Penuh</span>
+              </a>
+            </div>
+            <p class="text-[11px] text-text-caption mt-2.5 flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">touch_app</span>
+              Klik pada gambar atau tombol untuk melihat scan sertifikat resolusi penuh
+            </p>
+          </div>
+
+          <!-- Metadata & Scope Section (Right) -->
+          <div class="lg:col-span-5 p-5 sm:p-6 flex flex-col justify-between bg-surface-base space-y-5">
+            <div class="space-y-4">
+              
+              <!-- Standard Header -->
+              <div>
+                <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 mb-2" id="cert-modal-status">
+                  ✓ Certified &amp; Active
+                </span>
+                <h4 class="font-headline-sm text-lg font-bold text-text-heading" id="cert-modal-header">
+                  ISO 9001:2015 Quality Management System
+                </h4>
+                <p class="font-body-sm text-xs text-text-caption mt-1" id="cert-modal-awarded">
+                  Awarded to: <strong class="text-text-heading">PT SSC WORKS</strong>
+                </p>
+              </div>
+
+              <!-- Scope Box -->
+              <div class="bg-surface-subtle p-3.5 rounded-xl border border-border-hairline">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-text-caption block mb-1">Scope of Certified Activities:</span>
+                <p class="font-body-sm text-xs text-text-heading leading-relaxed" id="cert-modal-scope">
+                  Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.
+                </p>
+              </div>
+
+              <!-- Details Table -->
+              <div class="space-y-2.5 text-xs">
+                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
+                  <span class="text-text-caption">Nomor Sertifikat:</span>
+                  <span class="font-mono font-semibold text-text-heading text-right" id="cert-modal-no">68522/B/0001/UK/En</span>
+                </div>
+                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
+                  <span class="text-text-caption">Lokasi Fasilitas:</span>
+                  <span class="font-medium text-text-heading text-right text-[11px] max-w-[220px]" id="cert-modal-address">Jl. Balikpapan Handil II Solok Api, Kutai Kartanegara, Kaltim</span>
+                </div>
+                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
+                  <span class="text-text-caption">Masa Berlaku:</span>
+                  <span class="font-medium text-text-heading text-right" id="cert-modal-valid">Hingga 11 Mei 2027</span>
+                </div>
+                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
+                  <span class="text-text-caption">Lembaga Registrasi:</span>
+                  <span class="font-medium text-text-heading text-right" id="cert-modal-registrar">URS (United Registrar of Systems)</span>
+                </div>
+                <div class="flex items-start justify-between py-1.5 gap-2">
+                  <span class="text-text-caption">Badan Akreditasi:</span>
+                  <span class="font-medium text-text-heading text-right" id="cert-modal-accreditation">UKAS Management Systems 0043 / IAF MLA</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Modal Action Buttons -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              <a id="cert-modal-open-link" href="iso-9001.png" target="_blank"
+                class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-xs font-semibold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg">
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                <span>Buka Dokumen Asli</span>
+              </a>
+              <button
+                class="w-full sm:w-auto font-label-ui text-xs font-medium py-3 px-5 rounded-xl border border-border-hairline text-text-heading hover:bg-surface-subtle transition-colors text-center"
+                onclick="closeCertModal()" type="button">
+                Tutup
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </div>
     <script>
@@ -3296,12 +3390,124 @@
         document.getElementById('branch-phone').innerText = 'Tel: ' + phone;
       }
 
-      function openCertModal(title, desc) {
-        document.getElementById('cert-modal-title').innerText = title;
-        document.getElementById('cert-modal-header').innerText = title;
-        document.getElementById('cert-modal-desc').innerText = desc;
-        document.getElementById('cert-modal').classList.remove('hidden');
+      const isoCertData = {
+        '9001': {
+          title: 'Certificate of Registration — ISO 9001:2015',
+          tag: 'Quality Management System',
+          header: 'ISO 9001:2015 Quality Management System',
+          number: 'Cert. No: 68522/B/0001/UK/En',
+          no: '68522/B/0001/UK/En',
+          address: 'Jl. Balikpapan Handil II Solok Api, RT.05, Kec. Samboja, Kab. Kutai Kartanegara, Kalimantan Timur, Indonesia',
+          scope: 'Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.',
+          valid: 'Hingga 11 Mei 2027',
+          registrar: 'URS (United Registrar of Systems)',
+          accreditation: 'UKAS Management Systems 0043 / IAF MLA',
+          image: 'iso-9001.png'
+        },
+        '14001': {
+          title: 'Certificate of Registration — ISO 14001:2015',
+          tag: 'Environmental Management System',
+          header: 'ISO 14001:2015 Environmental Management System',
+          number: 'Cert. No: 68522/A/0002/UK/En',
+          no: '68522/A/0002/UK/En',
+          address: 'Pergudangan Akses Kebomas Blok E57–E58, Jl. Mayjend Sungkono No. 38, Sekarkurung, Kebomas, Gresik, Jawa Timur, Indonesia',
+          scope: 'Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.',
+          valid: 'Hingga 30 April 2029',
+          registrar: 'URS (United Registrar of Systems)',
+          accreditation: 'UKAS Management Systems 0043 / IAF MLA',
+          image: 'iso-14001.png'
+        },
+        '45001': {
+          title: 'Certificate of Registration — ISO 45001:2018',
+          tag: 'Occupational Health & Safety',
+          header: 'ISO 45001:2018 Occupational Health & Safety Management',
+          number: 'Cert. No: 68522/C/0001/UK/En',
+          no: '68522/C/0001/UK/En',
+          address: 'Jl. Balikpapan Handil II Solok Api, RT.05, Kec. Samboja, Kab. Kutai Kartanegara, Kalimantan Timur, Indonesia',
+          scope: 'Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.',
+          valid: 'Hingga 16 April 2029',
+          registrar: 'URS (United Registrar of Systems)',
+          accreditation: 'UKAS Management Systems 0043 / IAF MLA',
+          image: 'iso-45001.png'
+        }
+      };
+
+      function selectCertTab(key) {
+        const cert = isoCertData[key];
+        if (!cert) return;
+
+        const titleEl = document.getElementById('cert-modal-title');
+        const tagEl = document.getElementById('cert-modal-tag');
+        const numEl = document.getElementById('cert-modal-number');
+        const headerEl = document.getElementById('cert-modal-header');
+        const scopeEl = document.getElementById('cert-modal-scope');
+        const noEl = document.getElementById('cert-modal-no');
+        const addrEl = document.getElementById('cert-modal-address');
+        const validEl = document.getElementById('cert-modal-valid');
+        const regEl = document.getElementById('cert-modal-registrar');
+        const accEl = document.getElementById('cert-modal-accreditation');
+        const imgEl = document.getElementById('cert-modal-img');
+        const linkEl = document.getElementById('cert-modal-open-link');
+        const zoomBadge = document.getElementById('cert-modal-zoom-badge');
+
+        if (titleEl) titleEl.innerText = cert.title;
+        if (tagEl) tagEl.innerText = cert.tag;
+        if (numEl) numEl.innerText = cert.number;
+        if (headerEl) headerEl.innerText = cert.header;
+        if (scopeEl) scopeEl.innerText = cert.scope;
+        if (noEl) noEl.innerText = cert.no;
+        if (addrEl) addrEl.innerText = cert.address;
+        if (validEl) validEl.innerText = cert.valid;
+        if (regEl) regEl.innerText = cert.registrar;
+        if (accEl) accEl.innerText = cert.accreditation;
+        if (imgEl) {
+          imgEl.src = cert.image;
+          imgEl.alt = cert.title;
+        }
+        if (linkEl) linkEl.href = cert.image;
+        if (zoomBadge) zoomBadge.href = cert.image;
+
+        ['9001', '14001', '45001'].forEach(k => {
+          const btn = document.getElementById('tab-btn-' + k);
+          if (btn) {
+            if (k === key) {
+              btn.className = 'cert-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-primary-container text-on-primary shadow-sm';
+            } else {
+              btn.className = 'cert-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-text-caption hover:text-text-heading';
+            }
+          }
+        });
       }
+
+      function openCertModal(keyOrTitle, desc) {
+        let key = '9001';
+        if (keyOrTitle) {
+          if (keyOrTitle.includes('14001')) key = '14001';
+          else if (keyOrTitle.includes('45001')) key = '45001';
+          else if (keyOrTitle.includes('9001')) key = '9001';
+          else if (isoCertData[keyOrTitle]) key = keyOrTitle;
+        }
+        selectCertTab(key);
+        const modal = document.getElementById('cert-modal');
+        if (modal) {
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeCertModal() {
+        const modal = document.getElementById('cert-modal');
+        if (modal) {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeCertModal();
+        }
+      });
 
       function submitInquiry() {
         document.getElementById('form-success').classList.remove('hidden');
