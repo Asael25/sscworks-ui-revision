@@ -891,8 +891,8 @@
           })();
         </script>
       </section>
-      <!-- COMPANY PROFILE (VIDEO SPOTLIGHT) -->
-      <section class="w-full bg-surface-base py-20 border-b border-border-hairline">
+            <!-- COMPANY PROFILE (VIDEO SPOTLIGHT) -->
+      <section class="w-full bg-surface-base py-20 border-b border-border-hairline" id="company-profile">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-5 flex flex-col items-start">
@@ -911,30 +911,35 @@
                 structural earthmovers across Indonesia.
               </p>
               <button
-                class="inline-flex items-center gap-2 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary transition-colors group"
-                onclick="document.getElementById('video-modal').classList.remove('hidden')" type="button">
-                <span class="">Play Video Tour</span>
+                class="inline-flex items-center gap-2 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary transition-colors group cursor-pointer"
+                onclick="openVideoModal()" type="button">
+                <span>Play Video Tour</span>
                 <span
                   class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
             </div>
             <div class="lg:col-span-7">
-              <div class="relative rounded-lg overflow-hidden border border-border-hairline group cursor-pointer"
-                onclick="document.getElementById('video-modal').classList.remove('hidden')">
+              <div class="relative rounded-xl overflow-hidden border border-border-hairline group cursor-pointer shadow-lg bg-slate-900"
+                onclick="openVideoModal()">
                 <img alt="Inside view of SSC Works machining department showing heavy component turning"
-                  class="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1WFedkV54x__V-1mGPWasefKBA0lscUWE-zhPidTDlQb0Ipcv4ZKoTDyr9iuYIWCoj01HgqqLM0AVy4IfuSKp53KdCUGhSXwiMCTypnF11GftNMaKzwWLyE9rlWyweDDaGNfyoLEwB6BvxFw27CfDSRw1KstYkWLo1UhHUc6wzNls2l7083dG9aqdnoOMK8pdLd4SfXUC4XqZCBKfgRfS-tw-iSKMi8K4py6Qzd_wqIq0_IEItAS09Bvxo">
+                  class="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-90"
+                  src="https://i.ytimg.com/vi/miWLacTKJHU/maxresdefault.jpg"
+                  onerror="this.src='https://sscworks.com/wp-content/uploads/2026/08/about.webp'">
                 <div
-                  class="absolute inset-0 bg-text-heading/30 group-hover:bg-text-heading/20 transition-colors flex items-center justify-center">
-                  <div
-                    class="w-20 h-20 rounded-full bg-primary-container/90 text-on-primary flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                    <span class="material-symbols-outlined text-[36px] ml-1">play_arrow</span>
+                  class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent group-hover:via-slate-950/20 transition-colors flex items-center justify-center">
+                  <div class="relative">
+                    <span class="absolute -inset-3 rounded-full bg-blue-600/50 animate-ping opacity-75"></span>
+                    <div
+                      class="relative w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl ring-4 ring-white/30">
+                      <span class="material-symbols-outlined text-[40px] ml-1">play_arrow</span>
+                    </div>
                   </div>
                 </div>
                 <div
-                  class="absolute bottom-4 left-4 bg-surface-base/90 backdrop-blur-md px-4 py-2 rounded-lg border border-border-hairline">
+                  class="absolute bottom-4 left-4 bg-slate-900/90 backdrop-blur-md px-4 py-2.5 rounded-lg border border-white/15 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                   <span
-                    class="font-label-tag text-label-tag uppercase text-text-heading font-semibold tracking-wider">SSC
+                    class="font-label-tag text-label-tag uppercase text-white font-semibold tracking-wider text-xs">SSC
                     Works Corporate Video (04:12)</span>
                 </div>
               </div>
@@ -942,8 +947,18 @@
           </div>
         </div>
       </section>
-      <!-- OUR REPAIR PROCESS (WHAT WE DO) -->
-      <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
+            <!-- OUR REPAIR PROCESS (WHAT WE DO) -->
+      <section class="w-full bg-surface-base py-24 border-b border-border-hairline" id="repair-process">
+        <style>
+          .process-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+          }
+          .process-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.12);
+            border-color: #1D4ED8;
+          }
+        </style>
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
           <div class="max-w-3xl mb-16">
             <span
@@ -960,15 +975,16 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Step 01 -->
             <div
-              class="group flex flex-col bg-surface-base rounded-lg border border-border-hairline overflow-hidden hover:border-primary-container transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
-              <div class="h-60 overflow-hidden relative">
+              class="process-card group flex flex-col bg-surface-base rounded-xl border border-border-hairline overflow-hidden shadow-sm cursor-pointer">
+              <div class="h-60 overflow-hidden relative bg-slate-900">
                 <img alt="Engineering technicians receiving and measuring damaged hydraulic arm component"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1WeEGKvFOwp963lRN7Vhxyje_tTX9d5jVpgnJdNeA2lAfsPw9ivslHydoxGY2dk9v75G87lrXAHHHtb5yxmKHIMthwEid6sNP9Q6POrCsVwFB0mvIROBhgoJM-KvL3fn2sayYjIsuZyNI3IN65d8MttcxLfzFwUEXkNOD_eIhm5mMc75ULWXl0oyRMRL_cQdTv57ajYM0kMn-aSEtluNgHEOOSr25TvhGHUyYxg9Le4wAtSOUVgB8EtM0et">
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/generalrep2.webp">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
                 <div
-                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 drop-shadow-md text-white font-mono text-xs font-bold tracking-wider">
-                  <span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-white/50"></span><span
-                    class="leading-none">01</span>
+                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold tracking-wider shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                  <span class="leading-none">STEP 01</span>
                 </div>
               </div>
               <div class="p-6 flex flex-col flex-1">
@@ -976,34 +992,31 @@
                   class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
                   1 — Assessment</span>
                 <h3
-                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2 group-hover:text-primary-container transition-colors">
+                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-3 group-hover:text-primary-container transition-colors">
                   Drop Off Damaged Component</h3>
-                <div
-                  class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out flex-1">
-                  <p class="font-body-sm text-body-sm text-text-caption pt-1 mb-4 leading-relaxed">
-                    Initial Inspection &amp; Diagnosis. We begin with a full inspection to identify damage levels,
-                    non-destructive crack testing, and determine the most efficient and cost-effective repair strategy.
-                  </p>
-                </div>
-                <div
-                  class="pt-4 border-t border-border-hairline flex items-center justify-between text-text-caption font-label-ui text-label-ui mt-auto">
-
-
+                <p class="font-body-sm text-body-sm text-text-caption leading-relaxed flex-1">
+                  Initial Inspection &amp; Diagnosis. We begin with a full inspection to identify damage levels,
+                  non-destructive crack testing, and determine the most efficient and cost-effective repair strategy.
+                </p>
+                <div class="pt-4 mt-4 border-t border-border-hairline flex items-center justify-between text-primary-container font-label-ui text-label-ui font-semibold text-xs">
+                  <span>Inspection & NDT Gate</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </div>
               </div>
             </div>
             <!-- Step 02 -->
             <div
-              class="group flex flex-col bg-surface-base rounded-lg border border-border-hairline overflow-hidden hover:border-primary-container transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
-              <div class="h-60 overflow-hidden relative">
+              class="process-card group flex flex-col bg-surface-base rounded-xl border border-border-hairline overflow-hidden shadow-sm cursor-pointer">
+              <div class="h-60 overflow-hidden relative bg-slate-900">
                 <img
                   alt="High precision CNC lathe cutting machine turning cylindrical shaft with continuous cooling lubrication"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1XacHsnQHXOtuUbPKRrSTr0r830fORF1a5Kl3Xo6qTeI4lHwWhNhwKjbqU73ja7UJemzxryNPKhv_Cb1UKbb5SvAWgLmVO0H-0Bg9a_IEZrGDle9C7SOAW7PencA29Jc9RfQrGFEEGyMUMWMvUiOaZUPivT6ahc0L5By8FRJGFFCYsLHjUVG7R9hQ1Ds-CL-_6jDAUCypYiORsaAIbjOIC6bVaCZs3k7fut4mfZZu6Idu3G1vY0sIbIX0w0">
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/precision.webp">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
                 <div
-                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 drop-shadow-md text-white font-mono text-xs font-bold tracking-wider">
-                  <span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-white/50"></span><span
-                    class="leading-none">02</span>
+                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold tracking-wider shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                  <span class="leading-none">STEP 02</span>
                 </div>
               </div>
               <div class="p-6 flex flex-col flex-1">
@@ -1011,35 +1024,32 @@
                   class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
                   2 — Engineering</span>
                 <h3
-                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2 group-hover:text-primary-container transition-colors">
+                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-3 group-hover:text-primary-container transition-colors">
                   Precision Repair &amp; Fabrication</h3>
-                <div
-                  class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out flex-1">
-                  <p class="font-body-sm text-body-sm text-text-caption pt-1 mb-4 leading-relaxed">
-                    Handled by Expert Engineers. Our technicians execute high-precision repairs using industry-standard
-                    machining, welding, thermal spray, and fabrication processes - ensuring strength, accuracy, and
-                    durability.
-                  </p>
-                </div>
-                <div
-                  class="pt-4 border-t border-border-hairline flex items-center justify-between text-text-caption font-label-ui text-label-ui mt-auto">
-
-
+                <p class="font-body-sm text-body-sm text-text-caption leading-relaxed flex-1">
+                  Handled by Expert Engineers. Our technicians execute high-precision repairs using industry-standard
+                  machining, welding, thermal spray, and fabrication processes - ensuring strength, accuracy, and
+                  durability.
+                </p>
+                <div class="pt-4 mt-4 border-t border-border-hairline flex items-center justify-between text-primary-container font-label-ui text-label-ui font-semibold text-xs">
+                  <span>ISO Metallurgy & Machining</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </div>
               </div>
             </div>
             <!-- Step 03 -->
             <div
-              class="group flex flex-col bg-surface-base rounded-lg border border-border-hairline overflow-hidden hover:border-primary-container transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
-              <div class="h-60 overflow-hidden relative">
+              class="process-card group flex flex-col bg-surface-base rounded-xl border border-border-hairline overflow-hidden shadow-sm cursor-pointer">
+              <div class="h-60 overflow-hidden relative bg-slate-900">
                 <img
                   alt="Restored large hydraulic cylinder reconditioned, pressure tested, painted orange, and ready for shipment"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1XtW_RcS8cODuGn75BTXV39S1Si4LfIg_O0pb5Pj4uKKrR9rLXJ2QqJN_lkC3M6qHYhy1L_t33hSOjPThgQcEPgXuOCbJuQqQYbas1mTz3bS51g8GwWTadJt9dUwU9ryxKg7-x0LQu_wqBnqqco2hQOg8WGc2BmtfUn6AGy19kOkBJp63XOra1_kuQT5ffF4LrBLecpoRO2Zvk5rCEr--Om2XdC_8tINLZV0j2qUjFOGYJxZ-HMOueCTU4">
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  src="https://sscworks.com/wp-content/uploads/2026/08/restored.webp">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
                 <div
-                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 drop-shadow-md text-white font-mono text-xs font-bold tracking-wider">
-                  <span class="w-2 h-2 rounded-full bg-primary-container ring-2 ring-white/50"></span><span
-                    class="leading-none">03</span>
+                  class="absolute top-4 left-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/20 text-white font-mono text-xs font-bold tracking-wider shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                  <span class="leading-none">STEP 03</span>
                 </div>
               </div>
               <div class="p-6 flex flex-col flex-1">
@@ -1047,78 +1057,140 @@
                   class="font-label-tag text-label-tag uppercase text-primary-container font-semibold tracking-wider mb-2">Step
                   3 — Commissioning</span>
                 <h3
-                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2 group-hover:text-primary-container transition-colors">
+                  class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-3 group-hover:text-primary-container transition-colors">
                   Return in Like-New Condition</h3>
-                <div
-                  class="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out flex-1">
-                  <p class="font-body-sm text-body-sm text-text-caption pt-1 mb-4 leading-relaxed">
-                    Tested. Proven. Delivered. All components are thoroughly tested before delivery, restored to optimal
-                    performance and ready to be reinstalled on-site with complete quality certifications.
-                  </p>
-                </div>
-                <div
-                  class="pt-4 border-t border-border-hairline flex items-center justify-between text-text-caption font-label-ui text-label-ui mt-auto">
-
-
+                <p class="font-body-sm text-body-sm text-text-caption leading-relaxed flex-1">
+                  Tested. Proven. Delivered. All components are thoroughly tested before delivery, restored to optimal
+                  performance and ready to be reinstalled on-site with complete quality certifications.
+                </p>
+                <div class="pt-4 mt-4 border-t border-border-hairline flex items-center justify-between text-primary-container font-label-ui text-label-ui font-semibold text-xs">
+                  <span>Final QA/QC Sign-Off</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- QUALITY SERVICES (HORIZONTAL ACCORDION & DIRECTORY) -->
+            <!-- QUALITY SERVICES (HORIZONTAL ACCORDION & DIRECTORY) -->
       <section class="w-full bg-surface-base py-24 border-b border-border-hairline" id="services-matrix">
         <style>
-          @media (max-width: 1535px) {
+          #services-matrix .service-shelf {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+          }
+
+          @media (min-width: 1024px) {
             #services-matrix .service-shelf {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-              height: auto;
-              gap: 14px;
-              overflow: visible;
-              border: 0;
-              background: transparent;
-              box-shadow: none;
+              flex-direction: row;
+              height: 520px;
+              gap: 0;
+              border-radius: 20px;
+              overflow: hidden;
+              background: #0b0f19;
+              box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.4);
+              border: 1px solid rgba(255, 255, 255, 0.12);
             }
 
-            #services-matrix .service-shelf > .group {
-              min-height: 300px;
-              border: 1px solid rgba(148, 163, 184, 0.3);
-              border-radius: 12px;
+            #services-matrix .service-panel {
+              position: relative;
+              flex: 1;
+              min-width: 72px;
+              height: 100%;
+              cursor: pointer;
+              overflow: hidden;
+              transition: flex 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+              border-right: 1px solid rgba(255, 255, 255, 0.1);
+              background: #0b0f19;
             }
 
-            #services-matrix .service-shelf > .group > .relative.z-10 {
-              min-height: 268px;
+            #services-matrix .service-panel:last-child {
+              border-right: none;
             }
 
-            #services-matrix .service-shelf > :not([hidden]) ~ :not([hidden]) {
-              border-top-width: 0;
-              border-left-width: 0;
+            #services-matrix .service-panel:hover,
+            #services-matrix .service-panel.is-active {
+              flex: 3.8;
             }
 
-            #services-matrix .service-shelf .relative.z-10 > div:last-child {
-              max-height: none !important;
+            #services-matrix .service-panel .panel-img {
+              transition: transform 0.7s ease, filter 0.5s ease;
+              filter: brightness(0.55);
+            }
+
+            #services-matrix .service-panel:hover .panel-img,
+            #services-matrix .service-panel.is-active .panel-img {
+              transform: scale(1.06);
+              filter: brightness(0.8);
+            }
+
+            #services-matrix .service-panel .panel-collapsed-view {
+              opacity: 1;
+              transition: opacity 0.3s ease;
+            }
+
+            #services-matrix .service-panel:hover .panel-collapsed-view,
+            #services-matrix .service-panel.is-active .panel-collapsed-view {
+              opacity: 0;
+              pointer-events: none;
+              display: none;
+            }
+
+            #services-matrix .service-panel .panel-expanded-view {
+              opacity: 0;
+              max-height: 0;
+              transform: translateY(14px);
+              transition: opacity 0.4s ease 0.12s, transform 0.4s ease 0.12s, max-height 0.4s ease;
+              overflow: hidden;
+            }
+
+            #services-matrix .service-panel:hover .panel-expanded-view,
+            #services-matrix .service-panel.is-active .panel-expanded-view {
+              opacity: 1;
+              max-height: 320px;
+              transform: translateY(0);
+            }
+
+            #services-matrix .service-panel::after {
+              content: '';
+              position: absolute;
+              inset: 0;
+              border-left: 3px solid transparent;
+              transition: border-color 0.3s ease;
+              pointer-events: none;
+            }
+
+            #services-matrix .service-panel:hover::after,
+            #services-matrix .service-panel.is-active::after {
+              border-left-color: #3b82f6;
+            }
+          }
+
+          @media (max-width: 1023px) {
+            #services-matrix .service-panel {
+              position: relative;
+              min-height: 180px;
+              border-radius: 14px;
+              overflow: hidden;
+              background: #0b0f19;
+              border: 1px solid rgba(255, 255, 255, 0.12);
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+            }
+            #services-matrix .service-panel .panel-collapsed-view {
+              display: none !important;
+            }
+            #services-matrix .service-panel .panel-expanded-view {
               opacity: 1 !important;
-              overflow: visible !important;
+              max-height: none !important;
               transform: none !important;
             }
-          }
-
-          @media (max-width: 1100px) {
-            .welcome-metrics {
-              grid-template-columns: repeat(2, minmax(0, 1fr));
-              gap: 16px;
-            }
-
-            .welcome-metrics > div {
-              min-width: 0;
-            }
-
-          }
-
-          @media (max-width: 639px) {
-            .welcome-metrics .font-metric-numeral {
-              font-size: clamp(2rem, 10vw, 2.5rem) !important;
+            #services-matrix .service-panel .panel-img {
+              filter: brightness(0.65);
             }
           }
         </style>
@@ -1132,326 +1204,345 @@
                 Quality Service is Our Guarantee
               </h2>
             </div>
+            <p class="text-sm text-text-caption max-w-md">
+              A comprehensive range of specialized workshop capabilities and on-site engineering services certified to ISO standards.
             </p>
           </div>
-          <!-- Interactive Expanding Horizontal Accordion Shelf / Rack -->
-          <div
-            class="service-shelf flex flex-col xl:flex-row h-auto xl:h-[520px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-900/95 w-full shadow-lg divide-y xl:divide-y-0 xl:divide-x divide-slate-700/70">
+          <!-- Interactive Expanding Horizontal Accordion Shelf -->
+          <div class="service-shelf" id="serviceShelf">
+            
             <!-- Panel 01 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-900">
-              <img alt="Machining (CNC &amp; Manual)"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.8] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WgphqfPWwGYfX5zk1n-NBpXVad8s0_3j4wnNJhtbV2U1r4Dinf-8Gmtix1rbXz81A4fSaRZshdmB4EUwt2UHMf-66RlXLNUv8vXO1JDGO_kuOFH0RnDL5V7-rMLBfHaWPx9N5URU61fsx1g9XHXRV3T3xDWZ45_ydkpQfB-VURlXL_5XjNnQBNOIXHTYeReI_MkKVzoMcSMlBbwK7fA9MHNzcA1M__BZUQj9gcpn-HA2p9BjHa5iCT984">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-transparent pointer-events-none">
+            <div class="service-panel is-active p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
+              <img alt="Machining (CNC & Manual)"
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/precision.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View (Vertical mode on desktop) -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">01</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">precision_manufacturing</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Machining
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View (Horizontal mode on hover/active) -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">01</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">precision_manufacturing</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">precision_manufacturing</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Machining (CNC &amp; Manual)</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Precision machining services for industrial components using advanced CNC and manual machines.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Capacities</span>
-                    <span class="text-xs text-slate-300">Lathe up to 3.2m · Milling · Line Boring · Honing</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Machining (CNC &amp; Manual)
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Precision machining services for industrial components using advanced CNC and manual machines.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Capacities</span>
+                  <span class="text-xs text-slate-300">Lathe up to 3.2m · Milling · Line Boring · Honing</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 02 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-900">
-              <img alt="Welding &amp; Fabrication"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.8] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1W7cnVw4w9i9fXPsn1vXxqlho3ZF3jXDx0wE0lqqZ9FNwMuesY-mG8rAH03jUexqR3WUwERE34HSD_sTVkX_0AuArbH9DxBR82aqyD2dMNc3U1duKSPzS8Hr2IelyiXsRgISPbII_i46QymSM8ZTu-s5Zt-_ZFWRUoEEc_OzTrWxE3Orf_-t8984Jfte_7O_N8powZUSjLwibuWaV6g4Zef3bcs3y5BzsDrNNzY17evEB1PHw__M_NFwPSF">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-transparent pointer-events-none">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
+              <img alt="Welding & Fabrication"
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/fabrication.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">02</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">engineering</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Welding &amp; Fab
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">02</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">engineering</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">engineering</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Welding &amp; Fabrication</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Certified welding solutions for critical structures and repairs, including robotic manipulators.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Processes</span>
-                    <span class="text-xs text-slate-300">SMAW · TIG · MIG · SAW · Digital PWHT</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Welding &amp; Fabrication
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Certified welding solutions for critical structures and repairs, including robotic manipulators.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Processes</span>
+                  <span class="text-xs text-slate-300">SMAW · TIG · MIG · SAW · Digital PWHT</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 03 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-900">
-              <img alt="Thermal Spray &amp; Coating"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.8] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WbWcMdB2rwf1zJ5KrDEo0q7ynSEJWgHQaqCi-KJq7izRfyjex3FGge4NMJwe-JoyEMifuTXGp4YUOvqJvsTfzuTgJL28NNKnPGidkXrJZIYKHsX8st-RsCGcgE2TSEhCF57YqX95NrdRzypzgEBl8M2mYKagI0LMftdlo1batyWqWe3Qo1-vawcHeYhOKQAH1Cu7thcos8oPuiddEEXxbCArOixW8hTejh-KPfV9uUr67MeCeZhKOB99Zx">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-transparent pointer-events-none">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
+              <img alt="Thermal Spray & Coating"
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/pict3.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">03</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">format_paint</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Thermal Spray
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">03</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">format_paint</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">format_paint</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Thermal Spray &amp; Coating</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Protective and restorative coatings using wire flame spray, arc spray, and ceramic technology.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Applications</span>
-
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Thermal Spray &amp; Coating
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Protective and restorative coatings using wire flame spray, arc spray, and ceramic technology.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Applications</span>
+                  <span class="text-xs text-slate-300">Shaft Restoration · Wear Resistance · Ceramic Barrier</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 04 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-900">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
               <img alt="Component Reconditioning"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.8] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WJ97fOGvvy6Zjsy5TXfyLqz-0VW9rhPltjfaSij1k25YHvaslgYH0D1j2VJqFOvyNT9cSyRduf5q7ier2Jdkd1DyaDmba5NxEpsK2_JZeHMYsKSGRQuwf9tqy1Kqgi4AcDq-1boOAi7zILMe5J_9S_u7epCFJb7Cf372pvK_lkjVMhUMY4CEaILW57mYDaU6BfFOCufX75JUVMNDXzCBifB-uJGb7eQn8xMxfSxidtrU1zoCrj8MS2Xguy">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-transparent pointer-events-none">
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/pict4.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">04</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">settings_backup_restore</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Reconditioning
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">04</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">settings_backup_restore</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">settings_backup_restore</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Component Reconditioning</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Cost-effective and sustainable repair of heavy diesel engine and powertrain components.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Core
-                      Parts</span>
-                    <span class="text-xs text-slate-300">Cylinder Block · Camshaft · Spindle · Crankshaft</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Component Reconditioning
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Cost-effective and sustainable repair of heavy diesel engine and powertrain components.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Core Parts</span>
+                  <span class="text-xs text-slate-300">Cylinder Block · Camshaft · Spindle · Crankshaft</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 05 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-900">
-              <img alt="Balancing, Plating &amp; Press"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.8] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1XVTMSHJ31eiW97ihKAdUiJlpmCNGHexbZoOlj5jIGI5OUNL-gbIgyuPiP-V8Zne9SPZf9kXrZX-Or7kK5hmcRSgjuIPvnvGORwq6R9sEx-jHtmkv_3xW2qBBXfEIlUN9ZG2s91ER0-dMxq1QjoRG1_pR07KwLHcXDwo3lJ4myrV38JyYaDNmX4E6kSVIOIzP4e0rX4olFnORrvXtfhhG0vvfiZwkd-Km0Svk-bNCkXL4bfDLRG_VFyNlkN">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-transparent pointer-events-none">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
+              <img alt="Balancing, Plating & Press"
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/tes1.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">05</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">autorenew</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Balancing
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">05</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">autorenew</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">autorenew</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Balancing, Plating &amp; Press</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Dynamic balancing and heavy-duty structural treatments for rotating high-speed shafts.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Machinery</span>
-                    <span class="text-xs text-slate-300">3M Balancing · Brush Plating · 650T Press</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Balancing, Plating &amp; Press
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Dynamic balancing and heavy-duty structural treatments for rotating high-speed shafts.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Machinery</span>
+                  <span class="text-xs text-slate-300">3M Balancing · Brush Plating · 650T Press</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 06 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-900">
-              <img alt="Inspection &amp; Testing"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.55] group-hover:brightness-[0.8] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1UIeEIJIZDGgDX0SpR-MImHkr34KbrR1kDEiD6hZ4u5OWnZPoTXyvCBqLegFIkk1SGiqlDklE9J3JAyupwCpVK034quUtC23wUPSnnEB1DNxhIMns6BeNOEqNBR23W3iUVwdzr901mJICsZ7qX_4iqBiBf_II0Jk5Q50LoK4JRp2x7IBSYKTrcOosWnhT2InGbcGL2w2J16Pda1yDAzabxYZu_Ayyo4IbXCqJOPXTZSJ9WBlZCZEl7JVI2p">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-transparent pointer-events-none">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
+              <img alt="Inspection & Testing"
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/tes8.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">06</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">fact_check</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Testing
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">06</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">fact_check</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">fact_check</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Inspection &amp; Testing</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Comprehensive QA/QC inspections following ISO calibration and certified non-destructive tests.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Methods</span>
-                    <span class="text-xs text-slate-300">NDT (PT, MT, UT) · Hardness · Pressure Test</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Inspection &amp; Testing
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Comprehensive QA/QC inspections following ISO calibration and certified non-destructive tests.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Methods</span>
+                  <span class="text-xs text-slate-300">NDT (PT, MT, UT) · Hardness · Pressure Test</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 07 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
               <img alt="Custom Fabrication"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WDmU1tmShg6IdRohh-qgrKNrlcD5Ta7logFE1R1CqFjIY2ZCJRRBaDIe62Ibdi57ODJVPSBq-6H2bh4Ijo1MAp3DsfE_ZMu_fuuc9qn8MfT0YhkG-t1ASistE_S9WUpBqCZRsaueHo3BvLIa0CW0_dCeKiQemVeJHpYkN9a9yCtJzw5vHWjHK-X2YrnFAsle3gJ1igR94hPxYuyY1LmjwBMk6LUwXnqRWhzK-E_l0KUXb1k_A2jfgoxYg">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/pict5.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">07</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">carpenter</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Custom Fab
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">07</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">carpenter</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">carpenter</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Custom Fabrication</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Tailor-made metalworks, heavy chutes, and structural chassis built to engineered drawings.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Products</span>
-                    <span class="text-xs text-slate-300">Screw Conveyors · Spreaders · Fuel Tanks</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Custom Fabrication
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Tailor-made metalworks, heavy chutes, and structural chassis built to engineered drawings.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Products</span>
+                  <span class="text-xs text-slate-300">Screw Conveyors · Spreaders · Fuel Tanks</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
             <!-- Panel 08 -->
-            <div
-              class="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-out overflow-hidden flex flex-col justify-end p-5 sm:p-7 cursor-pointer min-h-[140px] hover:min-h-[260px] lg:min-h-0 bg-slate-950">
+            <div class="service-panel p-5 sm:p-7 flex flex-col justify-end"
+              onmouseenter="activatePanel(this)">
               <img alt="Hot Dip Galvanizing (HDG)"
-                class="absolute inset-0 w-full h-full object-cover brightness-[0.4] group-hover:brightness-[0.6] group-hover:scale-105 transition-all duration-700 ease-out"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1UFpNTAeXwh08eF0s688NyRPbFlVO8LsoKk7_PlWAIDpLSfH3Mdc-iXJMbrm4kQuaHBo1oo1ojh_flUuTm3wracfy3T05-xmjZV-h5PCodftU5p_yL8IPNrknpe964zzh-LQGkIf1QqVRC-MJu2o5g8kty7xwWmmIWAehquL64vFPz5VmeDiFcxTV2DTvfzBA4YrPrVEvG_twttsazwBlqTY5C0OFcjxQ-E_bEC8UABE0tJvM5rC08D-bWE">
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none">
+                class="panel-img absolute inset-0 w-full h-full object-cover"
+                src="https://sscworks.com/wp-content/uploads/2026/08/tunnel.webp">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none"></div>
+              
+              <!-- Collapsed View -->
+              <div class="panel-collapsed-view relative z-10 flex flex-col items-center justify-between h-full py-4">
+                <span class="font-mono text-xs font-bold text-blue-400">08</span>
+                <span class="material-symbols-outlined text-white/70 text-[20px]">shield</span>
+                <span class="text-white text-xs font-semibold tracking-wider uppercase [writing-mode:vertical-rl] rotate-180 truncate max-h-48">
+                  Galvanizing
+                </span>
               </div>
-              <div
-                class="absolute inset-0 border-l-2 border-transparent group-hover:border-[#1D4ED8] transition-colors pointer-events-none">
-              </div>
-              <div class="relative z-10 flex flex-col justify-end h-full">
+
+              <!-- Expanded View -->
+              <div class="panel-expanded-view relative z-10 flex flex-col justify-end">
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-mono text-sm font-bold text-blue-400 tracking-wider">08</span>
-                  <span
-                    class="material-symbols-outlined text-white/70 group-hover:text-blue-400 group-hover:scale-110 transition-all text-[22px]">shield</span>
+                  <span class="material-symbols-outlined text-blue-400 text-[24px]">shield</span>
                 </div>
-                <h3
-                  class="text-white font-bold text-sm sm:text-base tracking-tight transition-transform duration-300 h-[4.25rem] flex items-start leading-tight shrink-0">
-                  Hot Dip Galvanizing (HDG)</h3>
-                <div
-                  class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-60 group-hover:translate-y-0 translate-y-3 transition-all duration-300 delay-100 overflow-hidden flex flex-col">
-                  <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
-                    Durable corrosion protection for steel components through SNI and ASTM compliant full immersion
-                    baths.
-                  </p>
-                  <div class="mt-4 pt-3 border-t border-white/10 flex flex-col gap-1.5">
-                    <span
-                      class="text-[11px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Compliance</span>
-                    <span class="text-xs text-slate-300">Large Industrial Parts · SNI &amp; ASTM A123</span>
-                  </div>
-                  <div
-                    class="mt-4 flex items-center gap-1.5 text-xs font-semibold text-blue-400 group-hover:text-blue-300">
-                    <span class="">Explore Service</span>
-                    <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </div>
+                <h3 class="text-white font-bold text-base sm:text-lg tracking-tight mb-2 leading-tight">
+                  Hot Dip Galvanizing (HDG)
+                </h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
+                  Durable corrosion protection for steel components through SNI and ASTM compliant full immersion baths.
+                </p>
+                <div class="pt-2.5 border-t border-white/15 flex flex-col gap-1 mb-3">
+                  <span class="text-[10px] font-mono text-blue-300 uppercase tracking-wider font-semibold">Compliance</span>
+                  <span class="text-xs text-slate-300">Large Industrial Parts · SNI &amp; ASTM A123</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300">
+                  <span>Explore Service</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
+        <script>
+          function activatePanel(panel) {
+            var shelf = document.getElementById('serviceShelf');
+            if (!shelf) return;
+            shelf.querySelectorAll('.service-panel').forEach(function(p) {
+              p.classList.remove('is-active');
+            });
+            panel.classList.add('is-active');
+          }
+        </script>
       </section>
       <!-- WELCOME TO REPAIR MASTERY (KEY STATS & TEAM PHOTO) -->
       <section class="w-full bg-surface-base py-24 border-b border-border-hairline">
@@ -1462,7 +1553,7 @@
               <div class="rounded-lg overflow-hidden border border-border-hairline bg-surface-subtle shadow-sm">
                 <img alt="Engineering leadership and field mechanics standing together at mining overhaul facility"
                   class="w-full h-[400px] object-cover"
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1UhjA1oF-WQYwLUgkkpgHiJNQWdjUE3ZWcrcyPewjp9cd9beIMkxUZBGaFNSTqfwiinlA6orRvHisR3yCama9y9tRSEwI02qJI2_doHl-G3D2LkQk_TwgkCPWctPWdNiQavKWYYr2mOL00k3aGzPgMAGlxWoa8BR2l594YASAz9UysZqj7c7av3xBd54dC7kG3UqqnynYPLA6Ut1Fp2x887jMBxGIookcnWNtidflDy29AgVxs-wNgBm96x">
+                  src="https://sscworks.com/wp-content/uploads/2026/08/about.webp">
               </div>
               <div
                 class="pt-3 flex items-center justify-between text-text-caption font-label-tag text-label-tag uppercase">
@@ -2938,32 +3029,56 @@
             }
           }
         </style>
-        <!-- MODAL: VIDEO PLAYER OVERLAY -->
-        <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
-          id="video-modal">
+                <!-- MODAL: VIDEO PLAYER OVERLAY -->
+        <div class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
+          id="video-modal" onclick="if(event.target === this) closeVideoModal()">
           <div
-            class="bg-surface-base border border-border-hairline rounded-lg w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col">
+            class="bg-surface-base border border-border-hairline rounded-2xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col">
             <div class="p-4 border-b border-border-hairline flex items-center justify-between bg-surface-subtle">
-              <span class="font-label-ui text-label-ui font-semibold text-text-heading">SSC Works — Corporate Workshop
-                Tour</span>
-              <button class="w-8 h-8 rounded flex items-center justify-center text-text-caption hover:text-text-heading"
-                onclick="document.getElementById('video-modal').classList.add('hidden')" type="button">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-red-600 animate-pulse"></span>
+                <span class="font-label-ui text-label-ui font-semibold text-text-heading">SSC Works — Corporate Video Tour</span>
+              </div>
+              <button class="w-8 h-8 rounded-full flex items-center justify-center text-text-caption hover:text-text-heading hover:bg-black/5 transition-colors"
+                onclick="closeVideoModal()" type="button" aria-label="Close video">
                 <span class="material-symbols-outlined text-[20px]">close</span>
               </button>
             </div>
-            <div class="relative aspect-video bg-black flex items-center justify-center">
-              <img alt="Video preview thumbnail" class="w-full h-full object-cover opacity-80"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1WFedkV54x__V-1mGPWasefKBA0lscUWE-zhPidTDlQb0Ipcv4ZKoTDyr9iuYIWCoj01HgqqLM0AVy4IfuSKp53KdCUGhSXwiMCTypnF11GftNMaKzwWLyE9rlWyweDDaGNfyoLEwB6BvxFw27CfDSRw1KstYkWLo1UhHUc6wzNls2l7083dG9aqdnoOMK8pdLd4SfXUC4XqZCBKfgRfS-tw-iSKMi8K4py6Qzd_wqIq0_IEItAS09Bvxo">
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 text-on-primary bg-text-heading/40">
-                <span class="material-symbols-outlined text-[64px] mb-2 text-primary-container">play_circle</span>
-                <p class="font-headline-sm text-headline-sm font-semibold">Video Stream Demonstration</p>
-                <p class="font-body-sm text-body-sm text-on-primary/80 max-w-md mt-2">Machining, welding, thermal spray
-                  coatings, and final hydrostatic testing workflows across Balikpapan &amp; Gresik plants.</p>
-              </div>
+            <div class="relative aspect-video bg-black flex items-center justify-center w-full">
+              <iframe id="company-profile-iframe"
+                class="w-full h-full border-0"
+                src=""
+                data-src="https://www.youtube-nocookie.com/embed/miWLacTKJHU?autoplay=1&rel=0&modestbranding=1"
+                title="SSC Works — Corporate Workshop Tour"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
         </div>
+        <script>
+          function openVideoModal() {
+            var modal = document.getElementById('video-modal');
+            var iframe = document.getElementById('company-profile-iframe');
+            if (modal && iframe) {
+              iframe.src = iframe.dataset.src;
+              modal.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+            }
+          }
+          function closeVideoModal() {
+            var modal = document.getElementById('video-modal');
+            var iframe = document.getElementById('company-profile-iframe');
+            if (modal && iframe) {
+              iframe.src = '';
+              modal.classList.add('hidden');
+              document.body.style.overflow = '';
+            }
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeVideoModal();
+          });
+        </script>
         <!-- MODAL: ISO CERTIFICATE VIEWER -->
         <div class="hidden fixed inset-0 z-50 bg-text-heading/80 backdrop-blur-sm flex items-center justify-center p-4"
           id="cert-modal">
