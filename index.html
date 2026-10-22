@@ -1757,8 +1757,7 @@
             <h3 class="font-headline-sm text-headline-sm text-text-heading font-semibold mb-2">Quality Management</h3>
             <button
               class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
-              onclick="openCertModal('9001')"
-              type="button">
+              onclick="openCertModal('9001')" type="button">
               <span class="">View certificate</span>
               <span class="material-symbols-outlined text-[16px]">visibility</span>
             </button>
@@ -1783,8 +1782,7 @@
             </p>
             <button
               class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
-              onclick="openCertModal('14001')"
-              type="button">
+              onclick="openCertModal('14001')" type="button">
               <span class="">View certificate</span>
               <span class="material-symbols-outlined text-[16px]">visibility</span>
             </button>
@@ -1809,8 +1807,7 @@
             </p>
             <button
               class="mt-auto inline-flex items-center gap-1.5 text-primary-container font-label-ui text-label-ui font-semibold hover:text-tertiary"
-              onclick="openCertModal('45001')"
-              type="button">
+              onclick="openCertModal('45001')" type="button">
               <span class="">View certificate</span>
               <span class="material-symbols-outlined text-[16px]">visibility</span>
             </button>
@@ -3249,12 +3246,13 @@
       id="cert-modal" onclick="if(event.target === this) closeCertModal()">
       <div
         class="bg-surface-base border border-border-hairline rounded-2xl w-full max-w-4xl max-h-[92vh] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in-95 duration-200">
-        
+
         <!-- Modal Top Bar -->
-        <div class="px-5 py-3.5 border-b border-border-hairline flex items-center justify-between gap-3 bg-surface-subtle">
+        <div
+          class="px-5 py-3.5 border-b border-border-hairline flex items-center justify-between gap-3 bg-surface-subtle">
           <div class="flex items-center gap-2.5">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span class="font-bold text-sm text-text-heading tracking-wide">Sertifikat Resmi PT SSC Works</span>
+
           </div>
 
           <!-- ISO Switcher Tabs & Close -->
@@ -3273,7 +3271,8 @@
                 ISO 45001
               </button>
             </div>
-            <button class="w-8 h-8 rounded-xl border border-border-hairline flex items-center justify-center text-text-caption hover:text-text-heading hover:bg-surface-subtle transition-colors ml-1"
+            <button
+              class="w-8 h-8 rounded-xl border border-border-hairline flex items-center justify-center text-text-caption hover:text-text-heading hover:bg-surface-subtle transition-colors ml-1"
               onclick="closeCertModal()" type="button" title="Tutup (Esc)">
               <span class="material-symbols-outlined text-[18px]">close</span>
             </button>
@@ -3281,16 +3280,18 @@
         </div>
 
         <!-- Modal Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 overflow-y-auto max-h-[calc(92vh-65px)] divide-y lg:divide-y-0 lg:divide-x divide-border-hairline">
-          
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 overflow-y-auto max-h-[calc(92vh-65px)] divide-y lg:divide-y-0 lg:divide-x divide-border-hairline">
+
           <!-- Image View Section (Left) -->
-          <div class="lg:col-span-7 p-4 sm:p-5 bg-slate-950/40 flex flex-col items-center justify-center min-h-[360px] relative group">
-            <div class="relative w-full flex items-center justify-center max-h-[66vh] overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-2 shadow-inner">
+          <div
+            class="lg:col-span-7 p-4 sm:p-5 bg-slate-950/40 flex flex-col items-center justify-center min-h-[360px] relative group">
+            <div
+              class="relative w-full flex items-center justify-center max-h-[66vh] overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-2 shadow-inner">
               <img id="cert-modal-img" src="iso-9001.png" alt="Sertifikat Resmi PT SSC Works"
                 class="max-h-[62vh] w-auto max-w-full object-contain rounded-lg shadow-2xl transition-transform duration-300 group-hover:scale-[1.01] cursor-zoom-in"
-                onclick="window.open(this.src, '_blank')"
-                title="Klik untuk membuka dalam ukuran penuh" />
-              
+                onclick="window.open(this.src, '_blank')" title="Klik untuk membuka dalam ukuran penuh" />
+
               <!-- Zoom badge button -->
               <a id="cert-modal-zoom-badge" href="iso-9001.png" target="_blank"
                 class="absolute bottom-3 right-3 bg-slate-900/90 hover:bg-primary-container text-white text-xs px-2.5 py-1 rounded-lg flex items-center gap-1.5 backdrop-blur-md border border-white/20 shadow-lg transition-all">
@@ -3303,10 +3304,11 @@
           <!-- Metadata & Scope Section (Right - Simple & Clear) -->
           <div class="lg:col-span-5 p-5 sm:p-6 flex flex-col justify-between bg-surface-base space-y-4">
             <div class="space-y-4">
-              
+
               <!-- Header -->
               <div>
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 mb-2">
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 mb-2">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                   <span id="cert-modal-badge">Sistem Manajemen Mutu</span>
                 </span>
@@ -3320,7 +3322,8 @@
 
               <!-- Ringkasan / Deskripsi Singkat -->
               <div class="bg-surface-subtle p-3.5 rounded-xl border border-border-hairline">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-text-caption block mb-1">Fokus Standar:</span>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-text-caption block mb-1">Fokus
+                  Standar:</span>
                 <p class="text-xs text-text-heading leading-relaxed" id="cert-modal-scope">
                   Standar mutu fabrikasi presisi, permesinan, dan servis alat berat industri.
                 </p>
@@ -3330,19 +3333,23 @@
               <div class="grid grid-cols-2 gap-2.5 text-xs">
                 <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
                   <span class="text-[10px] text-text-caption block mb-0.5">No. Registrasi</span>
-                  <span class="font-mono font-bold text-text-heading text-xs truncate block" id="cert-modal-no">68522/B/0001/UK/En</span>
+                  <span class="font-mono font-bold text-text-heading text-xs truncate block"
+                    id="cert-modal-no">68522/B/0001/UK/En</span>
                 </div>
                 <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
                   <span class="text-[10px] text-text-caption block mb-0.5">Masa Berlaku</span>
-                  <span class="font-semibold text-text-heading text-xs block" id="cert-modal-valid">s/d 11 Mei 2027</span>
+                  <span class="font-semibold text-text-heading text-xs block" id="cert-modal-valid">s/d 11 Mei
+                    2027</span>
                 </div>
                 <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
                   <span class="text-[10px] text-text-caption block mb-0.5">Lokasi Fasilitas</span>
-                  <span class="font-medium text-text-heading text-xs truncate block" id="cert-modal-facility">Samboja & Balikpapan</span>
+                  <span class="font-medium text-text-heading text-xs truncate block" id="cert-modal-facility">Samboja,
+                    Balikpapan</span>
                 </div>
                 <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
                   <span class="text-[10px] text-text-caption block mb-0.5">Akreditasi</span>
-                  <span class="font-medium text-text-heading text-xs truncate block" id="cert-modal-accreditation">URS & UKAS (0043)</span>
+                  <span class="font-medium text-text-heading text-xs truncate block" id="cert-modal-accreditation">URS &
+                    UKAS (0043)</span>
                 </div>
               </div>
 
@@ -3382,7 +3389,7 @@
           subtitle: 'Quality Management System',
           no: '68522/B/0001/UK/En',
           valid: 's/d 11 Mei 2027',
-          facility: 'Samboja & Balikpapan',
+          facility: 'Samboja, Balikpapan',
           accreditation: 'URS & UKAS (0043)',
           scope: 'Standar mutu fabrikasi presisi, permesinan, dan servis alat berat industri.',
           image: 'iso-9001.png'
@@ -3404,7 +3411,7 @@
           subtitle: 'Occupational Health & Safety (K3)',
           no: '68522/C/0001/UK/En',
           valid: 's/d 16 April 2029',
-          facility: 'Samboja & Balikpapan',
+          facility: 'Samboja, Balikpapan',
           accreditation: 'URS & UKAS (0043)',
           scope: 'Standar kepatuhan K3 workshop dengan komitmen target zero accident.',
           image: 'iso-45001.png'
