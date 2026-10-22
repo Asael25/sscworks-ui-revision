@@ -1611,25 +1611,100 @@
                 remanufacturing workflows, SSC Works transforms worn heavy fleet components into like-new assets
                 guaranteed to withstand the harshest extraction environments.
               </p>
-              <!-- 3-Column Uniform Metric Display -->
-              <div class="welcome-metrics grid grid-cols-3 gap-6 pt-6 border-t border-border-hairline">
+                            <!-- 3-Column Uniform Metric Display with Rolling Counter Animation -->
+              <div class="welcome-metrics grid grid-cols-3 gap-6 pt-6 border-t border-border-hairline" id="welcomeMetrics">
                 <div class="flex flex-col">
-                  <span class="font-metric-numeral text-metric-numeral font-bold mb-1">23+</span>
+                  <span class="counter-num font-metric-numeral text-metric-numeral font-bold mb-1 text-text-heading tracking-tight"
+                    data-target="23" data-suffix="+">23+</span>
                   <span class="font-label-ui text-label-ui font-semibold text-text-heading">Years Experience</span>
                   <span class="font-body-sm text-body-sm text-text-caption mt-1">Field Tested</span>
                 </div>
                 <div class="flex flex-col">
-                  <span class="font-metric-numeral text-metric-numeral font-bold mb-1">1M+</span>
+                  <span class="counter-num font-metric-numeral text-metric-numeral font-bold mb-1 text-text-heading tracking-tight"
+                    data-target="10000" data-format="id" data-suffix="+">10.000+</span>
                   <span class="font-label-ui text-label-ui font-semibold text-text-heading">Repairs Completed</span>
                   <span class="font-body-sm text-body-sm text-text-caption mt-1">Zero Fatal Defect</span>
                 </div>
                 <div class="flex flex-col">
-                  <span class="font-metric-numeral text-metric-numeral font-bold mb-1">1,000+</span>
+                  <span class="counter-num font-metric-numeral text-metric-numeral font-bold mb-1 text-text-heading tracking-tight"
+                    data-target="1000" data-format="id" data-suffix="+">1.000+</span>
                   <span class="font-label-ui text-label-ui font-semibold text-text-heading">Projects Completed</span>
                   <span class="font-body-sm text-body-sm text-text-caption mt-1">Nationwide Mines</span>
                 </div>
               </div>
+              <script>
+                (function() {
+                  function animateCounter(el) {
+                    var target = parseInt(el.getAttribute('data-target'), 10);
+                    var suffix = el.getAttribute('data-suffix') || '';
+                    var isIndo = el.getAttribute('data-format') === 'id';
+                    var duration = 1800;
+                    var startTime = null;
+
+                    function formatNumber(num) {
+                      if (isIndo) {
+                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                      }
+                      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    }
+
+                    // Start from 0
+                    el.textContent = '0' + suffix;
+
+                    function step(timestamp) {
+                      if (!startTime) startTime = timestamp;
+                      var elapsed = timestamp - startTime;
+                      var progress = Math.min(elapsed / duration, 1);
+                      // smooth easeOutExpo
+                      var ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                      var current = Math.floor(ease * target);
+                      el.textContent = formatNumber(current) + suffix;
+
+                      if (progress < 1) {
+                        requestAnimationFrame(step);
+                      } else {
+                        el.textContent = formatNumber(target) + suffix;
+                      }
+                    }
+
+                    requestAnimationFrame(step);
+                  }
+
+                  var metricsObserved = false;
+                  function initMetricsObserver() {
+                    var metricsEl = document.getElementById('welcomeMetrics');
+                    if (!metricsEl) return;
+
+                    if ('IntersectionObserver' in window) {
+                      var observer = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(entry) {
+                          if (entry.isIntersecting && !metricsObserved) {
+                            metricsObserved = true;
+                            var counters = metricsEl.querySelectorAll('.counter-num');
+                            counters.forEach(function(c) {
+                              animateCounter(c);
+                            });
+                          }
+                        });
+                      }, { threshold: 0.2 });
+                      observer.observe(metricsEl);
+                    } else {
+                      var counters = metricsEl.querySelectorAll('.counter-num');
+                      counters.forEach(function(c) {
+                        animateCounter(c);
+                      });
+                    }
+                  }
+
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initMetricsObserver);
+                  } else {
+                    initMetricsObserver();
+                  }
+                })();
+              </script>
             </div>
+          </div>
           </div>
         </div>
       </section>
