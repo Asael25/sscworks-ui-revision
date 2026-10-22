@@ -3248,21 +3248,13 @@
     <div class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
       id="cert-modal" onclick="if(event.target === this) closeCertModal()">
       <div
-        class="bg-surface-base border border-border-hairline rounded-2xl w-full max-w-5xl max-h-[92vh] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in-95 duration-200">
+        class="bg-surface-base border border-border-hairline rounded-2xl w-full max-w-4xl max-h-[92vh] overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in-95 duration-200">
         
         <!-- Modal Top Bar -->
-        <div class="px-5 py-4 border-b border-border-hairline flex flex-wrap items-center justify-between gap-3 bg-surface-subtle">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-primary-container/10 border border-primary-container/20 flex items-center justify-center text-primary-container">
-              <span class="material-symbols-outlined text-[20px]">verified</span>
-            </div>
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="font-label-ui text-xs font-bold uppercase tracking-wider text-primary-container" id="cert-modal-tag">Quality Management System</span>
-                <span class="text-[10px] px-2 py-0.5 rounded-full bg-surface-base border border-border-hairline text-text-caption font-mono" id="cert-modal-number">Cert. No: 68522/B/0001/UK/En</span>
-              </div>
-              <h3 class="font-headline-sm text-base sm:text-lg font-bold text-text-heading" id="cert-modal-title">Certificate of Registration — ISO 9001:2015</h3>
-            </div>
+        <div class="px-5 py-3.5 border-b border-border-hairline flex items-center justify-between gap-3 bg-surface-subtle">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-bold text-sm text-text-heading tracking-wide">Sertifikat Resmi PT SSC Works</span>
           </div>
 
           <!-- ISO Switcher Tabs & Close -->
@@ -3281,97 +3273,90 @@
                 ISO 45001
               </button>
             </div>
-            <button class="w-9 h-9 rounded-xl border border-border-hairline flex items-center justify-center text-text-caption hover:text-text-heading hover:bg-surface-subtle transition-colors ml-1"
+            <button class="w-8 h-8 rounded-xl border border-border-hairline flex items-center justify-center text-text-caption hover:text-text-heading hover:bg-surface-subtle transition-colors ml-1"
               onclick="closeCertModal()" type="button" title="Tutup (Esc)">
-              <span class="material-symbols-outlined text-[20px]">close</span>
+              <span class="material-symbols-outlined text-[18px]">close</span>
             </button>
           </div>
         </div>
 
         <!-- Modal Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 overflow-y-auto max-h-[calc(92vh-75px)] divide-y lg:divide-y-0 lg:divide-x divide-border-hairline">
+        <div class="grid grid-cols-1 lg:grid-cols-12 overflow-y-auto max-h-[calc(92vh-65px)] divide-y lg:divide-y-0 lg:divide-x divide-border-hairline">
           
-          <!-- Image View Section (Left / Center) -->
-          <div class="lg:col-span-7 p-4 sm:p-6 bg-slate-950/40 flex flex-col items-center justify-center min-h-[360px] relative group">
+          <!-- Image View Section (Left) -->
+          <div class="lg:col-span-7 p-4 sm:p-5 bg-slate-950/40 flex flex-col items-center justify-center min-h-[360px] relative group">
             <div class="relative w-full flex items-center justify-center max-h-[66vh] overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-2 shadow-inner">
-              <img id="cert-modal-img" src="iso-9001.png" alt="Official Certificate of Registration PT SSC Works"
+              <img id="cert-modal-img" src="iso-9001.png" alt="Sertifikat Resmi PT SSC Works"
                 class="max-h-[62vh] w-auto max-w-full object-contain rounded-lg shadow-2xl transition-transform duration-300 group-hover:scale-[1.01] cursor-zoom-in"
                 onclick="window.open(this.src, '_blank')"
-                title="Klik untuk membuka dalam ukuran penuh / tab baru" />
+                title="Klik untuk membuka dalam ukuran penuh" />
               
               <!-- Zoom badge button -->
               <a id="cert-modal-zoom-badge" href="iso-9001.png" target="_blank"
-                class="absolute bottom-4 right-4 bg-slate-900/90 hover:bg-primary-container text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 backdrop-blur-md border border-white/20 shadow-lg transition-all opacity-90 group-hover:opacity-100">
-                <span class="material-symbols-outlined text-[15px]">zoom_in</span>
+                class="absolute bottom-3 right-3 bg-slate-900/90 hover:bg-primary-container text-white text-xs px-2.5 py-1 rounded-lg flex items-center gap-1.5 backdrop-blur-md border border-white/20 shadow-lg transition-all">
+                <span class="material-symbols-outlined text-[14px]">zoom_in</span>
                 <span>Ukuran Penuh</span>
               </a>
             </div>
-            <p class="text-[11px] text-text-caption mt-2.5 flex items-center gap-1">
-              <span class="material-symbols-outlined text-[14px]">touch_app</span>
-              Klik pada gambar atau tombol untuk melihat scan sertifikat resolusi penuh
-            </p>
           </div>
 
-          <!-- Metadata & Scope Section (Right) -->
-          <div class="lg:col-span-5 p-5 sm:p-6 flex flex-col justify-between bg-surface-base space-y-5">
+          <!-- Metadata & Scope Section (Right - Simple & Clear) -->
+          <div class="lg:col-span-5 p-5 sm:p-6 flex flex-col justify-between bg-surface-base space-y-4">
             <div class="space-y-4">
               
-              <!-- Standard Header -->
+              <!-- Header -->
               <div>
-                <span class="inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 mb-2" id="cert-modal-status">
-                  ✓ Certified &amp; Active
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20 mb-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  <span id="cert-modal-badge">Sistem Manajemen Mutu</span>
                 </span>
-                <h4 class="font-headline-sm text-lg font-bold text-text-heading" id="cert-modal-header">
-                  ISO 9001:2015 Quality Management System
+                <h4 class="text-2xl font-bold text-text-heading tracking-tight" id="cert-modal-title">
+                  ISO 9001:2015
                 </h4>
-                <p class="font-body-sm text-xs text-text-caption mt-1" id="cert-modal-awarded">
-                  Awarded to: <strong class="text-text-heading">PT SSC WORKS</strong>
+                <p class="text-xs text-text-caption mt-0.5" id="cert-modal-subtitle">
+                  Quality Management System
                 </p>
               </div>
 
-              <!-- Scope Box -->
+              <!-- Ringkasan / Deskripsi Singkat -->
               <div class="bg-surface-subtle p-3.5 rounded-xl border border-border-hairline">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-text-caption block mb-1">Scope of Certified Activities:</span>
-                <p class="font-body-sm text-xs text-text-heading leading-relaxed" id="cert-modal-scope">
-                  Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.
+                <span class="text-[10px] font-bold uppercase tracking-wider text-text-caption block mb-1">Fokus Standar:</span>
+                <p class="text-xs text-text-heading leading-relaxed" id="cert-modal-scope">
+                  Standar mutu fabrikasi presisi, permesinan, dan servis alat berat industri.
                 </p>
               </div>
 
-              <!-- Details Table -->
-              <div class="space-y-2.5 text-xs">
-                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
-                  <span class="text-text-caption">Nomor Sertifikat:</span>
-                  <span class="font-mono font-semibold text-text-heading text-right" id="cert-modal-no">68522/B/0001/UK/En</span>
+              <!-- Quick Info Grid (4 Kotak Ringkas) -->
+              <div class="grid grid-cols-2 gap-2.5 text-xs">
+                <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
+                  <span class="text-[10px] text-text-caption block mb-0.5">No. Registrasi</span>
+                  <span class="font-mono font-bold text-text-heading text-xs truncate block" id="cert-modal-no">68522/B/0001/UK/En</span>
                 </div>
-                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
-                  <span class="text-text-caption">Lokasi Fasilitas:</span>
-                  <span class="font-medium text-text-heading text-right text-[11px] max-w-[220px]" id="cert-modal-address">Jl. Balikpapan Handil II Solok Api, Kutai Kartanegara, Kaltim</span>
+                <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
+                  <span class="text-[10px] text-text-caption block mb-0.5">Masa Berlaku</span>
+                  <span class="font-semibold text-text-heading text-xs block" id="cert-modal-valid">s/d 11 Mei 2027</span>
                 </div>
-                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
-                  <span class="text-text-caption">Masa Berlaku:</span>
-                  <span class="font-medium text-text-heading text-right" id="cert-modal-valid">Hingga 11 Mei 2027</span>
+                <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
+                  <span class="text-[10px] text-text-caption block mb-0.5">Lokasi Fasilitas</span>
+                  <span class="font-medium text-text-heading text-xs truncate block" id="cert-modal-facility">Samboja & Balikpapan</span>
                 </div>
-                <div class="flex items-start justify-between py-1.5 border-b border-border-hairline gap-2">
-                  <span class="text-text-caption">Lembaga Registrasi:</span>
-                  <span class="font-medium text-text-heading text-right" id="cert-modal-registrar">URS (United Registrar of Systems)</span>
-                </div>
-                <div class="flex items-start justify-between py-1.5 gap-2">
-                  <span class="text-text-caption">Badan Akreditasi:</span>
-                  <span class="font-medium text-text-heading text-right" id="cert-modal-accreditation">UKAS Management Systems 0043 / IAF MLA</span>
+                <div class="bg-surface-subtle/70 p-3 rounded-xl border border-border-hairline">
+                  <span class="text-[10px] text-text-caption block mb-0.5">Akreditasi</span>
+                  <span class="font-medium text-text-heading text-xs truncate block" id="cert-modal-accreditation">URS & UKAS (0043)</span>
                 </div>
               </div>
 
             </div>
 
             <!-- Modal Action Buttons -->
-            <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+            <div class="pt-2 flex items-center gap-2.5">
               <a id="cert-modal-open-link" href="iso-9001.png" target="_blank"
-                class="w-full inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-tertiary text-on-primary font-label-ui text-xs font-semibold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg">
-                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                <span>Buka Dokumen Asli</span>
+                class="flex-1 inline-flex items-center justify-center gap-1.5 bg-primary-container hover:bg-tertiary text-on-primary font-medium text-xs py-2.5 px-4 rounded-xl transition-all shadow-sm">
+                <span class="material-symbols-outlined text-[15px]">open_in_new</span>
+                <span>Buka Ukuran Asli</span>
               </a>
               <button
-                class="w-full sm:w-auto font-label-ui text-xs font-medium py-3 px-5 rounded-xl border border-border-hairline text-text-heading hover:bg-surface-subtle transition-colors text-center"
+                class="py-2.5 px-4 rounded-xl border border-border-hairline text-text-heading hover:bg-surface-subtle text-xs font-medium transition-colors"
                 onclick="closeCertModal()" type="button">
                 Tutup
               </button>
@@ -3392,42 +3377,36 @@
 
       const isoCertData = {
         '9001': {
-          title: 'Certificate of Registration — ISO 9001:2015',
-          tag: 'Quality Management System',
-          header: 'ISO 9001:2015 Quality Management System',
-          number: 'Cert. No: 68522/B/0001/UK/En',
+          badge: 'Sistem Manajemen Mutu',
+          title: 'ISO 9001:2015',
+          subtitle: 'Quality Management System',
           no: '68522/B/0001/UK/En',
-          address: 'Jl. Balikpapan Handil II Solok Api, RT.05, Kec. Samboja, Kab. Kutai Kartanegara, Kalimantan Timur, Indonesia',
-          scope: 'Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.',
-          valid: 'Hingga 11 Mei 2027',
-          registrar: 'URS (United Registrar of Systems)',
-          accreditation: 'UKAS Management Systems 0043 / IAF MLA',
+          valid: 's/d 11 Mei 2027',
+          facility: 'Samboja & Balikpapan',
+          accreditation: 'URS & UKAS (0043)',
+          scope: 'Standar mutu fabrikasi presisi, permesinan, dan servis alat berat industri.',
           image: 'iso-9001.png'
         },
         '14001': {
-          title: 'Certificate of Registration — ISO 14001:2015',
-          tag: 'Environmental Management System',
-          header: 'ISO 14001:2015 Environmental Management System',
-          number: 'Cert. No: 68522/A/0002/UK/En',
+          badge: 'Sistem Manajemen Lingkungan',
+          title: 'ISO 14001:2015',
+          subtitle: 'Environmental Management System',
           no: '68522/A/0002/UK/En',
-          address: 'Pergudangan Akses Kebomas Blok E57–E58, Jl. Mayjend Sungkono No. 38, Sekarkurung, Kebomas, Gresik, Jawa Timur, Indonesia',
-          scope: 'Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.',
-          valid: 'Hingga 30 April 2029',
-          registrar: 'URS (United Registrar of Systems)',
-          accreditation: 'UKAS Management Systems 0043 / IAF MLA',
+          valid: 's/d 30 April 2029',
+          facility: 'Gresik, Jawa Timur',
+          accreditation: 'URS & UKAS (0043)',
+          scope: 'Standar manajemen lingkungan dan operasional workshop ramah lingkungan.',
           image: 'iso-14001.png'
         },
         '45001': {
-          title: 'Certificate of Registration — ISO 45001:2018',
-          tag: 'Occupational Health & Safety',
-          header: 'ISO 45001:2018 Occupational Health & Safety Management',
-          number: 'Cert. No: 68522/C/0001/UK/En',
+          badge: 'Kesehatan & Keselamatan Kerja',
+          title: 'ISO 45001:2018',
+          subtitle: 'Occupational Health & Safety (K3)',
           no: '68522/C/0001/UK/En',
-          address: 'Jl. Balikpapan Handil II Solok Api, RT.05, Kec. Samboja, Kab. Kutai Kartanegara, Kalimantan Timur, Indonesia',
-          scope: 'Oil and Gas, Mining and General Industry Tools Fabrication and Manufacture, Repair Services including Machining and General Supplier.',
-          valid: 'Hingga 16 April 2029',
-          registrar: 'URS (United Registrar of Systems)',
-          accreditation: 'UKAS Management Systems 0043 / IAF MLA',
+          valid: 's/d 16 April 2029',
+          facility: 'Samboja & Balikpapan',
+          accreditation: 'URS & UKAS (0043)',
+          scope: 'Standar kepatuhan K3 workshop dengan komitmen target zero accident.',
           image: 'iso-45001.png'
         }
       };
@@ -3436,29 +3415,25 @@
         const cert = isoCertData[key];
         if (!cert) return;
 
+        const badgeEl = document.getElementById('cert-modal-badge');
         const titleEl = document.getElementById('cert-modal-title');
-        const tagEl = document.getElementById('cert-modal-tag');
-        const numEl = document.getElementById('cert-modal-number');
-        const headerEl = document.getElementById('cert-modal-header');
+        const subtitleEl = document.getElementById('cert-modal-subtitle');
         const scopeEl = document.getElementById('cert-modal-scope');
         const noEl = document.getElementById('cert-modal-no');
-        const addrEl = document.getElementById('cert-modal-address');
         const validEl = document.getElementById('cert-modal-valid');
-        const regEl = document.getElementById('cert-modal-registrar');
+        const facilityEl = document.getElementById('cert-modal-facility');
         const accEl = document.getElementById('cert-modal-accreditation');
         const imgEl = document.getElementById('cert-modal-img');
         const linkEl = document.getElementById('cert-modal-open-link');
         const zoomBadge = document.getElementById('cert-modal-zoom-badge');
 
+        if (badgeEl) badgeEl.innerText = cert.badge;
         if (titleEl) titleEl.innerText = cert.title;
-        if (tagEl) tagEl.innerText = cert.tag;
-        if (numEl) numEl.innerText = cert.number;
-        if (headerEl) headerEl.innerText = cert.header;
+        if (subtitleEl) subtitleEl.innerText = cert.subtitle;
         if (scopeEl) scopeEl.innerText = cert.scope;
         if (noEl) noEl.innerText = cert.no;
-        if (addrEl) addrEl.innerText = cert.address;
         if (validEl) validEl.innerText = cert.valid;
-        if (regEl) regEl.innerText = cert.registrar;
+        if (facilityEl) facilityEl.innerText = cert.facility;
         if (accEl) accEl.innerText = cert.accreditation;
         if (imgEl) {
           imgEl.src = cert.image;
