@@ -2718,10 +2718,15 @@
         sscMap.on('focus', function () { sscMap.scrollWheelZoom.enable(); });
         sscMap.on('blur', function () { sscMap.scrollWheelZoom.disable(); });
 
-        L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        var isHighDpi = (window.devicePixelRatio && window.devicePixelRatio > 1) || (L.Browser && L.Browser.retina);
+        var googleMapUrl = isHighDpi
+          ? 'https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&scale=2'
+          : 'https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}';
+
+        L.tileLayer(googleMapUrl, {
           subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-          attribution: '&copy; Google Maps',
-          maxZoom: 19
+          attribution: '&copy; Google Maps HD',
+          maxZoom: 20
         }).addTo(sscMap);
 
         // Pasang Marker 6 Cabang
